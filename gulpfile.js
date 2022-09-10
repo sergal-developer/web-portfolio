@@ -2,10 +2,8 @@ const gulp = require('gulp');
 const ts = require('gulp-typescript');
 const sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean');
-const nodemon = require('nodemon');
 const gnodemon = require('gulp-nodemon');
-const open = require('gulp-open');
-const es = require('event-stream');
+var browserSync = require('browser-sync').create();
 
 const config = {
   dest: './docs',
@@ -51,18 +49,13 @@ gulp.task('watchers-dev', () => {
 });
 
 gulp.task('server', () => {
-  gulp.series('dev');
-  gnodemon({
-      script: 'index.js',
-      watch: ['./src/**/*'],
-      env: {'NODE_ENV': process.env.NODE_ENV !== 'production'
-      ? process.env.NODE_ENV || 'development' : 'development'}
-  })
-  .on('start', ['watchers-dev'])
-  .on('change', ['watchers-dev'])
-  .on('restart', function () {
-    console.log('restarted!');
+  browserSync.init({
+      server: "./docs"
   });
+  gulp.watch([config.sassFiles], gulp.series('styles'));
+  gulp.watch([config.tsFiles], gulp.series('scripts'));
+  gulp.watch([config.htmlFiles], gulp.series('html'));
+  gulp.watch([config.sassFiles, config.tsFiles, config.htmlFiles]).on('change', browserSync.reload);
 });
 
 gulp.task('build', 
