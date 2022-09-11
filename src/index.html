@@ -9,12 +9,12 @@
   <meta name="keywords" content="Sergio Gallegos, portafolio" />
   <meta name="description" content="developer, designer, javascript" />
   <link rel="stylesheet" type="text/css" href="scss/main.css" media="all" />
-  <script src="javascript/main.js"></script>
+  <script type="module" src="javascript/main.js"></script>
 </head>
 
 <body>
 
-  <div class="app-frame intro">
+  <div class="app-frame">
     <div class="navbar">
       <div class="item logo-container">
         <div class="logo">
@@ -39,12 +39,38 @@
           <div class="hero">
 
             <div class="text">
-              <h2> <span>Hello, I'm </span><br>
-                Sergio Gallegos</h2>
-              <span class="title">
-                Frontend Developer / Backend Developer
-              </span>
+
+              <h2 class="dinamic">
+                <div class='console-container'>
+                  <span id='text'></span>
+                  <div class='console-underscore' id='console'>&#95;</div>
+                </div>
+              </h2>
+
+              <div class="static">
+                <h2>
+                  <span>Hello, I'm </span><br>
+                  Sergio Gallegos
+                </h2>
+                <span class="title shimmer">
+                  Frontend Developer / Backend Developer
+                </span>
+              </div>
             </div>
+
+            <!-- <section id="preloader" class="dinamic">
+              <div id="top" class="mask">
+                <div class="plane"></div>
+              </div>
+              <div id="middle" class="mask">
+                <div class="plane"></div>
+              </div>
+
+              <div id="bottom" class="mask">
+                <div class="plane"></div>
+              </div>
+
+            </section> -->
 
           </div>
         </div>
@@ -487,7 +513,7 @@
                     </div>
                   </div>
                   <div class="full-divider"></div>
-              </div>
+                </div>
               </div>
             </div>
           </div>
@@ -498,7 +524,7 @@
             <h2>Portfolio</h2>
             <div class="title-divider"></div>
             <h3>I have participated in different projects of multiple items, these are some of the most outstanding</h3>
-            
+
             <div class="portfolio-con">
               <div class="container-sub margin-top50">
                 <div class="row">
@@ -507,10 +533,10 @@
                       <ul class="grid">
 
                         <li>
-                          <figure> 
+                          <figure>
                             <!-- <img src="asserts/img/work1.jpg" alt=""> -->
                             <figcaption>
-                              <div class="figcaption-details"> 
+                              <div class="figcaption-details">
                                 <!-- <img src="asserts/img/icon-plus.png" height="82" width="82" alt=""> -->
                                 <h3>Blackboard ULTRA</h3>
                                 <span>Website Design &amp; Development</span>
@@ -521,10 +547,10 @@
                         </li>
 
                         <li>
-                          <figure> 
+                          <figure>
                             <!-- <img src="asserts/img/work1.jpg" alt=""> -->
                             <figcaption>
-                              <div class="figcaption-details"> 
+                              <div class="figcaption-details">
                                 <!-- <img src="asserts/img/icon-plus.png" height="82" width="82" alt=""> -->
                                 <h3>Scholastic Pages</h3>
                                 <span>Website Design &amp; Development</span>
@@ -535,10 +561,10 @@
                         </li>
 
                         <li>
-                          <figure> 
+                          <figure>
                             <!-- <img src="asserts/img/work1.jpg" alt=""> -->
                             <figcaption>
-                              <div class="figcaption-details"> 
+                              <div class="figcaption-details">
                                 <!-- <img src="asserts/img/icon-plus.png" height="82" width="82" alt=""> -->
                                 <h3>Vivaanuncios</h3>
                                 <span>Website Design &amp; Development</span>
@@ -549,10 +575,10 @@
                         </li>
 
                         <li>
-                          <figure> 
+                          <figure>
                             <!-- <img src="asserts/img/work1.jpg" alt=""> -->
                             <figcaption>
-                              <div class="figcaption-details"> 
+                              <div class="figcaption-details">
                                 <!-- <img src="asserts/img/icon-plus.png" height="82" width="82" alt=""> -->
                                 <h3>Embassy of the united states, incident map</h3>
                                 <span>Website Design &amp; Development</span>
@@ -563,10 +589,10 @@
                         </li>
 
                         <li>
-                          <figure> 
+                          <figure>
                             <!-- <img src="asserts/img/work1.jpg" alt=""> -->
                             <figcaption>
-                              <div class="figcaption-details"> 
+                              <div class="figcaption-details">
                                 <!-- <img src="asserts/img/icon-plus.png" height="82" width="82" alt=""> -->
                                 <h3>APX Glow</h3>
                                 <span>Website Design &amp; Development</span>
@@ -578,71 +604,6 @@
 
                       </ul>
                     </section>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item frame-contact" id="contact">
-          <div class="inner">
-            <h2>Contact</h2>
-            <div class="title-divider"></div>
-            <h3>Let's Keep In Touch</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae
-              eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a
-              nibh mollis blandit. Quisque varius eros ac purus dignissim.</p>
-            <div class="full-divider"></div>
-            <div class="contact-con margin-top50">
-              <div class="container-sub">
-                <div class="row">
-                  <div class="contact-details">
-                    <div class="col-6">
-                      <div class="contact-text">
-                        <div class="col-2 icon-block address"><i class="fa-solid fa-map-pin"></i></div>
-                        <div class="flot-left"> <strong>Andrew Smith</strong><br>
-                          PO Box 16122 Collins Street West,<br>
-                          Victoria 8007, United States. </div>
-                      </div>
-                      <div class="contact-text">
-                        <div class="col-2 icon-block phone"><i class="fa-solid fa-mobile-retro"></i></div>
-                        <div class="flot-left"> <strong>Phone</strong><br>
-                          +123-456-7890 </div>
-                      </div>
-                      <div class="contact-text">
-                        <div class="col-2 icon-block email"><i class="fa-regular fa-envelope"></i></div>
-                        <div class="flot-left"> <strong>Email</strong><br>
-                          <a href="mailto:no-reply@domain.com">no-reply@domain.com</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 m-margin-top30">
-                      <h3>I'm also on Social Networks</h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet
-                      vitae eget dolor.
-                      <div class="contact-social margin-top30"><a href="https://www.facebook.com" target="_blank"><i
-                            class="fa fa-facebook"></i></a> <a href="https://twitter.com" target="_blank"><i
-                            class="fa fa-twitter"></i></a> <a href="https://www.youtube.com" target="_blank"><i
-                            class="fa fa-youtube"></i></a><a href="https://plus.google.com" target="_blank"><i
-                            class="fa fa-google-plus"></i></a><a href="https://www.linkedin.com" target="_blank"><i
-                            class="fa fa-linkedin"></i></a> </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="full-divider"></div>
-              <div class="container-sub">
-                <div class="row">
-                  <div class="contact-form">
-                    <h3>Drop Me a Line</h3>
-                    <form id="form1" name="form1" method="post">
-                      <input name="name" type="text" id="name" placeholder="Your Name...">
-                      <input name="email" type="text" id="email" placeholder="Your Email...">
-                      <textarea name="message" id="message" cols="45" rows="5" placeholder="Your Message..."></textarea>
-                      <input type="submit" name="button" id="button" value="say hello!">
-                      <div id="successmsg"></div>
-                    </form>
                   </div>
                 </div>
               </div>

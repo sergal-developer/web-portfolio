@@ -1,8 +1,12 @@
-class WebApp {
+import { EffectTerminal } from "./terminal.js";
+
+export class WebApp {
     frames: any;
     frameCollector: HTMLElement;
     links: any;
     inNavigation = false;
+
+    effectTerminal = new EffectTerminal();
 
     constructor() {}
 
@@ -47,11 +51,18 @@ class WebApp {
     }
 
     setupIntro() {
+
+        this.effectTerminal.text(
+            'console', 
+            ['Hello, I\'m', 'Sergio Gallegos'], 
+            'text',
+            ['#fff']);
+
         const appFrame = document.querySelector('.app-frame');
         appFrame.classList.add('intro');
         setTimeout(() => {
             appFrame.classList.remove('intro');
-        }, 2000);
+        }, 10000);
 
     }
 
