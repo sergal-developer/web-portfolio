@@ -185,12 +185,24 @@ $menuWidth: 200px;
 
             .dinamic {
                 opacity: 0;
+                // display: none;
             }
             .static {
                 opacity: 1;
             }
             .text {
-                
+                // z-index: 1;
+            }
+            .image {
+                position: absolute;
+                z-index: 0;
+                width: 100%;
+                height: inherit;
+                img {
+                    filter: grayscale(100%);
+                    width: auto;
+                    height: inherit;
+                  }
             }
 
             h2 {
@@ -294,6 +306,7 @@ $menuWidth: 200px;
                     opacity: 1;
                     width: 100vw;
                     transform: scale(3);
+                    background: #000;
 
                     .title {
                         color: rgba(255,255,255,0.1) !important;
