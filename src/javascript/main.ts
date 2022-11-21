@@ -8,13 +8,17 @@ export class WebApp {
 
     effectTerminal = new EffectTerminal();
 
+    TEMPLATES;
+    SKILLS;
+    EDUCATION;
+    PORTFOLIO;
+    EXPERIENCE;
+
     constructor() {}
 
     init() {
         this.setupIntro();
-        
         this.setupEvents();
-        console.info('app is initialized: ');
     }
 
     scrollHorizontally(e: any) {
@@ -52,17 +56,18 @@ export class WebApp {
 
     setupIntro() {
 
-        this.effectTerminal.text(
-            'console', 
-            ['Hello, I\'m', 'Sergio Gallegos'], 
-            'text',
-            ['#fff']);
+        // this.effectTerminal.text(
+        //     'console', 
+        //     ['Hello'], 
+        //     'text',
+        //     ['#fff']);
+        this.getInfo();
 
         const appFrame = document.querySelector('.app-frame');
         appFrame.classList.add('intro');
         setTimeout(() => {
             appFrame.classList.remove('intro');
-        }, 10000);
+        }, 1500);
 
     }
 
@@ -77,6 +82,62 @@ export class WebApp {
             });
         });
     }
+
+    async getInfo() {
+        this.TEMPLATES = await this.getAssert('./asserts/json/templates.json');
+        console.log('templates: ', this.TEMPLATES);
+        this.SKILLS = await this.getAssert('./asserts/json/tech.json');
+        console.log('technologies: ', this.SKILLS);
+        this.PORTFOLIO = await this.getAssert('./asserts/json/portfolio.json');
+        console.log('portfolio: ', this.PORTFOLIO);
+        this.EXPERIENCE = await this.getAssert('./asserts/json/experience.json');
+        console.log('experience: ', this.EXPERIENCE);
+        this.EDUCATION = await this.getAssert('./asserts/json/education.json');
+        console.log('education: ', this.EDUCATION);
+
+        this.setData();
+    }
+
+    async getAssert(filename) {
+        try {
+            return await fetch(filename)
+            .then((response) => response.json())
+            .then((json) => json);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    setData() {
+        //#region PORTAFOLIO
+        this.assingData('#portfolio-title', this.PORTFOLIO.title);
+        this.assingData('#portfolio-description', this.PORTFOLIO.description);
+        this.assingData('#portfolio-content', this.interateData(this.PORTFOLIO.collection,  this.TEMPLATES.portfolio));
+    }
+
+    assingData(id, data) {
+        const element:HTMLElement = document.querySelector(id);
+        if (element) {
+            var doc = new DOMParser().parseFromString(data, "text/xml");
+            element.innerHTML = '';
+            // element.insertAdjacentHTML(afterend, doc)
+        }
+    }
+
+    interateData(collection, templateName) {
+        let result = '';
+        collection.forEach(item => {
+            const keys = Object.keys(item);
+            let template: string = templateName;
+            keys.forEach(key => {
+                const content = item[key] ? item[key] : '';
+                template = template.replace(`{${ key.toUpperCase() }}`, content);
+            });
+            result += template;
+        });
+        return result;
+    }
+
 }
 
 const webApp = new WebApp();

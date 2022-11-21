@@ -53,6 +53,12 @@ $menuWidth: 200px;
         top: 0;
         transition: all 300ms;
 
+        .item-collection {
+            @include mobile-tablet {
+                display: inherit;
+            }
+        }
+
         .item {
             padding: 15px 0;
             font-size: 20px;
@@ -86,6 +92,43 @@ $menuWidth: 200px;
             justify-content: center;
             font-size: 2em;
         }
+
+        @include tablet {
+            flex-direction: row;
+            width: 100vw;
+            height: auto;
+            z-index: 1;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+
+            .logo-container {
+                margin-bottom: 0 !important;
+                position: absolute;
+                left: 0;
+                top: 0;
+                padding: 0 !important;
+
+                .logo {
+                    width: 62px;
+                    height: 62px;
+                    font-size: 1em;
+                }
+            }
+
+            .item {
+                padding: 0 15px;
+                border-bottom: none;
+                text-transform: uppercase;
+                font-size: 18px;
+            }
+
+            .copyright {
+                display: none;;
+            }
+        }
     }
 
     .frame-container {
@@ -96,7 +139,7 @@ $menuWidth: 200px;
         background: white;
         color: black;
         scroll-behavior: smooth;
-        transition: all 2000ms;
+        transition: all 500ms;
 
         .frame-horizontal {
             width: calc(100vw * 7);
@@ -285,6 +328,16 @@ $menuWidth: 200px;
                 -moz-transition-duration: .2s;
                 -webkit-transition-duration: .2s;
                 -o-transition-duration: .2s;
+            }
+        }
+
+        @include tablet {
+            width: calc(100vw);
+            margin-left: 0;
+            transition: all 500ms;
+
+            .item {
+                width: calc(100vw);
             }
         }
     }
