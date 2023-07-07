@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&family=Oswald:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Ubuntu&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&family=Oswald:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Ubuntu&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+article, aside, figure, footer, header, hgroup, nav, section {
+  display: block;
+}
+
+img, object, embed {
+  max-width: 100%;
+}
+
+img {
+  border-style: none;
+  border-color: transparent;
+  border-width: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+input, textarea, select, button {
+  font-family: inherit;
+  font-weight: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  font-size: inherit;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif;
+}
+
+button {
+  cursor: pointer;
+  margin: 0;
+  width: auto;
+  overflow: visible;
+}
+
+a.button {
+  display: inline-block;
+}
+
+.ie7 img {
+  -ms-interpolation-mode: bicubic;
+}
+
+a:link {
+  -webkit-tap-highlight-color: #197edd;
+}
+
+ins {
+  background-color: black;
+  color: black;
+  text-decoration: none;
+}
+
+mark {
+  background-color: black;
+  color: black;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+.bebasFont {
+  font-family: "Bebas Neue", cursive;
+}
+
+.openSansFont {
+  font-family: "Open Sans", sans-serif;
+}
+
+.ubuntuFont {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.oswaldFont, .page-frame .navbar, h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+.robotoFont, body {
+  font-family: "Roboto", sans-serif;
+}
+
+.inconsolata {
+  font-family: "Inconsolata", monospace;
+}
+
+.bebasFont {
+  font-family: "Bebas Neue", cursive;
+}
+
+.openSansFont {
+  font-family: "Open Sans", sans-serif;
+}
+
+.ubuntuFont {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.oswaldFont, .page-frame .navbar, h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+.robotoFont, body {
+  font-family: "Roboto", sans-serif;
+}
+
+.inconsolata {
+  font-family: "Inconsolata", monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+p {
+  margin: 1em 0;
+}
+
+:root {
+  --clientSizeX: 80vw;
+  --clientSizeY: 80vh;
+  --navbarWidth: 200px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(194, 194, 194);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  font-size: 14px;
+  line-height: 22px;
+}
+body * * {
+  box-sizing: border-box;
+}
+
+.page-frame {
+  width: var(--clientSizeX);
+  height: var(--clientSizeY);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.page-frame .navbar {
+  width: var(--navbarWidth);
+  transition: all 300ms;
+  padding: 20px;
+  background: black;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-frame .navbar .item {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  border-bottom: 1px solid #333333;
+}
+.page-frame .navbar .item.logo-container {
+  border: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 0 20px;
+}
+.page-frame .navbar .item.copyright {
+  border: none;
+  font-size: 14px;
+  color: gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 20px;
+}
+.page-frame .navbar .item-collection {
+  width: 100%;
+}
+.page-frame .navbar .item-collection .item {
+  cursor: pointer;
+}
+.page-frame .navbar.collapsed {
+  width: 60px;
+}
+.page-frame .page-frame-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.page-frame .page-frame-container .pfc-area {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 1000%;
+  transition-property: all;
+  transition-timing-function: ease;
+  margin-left: 0%;
+}
+.page-frame .page-frame-container .pfc-area.moveOn > .item {
+  background: white;
+}
+.page-frame .page-frame-container .pfc-area.moveOn > .item:before {
+  background: #e3dfdf;
+  margin-left: -33px;
+  width: 1px;
+  box-shadow: 0 0 10px black;
+}
+.page-frame .page-frame-container .pfc-area .item {
+  width: 100%;
+  height: inherit;
+  transition: all 300ms;
+  padding: 30px;
+  background: white;
+  overflow-y: auto;
+}
+.page-frame .page-frame-container .pfc-area .item::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.page-frame .page-frame-container .pfc-area .item::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 0;
+}
+.page-frame .page-frame-container .pfc-area .item::-webkit-scrollbar-track {
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.page-frame .page-frame-container .pfc-area .item body {
+  scrollbar-face-color: gray;
+  scrollbar-track-color: black;
+}
+.page-frame .page-frame-container .pfc-area .item:before {
+  content: "";
+  top: 0;
+  transition: all 200ms;
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  border-radius: 0%;
+  margin-left: -30px;
+  box-shadow: 0 0 10px transparent;
+  background: white;
+}
+
+* * {
+  outline: 1px dotted rgba(238, 130, 238, 0.233);
+}

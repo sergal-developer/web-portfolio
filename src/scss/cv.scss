@@ -1,0 +1,24 @@
+@import 'core/reset';
+@import 'core/colors';
+@import 'core/mixins';
+@import 'core/typography';
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    @extend .robotoFont;
+    background: white;
+    color: black;
+
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    font-size: 14pt;
+    line-height: 22px; 
+}
+
+* * {
+    outline: 1px solid rgba(255, 0, 255, 0.1);
+}
