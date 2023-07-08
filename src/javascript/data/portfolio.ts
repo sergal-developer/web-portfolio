@@ -16,35 +16,34 @@ export class PortfolioData {
       
       list: [
         {
+          image: 'https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png',
           name: 'Ultra UI',
-          carrer: 'Ingenieria en Computación',
+          description: 'Ingenieria en Computación',
           years: '2008 - 2011'
         }, 
         {
+          image: 'https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg',
             name: 'Glow',
-            carrer: 'Mastering in Angular',
+            description: 'Mastering in Angular',
             years: '2018'
         }, 
         {
+          image: 'https://www.infobae.com/new-resizer/lrtPUyzL_l14Q0YGp_TT-JJhHuU=/992x606/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2SDH2CJ7JRFFBAZHJTI6FTEBUU.jpg',
             name: 'Incident Maps USA Emmbasy',
-            carrer: 'Mastering in React',
+            description: 'Mastering in React',
             years: '2021 - 2022'
         },
         {
+          image: 'https://actus.adrisa.com.mx/File/Storage.ashx?img=Diapositiva03max.jpg',
             name: 'Actus Security',
-            carrer: 'Mastering in VUE.js',
+            description: 'Mastering in VUE.js',
             years: '2021 - 2022'
         },
         
         {
-            name: 'Scholastic',
-            carrer: 'Microsoft Azure',
-            years: '2010 - 2022'
-        },
-
-        {
+          image: 'https://www.huntleylibrary.org/wp-content/uploads/2021/05/ScienceFlix-in-action.jpg',
           name: 'Scholastic',
-          carrer: 'Microsoft Azure',
+          description: 'Microsoft Azure',
           years: '2010 - 2022'
       }
       ],
@@ -69,10 +68,12 @@ export class PortfolioData {
   listTemplate = `
   <div class="education-details">
     <div class="col-6 margin-bottom50 margin-top50">
-      <div class="col-3 icon-block"><i class="fa-solid fa-camera"></i></div>
+      <div class="col-3 icon-block">
+      <img src="{image}" class="image-project" alt="{image}">
+      </div>
       <div class="flot-left">
         <h5>{name}</h5>
-        <h4>{carrer}</h4>
+        <h4>{description}</h4>
         <span>{years}</span>
       </div>
     </div>

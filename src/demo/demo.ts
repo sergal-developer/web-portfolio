@@ -11,13 +11,20 @@ export class APP {
     links: any;
     inNavigation = false;
     currentPage = 0;
-    transitionDurationFrame = 500;
+    transitionDurationFrame = 1000;
 
     frameName = '.page-frame-container';
     frameContainerName = '.pfc-area';
     frameContainerWidth = `width: calc(100%);`;
     frameItemsName = '.pfc-area > .item';
     linksName = '.navbar .item.page';
+    navbarName = '.navbar';
+    shapesName = '.shapes';
+
+    navBar: HTMLElement;
+    frameContainer: HTMLElement;
+    currentPageClass = 'home';
+    shapesContainer: HTMLElement;
 
 
     // DATA
@@ -38,38 +45,57 @@ export class APP {
     }
 
     setupEvents() {
+        this.navBar = document.querySelector(this.navbarName);
         this.frameCollector = document.querySelector(this.frameName);
         this.frames = document.querySelectorAll(this.frameItemsName);
         this.links = document.querySelectorAll(this.linksName);
     
-        const container = document.querySelector(this.frameContainerName);
+        this.frameContainer = document.querySelector(this.frameContainerName);
         this.frameContainerWidth = `width: calc(100% * ${ this.frames.length });`;
-        container.setAttribute('style', `${ this.frameContainerWidth }`);
+        this.frameContainer.setAttribute('style', `${ this.frameContainerWidth }`);
 
+        this.shapesContainer = document.querySelector(this.shapesName);
         
         this.links.forEach((link: HTMLElement, index: number) => {
             link.addEventListener('click', (e) => {
-                this.gotoPage(index);
+                this.gotoPage(index, link);
             });
         });
     }
 
-    gotoPage(page: number) {
+    gotoPage(page: number, link: HTMLElement) {
         if( this.inNavigation || this.currentPage === page) { return }
         this.inNavigation = true;
         this.currentPage = page;
+
+        //get data atribute
+        const dataClass = link.getAttribute('data-class');
+        console.log('dataClass: ', dataClass);
         
         const left = `-${ 100 * page }%`;
-        const container = document.querySelector(this.frameContainerName);
         const transitionDurationByFrame = `transition-duration: ${ this.transitionDurationFrame }ms;`;
         const marginLeftByFrame = `margin-left: ${ left };`;
-        container.setAttribute('style', `${ this.frameContainerWidth }${ transitionDurationByFrame }${marginLeftByFrame}`);
+        this.frameContainer.setAttribute('style', `${ this.frameContainerWidth }${ transitionDurationByFrame }${marginLeftByFrame}`);
+        
+        if ( dataClass ) {
+            this.frameContainer.classList.replace(this.currentPageClass, dataClass);
+            this.shapesContainer.classList.replace(this.currentPageClass, dataClass);
+            this.currentPageClass = dataClass;
+        }
 
-        container.classList.add('moveOn');
+        this.frameContainer.classList.add('moveOn');
         setTimeout(() => {
-            container.classList.remove('moveOn');
+            this.frameContainer.classList.remove('moveOn');
             this.inNavigation = false;
         }, this.transitionDurationFrame);
+
+        if(this.currentPage !== 0) {
+            if(!this.navBar.classList.contains('collapsed')) {
+                this.navBar.classList.add('collapsed');
+            }
+        } else {
+            this.navBar.classList.remove('collapsed');
+        }
     }
 
     setupData() {

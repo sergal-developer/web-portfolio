@@ -20,11 +20,13 @@ export class AboutData {
         development.
         </p>`,
             sign: '/asserts/img/signature-web.png',
-            documentUrl: '/asserts/img/signature-web.png'
+            documentUrl: '/asserts/img/signature-web.png',
+            picture: '/asserts/img/sergal-front.png'
         };
         this.html = `<h2>{title}</h2>
             <div class="title-divider"></div>
             <div class="about-con">
+            <div class="divider50">
               <ul>
                 <li>Name: {name}</li>
                 <li>Email: <a href="mailto:{email}">{email}</a></li>
@@ -36,6 +38,10 @@ export class AboutData {
               {profileDescription}
               <a href="{documentUrl}" target="_blank" class="button">Download resume as PDF format</a>
               <img src="{sign}" class="signature" alt="{sign}">
+              </div>
+              <div class="divider50 picture">
+              <img src="{picture}" class="picture-profile" alt="{picture}">
+              </div>
             </div>
     `;
     }
