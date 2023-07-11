@@ -103,14 +103,14 @@ export class APP {
         const aboutElement = document.querySelector('#about');
         const skillsElement = document.querySelector('#skills');
         const experienceElement = document.querySelector('#experience');
-        const educationElement = document.querySelector('#education');
+        // const educationElement = document.querySelector('#education');
         const portfolioElement = document.querySelector('#portfolio');
 
         homeElement.innerHTML = this.data.home.getData();
         aboutElement.innerHTML = this.data.about.getData();
         skillsElement.innerHTML = this.data.skills.getData();
         experienceElement.innerHTML = this.data.experience.getData();
-        educationElement.innerHTML = this.data.education.getData();
+        // educationElement.innerHTML = this.data.education.getData();
         portfolioElement.innerHTML = this.data.portfolio.getData();
     }
 }

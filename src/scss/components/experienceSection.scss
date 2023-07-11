@@ -1,0 +1,106 @@
+/* Variables */
+$color-1: black;
+$color-2: white;
+$color-3: #ffcc00;
+
+/* Styling */
+.timeline {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+
+  &:before {
+    background-color: $color-1;
+    content: "";
+    margin-left: -1px;
+    position: absolute;
+    top: 0;
+    left: 2em;
+    width: 2px;
+    height: 100%;
+  }
+}
+
+.timeline-event {
+  position: relative;
+
+  &:hover {
+    .timeline-event-icon {
+      transform: rotate(-45deg);
+      background: $color-3;
+    }
+
+    .timeline-event-thumbnail {
+    //   box-shadow: inset 40em 0 0 0 $color-3;
+      background: $color-3;
+      color: black;
+    }
+  }
+}
+
+.timeline-event-copy {
+  padding: 2em;
+  position: relative;
+  top: -3em;
+  left: 4em;
+  width: 80%;
+
+  h3 {
+    font-size: 1.75em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  p:not(.timeline-event-thumbnail) {
+    padding-bottom: 1.2em;
+  }
+}
+
+.timeline-event-icon {
+  transition: transform 0.2s ease-in;
+  transform: rotate(45deg);
+
+  background-color: $color-1;
+  outline: 10px solid $color-2;
+  display: block;
+  margin: 0.5em 0.5em 0.5em -0.5em;
+  position: absolute;
+  top: 0;
+  left: 2em;
+  width: 1em;
+  height: 1em;
+}
+
+.timeline-event-thumbnail {
+  transition: box-shadow 0.5s ease-in 0.1s;
+  color: $color-2;
+  font-size: 1em;
+
+  background-color: $color-1;
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 0.25em 1em 0.2em 1em;
+}
+
+.logo-enterprice {
+  img {
+    height: 60px;
+    width: auto;
+  }
+}
+
+.list-tech {
+    display: flex;
+    div {
+        padding: 3px 8px;
+        background: rgb(209, 209, 209);
+        margin-right: 5px;
+    }
+}
+
