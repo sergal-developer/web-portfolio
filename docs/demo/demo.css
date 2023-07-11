@@ -596,12 +596,6 @@ body * * {
   left: 70%;
 }
 
-.page-frame .navbar.collapsed .logo {
-  border-radius: 50% 50% 50% 5%;
-  width: 100px;
-  height: 100px;
-  font-size: 1.5em;
-}
 .page-frame .navbar .item.logo-container {
   border: none;
   position: absolute;

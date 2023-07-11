@@ -76,6 +76,7 @@ export class PortfolioData {
     }
     getData() {
         this.data.listPortfolio = this.template.injectInterateData(this.listTemplate, this.data.list);
+        this.data.listPortfolio = '<h1>Under Construction ...</h1>';
         return this.template.injectData(this.html, this.data);
     }
 }

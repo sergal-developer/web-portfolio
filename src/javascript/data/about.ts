@@ -44,7 +44,9 @@ export class AboutData {
               <img src="{sign}" class="signature" alt="{sign}">
               </div>
               <div class="divider50 picture">
+              <!--
               <img src="{picture}" class="picture-profile" alt="{picture}">
+              -->
               </div>
             </div>
     `;

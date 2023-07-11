@@ -1,147 +1,120 @@
-import { EffectTerminal } from "./terminal.js";
+import { AboutData } from "./data/about.js";
+import { EducationData } from "./data/education.js";
+import { ExperienceData } from "./data/experience.js";
+import { HomeData } from "./data/home.js";
+import { PortfolioData } from "./data/portfolio.js";
+import { SkillsData } from "./data/skills.js";
 
-export class WebApp {
+
+export class APP {
     frames: any;
     frameCollector: HTMLElement;
     links: any;
     inNavigation = false;
+    currentPage = 0;
+    transitionDurationFrame = 1000;
 
-    effectTerminal = new EffectTerminal();
+    frameName = '.page-frame-container';
+    frameContainerName = '.pfc-area';
+    frameContainerWidth = `width: calc(100%);`;
+    frameItemsName = '.pfc-area > .item';
+    linksName = '.navbar .item.page';
+    navbarName = '.navbar';
+    shapesName = '.shapes';
 
-    TEMPLATES;
-    SKILLS;
-    EDUCATION;
-    PORTFOLIO;
-    EXPERIENCE;
+    navBar: HTMLElement;
+    frameContainer: HTMLElement;
+    currentPageClass = 'home';
+    shapesContainer: HTMLElement;
+
+
+    // DATA
+    data = {
+        home: new HomeData(),
+        about: new AboutData(),
+        skills: new SkillsData(),
+        experience: new ExperienceData(),
+        education: new EducationData(),
+        portfolio: new PortfolioData(),
+    }
 
     constructor() {}
 
     init() {
-        this.setupIntro();
         this.setupEvents();
-    }
-
-    scrollHorizontally(e: any) {
-        e = window.event || e;
-        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-        var scrollSpeed = 60;
-        document.documentElement.scrollLeft -= (delta * scrollSpeed);
-        document.body.scrollLeft -= (delta * scrollSpeed);
-        e.preventDefault();
-    }
-
-    getLeftScroll(parent: any, position = 0) {
-        const _parent = document.querySelector(parent);
-        const width = _parent.clientWidth;
-        const widthChild = this.frames[0].clientWidth;
-        return width != widthChild ? widthChild * position : width * position;
-    }
-
-    gotoPage(page: number) {
-        if( this.inNavigation ) { return }
-        this.inNavigation = true;
-        const _parent = document.querySelector('.frame-container');
-        const left = this.getLeftScroll('.frame-container', page);
-        const container = document.querySelector('.frame-horizontal');
-        container.setAttribute('style', `margin-left: -${ left }px`);
-        console.log('left: ', left);
-        // _parent.scroll({ left: left, behavior: 'smooth' });
-        
-        container.classList.add('moveOn');
-        setTimeout(() => {
-            container.classList.remove('moveOn');
-            this.inNavigation = false;
-        }, 500);
-    }
-
-    setupIntro() {
-
-        // this.effectTerminal.text(
-        //     'console', 
-        //     ['Hello'], 
-        //     'text',
-        //     ['#fff']);
-        this.getInfo();
-
-        const appFrame = document.querySelector('.app-frame');
-        appFrame.classList.add('intro');
-        setTimeout(() => {
-            appFrame.classList.remove('intro');
-        }, 1500);
-
+        this.setupData();
     }
 
     setupEvents() {
-        this.frameCollector = document.querySelector('.frame-container');
-        this.frames = document.querySelectorAll('.frame-horizontal > .item');
-        this.links = document.querySelectorAll('.navbar .item.page');
+        this.navBar = document.querySelector(this.navbarName);
+        this.frameCollector = document.querySelector(this.frameName);
+        this.frames = document.querySelectorAll(this.frameItemsName);
+        this.links = document.querySelectorAll(this.linksName);
+    
+        this.frameContainer = document.querySelector(this.frameContainerName);
+        this.frameContainerWidth = `width: calc(100% * ${ this.frames.length });`;
+        this.frameContainer.setAttribute('style', `${ this.frameContainerWidth }`);
+
+        this.shapesContainer = document.querySelector(this.shapesName);
         
         this.links.forEach((link: HTMLElement, index: number) => {
             link.addEventListener('click', (e) => {
-                this.gotoPage(index);
+                this.gotoPage(index, link);
             });
         });
     }
 
-    async getInfo() {
-        this.TEMPLATES = await this.getAssert('./asserts/json/templates.json');
-        console.log('templates: ', this.TEMPLATES);
-        this.SKILLS = await this.getAssert('./asserts/json/tech.json');
-        console.log('technologies: ', this.SKILLS);
-        this.PORTFOLIO = await this.getAssert('./asserts/json/portfolio.json');
-        console.log('portfolio: ', this.PORTFOLIO);
-        this.EXPERIENCE = await this.getAssert('./asserts/json/experience.json');
-        console.log('experience: ', this.EXPERIENCE);
-        this.EDUCATION = await this.getAssert('./asserts/json/education.json');
-        console.log('education: ', this.EDUCATION);
+    gotoPage(page: number, link: HTMLElement) {
+        if( this.inNavigation || this.currentPage === page) { return }
+        this.inNavigation = true;
+        this.currentPage = page;
 
-        this.setData();
-    }
+        //get data atribute
+        const dataClass = link.getAttribute('data-class');
+        console.log('dataClass: ', dataClass);
+        
+        const left = `-${ 100 * page }%`;
+        const transitionDurationByFrame = `transition-duration: ${ this.transitionDurationFrame }ms;`;
+        const marginLeftByFrame = `margin-left: ${ left };`;
+        this.frameContainer.setAttribute('style', `${ this.frameContainerWidth }${ transitionDurationByFrame }${marginLeftByFrame}`);
+        
+        if ( dataClass ) {
+            this.frameContainer.classList.replace(this.currentPageClass, dataClass);
+            this.shapesContainer.classList.replace(this.currentPageClass, dataClass);
+            this.currentPageClass = dataClass;
+        }
 
-    async getAssert(filename) {
-        try {
-            return await fetch(filename)
-            .then((response) => response.json())
-            .then((json) => json);
-        } catch (error) {
-            return null;
+        this.frameContainer.classList.add('moveOn');
+        setTimeout(() => {
+            this.frameContainer.classList.remove('moveOn');
+            this.inNavigation = false;
+        }, this.transitionDurationFrame);
+
+        if(this.currentPage !== 0) {
+            if(!this.navBar.classList.contains('collapsed')) {
+                this.navBar.classList.add('collapsed');
+            }
+        } else {
+            this.navBar.classList.remove('collapsed');
         }
     }
 
-    setData() {
-        //#region PORTAFOLIO
-        this.assingData('#portfolio-title', this.PORTFOLIO.title);
-        this.assingData('#portfolio-description', this.PORTFOLIO.description);
-        this.assingData('#portfolio-content', this.interateData(this.PORTFOLIO.collection,  this.TEMPLATES.portfolio));
-    }
+    setupData() {
+        const homeElement = document.querySelector('#home');
+        const aboutElement = document.querySelector('#about');
+        const skillsElement = document.querySelector('#skills');
+        const experienceElement = document.querySelector('#experience');
+        // const educationElement = document.querySelector('#education');
+        const portfolioElement = document.querySelector('#portfolio');
 
-    assingData(id, data) {
-        const element:HTMLElement = document.querySelector(id);
-        if (element) {
-            var doc = new DOMParser().parseFromString(data, "text/xml");
-            element.innerHTML = '';
-            // element.insertAdjacentHTML(afterend, doc)
-        }
+        homeElement.innerHTML = this.data.home.getData();
+        aboutElement.innerHTML = this.data.about.getData();
+        skillsElement.innerHTML = this.data.skills.getData();
+        experienceElement.innerHTML = this.data.experience.getData();
+        // educationElement.innerHTML = this.data.education.getData();
+        portfolioElement.innerHTML = this.data.portfolio.getData();
     }
-
-    interateData(collection, templateName) {
-        let result = '';
-        collection.forEach(item => {
-            const keys = Object.keys(item);
-            let template: string = templateName;
-            keys.forEach(key => {
-                const content = item[key] ? item[key] : '';
-                template = template.replace(`{${ key.toUpperCase() }}`, content);
-            });
-            result += template;
-        });
-        return result;
-    }
-
 }
 
-const webApp = new WebApp();
-
-window.onload = () => {
-    webApp.init();
-}
+const app = new APP();
+window.onload = () => app.init();
