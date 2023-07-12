@@ -20,7 +20,7 @@ export class AboutData {
         development.
         </p>`,
             sign: "/web-portfolio/asserts/img/signature-web.png",
-            documentUrl: "/web-portfolio/asserts/files/cv.png",
+            documentUrl: "/web-portfolio/asserts/files/cv.pdf",
             picture: "/web-portfolio/asserts/img/sergal-front.png",
         };
         this.html = `<h2>{title}</h2>

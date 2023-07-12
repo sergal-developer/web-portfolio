@@ -43,7 +43,19 @@ export class APP {
         this.links.forEach((link, index) => {
             link.addEventListener('click', (e) => {
                 this.gotoPage(index, link);
+                const menu = document.querySelector('#navbar-menu');
+                menu.classList.remove('show');
             });
+        });
+        const menu = document.querySelector('#navbar-menu');
+        const menuButton = document.querySelector('#navbar-menu-button');
+        menuButton.addEventListener('click', (e) => {
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+            }
+            else {
+                menu.classList.add('show');
+            }
         });
     }
     gotoPage(page, link) {

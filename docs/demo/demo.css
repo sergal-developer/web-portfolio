@@ -296,6 +296,11 @@ p {
   flex-direction: row;
   justify-content: flex-start;
 }
+@media (min-width: 0px) and (max-width: 1203px) {
+  .page-frame {
+    flex-direction: column;
+  }
+}
 .page-frame .navbar {
   width: var(--navbarWidth);
   transition: all 300ms;
@@ -308,6 +313,15 @@ p {
   flex-direction: column;
   justify-content: center;
 }
+@media (min-width: 0px) and (max-width: 1203px) {
+  .page-frame .navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    justify-content: space-between;
+  }
+}
 .page-frame .navbar .item {
   width: 100%;
   height: 40px;
@@ -317,6 +331,13 @@ p {
 }
 .page-frame .navbar .item:last-child {
   border: none;
+}
+@media (min-width: 0px) and (max-width: 1203px) {
+  .page-frame .navbar .item {
+    width: auto;
+    padding: 0 20px;
+    border-bottom: none;
+  }
 }
 .page-frame .navbar .item.logo-container {
   border: none;
@@ -329,6 +350,14 @@ p {
   justify-content: center;
   height: 160px;
 }
+@media (min-width: 0px) and (max-width: 1203px) {
+  .page-frame .navbar .item.logo-container {
+    position: relative;
+    height: auto;
+    top: 0;
+    padding: 0;
+  }
+}
 .page-frame .navbar .item.copyright {
   border: none;
   font-size: 14px;
@@ -338,14 +367,69 @@ p {
   left: 0;
   padding: 0 20px;
 }
+@media (min-width: 0px) and (max-width: 1203px) {
+  .page-frame .navbar .item.copyright {
+    display: none;
+  }
+}
+.page-frame .navbar .item.mobile-menu {
+  display: none;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .page-frame .navbar .item.mobile-menu {
+    display: block;
+  }
+}
 .page-frame .navbar .item-collection {
   width: 100%;
+  transition: right 300ms;
+}
+@media (min-width: 768px) and (max-width: 1203px) {
+  .page-frame .navbar .item-collection {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .page-frame .navbar .item-collection {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: -100%;
+    top: 70px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.37);
+    width: 100%;
+    height: calc(100vh - 70px);
+    padding: 30px;
+    backdrop-filter: blur(4px);
+  }
 }
 .page-frame .navbar .item-collection .item {
   cursor: pointer;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+  .page-frame .navbar .item-collection .item {
+    font-size: 30pt;
+    padding: 20px;
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .page-frame .navbar .item-collection.show {
+    right: 0%;
+  }
+}
 .page-frame .navbar.collapsed {
   width: var(--navbarWidth);
+}
+@media (min-width: 0px) and (max-width: 1203px) {
+  .page-frame .navbar.collapsed {
+    width: 100%;
+  }
 }
 .page-frame .navbar .logo {
   width: 140px;
@@ -358,6 +442,13 @@ p {
   font-size: 2em;
   border-radius: 5% 5% 5% 5%;
   transition: all 300ms;
+}
+@media (min-width: 0px) and (max-width: 1203px) {
+  .page-frame .navbar .logo {
+    width: 60px;
+    height: 60px;
+    font-size: 0.8em;
+  }
 }
 .page-frame .page-frame-container {
   width: 100%;
@@ -670,6 +761,40 @@ p {
   align-items: center;
 }
 
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
 .about-section .about-container {
   width: 100%;
   display: flex;
@@ -677,8 +802,18 @@ p {
   align-items: center;
   flex-direction: row;
 }
+@media (min-width: 0px) and (max-width: 1203px) {
+  .about-section .about-container {
+    flex-direction: column;
+  }
+}
 .about-section .about-container .divider50 {
   width: 50%;
+}
+@media (min-width: 0px) and (max-width: 1203px) {
+  .about-section .about-container .divider50 {
+    width: 100%;
+  }
 }
 .about-section .about-container .divider50.picture {
   position: relative;
