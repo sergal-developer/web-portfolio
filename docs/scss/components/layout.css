@@ -1,0 +1,438 @@
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Ubuntu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+.openSansFont {
+  font-family: "Open Sans", sans-serif;
+}
+
+.ubuntuFont {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.oswaldFont, .page-frame .navbar {
+  font-family: "Oswald", sans-serif;
+}
+
+.robotoFont {
+  font-family: "Roboto", sans-serif;
+}
+
+.inconsolata {
+  font-family: "Inconsolata", monospace;
+}
+
+.page-frame {
+  width: var(--clientSizeX);
+  height: var(--clientSizeY);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.page-frame .navbar {
+  width: var(--navbarWidth);
+  transition: all 300ms;
+  padding: 20px;
+  background: black;
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.page-frame .navbar .item {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  border-bottom: 1px solid #333333;
+}
+.page-frame .navbar .item:last-child {
+  border: none;
+}
+.page-frame .navbar .item.logo-container {
+  border: none;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+}
+.page-frame .navbar .item.copyright {
+  border: none;
+  font-size: 14px;
+  color: gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 20px;
+}
+.page-frame .navbar .item-collection {
+  width: 100%;
+}
+.page-frame .navbar .item-collection .item {
+  cursor: pointer;
+}
+.page-frame .navbar.collapsed {
+  width: var(--navbarWidth);
+}
+.page-frame .navbar .logo {
+  width: 140px;
+  height: 140px;
+  background: #ffcc00;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  border-radius: 5% 5% 5% 5%;
+  transition: all 300ms;
+}
+.page-frame .page-frame-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.page-frame .page-frame-container .pfc-area {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  width: 1000%;
+  z-index: 2;
+  background: white;
+  transition-property: all;
+  transition-duration: 600ms;
+  transition-timing-function: ease;
+  transition-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  margin-left: 0%;
+}
+.page-frame .page-frame-container .pfc-area.moveOn > .item:before {
+  margin-left: -60px;
+  width: 5vw;
+}
+.page-frame .page-frame-container .pfc-area > .item {
+  width: 100%;
+  height: inherit;
+  transition: all 300ms;
+  padding: 50px;
+  background: transparent;
+  overflow-y: auto;
+  position: relative;
+  z-index: 2;
+}
+.page-frame .page-frame-container .pfc-area > .item::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.page-frame .page-frame-container .pfc-area > .item::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 0;
+}
+.page-frame .page-frame-container .pfc-area > .item::-webkit-scrollbar-track {
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.page-frame .page-frame-container .pfc-area > .item body {
+  scrollbar-face-color: gray;
+  scrollbar-track-color: black;
+}
+.page-frame .page-frame-container .pfc-area > .item:before {
+  content: "";
+  top: 0;
+  transition: all 200ms;
+  position: absolute;
+  height: 100%;
+  width: 0px;
+  border-radius: 0%;
+  margin-left: -30px;
+  box-shadow: 0 0 10px transparent;
+  background: inherit;
+}
+.page-frame .page-frame-container .pfc-area > .item#home {
+  color: white;
+}
+.page-frame .page-frame-container .pfc-area > .item h2 {
+  font-size: 45px;
+  margin: 0;
+  line-height: 45px;
+}
+.page-frame .page-frame-container .pfc-area > .item h3 {
+  font-size: 16px;
+  margin: 50px 0 10px;
+}
+.page-frame .page-frame-container .pfc-area > .item .title-divider {
+  width: 70px;
+  height: 5px;
+  background-color: #ffb400;
+  margin: 30px 0 50px 0;
+}
+.page-frame .page-frame-container .pfc-area > .item .full-divider {
+  width: 100%;
+  height: 2px;
+  background-color: #fbe7b6;
+  margin: 30px 0 30px 0;
+}
+.page-frame .page-frame-container .pfc-area > .item .button {
+  border: 2px solid #ffb400;
+  background-color: #fff;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  color: #000;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 20px 0;
+  padding: 10px 15px;
+  display: inline-block;
+  letter-spacing: 1px;
+  transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+}
+.page-frame .page-frame-container .pfc-area.home {
+  background: #616161;
+}
+.page-frame .page-frame-container .shapes {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.page-frame .page-frame-container .shapes .shape {
+  width: 100vw;
+  height: 100vh;
+  background: #fcda69;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 300ms ease 300ms;
+}
+.page-frame .page-frame-container .shapes.home .shape {
+  width: 10%;
+  height: 5%;
+  top: 50%;
+  left: 50%;
+  background: white;
+}
+.page-frame .page-frame-container .shapes.about .shape {
+  width: 50px;
+  height: 50px;
+}
+.page-frame .page-frame-container .shapes.about .shape1 {
+  top: 10%;
+  left: 30%;
+  background: red;
+}
+.page-frame .page-frame-container .shapes.about .shape2 {
+  top: 30%;
+  left: 10%;
+}
+.page-frame .page-frame-container .shapes.about .shape3 {
+  top: 40%;
+  left: 80%;
+  background: green;
+}
+.page-frame .page-frame-container .shapes.about .shape4 {
+  top: 70%;
+  left: 20%;
+}
+.page-frame .page-frame-container .shapes.about .shape5 {
+  top: 90%;
+  left: 70%;
+  background: blue;
+}
+.page-frame .page-frame-container .shapes.skills .shape {
+  width: 100px;
+  height: 100px;
+}
+.page-frame .page-frame-container .shapes.skills .shape1 {
+  top: 30%;
+  left: 10%;
+}
+.page-frame .page-frame-container .shapes.skills .shape2 {
+  top: 50%;
+  left: 10%;
+}
+.page-frame .page-frame-container .shapes.skills .shape3 {
+  top: 40%;
+  left: 80%;
+}
+.page-frame .page-frame-container .shapes.skills .shape4 {
+  top: 70%;
+  left: 20%;
+}
+.page-frame .page-frame-container .shapes.skills .shape5 {
+  top: 90%;
+  left: 30%;
+}
+.page-frame .page-frame-container .shapes.experience .shape {
+  width: 50px;
+  height: 50px;
+}
+.page-frame .page-frame-container .shapes.experience .shape1 {
+  top: 10%;
+  left: 30%;
+}
+.page-frame .page-frame-container .shapes.experience .shape2 {
+  top: 30%;
+  left: 10%;
+}
+.page-frame .page-frame-container .shapes.experience .shape3 {
+  top: 40%;
+  left: 80%;
+}
+.page-frame .page-frame-container .shapes.experience .shape4 {
+  top: 70%;
+  left: 20%;
+}
+.page-frame .page-frame-container .shapes.experience .shape5 {
+  top: 90%;
+  left: 70%;
+}
+.page-frame .page-frame-container .shapes.education .shape {
+  width: 80px;
+  height: 50px;
+}
+.page-frame .page-frame-container .shapes.education .shape1 {
+  top: 10%;
+  left: 30%;
+}
+.page-frame .page-frame-container .shapes.education .shape2 {
+  top: 30%;
+  left: 10%;
+}
+.page-frame .page-frame-container .shapes.education .shape3 {
+  top: 40%;
+  left: 80%;
+}
+.page-frame .page-frame-container .shapes.education .shape4 {
+  top: 70%;
+  left: 20%;
+}
+.page-frame .page-frame-container .shapes.education .shape5 {
+  top: 90%;
+  left: 70%;
+}
+.page-frame .page-frame-container .shapes.portfolio .shape {
+  width: 50px;
+  height: 50px;
+}
+.page-frame .page-frame-container .shapes.portfolio .shape1 {
+  top: 10%;
+  left: 30%;
+}
+.page-frame .page-frame-container .shapes.portfolio .shape2 {
+  top: 30%;
+  left: 10%;
+}
+.page-frame .page-frame-container .shapes.portfolio .shape3 {
+  top: 40%;
+  left: 80%;
+}
+.page-frame .page-frame-container .shapes.portfolio .shape4 {
+  top: 70%;
+  left: 20%;
+}
+.page-frame .page-frame-container .shapes.portfolio .shape5 {
+  top: 90%;
+  left: 70%;
+}
+
+.hero {
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .dinamic {
+  opacity: 0;
+}
+.hero .static {
+  opacity: 1;
+}
+.hero .image {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: inherit;
+}
+.hero .image img {
+  filter: grayscale(100%);
+  width: auto;
+  height: inherit;
+}
+.hero h2 {
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 50px;
+  padding-bottom: 0;
+  font-size: 45px;
+  margin-bottom: 25px !important;
+  transition: all 300ms;
+}
+.hero h2 span {
+  font-weight: 300;
+}
+.hero .title {
+  border-bottom: 1px solid #7a7a7a;
+  border-top: 1px solid #7a7a7a;
+  color: #aeaeae;
+  padding: 15px 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.list-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}

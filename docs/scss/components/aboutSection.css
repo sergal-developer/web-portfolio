@@ -1,0 +1,32 @@
+.about-section .about-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.about-section .about-container .divider50 {
+  width: 50%;
+}
+.about-section .about-container .divider50.picture {
+  position: relative;
+  overflow: hidden;
+  height: 77vh;
+}
+.about-section .about-container .divider50.picture img {
+  width: 100%;
+  margin-left: 0%;
+  margin-top: -74px;
+}
+.about-section .about-container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.about-section .about-container ul li {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 12px 0;
+}
+.about-section .about-container ul li:first-child {
+  padding: 0 0 12px 0;
+}

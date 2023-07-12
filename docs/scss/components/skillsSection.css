@@ -1,0 +1,195 @@
+.skills-section .list-container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.skills-section .skills-collection {
+  width: 35%;
+  padding-right: 40px;
+}
+.skills-section .skills-collection .item-skill {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+.skills-section .skills-collection .item-skill .name {
+  font-size: 16px;
+}
+.skills-section .skills-collection .item-skill .progressbar {
+  background: #d5d5d5;
+  position: relative;
+  width: 100%;
+  height: 15px;
+  border: 2px solid #d5d5d5;
+}
+.skills-section .skills-collection .item-skill .progressbar .progressbar-indicator {
+  background: #ffcc00;
+  position: absolute;
+  height: 100%;
+}
+.skills-section .education-details {
+  display: flex;
+  margin: 0 20px 20px 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-right: 1px solid #e3e3e3;
+  padding-right: 18px;
+}
+.skills-section .education-details:last-child {
+  border: none;
+}
+.skills-section .education-details h5 {
+  font-size: 12px;
+  font-family: "Roboto";
+}
+.skills-section .education-details h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.skills-section .education-details span {
+  font-size: 18px;
+  font-family: "Oswald";
+}
+.skills-section .list-item {
+  transition: all 300ms;
+  position: relative;
+  margin-bottom: 30px;
+  margin-right: 30px;
+}
+.skills-section .list-item .overlay {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-top: 0;
+  transition: all 300ms;
+  font-size: 12px;
+  text-align: center;
+}
+.skills-section .list-item .name {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+  transition: all 300ms;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  text-align: center;
+}
+.skills-section .list-item .level-knowledge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -8px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.skills-section .list-item .level-knowledge .lvl {
+  background: #e5e5e5;
+  color: #8b8b8b;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 8px;
+  transition: all 300ms ease 300ms;
+  height: 7px;
+  width: 25%;
+}
+.skills-section .list-item .level-knowledge .lvl span {
+  opacity: 0;
+  transition: opacity 300ms ease 300ms;
+}
+.skills-section .list-item .level-knowledge .lvl.current, .skills-section .list-item .level-knowledge .lvl.fill {
+  color: white;
+  background: #3a8bd3;
+  box-shadow: 0 0 10px #3a8bd3;
+}
+.skills-section .list-item .level-experience {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: all 300ms;
+  opacity: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+}
+.skills-section .list-item .level-experience span {
+  margin-right: 3px;
+  font-weight: bold;
+}
+.skills-section .list-item .picture {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms;
+}
+.skills-section .list-item .picture img {
+  height: 100px;
+  width: auto;
+  transition: all 300ms;
+}
+.skills-section .list-item.open, .skills-section .list-item:hover {
+  background: white;
+  height: 100px;
+  cursor: pointer;
+}
+.skills-section .list-item.open .overlay, .skills-section .list-item:hover .overlay {
+  width: 160px;
+  height: 120px;
+  margin-left: -30px;
+  margin-top: -10px;
+  z-index: 5;
+}
+.skills-section .list-item.open .name, .skills-section .list-item:hover .name {
+  opacity: 1;
+}
+.skills-section .list-item.open .level-knowledge, .skills-section .list-item:hover .level-knowledge {
+  opacity: 1;
+  bottom: -30px;
+  width: 330px;
+  margin-left: -90px;
+  padding: 10px 30px;
+  border-radius: 15px;
+}
+.skills-section .list-item.open .level-knowledge .lvl, .skills-section .list-item:hover .level-knowledge .lvl {
+  padding: 3px 10px;
+  width: auto;
+  height: auto;
+  font-size: 11px;
+}
+.skills-section .list-item.open .level-knowledge .lvl span, .skills-section .list-item:hover .level-knowledge .lvl span {
+  opacity: 1;
+}
+.skills-section .list-item.open .level-knowledge .lvl.fill, .skills-section .list-item:hover .level-knowledge .lvl.fill {
+  background: #e5e5e5;
+  color: #8b8b8b;
+  box-shadow: none;
+}
+.skills-section .list-item.open .level-experience, .skills-section .list-item:hover .level-experience {
+  opacity: 1;
+  bottom: 10px;
+}
+.skills-section .list-item.open .picture img, .skills-section .list-item:hover .picture img {
+  transform: scale(1.1);
+}

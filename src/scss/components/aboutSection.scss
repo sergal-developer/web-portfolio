@@ -1,0 +1,37 @@
+.about-section {
+  .about-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    .divider50 {
+      width: 50%;
+      &.picture {
+        position: relative;
+        overflow: hidden;
+        height: 77vh;
+        img {
+          width: 100%;
+          margin-left: 0%;
+          margin-top: -74px;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #dfdfdf;
+        padding: 12px 0;
+
+        &:first-child {
+          padding: 0 0 12px 0;
+        }
+      }
+    }
+  }
+}

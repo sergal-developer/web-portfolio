@@ -19,9 +19,9 @@ export class AboutData {
         OOP, and software architectures for web development. He is on top of the latest trends in web
         development.
         </p>`,
-            sign: "/asserts/img/signature-web.png",
-            documentUrl: "/asserts/img/signature-web.png",
-            picture: "/asserts/img/sergal-front.png",
+            sign: "/web-portfolio/asserts/img/signature-web.png",
+            documentUrl: "/web-portfolio/asserts/files/cv.png",
+            picture: "/web-portfolio/asserts/img/sergal-front.png",
         };
         this.html = `<h2>{title}</h2>
             <div class="title-divider"></div>

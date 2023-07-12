@@ -8,12 +8,7 @@ export class ExperienceData {
     title: "Experience",
     subtitle: "14 Years Experience!",
     description: `<p>
-        Sergio started working as a designer and programmer in 2008. During his first years he worked in projects
-        with technologies such as: JS, and ASP. In addition, he honed skills in graphic design, web development,
-        and desktop application development with Microsoft Tecnologies. Sergio acknowledges the benefits of agile
-        methodologies to ensure predictive delivery in software projects. He has experience working with Scrum and
-        Kanban methods. Additionally, Sergio has a solid background in design patterns, OOP, and software
-        architectures for web development. He is on top of the latest trends in web development.
+      Since 2008 I started working on blog projects and university exhibitions, understanding information technology more. I ventured into full stack development, mixing backend, frontend and graphic design. This has opened the doors to various projects such as the ones that will be shown below. continuation.
         </p>`,
 
     list: [
@@ -21,7 +16,7 @@ export class ExperienceData {
         name: "RockWell Automation",
         type: "Web Developer",
         period: "MAR <b>2023</b> - JUL <b>2023</b>",
-        image: '/asserts/img/rockwell.png',
+        image: '/web-portfolio/asserts/img/rockwell.png',
         description: `<p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>`,
         tech: [
           { name: "Nodejs" },
@@ -41,7 +36,7 @@ export class ExperienceData {
         name: "Disney",
         type: "Web Developer",
         period: "JUL <b>2022</b> - JUN <b>2023</b>",
-        image: '/asserts/img/disnep.png',
+        image: '/web-portfolio/asserts/img/disnep.png',
         
         description: `<p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>`,
         tech: [
@@ -62,7 +57,7 @@ export class ExperienceData {
         name: "Globant GLOW",
         type: "Web Developer",
         period: "SEP <b>2017</b> - JUL <b>2022</b>",
-        image: '/asserts/img/globant.png',
+        image: '/web-portfolio/asserts/img/globant.png',
         
         description: `<p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>`,
         tech: [
@@ -83,7 +78,7 @@ export class ExperienceData {
         name: "DELL EMC",
         type: "Web Developer",
         period: "AUG <b>2017</b> - SEP <b>2017</b>",
-        image: '/asserts/img/dell.png',
+        image: '/web-portfolio/asserts/img/dell.png',
         
         description: `<p>The customer search and management application, the development was a module of the DELL EMC site, using AngularJs technology and SOAP as information provider, our day to day was managed through an internal ticketing application, using the AGILE methodology. The development consisted in making more efficient the search of customers and present their details in a more comfortable way for consumers.</p>`,
         tech: [
@@ -102,7 +97,7 @@ export class ExperienceData {
         name: "Zaplabs LLC",
         type: "Web Developer",
         period: "APR <b>2017</b> - AUG <b>2017</b>",
-        image: '/asserts/img/zaplabs.png',
+        image: '/web-portfolio/asserts/img/zaplabs.png',
         
         description: `<p>The application was a real estate sales site using riot and javascript as frontend technology along with nodejs, our day to day was managed through JIRA using the AGILE methodology. The development consisted of modernizing the client's site prioritizing speed and stability</p>`,
         tech: [
@@ -121,7 +116,7 @@ export class ExperienceData {
         name: "Ebay, VivaAnuncios",
         type: "Web Developer",
         period: "NOV <b>2016</b> - APR <b>2017</b>",
-        image: '/asserts/img/vivaanuncios.png',
+        image: '/web-portfolio/asserts/img/vivaanuncios.png',
         
         description: `<p> The project was to maintain the child site of ebay &ldquo;vivaanuncios.com&rdquo;, the technologies used are: jquery, google maps api, javascript, consuming microservices, our day to day was managed through JIRA using the SCRUM methodology. </p>`,
         tech: [
@@ -138,7 +133,7 @@ export class ExperienceData {
         name: "Interapt",
         type: "Web Developer / Backend Developer",
         period: "SEP <b>2016</b> - NOV <b>2016</b>",
-        image: '/asserts/img/interapt.png',
+        image: '/web-portfolio/asserts/img/interapt.png',
         
         description: `<p>The application for managing medical visits and medical history, Angular 2 and Typescript technology was used, on the server side using Nodejs, Gulp, our day to day was managed through Jira using the SCRUM methodology. The development aims to upgrade the old system to a more modern one</p>`,
         tech: [
@@ -157,7 +152,7 @@ export class ExperienceData {
         name: "Scholastic",
         type: "Web Developer / Backend Developer",
         period: "SEP <b>2015</b> - JUL <b>2016</b>",
-        image: '/asserts/img/scholastic.png',
+        image: '/web-portfolio/asserts/img/scholastic.png',
         
         description: `<p> The project consisted of generating sites to advertise books, events and scholastic didactic material, the different sites and games were made on jquery, javascript, angularjs, with the use of PHP for contact forms, our day to day was to consult the pending tasks in Jira using the AGILE methodology. The development aims to create Single page sites to promote products, events, etc., with compatibility in multiple browsers and respecting the designs provided by the Scholastic design and UX team. </p>`,
         tech: [
@@ -176,7 +171,7 @@ export class ExperienceData {
         name: "Blackboard",
         type: "Web Developer",
         period: "SEP <b>2014</b> - AUG <b>2015</b>",
-        image: '/asserts/img/blackboard.png',
+        image: '/web-portfolio/asserts/img/blackboard.png',
         
         description: `<p>Management aplication of courses and learning online named &quot;Ultra-UI&quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>`,
         tech: [
