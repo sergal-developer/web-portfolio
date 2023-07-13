@@ -1,0 +1,25 @@
+---
+export interface Props {
+  level: number;
+}
+
+let { level } = Astro.props;
+
+const levels = [
+  { class: 'lvl', name: 'rookie' },
+  { class: 'lvl', name: 'intermediate' },
+  { class: 'lvl', name: 'advanced' },
+  { class: 'lvl', name: 'master' }
+];
+
+---
+{
+  levels.map((i: any, index: number) => {
+    i.class = level > index ? 'lvl fill' : 'lvl';
+    i.class = level === index ? 'lvl current' : 'lvl fill';
+
+    return (
+      <div class={i.class}><span>{i.name}</span></div>
+    )
+  })
+}

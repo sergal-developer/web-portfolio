@@ -1,0 +1,470 @@
+---
+import SkillsItem from "./SkillsItem.astro";
+import SkillsTechItem from "./SkillsTechItem.astro";
+import azureImg from '../asserts/img/azure.png';
+import cssImg from '../asserts/img/css.png';
+import dotnetImg from '../asserts/img/dotnet.png';
+import csharpImg from '../asserts/img/csharp.png';
+import htmlImg from '../asserts/img/html.png';
+import sassImg from '../asserts/img/sass.png';
+import astroImg from '../asserts/img/astro.png';
+import javascriptImg from '../asserts/img/javascript.png';
+import typescriptImg from '../asserts/img/typescript.png';
+import jqueryImg from '../asserts/img/jquery.png';
+import angularImg from '../asserts/img/angular.png';
+import reactImg from '../asserts/img/react.png';
+import vueImg from '../asserts/img/vue.png';
+import electronImg from '../asserts/img/electron.png';
+import sqlImg from '../asserts/img/sql.png';
+import mongodbImg from '../asserts/img/mongodb.png';
+import firebaseImg from '../asserts/img/firebase.png';
+import analyticsImg from '../asserts/img/analytics.png';
+import jazminejsImg from '../asserts/img/jazminejs.png';
+import karmaImg from '../asserts/img/karma.png';
+import githubImg from '../asserts/img/github.png';
+import jiraImg from '../asserts/img/jira.png';
+import confluenceImg from '../asserts/img/confluence.png';
+import nodejsImg from '../asserts/img/nodejs.png';
+import adobephotoshopImg from '../asserts/img/adobephotoshop.png';
+import adobeilustratorImg from '../asserts/img/adobeilustrator.png';
+import adobexdImg from '../asserts/img/adobexd.png';
+import figmaImg from '../asserts/img/figma.png';
+import expressionImg from '../asserts/img/expression.png';
+
+
+let {
+  title,
+  subtitle1,
+  description1,
+  subtitle2,
+  description2,
+  subtitle3,
+  description3,
+  skillsTitleDesign,
+  skillsTitleFrontEnd,
+  skillsTitleBackend,
+  skillsTitleAdmin,
+  skills,
+  softSkills,
+  hardSkills,
+  education,
+} = Astro.props;
+
+const data = {
+  title: "Skills & Education",
+
+  subtitle1: "Just My Skills",
+  description1: `Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years.`,
+
+  subtitle2: "Just My Education",
+  description2: `I studied at the Universidad Autonoma de México, 
+    in the Faculty of Higher Education Aragon (FES Aragon), from 2008 to 2011 where I graduated as a Computer Engineer, 
+    throughout my career I have updated myself in edge technologies, 
+    I have taken courses at Microsoft offices and courses on virtual way using digital platforms, 
+    all this knowledge is reflected in the success of the projects in which I participate.`,
+
+  subtitle3: "Soft & Hard Skills",
+  description3: ``,
+
+  skillsTitleDesign: "Design",
+  skillsTitleFrontEnd: "FrontEnd",
+  skillsTitleBackend: "Backend",
+  skillsTitleAdmin: "Admin",
+
+  skills: [
+    {
+      name: "Windows Azure",
+      level: 1,
+      years: "4",
+      image: azureImg,
+      type: "backend",
+    },
+    {
+      name: "Windows .NET Services",
+      level: 2,
+      years: "8",
+      image: dotnetImg,
+      type: "backend",
+    },
+    {
+      name: "C#",
+      level: 3,
+      years: "8",
+      image: csharpImg,
+      type: "backend",
+    },
+    {
+      name: "HTML5",
+      level: 3,
+      years: "14",
+      image: htmlImg,
+      type: "frontend",
+    },
+    {
+      name: "CSS3",
+      level: 3,
+      years: "14",
+      image: cssImg,
+      type: "frontend",
+    },
+    {
+      name: "SASS, SCSS",
+      level: 3,
+      years: "8",
+      image: sassImg,
+      type: "frontend",
+    },
+    {
+      name: "Astro",
+      level: 1,
+      years: "1",
+      image: astroImg,
+      type: "frontend",
+    },
+    {
+      name: "Java Script, ECMAScript 6 (ES6)",
+      level: 3,
+      years: "14",
+      image: javascriptImg,
+      type: "frontend",
+    },
+    {
+      name: "TypeScript",
+      level: 3,
+      years: "9",
+      image: typescriptImg,
+      type: "frontend",
+    },
+    {
+      name: "TypeScript",
+      level: 3,
+      years: "9",
+      image: typescriptImg,
+      type: "backend",
+    },
+    {
+      name: "jQuery",
+      level: 3,
+      years: "10",
+      image: jqueryImg,
+      type: "frontend",
+    },
+    {
+      name: "AngularJS & Angular 15",
+      level: 3,
+      years: "8",
+      image: angularImg,
+      type: "frontend",
+    },
+    {
+      name: "React",
+      level: 1,
+      years: "1",
+      image: reactImg,
+      type: "frontend",
+    },
+    {
+      name: "VUEJs",
+      level: 1,
+      years: "1",
+      image: vueImg,
+      type: "frontend",
+    },
+    {
+      name: "ElectronJs",
+      level: 2,
+      years: "3",
+      image: electronImg,
+      type: "frontend",
+    },
+    {
+      name: "SQL Server / SQL Azure",
+      level: 2,
+      years: "5",
+      image: sqlImg,
+      type: "backend",
+    },
+    {
+      name: "MongoDB",
+      level: 2,
+      years: "3",
+      image: mongodbImg,
+      type: "backend",
+    },
+    {
+      name: "Google Firebase",
+      level: 1,
+      years: "1",
+      image: firebaseImg,
+      type: "backend",
+    },
+    {
+      name: "Google Analytics",
+      level: 2,
+      years: "5",
+      image: analyticsImg,
+      type: "admin",
+    },
+    {
+      name: "Jazmine UnitTest",
+      level: 3,
+      years: "8",
+      image: jazminejsImg,
+      type: "frontend",
+    },
+    {
+      name: "Karma UnitTest",
+      level: 3,
+      years: "8",
+      image: karmaImg,
+      type: "frontend",
+    },
+    {
+      name: "Github",
+      level: 3,
+      years: "14",
+      image: githubImg,
+      type: "admin",
+    },
+    {
+      name: "Jira",
+      level: 2,
+      years: "8",
+      image: jiraImg,
+      type: "admin",
+    },
+    {
+      name: "Confluence",
+      level: 1,
+      years: "7",
+      image: confluenceImg,
+      type: "admin",
+    },
+    {
+      name: "NodeJS",
+      level: 2,
+      years: "8",
+      image: nodejsImg,
+      type: "backend",
+    },
+    {
+      name: "Adobe Photoshop",
+      level: 2,
+      years: "4",
+      image: adobephotoshopImg,
+      type: "design",
+    },
+    {
+      name: "Adobe Ilustrator",
+      level: 2,
+      years: "4",
+      image: adobeilustratorImg,
+      type: "design",
+    },
+    {
+      name: "Adobe XD",
+      level: 2,
+      years: "3",
+      image: adobexdImg,
+      type: "design",
+    },
+    {
+      name: "Figma",
+      level: 2,
+      years: "1",
+      image: figmaImg,
+      type: "design",
+    },
+    {
+      name: "Microsoft Expression",
+      level: 2,
+      years: "8",
+      image: expressionImg,
+      type: "design",
+    },
+  ],
+
+  softSkills: [
+    { name: "Communication", level: "Advanced", value: 80 },
+    { name: "Flexibility", level: "Expert", value: 100 },
+    { name: "Leadership", level: "Advanced", value: 80 },
+    { name: "Motivation", level: "Expert", value: 100 },
+    { name: "Innovation", level: "Expert", value: 100 },
+    { name: "problem solving ability", level: "Expert", value: 100 },
+    { name: "Teamwork", level: "Expert", value: 100 },
+  ],
+
+  hardSkills: [
+    { name: "English", level: "A2", value: 30 },
+    { name: "Español", level: "Native", value: 100 },
+    { name: "Logical thinking", level: "Expert", value: 100 },
+    { name: "Management tools", level: "Advanced", value: 80 },
+    {
+      name: "Programming in different areas (Backend, Frontend)",
+      level: "Expert",
+      value: 100,
+    },
+    { name: "Design and prototyping skills", level: "Advanced", value: 90 },
+  ],
+
+  education: [
+    {
+      image: "",
+      name: "Universisdad Autonoma De Mexico, FES Aragon",
+      carrer: "Ingenieria en Computación",
+      years: "2008 - 2011",
+    },
+    {
+      image: "",
+      name: "Certification",
+      carrer: "Microsoft Azure",
+      years: "2010 - 2011",
+    },
+    {
+      image: "",
+      name: "Online course",
+      carrer: "Mastering in Angular",
+      years: "2018",
+    },
+    {
+      image: "",
+      name: "Online course",
+      carrer: "Mastering in React",
+      years: "2021 - 2022",
+    },
+    {
+      image: "",
+      name: "Online course",
+      carrer: "Mastering in VUE.js",
+      years: "2021 - 2022",
+    },
+  ],
+};
+
+title = data.title;
+subtitle1 = data.subtitle1;
+description1 = data.description1;
+subtitle2 = data.subtitle2;
+description2 = data.description2;
+subtitle3 = data.subtitle3;
+description3 = data.description3;
+skillsTitleDesign = data.skillsTitleDesign;
+skillsTitleFrontEnd = data.skillsTitleFrontEnd;
+skillsTitleBackend = data.skillsTitleBackend;
+skillsTitleAdmin = data.skillsTitleAdmin;
+skills = data.skills;
+softSkills = data.softSkills;
+hardSkills = data.hardSkills;
+education = data.education;
+
+const listSkillsDesign: any[] = [];
+const listSkillsFrontend: any[] = [];
+const listSkillsBackend: any[] = [];
+const listSkillsAdmin: any[] = [];
+
+data.skills.forEach((s) => {
+  if (s.type.toLowerCase() === "frontend") {
+    listSkillsFrontend.push(s);
+  }
+  if (s.type.toLowerCase() === "design") {
+    listSkillsDesign.push(s);
+  }
+  if (s.type.toLowerCase() === "backend") {
+    listSkillsBackend.push(s);
+  }
+  if (s.type.toLowerCase() === "admin") {
+    listSkillsAdmin.push(s);
+  }
+});
+---
+
+<h2>{title}</h2>
+<div class="title-divider"></div>
+
+<div class="row">
+  <h3>{subtitle2}</h3>
+  <p>{description2}</p>
+  <br />
+  <br />
+
+  <div class="list-container">
+    <!-- {listEducation} -->
+  </div>
+</div>
+
+<div class="full-divider"></div>
+
+<div class="row">
+  <h3>{subtitle3}</h3>
+  <br />
+  <br />
+
+  <div class="list-container">
+    <div class="skills-collection">
+      <h4>Soft Skills</h4>
+      <br />
+      {
+        softSkills.map((i: any) => {
+          return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+        })
+      }
+      <!-- {listSoftSkills} -->
+    </div>
+    <div class="skills-collection">
+      <h4>Hard Skills</h4>
+      <br />
+      {
+        hardSkills.map((i: any) => {
+          return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+        })
+      }
+    </div>
+  </div>
+</div>
+
+<div class="full-divider"></div>
+
+<h3>{subtitle1}</h3>
+<p>{description1}</p>
+<h3>{skillsTitleDesign}</h3>
+
+<div class="list-section">
+  {
+    listSkillsDesign.map((i: any) => {
+      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
+    })
+  }
+</div>
+
+<div class="full-divider"></div>
+<h3>{skillsTitleFrontEnd}</h3>
+
+<div class="list-section">
+  {
+    listSkillsFrontend.map((i: any) => {
+      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
+    })
+  }
+</div>
+
+<div class="full-divider"></div>
+<h3>{skillsTitleBackend}</h3>
+
+<div class="list-section">
+  {
+    listSkillsBackend.map((i: any) => {
+      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
+    })
+  }
+</div>
+
+<div class="full-divider"></div>
+<h3>{skillsTitleAdmin}</h3>
+
+<div class="list-section">
+  {
+    listSkillsAdmin.map((i: any) => {
+      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
+    })
+  }
+</div>

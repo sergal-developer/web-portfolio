@@ -1,3 +1,5 @@
+@import '../core/mixins';
+
 .experience-section {
   /* Variables */
   $color-1: black;
@@ -8,6 +10,7 @@
   .timeline {
     position: relative;
     font-family: "Open Sans", sans-serif;
+    
 
     &:before {
       background-color: $color-1;
@@ -18,16 +21,23 @@
       left: 2em;
       width: 2px;
       height: 100%;
+      @include mobile {
+        display: none;
+      }
     }
   }
 
   .timeline-event {
     position: relative;
+    @include mobile {
+      margin: 0 0 30px;
+    }
 
     &:hover {
       .timeline-event-icon {
         transform: rotate(-45deg);
         background: $color-3;
+
       }
 
       .timeline-event-thumbnail {
@@ -44,6 +54,13 @@
     top: -3em;
     left: 4em;
     width: 80%;
+
+    @include mobile {
+      padding: 0;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
 
     h3 {
       font-size: 1.75em;
@@ -76,6 +93,10 @@
     left: 2em;
     width: 1em;
     height: 1em;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   .timeline-event-thumbnail {
@@ -98,10 +119,13 @@
 
   .list-tech {
     display: flex;
+    flex-wrap: wrap;
+
     div {
       padding: 3px 8px;
       background: rgb(209, 209, 209);
-      margin-right: 5px;
+      margin: 5px;
+      margin-left: 0px;
     }
   }
 

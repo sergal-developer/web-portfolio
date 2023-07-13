@@ -8,7 +8,7 @@ import { SkillsData } from "./data/skills.js";
 
 export class APP {
     frames: any;
-    frameCollector: HTMLElement;
+    frameCollector: HTMLElement | null = null;
     links: any;
     inNavigation = false;
     currentPage = 0;
@@ -22,10 +22,10 @@ export class APP {
     navbarName = '.navbar';
     shapesName = '.shapes';
 
-    navBar: HTMLElement;
-    frameContainer: HTMLElement;
+    navBar: HTMLElement | null = null;
+    frameContainer: HTMLElement | null = null;
     currentPageClass = 'home';
-    shapesContainer: HTMLElement;
+    shapesContainer: HTMLElement | null = null;
 
 
     // DATA
@@ -42,7 +42,7 @@ export class APP {
 
     init() {
         this.setupEvents();
-        this.setupData();
+        //this.setupData();
     }
 
     setupEvents() {
@@ -53,7 +53,7 @@ export class APP {
     
         this.frameContainer = document.querySelector(this.frameContainerName);
         this.frameContainerWidth = `width: calc(100% * ${ this.frames.length });`;
-        this.frameContainer.setAttribute('style', `${ this.frameContainerWidth }`);
+        this.frameContainer?.setAttribute('style', `${ this.frameContainerWidth }`);
 
         this.shapesContainer = document.querySelector(this.shapesName);
         
@@ -61,17 +61,17 @@ export class APP {
             link.addEventListener('click', (e) => {
                 this.gotoPage(index, link);
                 const menu = document.querySelector('#navbar-menu');
-                menu.classList.remove('show');
+                menu?.classList.remove('show');
             });
         });
 
         const menu = document.querySelector('#navbar-menu');
         const menuButton = document.querySelector('#navbar-menu-button');
-        menuButton.addEventListener('click', (e) => {
-            if (menu.classList.contains('show')) {
-                menu.classList.remove('show');
+        menuButton?.addEventListener('click', (e) => {
+            if (menu?.classList.contains('show')) {
+                menu?.classList.remove('show');
             } else {
-                menu.classList.add('show');
+                menu?.classList.add('show');
             }
         });
     }
@@ -88,26 +88,26 @@ export class APP {
         const left = `-${ 100 * page }%`;
         const transitionDurationByFrame = `transition-duration: ${ this.transitionDurationFrame }ms;`;
         const marginLeftByFrame = `margin-left: ${ left };`;
-        this.frameContainer.setAttribute('style', `${ this.frameContainerWidth }${ transitionDurationByFrame }${marginLeftByFrame}`);
+        this.frameContainer?.setAttribute('style', `${ this.frameContainerWidth }${ transitionDurationByFrame }${marginLeftByFrame}`);
         
         if ( dataClass ) {
-            this.frameContainer.classList.replace(this.currentPageClass, dataClass);
-            this.shapesContainer.classList.replace(this.currentPageClass, dataClass);
+            this.frameContainer?.classList.replace(this.currentPageClass, dataClass);
+            this.shapesContainer?.classList.replace(this.currentPageClass, dataClass);
             this.currentPageClass = dataClass;
         }
 
-        this.frameContainer.classList.add('moveOn');
+        this.frameContainer?.classList.add('moveOn');
         setTimeout(() => {
-            this.frameContainer.classList.remove('moveOn');
+            this.frameContainer?.classList.remove('moveOn');
             this.inNavigation = false;
         }, this.transitionDurationFrame);
 
         if(this.currentPage !== 0) {
-            if(!this.navBar.classList.contains('collapsed')) {
-                this.navBar.classList.add('collapsed');
+            if(!this.navBar?.classList.contains('collapsed')) {
+                this.navBar?.classList.add('collapsed');
             }
         } else {
-            this.navBar.classList.remove('collapsed');
+            this.navBar?.classList.remove('collapsed');
         }
     }
 
@@ -119,14 +119,11 @@ export class APP {
         // const educationElement = document.querySelector('#education');
         const portfolioElement = document.querySelector('#portfolio');
 
-        homeElement.innerHTML = this.data.home.getData();
-        aboutElement.innerHTML = this.data.about.getData();
-        skillsElement.innerHTML = this.data.skills.getData();
-        experienceElement.innerHTML = this.data.experience.getData();
-        // educationElement.innerHTML = this.data.education.getData();
-        portfolioElement.innerHTML = this.data.portfolio.getData();
+        // homeElement.innerHTML = this.data.home.getData();
+        // aboutElement.innerHTML = this.data.about.getData();
+        // skillsElement.innerHTML = this.data.skills.getData();
+        // experienceElement.innerHTML = this.data.experience.getData();
+        // // educationElement.innerHTML = this.data.education.getData();
+        // portfolioElement.innerHTML = this.data.portfolio.getData();
     }
 }
-
-const app = new APP();
-window.onload = () => app.init();

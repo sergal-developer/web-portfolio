@@ -1,18 +1,15 @@
-import { Template } from "./template.js";
+---
+let { title, subtitle, description, list } = Astro.props;
 
-export class PortfolioData {
-  constructor() {}
-  template = new Template();
-
-  data = {
+const data = {
     title: "Portfolio",
     subtitle: "Just My Work",
-    description: `<p>Sergio started working as a designer and programmer in 2008. During his first years he worked in projects
+    description: `Sergio started working as a designer and programmer in 2008. During his first years he worked in projects
       with technologies such as: JS, and ASP. In addition, he honed skills in graphic design, web development,
       and desktop application development with Microsoft Tecnologies. Sergio acknowledges the benefits of agile
       methodologies to ensure predictive delivery in software projects. He has experience working with Scrum and
       Kanban methods. Additionally, Sergio has a solid background in design patterns, OOP, and software
-      architectures for web development. He is on top of the latest trends in web development.</p>`,
+      architectures for web development. He is on top of the latest trends in web development.`,
 
     list: [
       {
@@ -51,35 +48,26 @@ export class PortfolioData {
         description: "Microsoft Azure",
         years: "2010 - 2022",
       },
-    ],
-    listPortfolio: "",
+    ]
   };
 
-  html = `
-  `;
+title = data.title;
+subtitle = data.subtitle;
+description = data.description;
+list = data.list;
+---
 
-  listTemplate = `
-  <div class="education-details">
-    <div class="col-6 margin-bottom50 margin-top50">
-      <div class="col-3 icon-block">
-      <img src="{image}" class="image-project" alt="{image}">
-      </div>
-      <div class="flot-left">
-        <h5>{name}</h5>
-        <h4>{description}</h4>
-        <span>{years}</span>
+<h2>{title}</h2>
+  <div class="title-divider"></div>
+  <h3>{subtitle}</h3>
+  <p>{description}</p>
+
+  <div class="education-con">
+    <div class="container-sub">
+      <div class="full-divider"></div>
+      <div class="row">
+        <!-- {listPortfolio} -->
+        <h1>Under Construction ...</h1>
       </div>
     </div>
   </div>
-  <div class="full-divider"></div>`;
-
-  getData() {
-    this.data.listPortfolio = this.template.injectInterateData(
-      this.listTemplate,
-      this.data.list
-    );
-
-    this.data.listPortfolio = "<h1>Under Construction ...</h1>";
-    return this.template.injectData(this.html, this.data);
-  }
-}
