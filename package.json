@@ -4,9 +4,15 @@
   "description": "Portafolio Sergio Galllegos",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "gulp dev",
-    "build": "gulp build"
+    "startOld": "npm run dev",
+    "devOld": "gulp dev",
+    "buildOld": "gulp build",
+  
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -30,7 +36,8 @@
     "gulp-open": "^3.0.1",
     "nodemon": "^2.0.19",
     "path": "^0.12.7",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "astro": "^2.8.1"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
