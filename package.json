@@ -7,9 +7,9 @@
     "startOld": "npm run dev",
     "devOld": "gulp dev",
     "buildOld": "gulp build",
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "astro dev --config astro.config.mjs",
+    "start": "astro dev --config astro.config.mjs",
+    "build": "astro build --config astro.config.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
