@@ -5,7 +5,6 @@ import { HomeData } from "./data/home.js";
 import { PortfolioData } from "./data/portfolio.js";
 import { SkillsData } from "./data/skills.js";
 
-
 export class APP {
     frames: any;
     frameCollector: HTMLElement | null = null;
