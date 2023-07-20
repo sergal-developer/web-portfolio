@@ -126,3 +126,10 @@ export class APP {
         // portfolioElement.innerHTML = this.data.portfolio.getData();
     }
 }
+
+try {
+    const app = new APP();
+    window.onload = () => app.init();
+} catch (error) {
+    console.log('error: ', error);
+}
