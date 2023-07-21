@@ -1,9 +1,3 @@
-import { AboutData } from "./data/about.js";
-import { EducationData } from "./data/education.js";
-import { ExperienceData } from "./data/experience.js";
-import { HomeData } from "./data/home.js";
-import { PortfolioData } from "./data/portfolio.js";
-import { SkillsData } from "./data/skills.js";
 
 export class APP {
     frames: any;
@@ -26,22 +20,10 @@ export class APP {
     currentPageClass = 'home';
     shapesContainer: HTMLElement | null = null;
 
-
-    // DATA
-    data = {
-        home: new HomeData(),
-        about: new AboutData(),
-        skills: new SkillsData(),
-        experience: new ExperienceData(),
-        education: new EducationData(),
-        portfolio: new PortfolioData(),
-    }
-
     constructor() {}
 
     init() {
         this.setupEvents();
-        //this.setupData();
     }
 
     setupEvents() {
@@ -109,27 +91,4 @@ export class APP {
             this.navBar?.classList.remove('collapsed');
         }
     }
-
-    setupData() {
-        const homeElement = document.querySelector('#home');
-        const aboutElement = document.querySelector('#about');
-        const skillsElement = document.querySelector('#skills');
-        const experienceElement = document.querySelector('#experience');
-        // const educationElement = document.querySelector('#education');
-        const portfolioElement = document.querySelector('#portfolio');
-
-        // homeElement.innerHTML = this.data.home.getData();
-        // aboutElement.innerHTML = this.data.about.getData();
-        // skillsElement.innerHTML = this.data.skills.getData();
-        // experienceElement.innerHTML = this.data.experience.getData();
-        // // educationElement.innerHTML = this.data.education.getData();
-        // portfolioElement.innerHTML = this.data.portfolio.getData();
-    }
-}
-
-try {
-    const app = new APP();
-    window.onload = () => app.init();
-} catch (error) {
-    console.log('error: ', error);
 }

@@ -1,6 +1,6 @@
 ---
-import signImage from '../asserts/img/signature-web.png';
-import documentFile from '../asserts/files/cv.pdf';
+// import signImage from '../asserts/img/signature-web.png';
+// import documentFile from '../asserts/files/cv.pdf';
 
 let {
   title,
@@ -11,8 +11,8 @@ let {
   nationality,
   subtitle,
   profileDescription,
-  sign,
-  documentUrl
+  signImage,
+  documentFile
 } = Astro.props;
 
 const data = {
@@ -32,8 +32,8 @@ const data = {
         working with Scrum and Kanban methods. Additionally, Sergio has a solid background in design patterns,
         OOP, and software architectures for web development. He is on top of the latest trends in web
         development.`,
-//   sign: "/asserts/img/signature-web.png",
-//   documentUrl: "/asserts/files/cv.pdf",
+        signImage: "/img/signature-web.png",
+        documentFile: "/files/cv.pdf",
 //   picture: "/asserts/img/sergal-front.png",
 };
 
@@ -45,6 +45,8 @@ birthday = data.birthday;
 nationality = data.nationality;
 subtitle = data.subtitle;
 profileDescription = data.profileDescription;
+signImage = data.signImage;
+documentFile = data.documentFile;
 ---
 
 <h2>{title}</h2>
