@@ -1,0 +1,30 @@
+---
+import SkillsTechItemLevel from "./SkillsTechItemLevel.astro";
+
+export interface Props {
+  name: string;
+  years: string;
+  image: string;
+  level: number
+}
+
+let { name, years, image, level } = Astro.props;
+---
+
+<div class="list-item">
+  <div class="overlay">
+    <div class="name">{name}</div>
+
+    <div class="level-experience">
+      <span>{years} </span> Years EXP.
+    </div>
+
+    <div class="level-knowledge">
+      <SkillsTechItemLevel level={level} />
+    </div>
+  </div>
+  
+  <div class="picture">
+    <img src={image} alt={image}>
+  </div>
+</div>

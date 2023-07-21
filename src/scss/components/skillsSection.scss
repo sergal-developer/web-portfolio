@@ -1,3 +1,5 @@
+@import '../core/mixins';
+
 .skills-section {
   .list-container {
     display: flex;
@@ -10,6 +12,12 @@
   .skills-collection {
     width: 35%;
     padding-right: 40px;
+
+    @include mobile {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 30px;
+    }
 
     .item-skill {
       display: flex;

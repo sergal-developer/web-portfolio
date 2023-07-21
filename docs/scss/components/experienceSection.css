@@ -1,3 +1,37 @@
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
 .experience-section {
   /* Variables */
   /* Styling */
@@ -16,8 +50,18 @@
   width: 2px;
   height: 100%;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline:before {
+    display: none;
+  }
+}
 .experience-section .timeline-event {
   position: relative;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline-event {
+    margin: 0 0 30px;
+  }
 }
 .experience-section .timeline-event:hover .timeline-event-icon {
   transform: rotate(-45deg);
@@ -33,6 +77,14 @@
   top: -3em;
   left: 4em;
   width: 80%;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline-event-copy {
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 }
 .experience-section .timeline-event-copy h3 {
   font-size: 1.75em;
@@ -60,6 +112,11 @@
   width: 1em;
   height: 1em;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline-event-icon {
+    display: none;
+  }
+}
 .experience-section .timeline-event-thumbnail {
   transition: box-shadow 0.5s ease-in 0.1s;
   color: white;
@@ -75,11 +132,13 @@
 }
 .experience-section .list-tech {
   display: flex;
+  flex-wrap: wrap;
 }
 .experience-section .list-tech div {
   padding: 3px 8px;
   background: rgb(209, 209, 209);
-  margin-right: 5px;
+  margin: 5px;
+  margin-left: 0px;
 }
 .experience-section .experience-container {
   display: flex;

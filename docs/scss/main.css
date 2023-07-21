@@ -175,7 +175,7 @@ mark {
  * @param $value: contain | text | none
  *
  */
-.openSansFont, body {
+.openSansFont, body, .body {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -201,7 +201,7 @@ mark {
   --navbarWidth: 200px;
 }
 
-.openSansFont, body {
+.openSansFont, body, .body {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -269,7 +269,7 @@ p {
  * @param $value: contain | text | none
  *
  */
-.openSansFont, body {
+.openSansFont, body, .body {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -714,23 +714,6 @@ p {
   align-items: center;
   justify-content: center;
 }
-.hero .dinamic {
-  opacity: 0;
-}
-.hero .static {
-  opacity: 1;
-}
-.hero .image {
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  height: inherit;
-}
-.hero .image img {
-  filter: grayscale(100%);
-  width: auto;
-  height: inherit;
-}
 .hero h2 {
   border: none;
   color: #fff;
@@ -744,6 +727,11 @@ p {
 .hero h2 span {
   font-weight: 300;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+  .hero h2 {
+    font-size: 40px !important;
+  }
+}
 .hero .title {
   border-bottom: 1px solid #7a7a7a;
   border-top: 1px solid #7a7a7a;
@@ -753,12 +741,22 @@ p {
   text-transform: uppercase;
   font-size: 13px;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+  .hero .title {
+    font-size: 10px !important;
+  }
+}
 
 .list-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .list-section {
+    justify-content: space-around;
+  }
 }
 
 /**
@@ -838,6 +836,40 @@ p {
   padding: 0 0 12px 0;
 }
 
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
 .skills-section .list-container {
   display: flex;
   align-items: flex-start;
@@ -848,6 +880,13 @@ p {
 .skills-section .skills-collection {
   width: 35%;
   padding-right: 40px;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .skills-section .skills-collection {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+  }
 }
 .skills-section .skills-collection .item-skill {
   display: flex;
@@ -1034,6 +1073,40 @@ p {
   transform: scale(1.1);
 }
 
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
 .experience-section {
   /* Variables */
   /* Styling */
@@ -1052,8 +1125,18 @@ p {
   width: 2px;
   height: 100%;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline:before {
+    display: none;
+  }
+}
 .experience-section .timeline-event {
   position: relative;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline-event {
+    margin: 0 0 30px;
+  }
 }
 .experience-section .timeline-event:hover .timeline-event-icon {
   transform: rotate(-45deg);
@@ -1069,6 +1152,14 @@ p {
   top: -3em;
   left: 4em;
   width: 80%;
+}
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline-event-copy {
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 }
 .experience-section .timeline-event-copy h3 {
   font-size: 1.75em;
@@ -1096,6 +1187,11 @@ p {
   width: 1em;
   height: 1em;
 }
+@media (min-width: 0px) and (max-width: 767px) {
+  .experience-section .timeline-event-icon {
+    display: none;
+  }
+}
 .experience-section .timeline-event-thumbnail {
   transition: box-shadow 0.5s ease-in 0.1s;
   color: white;
@@ -1111,11 +1207,13 @@ p {
 }
 .experience-section .list-tech {
   display: flex;
+  flex-wrap: wrap;
 }
 .experience-section .list-tech div {
   padding: 3px 8px;
   background: rgb(209, 209, 209);
-  margin-right: 5px;
+  margin: 5px;
+  margin-left: 0px;
 }
 .experience-section .experience-container {
   display: flex;
@@ -1162,7 +1260,7 @@ p {
   margin-bottom: 1.5em;
 }
 
-body {
+body, .body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -1181,6 +1279,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body * * {
+body * *, .body * * {
   box-sizing: border-box;
 }

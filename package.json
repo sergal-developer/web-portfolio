@@ -4,9 +4,14 @@
   "description": "Portafolio Sergio Galllegos",
   "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "gulp dev",
-    "build": "gulp build"
+    "startOld": "npm run dev",
+    "devOld": "gulp dev",
+    "buildOld": "gulp build",
+    "dev": "astro dev --config astro.config.mjs",
+    "start": "astro dev --config astro.config.mjs",
+    "build": "astro build --config astro.config.mjs",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,7 @@
   },
   "homepage": "https://github.com/sergal-developer/web-portfolio#readme",
   "dependencies": {
+    "astro": "^2.8.1",
     "browser-sync": "^2.27.10",
     "event-stream": "^4.0.1",
     "express": "^4.18.1",
