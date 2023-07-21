@@ -14,6 +14,7 @@ const config = {
   tsFiles: './src/**/*.ts',
 
   astroFiles: './docs/**/*.html',
+  astroFilesDest: './public/**/*.html',
   urlPage: '/web-portafolio/',
 }
 
@@ -43,9 +44,9 @@ gulp.task('watchers-dev', () => {
 });
 
 gulp.task('prepare-deploy', () => {
-  return gulp.src(config.astroFiles)
-    .pipe(replace(/http:\/\/localhost:\d+/g, 'http://example.com'))
-    .pipe(gulp.dest(config.astroFiles));
+  return gulp.src('./docs/index.html', {base: './'})
+    .pipe(replace(/href="\/_astro\/index.[\S]*.css"/g, 'href="main.css"'))
+    .pipe(gulp.dest('./'));
 });
 
 
@@ -54,5 +55,3 @@ gulp.task('build',
 
 gulp.task('dev', 
   gulp.series('build', 'watchers-dev' ));
-
-  
