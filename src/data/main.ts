@@ -1,3 +1,4 @@
+import { EXPERIENCE } from "./experience";
 
 export class APP {
     frames: any;
@@ -20,6 +21,9 @@ export class APP {
     currentPageClass = 'home';
     shapesContainer: HTMLElement | null = null;
 
+    data = {
+        experience: new EXPERIENCE()
+    }
     constructor() {}
 
     init() {
@@ -27,6 +31,9 @@ export class APP {
     }
 
     setupEvents() {
+        const data = this.data.experience.get();
+        console.log('data: ', data);
+
         this.navBar = document.querySelector(this.navbarName);
         this.frameCollector = document.querySelector(this.frameName);
         this.frames = document.querySelectorAll(this.frameItemsName);

@@ -4,12 +4,9 @@
   "description": "Portafolio Sergio Galllegos",
   "main": "index.js",
   "scripts": {
-    "startOld": "npm run dev",
-    "devOld": "gulp dev",
-    "buildOld": "gulp build",
     "dev": "astro dev --config astro.config.mjs",
-    "start": "astro dev --config astro.config.mjs",
-    "build": "astro build --config astro.config.mjs",
+    "start": "gulp build && astro dev --config astro.config.mjs",
+    "build": "gulp build && astro build --config astro.config.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -41,6 +38,8 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-typescript": "^6.0.0-alpha.1",

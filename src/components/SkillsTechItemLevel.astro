@@ -16,7 +16,7 @@ const levels = [
 {
   levels.map((i: any, index: number) => {
     i.class = level > index ? 'lvl fill' : 'lvl';
-    i.class = level === index ? 'lvl current' : 'lvl fill';
+    i.class = level === index ? 'lvl current' : i.class;
 
     return (
       <div class={i.class}><span>{i.name}</span></div>

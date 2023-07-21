@@ -4,5 +4,4 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     outDir: './docs',
     site: 'https://sergal-developer.github.io',
-    base: '/web-portafolio',
 });

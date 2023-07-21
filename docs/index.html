@@ -5,10 +5,15 @@
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<!-- <link rel="stylesheet" href="scss/main.css"> -->
 		<meta name="generator" content="Astro v2.8.1">
 		
 		<title>SERGAL Portfolio</title>
-	<link rel="stylesheet" href="scss/main.css" /><script type="module">class o{constructor(){this.frameCollector=null,this.inNavigation=!1,this.currentPage=0,this.transitionDurationFrame=1e3,this.frameName=".page-frame-container",this.frameContainerName=".pfc-area",this.frameContainerWidth="width: calc(100%);",this.frameItemsName=".pfc-area > .item",this.linksName=".navbar .item.page",this.navbarName=".navbar",this.shapesName=".shapes",this.navBar=null,this.frameContainer=null,this.currentPageClass="home",this.shapesContainer=null}init(){this.setupEvents()}setupEvents(){this.navBar=document.querySelector(this.navbarName),this.frameCollector=document.querySelector(this.frameName),this.frames=document.querySelectorAll(this.frameItemsName),this.links=document.querySelectorAll(this.linksName),this.frameContainer=document.querySelector(this.frameContainerName),this.frameContainerWidth=`width: calc(100% * ${this.frames.length});`,this.frameContainer?.setAttribute("style",`${this.frameContainerWidth}`),this.shapesContainer=document.querySelector(this.shapesName),this.links.forEach((t,a)=>{t.addEventListener("click",i=>{this.gotoPage(a,t),document.querySelector("#navbar-menu")?.classList.remove("show")})});const e=document.querySelector("#navbar-menu");document.querySelector("#navbar-menu-button")?.addEventListener("click",t=>{e?.classList.contains("show")?e?.classList.remove("show"):e?.classList.add("show")})}gotoPage(e,s){if(this.inNavigation||this.currentPage===e)return;this.inNavigation=!0,this.currentPage=e;const t=s.getAttribute("data-class");console.log("dataClass: ",t);const a=`-${100*e}%`,i=`transition-duration: ${this.transitionDurationFrame}ms;`,n=`margin-left: ${a};`;this.frameContainer?.setAttribute("style",`${this.frameContainerWidth}${i}${n}`),t&&(this.frameContainer?.classList.replace(this.currentPageClass,t),this.shapesContainer?.classList.replace(this.currentPageClass,t),this.currentPageClass=t),this.frameContainer?.classList.add("moveOn"),setTimeout(()=>{this.frameContainer?.classList.remove("moveOn"),this.inNavigation=!1},this.transitionDurationFrame),this.currentPage!==0?this.navBar?.classList.contains("collapsed")||this.navBar?.classList.add("collapsed"):this.navBar?.classList.remove("collapsed")}}const l=new o;window.onload=r=>{l.init(),console.log("loaded!")};
+	<link rel="stylesheet" href="/_astro/index.aad686c9.css" /><script type="module">class o{get(){return[{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0},{name:"sasd",tyep:"",some:"",somn:!0}]}toSnakeCase(e){return e=e.toString().trim(),e.split("").map((t,n)=>t&&n>2&&/[A-Z]/.test(t)?`_${t}`:t).join("").toLowerCase()}processText(e){let s=[];return e=e.replaceAll(`
+`,` 
+`),console.log(e),e.trim().split(" ").forEach((t,n)=>{const r=this.formatWord(t);t=t.replace(`
+`,"<br>"),s.push({index:n,word:t,format:r})}),s}formatWord(e){const s=e.split(""),a=Math.trunc(s.length/2);return s[a]=`<b>${s[a]}</b>`,s.join("").replaceAll(`
+`,"")}}class m{constructor(){this.frameCollector=null,this.inNavigation=!1,this.currentPage=0,this.transitionDurationFrame=1e3,this.frameName=".page-frame-container",this.frameContainerName=".pfc-area",this.frameContainerWidth="width: calc(100%);",this.frameItemsName=".pfc-area > .item",this.linksName=".navbar .item.page",this.navbarName=".navbar",this.shapesName=".shapes",this.navBar=null,this.frameContainer=null,this.currentPageClass="home",this.shapesContainer=null,this.data={experience:new o}}init(){this.setupEvents()}setupEvents(){const e=this.data.experience.get();console.log("data: ",e),this.navBar=document.querySelector(this.navbarName),this.frameCollector=document.querySelector(this.frameName),this.frames=document.querySelectorAll(this.frameItemsName),this.links=document.querySelectorAll(this.linksName),this.frameContainer=document.querySelector(this.frameContainerName),this.frameContainerWidth=`width: calc(100% * ${this.frames.length});`,this.frameContainer?.setAttribute("style",`${this.frameContainerWidth}`),this.shapesContainer=document.querySelector(this.shapesName),this.links.forEach((t,n)=>{t.addEventListener("click",r=>{this.gotoPage(n,t),document.querySelector("#navbar-menu")?.classList.remove("show")})});const s=document.querySelector("#navbar-menu");document.querySelector("#navbar-menu-button")?.addEventListener("click",t=>{s?.classList.contains("show")?s?.classList.remove("show"):s?.classList.add("show")})}gotoPage(e,s){if(this.inNavigation||this.currentPage===e)return;this.inNavigation=!0,this.currentPage=e;const a=s.getAttribute("data-class");console.log("dataClass: ",a);const t=`-${100*e}%`,n=`transition-duration: ${this.transitionDurationFrame}ms;`,r=`margin-left: ${t};`;this.frameContainer?.setAttribute("style",`${this.frameContainerWidth}${n}${r}`),a&&(this.frameContainer?.classList.replace(this.currentPageClass,a),this.shapesContainer?.classList.replace(this.currentPageClass,a),this.currentPageClass=a),this.frameContainer?.classList.add("moveOn"),setTimeout(()=>{this.frameContainer?.classList.remove("moveOn"),this.inNavigation=!1},this.transitionDurationFrame),this.currentPage!==0?this.navBar?.classList.contains("collapsed")||this.navBar?.classList.add("collapsed"):this.navBar?.classList.remove("collapsed")}}const l=new m;window.onload=i=>{l.init(),console.log("loaded!")};
 </script></head>
 	<body class="astro-HSP6OTUF">
 		
@@ -206,7 +211,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -222,7 +227,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -238,7 +243,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -254,7 +259,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -270,7 +275,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -341,7 +346,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl fill"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -421,7 +426,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl fill"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -437,7 +442,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl fill"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -453,7 +458,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -508,7 +513,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl fill"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -524,7 +529,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -572,7 +577,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -588,7 +593,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -604,7 +609,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl fill"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -620,7 +625,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -643,7 +648,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -675,7 +680,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl fill"><span>intermediate</span></div><div class="lvl current"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
@@ -691,7 +696,7 @@
     </div>
 
     <div class="level-knowledge">
-      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl fill"><span>advanced</span></div><div class="lvl fill"><span>master</span></div>
+      <div class="lvl fill"><span>rookie</span></div><div class="lvl current"><span>intermediate</span></div><div class="lvl"><span>advanced</span></div><div class="lvl"><span>master</span></div>
     </div>
   </div>
   
