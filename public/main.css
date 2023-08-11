@@ -406,7 +406,7 @@ body section.intro.stage2 .developer {
   left: 46%;
 }
 body section.intro.stage3 {
-  transform: perspective(1500px) rotate3d(0, 1, 0, -90deg) scale(2);
+  transform: matrix(1, 0, -1, 1, 2, 1);
 }
 body section.intro.stage3 .title {
   top: 22%;
@@ -421,32 +421,232 @@ body section.intro.stage3 .developer {
   top: 55%;
   left: 46%;
 }
-body section.layers {
-  opacity: 0;
-}
 body section.layers .title {
   top: 44%;
   left: -25%;
 }
-body section.layers.stage0 {
-  transform: perspective(1500px) rotate3d(0, 1, 0, 274deg) scale(2) translateZ(-150px);
-  opacity: 1;
+body section.layers.stage0 .ateroids-planet-layers {
+  transform: scale(2) translate(-50%, 0%);
 }
-body section.layers.stage1 {
-  transform: scale(1) translate(0%, 0%);
-  opacity: 1;
+body section.layers.stage0 .planet-main-layers {
+  transform: scale(3) translate(50%, 0%);
+}
+body section.layers.stage0 .title {
+  transform: scale(2) translate(50%, 0%);
+}
+body section.layers.stage1 .ateroids-planet-layers {
+  transform: scale(2) translate(0%, 0%);
 }
 body section.layers.stage1 .planet-main-layers {
-  animation: rotate 20s ease;
+  transform: scale(2) translate(10%, 0%) rotate(30deg);
+}
+body section.layers.stage1 .title {
+  transform: scale(1) translate(0%, 0%);
+}
+body section.layers.stage2 .ateroids-planet-layers {
+  transform: scale(2) translate(20%, 0%);
+}
+body section.layers.stage2 .planet-main-layers {
+  transform: scale(1) translate(30%, 0%) rotate(60deg);
+}
+body section.layers.stage2 .title {
+  transform: scale(1) translate(0%, 0%);
+}
+body section.layers.stage3 .ateroids-planet-layers {
+  transform: scale(1) translate(0%, 0%);
+}
+body section.layers.stage3 .planet-main-layers {
+  transform: scale(1) translate(0%, 0%) rotate(0deg);
+}
+body section.layers.stage3 .title {
+  transform: scale(1) translate(0%, 0%);
 }
 body section.projects .title {
-  top: 2%;
+  top: 10%;
 }
-body section.city .title {
+body section.projects .projects {
+  top: 35%;
+  opacity: 0;
+}
+body section.projects .city {
+  opacity: 0;
+  top: 30%;
+  transform: scale(3);
+}
+body section.projects #title-projects {
+  opacity: 0;
+}
+body section.projects #title-city {
+  opacity: 0;
+}
+body section.projects.stage0 #title-projects {
+  top: 50%;
+}
+body section.projects.stage1 .projects {
+  top: 100%;
+}
+body section.projects.stage1 #title-projects {
+  opacity: 1;
+  top: 10%;
+}
+body section.projects.stage2 .projects {
+  top: 35%;
+  opacity: 1;
+}
+body section.projects.stage2 #title-projects {
+  opacity: 1;
+  top: 10%;
+}
+body section.projects.stage2 .city {
+  top: 100%;
+}
+body section.projects.stage3 .projects {
+  top: 20%;
+  opacity: 1;
+  transform: scale(0.8);
+}
+body section.projects.stage3 #title-projects {
+  opacity: 1;
+  top: 5%;
+  transform: scale(0.8);
+}
+body section.projects.stage3 .city {
+  opacity: 1;
+  top: 50%;
+  transform: scale(2);
+}
+body section.projects.stage3 #title-city {
+  opacity: 0;
+  top: -20%;
+  transform: scale(2);
+}
+body section.projects.stage4 .projects {
+  top: 20%;
+  opacity: 0;
+  transform: scale(0.5);
+}
+body section.projects.stage4 #title-projects {
+  opacity: 1;
+  top: 50%;
+  transform: scale(0.7);
+}
+body section.projects.stage4 .city {
+  opacity: 1;
+  top: 40%;
+  transform: scale(1.5);
+}
+body section.projects.stage4 #title-city {
+  opacity: 1;
+  top: 25%;
+  transform: scale(1);
+}
+body section.projects.stage5 .projects {
+  top: 20%;
+  opacity: 1;
+  transform: scale(1);
+  opacity: 0;
+}
+body section.projects.stage5 #title-projects {
+  opacity: 0;
+  top: 50%;
+}
+body section.projects.stage5 .city {
+  opacity: 1;
+  top: 30%;
+  transform: scale(1.8);
+}
+body section.projects.stage5 #title-city {
+  opacity: 1;
   top: 75%;
+  transform: scale(1);
 }
-body section.star .title {
-  top: 7%;
+body section.projects.stage6 {
+  transform: scale(0.5) translate(61%, 60%);
+  opacity: 0;
+}
+body section.projects.stage6 .projects {
+  top: 20%;
+  opacity: 1;
+  transform: scale(1);
+  opacity: 0;
+}
+body section.projects.stage6 #title-projects {
+  opacity: 0;
+  top: 50%;
+}
+body section.projects.stage6 .city {
+  opacity: 1;
+  top: 30%;
+  transform: scale(1.8);
+}
+body section.projects.stage6 #title-city {
+  opacity: 1;
+  top: 75%;
+  transform: scale(1);
+}
+body section.star #title-star {
+  opacity: 1;
+}
+body section.star .glow-star {
+  opacity: 1;
+}
+body section.star .star-unique {
+  opacity: 1;
+}
+body section.star .constellation {
+  opacity: 0;
+}
+body section.star #title-constellation {
+  opacity: 0;
+}
+body section.star.stage0 #title-star {
+  transform: translate(-300%, -100%) scale(4);
+}
+body section.star.stage0 .glow-star {
+  transform: translate(-800%, -100%) scale(6) rotate(30deg);
+}
+body section.star.stage0 .star-unique {
+  transform: translate(-500%, -100%) scale(10);
+}
+body section.star.stage1 #title-star {
+  transform: translate(0, -100%) scale(1);
+}
+body section.star.stage1 .glow-star {
+  transform: translate(0, 10%) scale(2) rotate(-30deg);
+}
+body section.star.stage1 .star-unique {
+  transform: translate(0, 0) scale(2.5);
+}
+body section.star.stage2 #title-star {
+  transform: translate(0, 0%) scale(1) rotate(-5deg);
+}
+body section.star.stage2 .glow-star {
+  transform: translate(0, 0) scale(1.5) rotate(10deg);
+}
+body section.star.stage2 .star-unique {
+  transform: translate(0, 0) scale(1.5) rotate(-10deg);
+}
+body section.star.stage3 .glow-star, body section.star.stage3 #title-star {
+  opacity: 0;
+}
+body section.star.stage3 .constellation {
+  opacity: 0.5;
+  transform: translate(-50%, 0%) scale(3);
+}
+body section.star.stage4 .glow-star, body section.star.stage4 .star-unique, body section.star.stage4 #title-star {
+  opacity: 0;
+}
+body section.star.stage5 .glow-star, body section.star.stage5 .star-unique, body section.star.stage5 #title-star {
+  opacity: 0;
+}
+body section.star.stage6 .glow-star, body section.star.stage6 .star-unique, body section.star.stage6 #title-star {
+  opacity: 0;
+}
+body section.star.stage7 .glow-star, body section.star.stage7 .star-unique, body section.star.stage7 #title-star {
+  opacity: 0;
+}
+body section.star.stage8 .glow-star, body section.star.stage8 .star-unique, body section.star.stage8 #title-star {
+  opacity: 0;
 }
 body section.constellation .title {
   top: 81%;
@@ -465,7 +665,7 @@ body .anim {
 }
 
 * * {
-  outline: 1px solid rgba(235, 189, 235, 0.072);
+  outline: 1px solid rgba(235, 189, 235, 0.5);
 }
 
 @keyframes leftToRight {
@@ -484,13 +684,13 @@ body .anim {
 }
 @keyframes rotate {
   0% {
-    transform: rotate(180deg);
+    transform: rotate(90deg);
   }
   50% {
     transform: rotate(0);
   }
   100% {
-    transform: rotate(180deg);
+    transform: rotate(-90deg);
   }
 }
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&family=Ubuntu&display=swap");
