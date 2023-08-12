@@ -472,24 +472,31 @@ body {
       .rocks-bottom-right { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
       .rocks-bottom-center { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
       #title-end { top: 29%; opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
+      
       &.stage0 {
-
-        .rocks-top-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        .rocks-top-right { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-right { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-center { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        #title-end { top: 29%; opacity: 1; transform: translate(-0%, 0%) scale(5) rotate(0deg) }
-
+        .rocks-top-left { opacity: 1; transform: translate(-200%, 0%) scale(1) rotate(0deg) }
+        .rocks-top-right { opacity: 1; transform: translate(200%, 0%) scale(1) rotate(0deg) }
+        .rocks-bottom-left { opacity: 1; transform: translate(-100%, 0%) scale(1) rotate(0deg) }
+        .rocks-bottom-right { opacity: 1; transform: translate(100%, 0%) scale(1) rotate(0deg) }
+        .rocks-bottom-center { opacity: 1; transform: translate(-0%, 200%) scale(1) rotate(0deg) }
+        #title-end { top: 50%; opacity: 0; transform: translate(-0%, 0%) scale(3) rotate(0deg) }
       }
-      &.stage1 {}
-      &.stage2 {}
-      &.stage3 {}
-      &.stage4 {}
-      &.stage5 {}
-      &.stage6 {}
-      &.stage7 {}
-      &.stage8 {}
+      &.stage1 {
+        .rocks-top-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
+        .rocks-top-right { opacity: 1; transform: translate(0%, 0%) scale(1) rotate(0deg) }
+        .rocks-bottom-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
+        .rocks-bottom-right { opacity: 1; transform: translate(0%, 0%) scale(1) rotate(0deg) }
+        .rocks-bottom-center { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
+        #title-end { top: 30%; opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
+      }
+      &.stage2 {
+        .rocks-top-left { opacity: 1; transform: translate(-0%, -200%) scale(1) rotate(0deg) }
+        .rocks-top-right { opacity: 1; transform: translate(0%, -200%) scale(1) rotate(0deg) }
+        .rocks-bottom-left { opacity: 1; transform: translate(-0%, -200%) scale(1) rotate(0deg) }
+        .rocks-bottom-right { opacity: 1; transform: translate(0%, -200%) scale(1) rotate(0deg) }
+        .rocks-bottom-center { opacity: 1; transform: translate(-0%, -200%) scale(1) rotate(0deg) }
+        #title-end { top: 10%; opacity: 1; transform: translate(-0%, -0%) scale(1) rotate(0deg) }
+      }
     }
   }
 
