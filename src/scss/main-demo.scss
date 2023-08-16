@@ -48,13 +48,16 @@ body {
 
     .title {
       position: absolute;
-      width: 50%;
+      width: 80%;
       left: 0;
       right: 0;
+      top: 50%;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
       line-height: 1;
+      transition: all 300ms;
+    
       h1 {
         font-size: 5em;
       }
@@ -82,6 +85,7 @@ body {
         color: gray;
       }
     }
+
     .image {
       position: absolute;
       width: auto;
@@ -89,415 +93,320 @@ body {
       right: 0;
       margin-left: auto;
       margin-right: auto;
-
-      &.asteroids-main {
-        width: 80%;
-      }
-      &.planet-main {
-        width: 50%;
-        top: 23%;
-      }
-      &.developer {
-        top: 52%;
-        width: 22%;
-        left: 22%;
-      }
-      &.ateroids-planet-layers {
-        width: 58%;
-        margin-left: 6%;
-        top: 14%;
-      }
-      &.planet-main-layers {
-        margin-right: -15%;
-        width: 45%;
-        top: 10%;
-      }
-      &.projects {
-        width: 35%;
-        top: 23%;
-      }
-      &.city {
-        width: 37%;
-        top: 14%;
-      }
-      &.glow-star {
-        width: 45%;
-        top: 25%;
-      }
-      &.start {
-        width: 18%;
-        top: 36%;
-      }
-      &.constellation {
-        width: 75%;
-        top: 10%;
-      }
-      &.citadel-internal {
-        width: 50%;
-        top: calc(50% - (170px));
-      }
-      &.citadel-external, &.citadel-external-2 {
-        width: 50%;
-        top: calc(50% - (170px));
-      }
-      &.stars-dark-planet {
-        width: 80%;
-        top: 5%;
-      }
-      &.dark-planet {
-        top: 25%;
-      }
-      &.astronaut-1 {
-        top: 49%;
-        left: 32%;
-        width: 19%;
-      }
-      &.astronaut-2 {
-        top: 49%;
-        left: -62%;
-        width: 30%;
-      }
-      &.rocks-top-left {
-        width: 25%;
-        margin-left: 0;
-        left: 18%;
-        top: 4%;
-      }
-      &.rocks-top-right {
-        width: 25%;
-        margin-right: 0;
-        right: 18%;
-        top: 4%;
-      }
-      &.rocks-bottom-left {
-        width: 25%;
-        margin-left: 0;
-        left: -7%;
-        bottom: 4%;
-      }
-      &.rocks-bottom-right {
-        width: 25%;
-        margin-right: 0;
-        right: -7%;
-        bottom: 4%;
-      }
-      &.rocks-bottom-center {
-        width: 20%;
-        bottom: 1%;
-      }
     }
 
-    &.intro {
-      // height: 2000px;
-      .title { top: 6%; }
-      .asteroids-main { width: 150%; }
-      .planet-main { top: 43%; left: 0; }
-      .developer { opacity: 0; top: 60%; left: -10%;}
+    #asteroids-main {  }
+    #planet-main {  top: 23%; }
+    #developer { top: 52%; left: 22%; }
+    #title-intro { top: 10%; }
 
-      &.stage0 {
-        .title { top: 3%; }
-        .asteroids-main { transform: scale(1.8); }
-        .developer { opacity: 0; }
-        .planet-main { transform: scale(2); }
-      }
-      &.stage1 {
-        .title { top: 15%; }
-        .asteroids-main { transform: scale(1.1); }
-        .planet-main { transform: scale(1); top: 25% }
-        .developer { opacity: 0 ; top: 80%; left: 20%; }
-      }
-      &.stage2 {
-        .title { top: 22%; }
-        .asteroids-main { animation: leftToRight 20s ease infinite; }
-        .planet-main { transform: scale(1); top: 30%; left: 5%;}
-        .developer { opacity: 1; top: 55%; left: 46%;  }
-      }
-      &.stage3 {
-        // transform: perspective(1500px) rotate3d(0, 1, 0, -90deg) scale(2);
-        transform: matrix(1, 0, -1, 1, 2, 1);
-        .title { top: 22%; }
-        .asteroids-main { }
-        .planet-main { transform: scale(1); top: 30%; left: 5%;}
-        .developer { opacity: 1; top: 55%; left: 46%;  }
-      }
+    #ateroids-planet-layers { width: 58%; margin-left: 6%;top: 14%; }
+    #planet-main-layers { margin-right: -15%; width: 45%; top: 10%; }
+    #title-layers {}
+
+    #projects { width: 35%; top: 23%; }
+    #title-projects {}
+
+    #city { width: 37%; top: 14%; }
+    #title-city {}
+
+    #glow-star { width: 45%; top: 25%; }
+    #star-unique { width: 18%; top: 36%; }
+    #title-star {}
+
+    #constellation { width: 75%; top: 10%; }
+    #title-constellation {}
+
+    #citadel-external-2 { width: 50%; top: calc(50% - (170px)); }
+    #citadel-external { width: 50%; top: calc(50% - (170px)); }
+    #citadel-internal { width: 50%; top: calc(50% - (170px)); }
+
+    #stars-dark-planet {  top: 5%; }
+    #dark-planet { top: 25%; }
+    #astronaut-1 { top: 49%; left: 32%; width: 19%; }
+    #astronaut-2 { top: 49%; left: -62%; width: 30%; }
+
+    #rocks-top-left { width: 25%; margin-left: 0; left: 18%; top: 4%; }
+    #rocks-top-right { width: 25%; margin-right: 0; right: 18%; top: 4%; }
+    #rocks-bottom-left { width: 25%; margin-left: 0; left: -7%; bottom: 4%; }
+    #rocks-bottom-right { width: 25%; margin-right: 0; right: -7%; bottom: 4%; }
+    #rocks-bottom-center { width: 20%; bottom: 1%; }
+    #title-end {}
+    .anim { opacity: 0;}
+
+    // INTRO
+    &.stage0 {
+      #asteroids-main, #planet-main, #title-intro { opacity: 1; }
+
+      #asteroids-main { transform: scale(1.5); }
+      #planet-main { transform: scale(2); top: 90%; }
+      #developer { top: 52%; width: 22%; left: 22%; }
+      #title-intro { top: 15%; }
     }
-    &.layers {
-      .title {
-        top: 44%;
-        left: -25%;
-      }
-      &.stage0 {
-        .ateroids-planet-layers {
-          transform: 
-            scale(2)
-            translate(-50% , 0%);
-        }
 
-        .planet-main-layers {
-          transform: scale(3) translate(50% , 0%);
-        }
+    &.stage1 {
+      #asteroids-main, #planet-main, #title-intro, #developer { opacity: 1; }
 
-        .title {
-          transform: scale(2) translate(50% , 0%);
-        }
-      }
-      &.stage1 {
-        .ateroids-planet-layers {
-          transform: 
-            scale(2)
-            translate(0% , 0%);
-        }
-
-        .planet-main-layers {
-          transform: 
-            scale(2)
-            translate(10% , 0%)
-            rotate(30deg);
-        }
-
-        .title {
-          transform: scale(1) translate(0% , 0%);
-        }
-      }
-      &.stage2 {
-        .ateroids-planet-layers {
-          transform: 
-            scale(2)
-            translate(20% , 0%);
-        }
-
-        .planet-main-layers {
-          transform: 
-            scale(1)
-            translate(30% , 0%)
-            rotate(60deg);
-        }
-
-        .title {
-          transform: scale(1) translate(0% , 0%);
-        }
-      }
-      &.stage3 {
-        .ateroids-planet-layers {
-          transform: 
-            scale(1)
-            translate(0% , 0%);
-        }
-
-        .planet-main-layers {
-          transform: 
-            scale(1)
-            translate(0% , 0%)
-            rotate(0deg);
-        }
-
-        .title {
-          transform: scale(1) translate(0% , 0%);
-        }
-      }
+      #asteroids-main { transform: scale(1.1); }
+      #planet-main { transform: scale(1); top: 25% }
+      #developer { opacity: 0 ; top: 80%; left: 20%; }
+      #title-intro { top: 10%; }
     }
-    &.projects {
-      .title { top: 10%; }
-      .projects { top: 35%; opacity: 0; }
-      .city { opacity: 0; top: 30%; transform: scale(3);  }
-      #title-projects { opacity: 0; }
-      #title-city { opacity: 0; }
 
-      &.stage0 {
-        #title-projects { top: 50%; }
-      }
-      &.stage1 {
-        .projects { top: 100%; }
-        #title-projects { opacity: 1; top: 10%; }
-      }
-      &.stage2 {
-        .projects { top: 35%; opacity: 1; }
-        #title-projects { opacity: 1; top: 10%; }
-        .city { top: 100%; }
-      }
-      &.stage3 {
-        .projects { top: 20%; opacity: 1; transform: scale(0.8); }
-        #title-projects { opacity: 1; top: 5%;  transform: scale(0.8); }
-        .city { opacity: 1; top: 50%; transform: scale(2);  }
-        #title-city { opacity: 0; top: -20%; transform: scale(2);  }
-      }
-      &.stage4 {
-        .projects { top: 20%; opacity: 0; transform: scale(0.5); }
-        #title-projects { opacity: 1; top: 50%;  transform: scale(0.7); }
-        .city { opacity: 1; top: 40%; transform: scale(1.5);  }
-        #title-city { opacity: 1; top: 25%; transform: scale(1); }
-      }
-      &.stage5 {
-        .projects { top: 20%; opacity: 1; transform: scale(1); opacity: 0; }
-        #title-projects { opacity: 0; top: 50%; }
-        .city { opacity: 1; top: 30%; transform: scale(1.8);  }
-        #title-city { opacity: 1; top: 75%; transform: scale(1); }
-      }
-      &.stage6 {
-        transform: scale(0.5) translate(61%, 60%); 
-        opacity: 0;
-        .projects { top: 20%; opacity: 1; transform: scale(1); opacity: 0; }
-        #title-projects { opacity: 0; top: 50%; }
-        .city { opacity: 1; top: 30%; transform: scale(1.8);  }
-        #title-city { opacity: 1; top: 75%; transform: scale(1); }
-      }
+    &.stage2 {
+      #asteroids-main, #planet-main, #title-intro, #developer { opacity: 1; }
+
+      #title-intro { top: 10%; }
+      #asteroids-main { animation: leftToRight 20s ease infinite; }
+      #planet-main { transform: scale(0.8); top: 15%; left: -10%;}
+      #developer { top: 50%; left: 50%; transform: scale(0.8);  }
+      #title-layers { top: 50%; left: 150%; transform: scale(3);}
     }
-    &.star {
-      #title-star { opacity: 1; }
-      .glow-star { opacity: 1; }
-      .star-unique { opacity: 1; }
 
-      .constellation {  opacity: 0; }
-      #title-constellation {  opacity: 0; }
+    &.stage3 {
+      #asteroids-main, #planet-main, #title-intro, #developer { opacity: 1; }
 
-      .citadel-internal { opacity: 0; }
-      .citadel-external { opacity: 0; }
-      .citadel-external-2 { opacity: 0; }
+      #title-intro { top: 30%; left: -200%; transform: scale(1.5); }
+      #asteroids-main { animation: leftToRight 20s ease infinite; }
+      #planet-main { top: 10%; left: 0; transform: scale(5); opacity: 0;  }
+      #developer { top: 50%; left: 50%; transform: scale(6); opacity: 0;  }
 
-      &.stage0 {
-        #title-star { transform: translate(-300%, -100%) scale(4); }
-        .glow-star { transform: translate(-800%, -100%) scale(6) rotate(30deg); }
-        .star-unique { transform: translate(-500%, -100%) scale(10); }
-      }
-      &.stage1 {
-        #title-star { transform: translate(0, -100%) scale(1); }
-        .glow-star { transform: translate(0, 10%) scale(2) rotate(-30deg); }
-        .star-unique { transform: translate(0, 50%) scale(1.5); }
-      }
-      &.stage2 {
-        #title-star { transform: translate(0, -00%) scale(1) rotate(-5deg); }
-        .glow-star { transform: translate(0, 0) scale(1.5) rotate(10deg); }
-        .star-unique { transform: translate(0, 50%) scale(1) rotate(-10deg); }
-      }
-      &.stage3 {
-        .glow-star, #title-star { opacity: 0; }
-        .constellation { opacity: 0.5; transform: translate(-88%, 9%) scale(3); }
-        .star-unique { transform: translate(0, 60%) scale(0.8) rotate(10deg); }
-      }
-      &.stage4 {
-        .glow-star, #title-star { opacity: 0; }
-        .constellation {  opacity: 1; transform: translate(-10%, 40%) scale(1.8);  }
-        .star-unique { transform: translate(-5%, 70%) scale(0.4) rotate(-20deg); }
-
-        .citadel-external { opacity: 0; transform: translate(-0%, 0%) scale(6) rotate(-1deg); }
-      }
-      &.stage5 {
-        .glow-star, #title-star { opacity: 0; }
-        .constellation {  opacity: 0; transform: translate(-0%, 0%) scale(1);  }
-        .star-unique { transform: translate(-5%, 70%) scale(0.2) rotate(-30deg); }
-        .citadel-external { opacity: 0.5; transform: translate(-0%, 0%) scale(3) rotate(-1deg); }
-        .citadel-internal { opacity: 0; transform: translate(-0%, 0%) scale(0) rotate(0deg); }
-      }
-      &.stage6 {
-        .glow-star, #title-star { opacity: 0; }
-        .constellation {  opacity: 0; transform: translate(-0%, 0%) scale(1);  }
-        .star-unique { transform: translate(-5%, 70%) scale(0.1) rotate(-90deg); }
-        .citadel-external { opacity: 1; transform: translate(-0%, 0%) scale(3) rotate(-30deg); }
-        .citadel-internal { opacity: 0.5; transform: translate(-0%, 0%) scale(1) rotate(10deg); }
-        .citadel-external-2 { opacity: 0; transform: translate(-0%, 0%) scale(10) rotate(0deg); } 
-      }
-      &.stage7 {
-        .glow-star, #title-star, .constellation { opacity: 0; }
-        .star-unique { transform: translate(-5%, 70%) scale(0) rotate(-120deg); }
-        .citadel-external { opacity: 1; transform: translate(-0%, 0%) scale(3) rotate(-60deg); }
-        .citadel-internal { opacity: 1; transform: translate(-0%, 0%) scale(1.5) rotate(50deg); }
-        .citadel-external-2 { opacity: 0.3; transform: translate(-0%, 0%) scale(6) rotate(40deg); } 
-      }
-      &.stage8 {
-        .glow-star, .star-unique, #title-star, .constellation { opacity: 0; }
-        .star-unique { transform: translate(-5%, 70%) scale(0) rotate(0); opacity: 0; }
-        .citadel-external { opacity: 0.5; transform: translate(-0%, 0%) scale(7) rotate(-60deg); }
-        .citadel-internal { opacity: 0.5; transform: translate(-0%, 0%) scale(1) rotate(50deg); }
-        .citadel-external-2 { opacity: 1; transform: translate(-0%, 0%) scale(3) rotate(70deg); } 
-      }
-      &.stage9 {
-        .glow-star, .star-unique, #title-star, .constellation { opacity: 0; }
-        .citadel-external { opacity: 0; transform: translate(-0%, 0%) scale(7) rotate(-50deg); }
-        .citadel-internal { opacity: 0.5; transform: translate(-0%, 0%) scale(1) rotate(40deg); }
-        .citadel-external-2 { opacity: 0.5; transform: translate(-0%, 0%) scale(3) rotate(90deg); } 
-      }
-      &.stage10 {
-        .glow-star, .star-unique, #title-star, .constellation { opacity: 0; }
-        .citadel-external { opacity: 0; transform: translate(-0%, 0%) scale(7) rotate(-50deg); }
-        .citadel-internal { opacity: 0; transform: translate(-0%, 0%) scale(1) rotate(10deg); }
-        .citadel-external-2 { opacity: 0; transform: translate(-0%, 0%) scale(3) rotate(120deg); } 
-      }
+      #ateroids-planet-layers { top: 30%; left: 50%; transform: scale(1.5); opacity: 0; }
+      #planet-main-layers { transform: scale(3) translate(50% , 0%); opacity: 0; }
+      #title-layers { top: 50%; left: 0%; transform: scale(1.3); opacity: 1; }
     }
-    &.dark-planet {
 
-      .stars-dark-planet { opacity: 0;}
-      .dark-planet { opacity: 0; }
-      .astronaut-1 { opacity: 0; }
-      .astronaut-2 { opacity: 0; }
-
-      &.stage0 {
-        .stars-dark-planet { opacity: 0; transform: translate(-0%, 0%) scale(10) rotate(0deg) }
-        .dark-planet { opacity: 0; transform: translate(-0%, 0%) scale(10) rotate(0deg) }
-      }
-      &.stage1 {
-        .stars-dark-planet { opacity: 1; transform: translate(-0%, 0%) scale(2) rotate(10deg) }
-        .dark-planet { opacity: 0.5; transform: translate(-0%, 50%) scale(3) rotate(-10deg) }
-        .astronaut-1 { opacity: 0; transform: translate(-0%, 0%) scale(2) rotate(10deg) }
-        
-      }
-      &.stage2 {
-        .stars-dark-planet { opacity: 1; transform: translate(-0%, 50%) scale(2) rotate(15deg) }
-        .dark-planet { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(-5deg) }
-        .astronaut-1 { opacity: 1; transform: translate(-0%, 0%) scale(1.5) rotate(30deg) }
-        .astronaut-2 { opacity: 0.5; transform: translate(-100%, 100%) scale(2) rotate(0deg) }
-      }
-      &.stage3 {
-        .stars-dark-planet { opacity: 1; transform: translate(-0%, 50%) scale(1.8) rotate(15deg) }
-        .dark-planet { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(10deg) }
-        .astronaut-1 { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(20deg) }
-        .astronaut-2 { opacity: 1; transform: translate(0%, 0%) scale(1) rotate(20deg) }
-      }
-      &.stage4 {
-        .stars-dark-planet { opacity: 1; transform: translate(-0%, 50%) scale(1.8) rotate(15deg) }
-        .dark-planet { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(10deg) }
-        .astronaut-1 { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(20deg) }
-        .astronaut-2 { opacity: 1; transform: translate(0%, 0%) scale(1) rotate(20deg) }
-      }
-      &.stage5 {
-        .stars-dark-planet { opacity: 0; transform: translate(-0%, 50%) scale(2) rotate(30deg) }
-        .dark-planet { opacity: 0; transform: translate(-0%, 0%) scale(0.5) rotate(10deg) }
-        .astronaut-1 { opacity: 0; transform: translate(-40%, -40%) scale(0.6) rotate(20deg) }
-        .astronaut-2 { opacity: 0; transform: translate(70%, -70%) scale(0.6) rotate(20deg) }
-      }
-    }
-    &.end {
-      .rocks-top-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-      .rocks-top-right { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-      .rocks-bottom-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-      .rocks-bottom-right { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-      .rocks-bottom-center { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-      #title-end { top: 29%; opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
+    // LAYERS
+    &.stage4 {
+      #asteroids-main, #ateroids-planet-layers, #planet-main-layers, #title-layers  { opacity: 1; }
+      #title-intro { top: 30%; left: -300%; transform: scale(1); opacity: 0; }
       
-      &.stage0 {
-        .rocks-top-left { opacity: 1; transform: translate(-200%, 0%) scale(1) rotate(0deg) }
-        .rocks-top-right { opacity: 1; transform: translate(200%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-left { opacity: 1; transform: translate(-100%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-right { opacity: 1; transform: translate(100%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-center { opacity: 1; transform: translate(-0%, 200%) scale(1) rotate(0deg) }
-        #title-end { top: 50%; opacity: 0; transform: translate(-0%, 0%) scale(3) rotate(0deg) }
-      }
-      &.stage1 {
-        .rocks-top-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        .rocks-top-right { opacity: 1; transform: translate(0%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-left { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-right { opacity: 1; transform: translate(0%, 0%) scale(1) rotate(0deg) }
-        .rocks-bottom-center { opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-        #title-end { top: 30%; opacity: 1; transform: translate(-0%, 0%) scale(1) rotate(0deg) }
-      }
-      &.stage2 {
-        .rocks-top-left { opacity: 1; transform: translate(-0%, -200%) scale(1) rotate(0deg) }
-        .rocks-top-right { opacity: 1; transform: translate(0%, -200%) scale(1) rotate(0deg) }
-        .rocks-bottom-left { opacity: 1; transform: translate(-0%, -200%) scale(1) rotate(0deg) }
-        .rocks-bottom-right { opacity: 1; transform: translate(0%, -200%) scale(1) rotate(0deg) }
-        .rocks-bottom-center { opacity: 1; transform: translate(-0%, -200%) scale(1) rotate(0deg) }
-        #title-end { top: 10%; opacity: 1; transform: translate(-0%, -0%) scale(1) rotate(0deg) }
-      }
+      #asteroids-main { animation: leftToRight 20s ease infinite;  transform: scale(1); }
+      #ateroids-planet-layers { top: 30%; left: 0%; transform: scale(1.5); }
+      #planet-main-layers { transform: scale(3) translate(50% , 0%); }
+      #title-layers { top: 50%; left: 0%; transform: scale(1.3); opacity: 1; }
     }
+    &.stage5 {
+      #asteroids-main, #ateroids-planet-layers, #planet-main-layers, #title-layers  { opacity: 1; }
+
+      #ateroids-planet-layers { transform: scale(2) translate(0% , 0%); }
+      #planet-main-layers { top: 10%; transform: scale(1.5) rotate(30deg); }
+      #title-layers { transform: scale(1) translate(0% , 0%); }
+    }
+
+    &.stage6 {
+      #asteroids-main, #ateroids-planet-layers, #planet-main-layers, #title-layers  { opacity: 1; }
+      
+      #ateroids-planet-layers { transform: scale(2) translate(20% , 0%);}
+      #planet-main-layers { left: 110%; transform: scale(1) rotate(60deg); }
+      #title-layers { left: -30%; transform: scale(1); }
+    }
+
+    &.stage7 {
+      #asteroids-main, #ateroids-planet-layers, #planet-main-layers, #title-layers  { opacity: 1; }
+      
+      #asteroids-main { opacity: 0; }
+      #ateroids-planet-layers { opacity: 0; transform: scale(2) translate(20% , 0%);}
+      #planet-main-layers { top: 90%; left: 0%; right: 45%; transform: scale(1.8) rotate(90deg); }
+      #title-layers { left: -0%; transform: scale(1); }
+    }
+
+    // PROJECTS 
+    &.stage8 {
+      #title-projects  { opacity: 1; }
+      
+      #planet-main-layers { top: 20%; left: 0%; right: 45%; transform: scale(1) rotate(90deg); }
+      #title-layers { top: 10%; left: -0%; transform: scale(1); }
+
+      #title-projects { top: 50%; }
+    }
+    &.stage9 {
+      #title-projects, #projects  { opacity: 1; }
+
+      #projects { top: 30%; }
+      #title-projects { top: 10%; }
+      #city { top: 100%; }
+    }
+    &.stage10 {
+      #title-projects, #projects, #city  { opacity: 1; }
+
+      #projects { top: 30%; }
+      #title-projects { top: 10%; }
+      #city { top: 100%; transform: scale(2); }
+    }
+    &.stage11 {
+      #title-projects, #projects, #city, #title-city  { opacity: 1; }
+
+      #projects { top: 20%; transform: scale(0.8); }
+      #title-projects { top: 5%;  transform: scale(0.8); }
+      #city { top: 50%; transform: scale(1);  }
+      #title-city { top: 100%; transform: scale(2); opacity: 0; }
+    }
+    &.stage12 {
+      #title-projects, #projects, #city, #title-city { opacity: 1; }
+
+      #projects { top: -100%; transform: scale(0.8); }
+      #title-projects { top: -100%;  transform: scale(0.8); }
+      #city { top: 20%; transform: scale(1.3);  }
+      #title-city { top: 75%; transform: scale(1); }
+
+      #title-star { top:10%; transform: scale(0.5); }
+      #glow-star { transform: scale(1) rotate(30deg); opacity: 0.3; }
+      #star-unique { transform: scale(0) rotate(60deg);  }
+    }
+
+    
+    // STARS
+    &.stage13 {
+      #title-star, #glow-star, #star-unique { opacity: 1; }
+
+      #title-star { top:70%; transform: scale(1); }
+      #glow-star { transform: scale(1.3) rotate(120deg); }
+      #star-unique { transform: scale(1); }
+    }
+    &.stage14 {
+      #title-star, #glow-star, #star-unique, #constellation { opacity: 1; }
+
+      #title-star { top: 10%; transform: scale(1); }
+      #glow-star { transform: scale(0) rotate(280deg); }
+      #star-unique { transform: scale(0.8); }
+      #constellation { left: -18%; top: -5%; transform: scale(3); }
+      #title-constellation { width: 100%; top: 100%; transform: scale(0.5);}
+    }
+
+    &.stage15 {
+      #star-unique, #constellation, #title-constellation { opacity: 1; }
+
+      #title-star { top: -100%; transform: scale(1); }
+      #star-unique { top: 48%; left: 8%; transform: scale(0.5); }
+      #constellation { left: 0%; top: 20%; transform: scale(1.4); }
+      #title-constellation { width: 100%; top: 80%; transform: scale(0.5);}
+
+      #citadel-internal { top: 35%; left: 8%; transform: scale(1.5) rotate(280deg);  }
+      #citadel-external {  top: 35%; left: 6%; transform: scale(4) rotate(250deg); }
+    }
+    &.stage16 {
+      #star-unique, #constellation, #title-constellation { opacity: 1; }
+      #star-unique, #constellation, #citadel-internal, #citadel-external { opacity: 1; }
+      
+      #title-star { top: -100%; transform: scale(1); }
+      #star-unique { top: 48%; left: 8%; transform: scale(0.5); }
+      #constellation { left: 0%; top: 20%; transform: scale(0); }
+      #title-constellation { width: 100%; top: 120%; transform: scale(0.5); opacity: 0;}
+      
+      #citadel-internal { top: 35%; left: 6%; transform: scale(0.5) rotate(240deg); }
+      #citadel-external {  top: 38%; left: 16%; transform: scale(2) rotate(300deg); }
+    }
+    &.stage17 {
+      #star-unique, #citadel-internal, #citadel-external { opacity: 1; }
+      
+      #star-unique { top: 40%; left: 0%; transform: scale(0.3); }
+      #citadel-internal { top: 30%; left: -3%; transform: scale(0.8) rotate(200deg); }
+      #citadel-external {  top: 30%; left: 0%; transform: scale(2) rotate(360deg); }
+      #citadel-external-2 { top: 30%; left: -3%; transform: scale(4) rotate(200deg); }
+    }
+    &.stage18 {
+      #star-unique, #citadel-internal, #citadel-external, #citadel-external-2 { opacity: 1; }
+      
+      #star-unique { top: 40%; left: 0%; transform: scale(0); }
+      #citadel-internal { top: 30%; left: -3%; transform: scale(0.5) rotate(180deg); opacity: 0.5;}
+      #citadel-external {  top: 30%; left: 0%; transform: scale(1.5) rotate(420deg); }
+      #citadel-external-2 { top: 30%; left: -3%; transform: scale(3) rotate(200deg); }
+    }
+    &.stage19 {
+      #star-unique, #citadel-internal, #citadel-external, #citadel-external-2, #stars-dark-planet  { opacity: 1; }
+      
+      #star-unique { top: 40%; left: 0%; transform: scale(0); }
+      #citadel-internal { top: 30%; left: -3%; transform: scale(0) rotate(100deg); opacity: 0.5;}
+      #citadel-external {  top: 30%; left: 0%; transform: scale(0.8) rotate(520deg); }
+      #citadel-external-2 { top: 30%; left: -3%; transform: scale(1.8) rotate(100deg); }
+      #dark-planet { transform: scale(3) rotate(0deg) }
+      #stars-dark-planet { transform: scale(4) rotate(0deg) }
+    }
+    &.stage20 {
+      #citadel-external, #citadel-external-2, #dark-planet, #stars-dark-planet { opacity: 1; }
+      
+      #citadel-external {  top: 30%; left: 0%; transform: scale(0) rotate(620deg); }
+      #citadel-external-2 { top: 30%; left: -3%; transform: scale(1) rotate(0deg); opacity: 0; }
+      #dark-planet { top: 35%; transform: scale(1) rotate(0deg) }
+      #stars-dark-planet { transform: scale(1.5) rotate(50deg) }
+    }
+
+    //DARK PLANET
+    &.stage21 {
+      #citadel-external, #citadel-external-2, #dark-planet, #stars-dark-planet, #astronaut-1, #astronaut-2 { opacity: 1; }
+      
+      #citadel-external {  top: 30%; left: 0%; transform: scale(0) rotate(620deg); }
+      #citadel-external-2 { top: 30%; left: -3%; transform: scale(1) rotate(0deg); opacity: 0; }
+      #dark-planet { top: 35%; transform: scale(1) rotate(0deg) }
+      #stars-dark-planet { transform: scale(1.5) rotate(50deg) }
+      #astronaut-1 { top:60%; left: 40%; transform: scale(1.5) rotate(40deg) }
+      #astronaut-2 { top:100%; left: -100%; opacity: 0.5; transform: scale(2) rotate(0deg) }
+    }
+    &.stage22 {
+      #dark-planet, #stars-dark-planet, #astronaut-1, #astronaut-2 { opacity: 1; }
+      
+      #dark-planet { top: 35%; transform: scale(1) rotate(0deg) }
+      #stars-dark-planet { transform: scale(1.5) rotate(100deg) }
+      #astronaut-1 { top:50%; left: 30%; transform: scale(1) rotate(0deg) }
+      #astronaut-2 { top:50%; left: -50%;  transform: scale(1) rotate(0deg) }
+
+      #rocks-top-left { top: 0%; left: -200%; transform:  scale(1) rotate(0deg) }
+      #rocks-top-right { top: 0%; left: 200%;  transform: scale(1) rotate(0deg) }
+      #rocks-bottom-left { top: 0%; left: -150%;  transform:  scale(1) rotate(0deg) }
+      #rocks-bottom-right { top: 0%; left: 150%;  transform: scale(1) rotate(0deg) }
+      #rocks-bottom-center { top: 200%; left: 0%;  transform:  scale(1) rotate(0deg) }
+      #title-end { top: 50%; opacity: 0; transform: translate(-0%, 0%) scale(3) rotate(0deg) }
+    }
+    &.stage23 {
+      #dark-planet, #stars-dark-planet, #astronaut-1, #astronaut-2 { opacity: 1; }
+      #rocks-top-left, #rocks-top-right, #rocks-bottom-left, #rocks-bottom-right, #rocks-bottom-center, #title-end { opacity: 1; }
+      
+      #dark-planet { top: 35%; transform: scale(0) rotate(80deg) }
+      #stars-dark-planet { transform: scale(1) rotate(150deg) }
+      #astronaut-1 { top:50%; left: 30%; transform: scale(0) rotate(-40deg) }
+      #astronaut-2 { top:50%; left: -50%;  transform: scale(0) rotate(30deg) }
+
+      #rocks-top-left { top: 10%; left: 10%; transform:  scale(1) rotate(0deg) }
+      #rocks-top-right { top: 10%; left: 90%;  transform: scale(1) rotate(0deg) }
+      #rocks-bottom-left { top: 80%; left: 0%;  transform:  scale(1) rotate(0deg) }
+      #rocks-bottom-right { top: 80%; left: 0%;  transform: scale(1) rotate(0deg) }
+      #rocks-bottom-center { top: 100%; left: 0%;  transform:  scale(1) rotate(0deg) }
+      #title-end { top: 50%; opacity: 0; transform: translate(-0%, 0%) scale(3) rotate(0deg) }
+    }
+    &.stage24 {
+      #rocks-top-left, #rocks-top-right, #rocks-bottom-left, #rocks-bottom-right, #rocks-bottom-center, #title-end { opacity: 1; }
+      
+      #dark-planet { transform: scale(0) }
+      #stars-dark-planet { transform: scale(0) }
+      #astronaut-1 { transform: scale(0) }
+      #astronaut-2 { transform: scale(0) }
+
+      #rocks-top-left { top: 10%; left: 10%; transform:  scale(1) rotate(0deg) }
+      #rocks-top-right { top: 10%; left: 90%;  transform: scale(1) rotate(0deg) }
+      #rocks-bottom-left { top: 80%; left: 0%;  transform:  scale(1) rotate(0deg) }
+      #rocks-bottom-right { top: 80%; left: 0%;  transform: scale(1) rotate(0deg) }
+      #rocks-bottom-center { top: 70%; left: 0%;  transform:  scale(1) rotate(0deg) }
+      #title-end { top: 10%; transform: scale(1) rotate(0deg) }
+      
+    }
+    &.stage25 {
+      #rocks-top-left, #rocks-top-right, #rocks-bottom-left, #rocks-bottom-right, #rocks-bottom-center, #title-end { opacity: 1; }
+      
+      #dark-planet { transform: scale(0) }
+      #stars-dark-planet { transform: scale(0) }
+      #astronaut-1 { transform: scale(0) }
+      #astronaut-2 { transform: scale(0) }
+
+      #rocks-top-left { top: 40%; left: 10%; transform:  scale(0) rotate(0deg) }
+      #rocks-top-right { top: 40%; left: 90%;  transform: scale(0) rotate(0deg) }
+      #rocks-bottom-left { top: 80%; right: 50%;  transform:  scale(0) rotate(0deg) }
+      #rocks-bottom-right { top: 80%; right: 50%;  transform: scale(0) rotate(0deg) }
+      #rocks-bottom-center { top: 10%; left: 0%;  transform:  scale(0.6) rotate(0deg) }
+      #title-end { top: 40%; transform: scale(1) rotate(0deg) }
+      
+    }
+
   }
 
   .anim {

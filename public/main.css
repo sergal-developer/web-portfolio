@@ -215,13 +215,15 @@ body section {
 }
 body section .title {
   position: absolute;
-  width: 50%;
+  width: 80%;
   left: 0;
   right: 0;
+  top: 50%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   line-height: 1;
+  transition: all 300ms;
 }
 body section .title h1 {
   font-size: 5em;
@@ -252,413 +254,794 @@ body section .image {
   margin-left: auto;
   margin-right: auto;
 }
-body section .image.asteroids-main {
-  width: 80%;
-}
-body section .image.planet-main {
-  width: 50%;
+body section #planet-main {
   top: 23%;
 }
-body section .image.developer {
+body section #developer {
   top: 52%;
-  width: 22%;
   left: 22%;
 }
-body section .image.ateroids-planet-layers {
+body section #title-intro {
+  top: 10%;
+}
+body section #ateroids-planet-layers {
   width: 58%;
   margin-left: 6%;
   top: 14%;
 }
-body section .image.planet-main-layers {
+body section #planet-main-layers {
   margin-right: -15%;
   width: 45%;
   top: 10%;
 }
-body section .image.projects {
+body section #projects {
   width: 35%;
   top: 23%;
 }
-body section .image.city {
+body section #city {
   width: 37%;
   top: 14%;
 }
-body section .image.glow-star {
+body section #glow-star {
   width: 45%;
   top: 25%;
 }
-body section .image.start {
+body section #star-unique {
   width: 18%;
   top: 36%;
 }
-body section .image.constellation {
+body section #constellation {
   width: 75%;
   top: 10%;
 }
-body section .image.citadel-internal {
-  top: 29%;
-  left: 8%;
+body section #citadel-external-2 {
+  width: 50%;
+  top: calc(50% - 170px);
 }
-body section .image.citadel-external {
-  width: 75%;
-  top: 6%;
+body section #citadel-external {
+  width: 50%;
+  top: calc(50% - 170px);
 }
-body section .image.stars-dark-planet {
-  width: 80%;
+body section #citadel-internal {
+  width: 50%;
+  top: calc(50% - 170px);
+}
+body section #stars-dark-planet {
   top: 5%;
 }
-body section .image.dark-planet {
+body section #dark-planet {
   top: 25%;
 }
-body section .image.astronaut-1 {
+body section #astronaut-1 {
   top: 49%;
   left: 32%;
   width: 19%;
 }
-body section .image.astronaut-2 {
+body section #astronaut-2 {
   top: 49%;
   left: -62%;
   width: 30%;
 }
-body section .image.rocks-top-left {
+body section #rocks-top-left {
   width: 25%;
   margin-left: 0;
   left: 18%;
   top: 4%;
 }
-body section .image.rocks-top-right {
+body section #rocks-top-right {
   width: 25%;
   margin-right: 0;
   right: 18%;
   top: 4%;
 }
-body section .image.rocks-bottom-left {
+body section #rocks-bottom-left {
   width: 25%;
   margin-left: 0;
   left: -7%;
   bottom: 4%;
 }
-body section .image.rocks-bottom-right {
+body section #rocks-bottom-right {
   width: 25%;
   margin-right: 0;
   right: -7%;
   bottom: 4%;
 }
-body section .image.rocks-bottom-center {
+body section #rocks-bottom-center {
   width: 20%;
   bottom: 1%;
 }
-body section.intro .title {
-  top: 6%;
-}
-body section.intro .asteroids-main {
-  width: 150%;
-}
-body section.intro .planet-main {
-  top: 43%;
-  left: 0;
-}
-body section.intro .developer {
-  opacity: 0;
-  top: 60%;
-  left: -10%;
-}
-body section.intro.stage0 .title {
-  top: 3%;
-}
-body section.intro.stage0 .asteroids-main {
-  transform: scale(1.8);
-}
-body section.intro.stage0 .developer {
+body section .anim {
   opacity: 0;
 }
-body section.intro.stage0 .planet-main {
+body section.stage0 #asteroids-main, body section.stage0 #planet-main, body section.stage0 #title-intro {
+  opacity: 1;
+}
+body section.stage0 #asteroids-main {
+  transform: scale(1.5);
+}
+body section.stage0 #planet-main {
   transform: scale(2);
+  top: 90%;
 }
-body section.intro.stage1 .title {
+body section.stage0 #developer {
+  top: 52%;
+  width: 22%;
+  left: 22%;
+}
+body section.stage0 #title-intro {
   top: 15%;
 }
-body section.intro.stage1 .asteroids-main {
+body section.stage1 #asteroids-main, body section.stage1 #planet-main, body section.stage1 #title-intro, body section.stage1 #developer {
+  opacity: 1;
+}
+body section.stage1 #asteroids-main {
   transform: scale(1.1);
 }
-body section.intro.stage1 .planet-main {
+body section.stage1 #planet-main {
   transform: scale(1);
   top: 25%;
 }
-body section.intro.stage1 .developer {
+body section.stage1 #developer {
   opacity: 0;
   top: 80%;
   left: 20%;
 }
-body section.intro.stage2 .title {
-  top: 22%;
+body section.stage1 #title-intro {
+  top: 10%;
 }
-body section.intro.stage2 .asteroids-main {
+body section.stage2 #asteroids-main, body section.stage2 #planet-main, body section.stage2 #title-intro, body section.stage2 #developer {
+  opacity: 1;
+}
+body section.stage2 #title-intro {
+  top: 10%;
+}
+body section.stage2 #asteroids-main {
   animation: leftToRight 20s ease infinite;
 }
-body section.intro.stage2 .planet-main {
-  transform: scale(1);
-  top: 30%;
-  left: 5%;
+body section.stage2 #planet-main {
+  transform: scale(0.8);
+  top: 15%;
+  left: -10%;
 }
-body section.intro.stage2 .developer {
-  opacity: 1;
-  top: 55%;
-  left: 46%;
-}
-body section.intro.stage3 {
-  transform: matrix(1, 0, -1, 1, 2, 1);
-}
-body section.intro.stage3 .title {
-  top: 22%;
-}
-body section.intro.stage3 .planet-main {
-  transform: scale(1);
-  top: 30%;
-  left: 5%;
-}
-body section.intro.stage3 .developer {
-  opacity: 1;
-  top: 55%;
-  left: 46%;
-}
-body section.layers .title {
-  top: 44%;
-  left: -25%;
-}
-body section.layers.stage0 .ateroids-planet-layers {
-  transform: scale(2) translate(-50%, 0%);
-}
-body section.layers.stage0 .planet-main-layers {
-  transform: scale(3) translate(50%, 0%);
-}
-body section.layers.stage0 .title {
-  transform: scale(2) translate(50%, 0%);
-}
-body section.layers.stage1 .ateroids-planet-layers {
-  transform: scale(2) translate(0%, 0%);
-}
-body section.layers.stage1 .planet-main-layers {
-  transform: scale(2) translate(10%, 0%) rotate(30deg);
-}
-body section.layers.stage1 .title {
-  transform: scale(1) translate(0%, 0%);
-}
-body section.layers.stage2 .ateroids-planet-layers {
-  transform: scale(2) translate(20%, 0%);
-}
-body section.layers.stage2 .planet-main-layers {
-  transform: scale(1) translate(30%, 0%) rotate(60deg);
-}
-body section.layers.stage2 .title {
-  transform: scale(1) translate(0%, 0%);
-}
-body section.layers.stage3 .ateroids-planet-layers {
-  transform: scale(1) translate(0%, 0%);
-}
-body section.layers.stage3 .planet-main-layers {
-  transform: scale(1) translate(0%, 0%) rotate(0deg);
-}
-body section.layers.stage3 .title {
-  transform: scale(1) translate(0%, 0%);
-}
-body section.projects .title {
-  top: 10%;
-}
-body section.projects .projects {
-  top: 35%;
-  opacity: 0;
-}
-body section.projects .city {
-  opacity: 0;
-  top: 30%;
-  transform: scale(3);
-}
-body section.projects #title-projects {
-  opacity: 0;
-}
-body section.projects #title-city {
-  opacity: 0;
-}
-body section.projects.stage0 #title-projects {
+body section.stage2 #developer {
   top: 50%;
-}
-body section.projects.stage1 .projects {
-  top: 100%;
-}
-body section.projects.stage1 #title-projects {
-  opacity: 1;
-  top: 10%;
-}
-body section.projects.stage2 .projects {
-  top: 35%;
-  opacity: 1;
-}
-body section.projects.stage2 #title-projects {
-  opacity: 1;
-  top: 10%;
-}
-body section.projects.stage2 .city {
-  top: 100%;
-}
-body section.projects.stage3 .projects {
-  top: 20%;
-  opacity: 1;
+  left: 50%;
   transform: scale(0.8);
 }
-body section.projects.stage3 #title-projects {
+body section.stage2 #title-layers {
+  top: 50%;
+  left: 150%;
+  transform: scale(3);
+}
+body section.stage3 #asteroids-main, body section.stage3 #planet-main, body section.stage3 #title-intro, body section.stage3 #developer {
   opacity: 1;
+}
+body section.stage3 #title-intro {
+  top: 30%;
+  left: -200%;
+  transform: scale(1.5);
+}
+body section.stage3 #asteroids-main {
+  animation: leftToRight 20s ease infinite;
+}
+body section.stage3 #planet-main {
+  top: 10%;
+  left: 0;
+  transform: scale(5);
+  opacity: 0;
+}
+body section.stage3 #developer {
+  top: 50%;
+  left: 50%;
+  transform: scale(6);
+  opacity: 0;
+}
+body section.stage3 #ateroids-planet-layers {
+  top: 30%;
+  left: 50%;
+  transform: scale(1.5);
+  opacity: 0;
+}
+body section.stage3 #planet-main-layers {
+  transform: scale(3) translate(50%, 0%);
+  opacity: 0;
+}
+body section.stage3 #title-layers {
+  top: 50%;
+  left: 0%;
+  transform: scale(1.3);
+  opacity: 1;
+}
+body section.stage4 #asteroids-main, body section.stage4 #ateroids-planet-layers, body section.stage4 #planet-main-layers, body section.stage4 #title-layers {
+  opacity: 1;
+}
+body section.stage4 #title-intro {
+  top: 30%;
+  left: -300%;
+  transform: scale(1);
+  opacity: 0;
+}
+body section.stage4 #asteroids-main {
+  animation: leftToRight 20s ease infinite;
+  transform: scale(1);
+}
+body section.stage4 #ateroids-planet-layers {
+  top: 30%;
+  left: 0%;
+  transform: scale(1.5);
+}
+body section.stage4 #planet-main-layers {
+  transform: scale(3) translate(50%, 0%);
+}
+body section.stage4 #title-layers {
+  top: 50%;
+  left: 0%;
+  transform: scale(1.3);
+  opacity: 1;
+}
+body section.stage5 #asteroids-main, body section.stage5 #ateroids-planet-layers, body section.stage5 #planet-main-layers, body section.stage5 #title-layers {
+  opacity: 1;
+}
+body section.stage5 #ateroids-planet-layers {
+  transform: scale(2) translate(0%, 0%);
+}
+body section.stage5 #planet-main-layers {
+  top: 10%;
+  transform: scale(1.5) rotate(30deg);
+}
+body section.stage5 #title-layers {
+  transform: scale(1) translate(0%, 0%);
+}
+body section.stage6 #asteroids-main, body section.stage6 #ateroids-planet-layers, body section.stage6 #planet-main-layers, body section.stage6 #title-layers {
+  opacity: 1;
+}
+body section.stage6 #ateroids-planet-layers {
+  transform: scale(2) translate(20%, 0%);
+}
+body section.stage6 #planet-main-layers {
+  left: 110%;
+  transform: scale(1) rotate(60deg);
+}
+body section.stage6 #title-layers {
+  left: -30%;
+  transform: scale(1);
+}
+body section.stage7 #asteroids-main, body section.stage7 #ateroids-planet-layers, body section.stage7 #planet-main-layers, body section.stage7 #title-layers {
+  opacity: 1;
+}
+body section.stage7 #asteroids-main {
+  opacity: 0;
+}
+body section.stage7 #ateroids-planet-layers {
+  opacity: 0;
+  transform: scale(2) translate(20%, 0%);
+}
+body section.stage7 #planet-main-layers {
+  top: 90%;
+  left: 0%;
+  right: 45%;
+  transform: scale(1.8) rotate(90deg);
+}
+body section.stage7 #title-layers {
+  left: 0%;
+  transform: scale(1);
+}
+body section.stage8 #title-projects {
+  opacity: 1;
+}
+body section.stage8 #planet-main-layers {
+  top: 20%;
+  left: 0%;
+  right: 45%;
+  transform: scale(1) rotate(90deg);
+}
+body section.stage8 #title-layers {
+  top: 10%;
+  left: 0%;
+  transform: scale(1);
+}
+body section.stage8 #title-projects {
+  top: 50%;
+}
+body section.stage9 #title-projects, body section.stage9 #projects {
+  opacity: 1;
+}
+body section.stage9 #projects {
+  top: 30%;
+}
+body section.stage9 #title-projects {
+  top: 10%;
+}
+body section.stage9 #city {
+  top: 100%;
+}
+body section.stage10 #title-projects, body section.stage10 #projects, body section.stage10 #city {
+  opacity: 1;
+}
+body section.stage10 #projects {
+  top: 30%;
+}
+body section.stage10 #title-projects {
+  top: 10%;
+}
+body section.stage10 #city {
+  top: 100%;
+  transform: scale(2);
+}
+body section.stage11 #title-projects, body section.stage11 #projects, body section.stage11 #city, body section.stage11 #title-city {
+  opacity: 1;
+}
+body section.stage11 #projects {
+  top: 20%;
+  transform: scale(0.8);
+}
+body section.stage11 #title-projects {
   top: 5%;
   transform: scale(0.8);
 }
-body section.projects.stage3 .city {
-  opacity: 1;
+body section.stage11 #city {
   top: 50%;
-  transform: scale(2);
+  transform: scale(1);
 }
-body section.projects.stage3 #title-city {
+body section.stage11 #title-city {
+  top: 100%;
+  transform: scale(2);
   opacity: 0;
-  top: -20%;
-  transform: scale(2);
 }
-body section.projects.stage4 .projects {
+body section.stage12 #title-projects, body section.stage12 #projects, body section.stage12 #city, body section.stage12 #title-city {
+  opacity: 1;
+}
+body section.stage12 #projects {
+  top: -100%;
+  transform: scale(0.8);
+}
+body section.stage12 #title-projects {
+  top: -100%;
+  transform: scale(0.8);
+}
+body section.stage12 #city {
   top: 20%;
-  opacity: 0;
+  transform: scale(1.3);
+}
+body section.stage12 #title-city {
+  top: 75%;
+  transform: scale(1);
+}
+body section.stage12 #title-star {
+  top: 10%;
   transform: scale(0.5);
 }
-body section.projects.stage4 #title-projects {
-  opacity: 1;
-  top: 50%;
-  transform: scale(0.7);
+body section.stage12 #glow-star {
+  transform: scale(1) rotate(30deg);
+  opacity: 0.3;
 }
-body section.projects.stage4 .city {
+body section.stage12 #star-unique {
+  transform: scale(0) rotate(60deg);
+}
+body section.stage13 #title-star, body section.stage13 #glow-star, body section.stage13 #star-unique {
   opacity: 1;
+}
+body section.stage13 #title-star {
+  top: 70%;
+  transform: scale(1);
+}
+body section.stage13 #glow-star {
+  transform: scale(1.3) rotate(120deg);
+}
+body section.stage13 #star-unique {
+  transform: scale(1);
+}
+body section.stage14 #title-star, body section.stage14 #glow-star, body section.stage14 #star-unique, body section.stage14 #constellation {
+  opacity: 1;
+}
+body section.stage14 #title-star {
+  top: 10%;
+  transform: scale(1);
+}
+body section.stage14 #glow-star {
+  transform: scale(0) rotate(280deg);
+}
+body section.stage14 #star-unique {
+  transform: scale(0.8);
+}
+body section.stage14 #constellation {
+  left: -18%;
+  top: -5%;
+  transform: scale(3);
+}
+body section.stage14 #title-constellation {
+  width: 100%;
+  top: 100%;
+  transform: scale(0.5);
+}
+body section.stage15 #star-unique, body section.stage15 #constellation, body section.stage15 #title-constellation {
+  opacity: 1;
+}
+body section.stage15 #title-star {
+  top: -100%;
+  transform: scale(1);
+}
+body section.stage15 #star-unique {
+  top: 48%;
+  left: 8%;
+  transform: scale(0.5);
+}
+body section.stage15 #constellation {
+  left: 0%;
+  top: 20%;
+  transform: scale(1.4);
+}
+body section.stage15 #title-constellation {
+  width: 100%;
+  top: 80%;
+  transform: scale(0.5);
+}
+body section.stage15 #citadel-internal {
+  top: 35%;
+  left: 8%;
+  transform: scale(1.5) rotate(280deg);
+}
+body section.stage15 #citadel-external {
+  top: 35%;
+  left: 6%;
+  transform: scale(4) rotate(250deg);
+}
+body section.stage16 #star-unique, body section.stage16 #constellation, body section.stage16 #title-constellation {
+  opacity: 1;
+}
+body section.stage16 #star-unique, body section.stage16 #constellation, body section.stage16 #citadel-internal, body section.stage16 #citadel-external {
+  opacity: 1;
+}
+body section.stage16 #title-star {
+  top: -100%;
+  transform: scale(1);
+}
+body section.stage16 #star-unique {
+  top: 48%;
+  left: 8%;
+  transform: scale(0.5);
+}
+body section.stage16 #constellation {
+  left: 0%;
+  top: 20%;
+  transform: scale(0);
+}
+body section.stage16 #title-constellation {
+  width: 100%;
+  top: 120%;
+  transform: scale(0.5);
+  opacity: 0;
+}
+body section.stage16 #citadel-internal {
+  top: 35%;
+  left: 6%;
+  transform: scale(0.5) rotate(240deg);
+}
+body section.stage16 #citadel-external {
+  top: 38%;
+  left: 16%;
+  transform: scale(2) rotate(300deg);
+}
+body section.stage17 #star-unique, body section.stage17 #citadel-internal, body section.stage17 #citadel-external {
+  opacity: 1;
+}
+body section.stage17 #star-unique {
   top: 40%;
-  transform: scale(1.5);
+  left: 0%;
+  transform: scale(0.3);
 }
-body section.projects.stage4 #title-city {
-  opacity: 1;
-  top: 25%;
-  transform: scale(1);
-}
-body section.projects.stage5 .projects {
-  top: 20%;
-  opacity: 1;
-  transform: scale(1);
-  opacity: 0;
-}
-body section.projects.stage5 #title-projects {
-  opacity: 0;
-  top: 50%;
-}
-body section.projects.stage5 .city {
-  opacity: 1;
+body section.stage17 #citadel-internal {
   top: 30%;
-  transform: scale(1.8);
+  left: -3%;
+  transform: scale(0.8) rotate(200deg);
 }
-body section.projects.stage5 #title-city {
-  opacity: 1;
-  top: 75%;
-  transform: scale(1);
-}
-body section.projects.stage6 {
-  transform: scale(0.5) translate(61%, 60%);
-  opacity: 0;
-}
-body section.projects.stage6 .projects {
-  top: 20%;
-  opacity: 1;
-  transform: scale(1);
-  opacity: 0;
-}
-body section.projects.stage6 #title-projects {
-  opacity: 0;
-  top: 50%;
-}
-body section.projects.stage6 .city {
-  opacity: 1;
+body section.stage17 #citadel-external {
   top: 30%;
-  transform: scale(1.8);
+  left: 0%;
+  transform: scale(2) rotate(360deg);
 }
-body section.projects.stage6 #title-city {
-  opacity: 1;
-  top: 75%;
-  transform: scale(1);
+body section.stage17 #citadel-external-2 {
+  top: 30%;
+  left: -3%;
+  transform: scale(4) rotate(200deg);
 }
-body section.star #title-star {
-  opacity: 1;
-}
-body section.star .glow-star {
+body section.stage18 #star-unique, body section.stage18 #citadel-internal, body section.stage18 #citadel-external, body section.stage18 #citadel-external-2 {
   opacity: 1;
 }
-body section.star .star-unique {
-  opacity: 1;
+body section.stage18 #star-unique {
+  top: 40%;
+  left: 0%;
+  transform: scale(0);
 }
-body section.star .constellation {
-  opacity: 0;
-}
-body section.star #title-constellation {
-  opacity: 0;
-}
-body section.star.stage0 #title-star {
-  transform: translate(-300%, -100%) scale(4);
-}
-body section.star.stage0 .glow-star {
-  transform: translate(-800%, -100%) scale(6) rotate(30deg);
-}
-body section.star.stage0 .star-unique {
-  transform: translate(-500%, -100%) scale(10);
-}
-body section.star.stage1 #title-star {
-  transform: translate(0, -100%) scale(1);
-}
-body section.star.stage1 .glow-star {
-  transform: translate(0, 10%) scale(2) rotate(-30deg);
-}
-body section.star.stage1 .star-unique {
-  transform: translate(0, 0) scale(2.5);
-}
-body section.star.stage2 #title-star {
-  transform: translate(0, 0%) scale(1) rotate(-5deg);
-}
-body section.star.stage2 .glow-star {
-  transform: translate(0, 0) scale(1.5) rotate(10deg);
-}
-body section.star.stage2 .star-unique {
-  transform: translate(0, 0) scale(1.5) rotate(-10deg);
-}
-body section.star.stage3 .glow-star, body section.star.stage3 #title-star {
-  opacity: 0;
-}
-body section.star.stage3 .constellation {
+body section.stage18 #citadel-internal {
+  top: 30%;
+  left: -3%;
+  transform: scale(0.5) rotate(180deg);
   opacity: 0.5;
-  transform: translate(-50%, 0%) scale(3);
 }
-body section.star.stage4 .glow-star, body section.star.stage4 .star-unique, body section.star.stage4 #title-star {
+body section.stage18 #citadel-external {
+  top: 30%;
+  left: 0%;
+  transform: scale(1.5) rotate(420deg);
+}
+body section.stage18 #citadel-external-2 {
+  top: 30%;
+  left: -3%;
+  transform: scale(3) rotate(200deg);
+}
+body section.stage19 #star-unique, body section.stage19 #citadel-internal, body section.stage19 #citadel-external, body section.stage19 #citadel-external-2, body section.stage19 #stars-dark-planet {
+  opacity: 1;
+}
+body section.stage19 #star-unique {
+  top: 40%;
+  left: 0%;
+  transform: scale(0);
+}
+body section.stage19 #citadel-internal {
+  top: 30%;
+  left: -3%;
+  transform: scale(0) rotate(100deg);
+  opacity: 0.5;
+}
+body section.stage19 #citadel-external {
+  top: 30%;
+  left: 0%;
+  transform: scale(0.8) rotate(520deg);
+}
+body section.stage19 #citadel-external-2 {
+  top: 30%;
+  left: -3%;
+  transform: scale(1.8) rotate(100deg);
+}
+body section.stage19 #dark-planet {
+  transform: scale(3) rotate(0deg);
+}
+body section.stage19 #stars-dark-planet {
+  transform: scale(4) rotate(0deg);
+}
+body section.stage20 #citadel-external, body section.stage20 #citadel-external-2, body section.stage20 #dark-planet, body section.stage20 #stars-dark-planet {
+  opacity: 1;
+}
+body section.stage20 #citadel-external {
+  top: 30%;
+  left: 0%;
+  transform: scale(0) rotate(620deg);
+}
+body section.stage20 #citadel-external-2 {
+  top: 30%;
+  left: -3%;
+  transform: scale(1) rotate(0deg);
   opacity: 0;
 }
-body section.star.stage5 .glow-star, body section.star.stage5 .star-unique, body section.star.stage5 #title-star {
+body section.stage20 #dark-planet {
+  top: 35%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage20 #stars-dark-planet {
+  transform: scale(1.5) rotate(50deg);
+}
+body section.stage21 #citadel-external, body section.stage21 #citadel-external-2, body section.stage21 #dark-planet, body section.stage21 #stars-dark-planet, body section.stage21 #astronaut-1, body section.stage21 #astronaut-2 {
+  opacity: 1;
+}
+body section.stage21 #citadel-external {
+  top: 30%;
+  left: 0%;
+  transform: scale(0) rotate(620deg);
+}
+body section.stage21 #citadel-external-2 {
+  top: 30%;
+  left: -3%;
+  transform: scale(1) rotate(0deg);
   opacity: 0;
 }
-body section.star.stage6 .glow-star, body section.star.stage6 .star-unique, body section.star.stage6 #title-star {
+body section.stage21 #dark-planet {
+  top: 35%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage21 #stars-dark-planet {
+  transform: scale(1.5) rotate(50deg);
+}
+body section.stage21 #astronaut-1 {
+  top: 60%;
+  left: 40%;
+  transform: scale(1.5) rotate(40deg);
+}
+body section.stage21 #astronaut-2 {
+  top: 100%;
+  left: -100%;
+  opacity: 0.5;
+  transform: scale(2) rotate(0deg);
+}
+body section.stage22 #dark-planet, body section.stage22 #stars-dark-planet, body section.stage22 #astronaut-1, body section.stage22 #astronaut-2 {
+  opacity: 1;
+}
+body section.stage22 #dark-planet {
+  top: 35%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #stars-dark-planet {
+  transform: scale(1.5) rotate(100deg);
+}
+body section.stage22 #astronaut-1 {
+  top: 50%;
+  left: 30%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #astronaut-2 {
+  top: 50%;
+  left: -50%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #rocks-top-left {
+  top: 0%;
+  left: -200%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #rocks-top-right {
+  top: 0%;
+  left: 200%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #rocks-bottom-left {
+  top: 0%;
+  left: -150%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #rocks-bottom-right {
+  top: 0%;
+  left: 150%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #rocks-bottom-center {
+  top: 200%;
+  left: 0%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage22 #title-end {
+  top: 50%;
   opacity: 0;
+  transform: translate(0%, 0%) scale(3) rotate(0deg);
 }
-body section.star.stage7 .glow-star, body section.star.stage7 .star-unique, body section.star.stage7 #title-star {
+body section.stage23 #dark-planet, body section.stage23 #stars-dark-planet, body section.stage23 #astronaut-1, body section.stage23 #astronaut-2 {
+  opacity: 1;
+}
+body section.stage23 #rocks-top-left, body section.stage23 #rocks-top-right, body section.stage23 #rocks-bottom-left, body section.stage23 #rocks-bottom-right, body section.stage23 #rocks-bottom-center, body section.stage23 #title-end {
+  opacity: 1;
+}
+body section.stage23 #dark-planet {
+  top: 35%;
+  transform: scale(0) rotate(80deg);
+}
+body section.stage23 #stars-dark-planet {
+  transform: scale(1) rotate(150deg);
+}
+body section.stage23 #astronaut-1 {
+  top: 50%;
+  left: 30%;
+  transform: scale(0) rotate(-40deg);
+}
+body section.stage23 #astronaut-2 {
+  top: 50%;
+  left: -50%;
+  transform: scale(0) rotate(30deg);
+}
+body section.stage23 #rocks-top-left {
+  top: 10%;
+  left: 10%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage23 #rocks-top-right {
+  top: 10%;
+  left: 90%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage23 #rocks-bottom-left {
+  top: 80%;
+  left: 0%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage23 #rocks-bottom-right {
+  top: 80%;
+  left: 0%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage23 #rocks-bottom-center {
+  top: 100%;
+  left: 0%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage23 #title-end {
+  top: 50%;
   opacity: 0;
+  transform: translate(0%, 0%) scale(3) rotate(0deg);
 }
-body section.star.stage8 .glow-star, body section.star.stage8 .star-unique, body section.star.stage8 #title-star {
-  opacity: 0;
+body section.stage24 #rocks-top-left, body section.stage24 #rocks-top-right, body section.stage24 #rocks-bottom-left, body section.stage24 #rocks-bottom-right, body section.stage24 #rocks-bottom-center, body section.stage24 #title-end {
+  opacity: 1;
 }
-body section.constellation .title {
-  top: 81%;
+body section.stage24 #dark-planet {
+  transform: scale(0);
 }
-body section.citadel .title {
-  top: 9%;
+body section.stage24 #stars-dark-planet {
+  transform: scale(0);
 }
-body section.dark-planet .title {
-  top: 9%;
+body section.stage24 #astronaut-1 {
+  transform: scale(0);
 }
-body section.end .title {
-  top: 29%;
+body section.stage24 #astronaut-2 {
+  transform: scale(0);
+}
+body section.stage24 #rocks-top-left {
+  top: 10%;
+  left: 10%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage24 #rocks-top-right {
+  top: 10%;
+  left: 90%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage24 #rocks-bottom-left {
+  top: 80%;
+  left: 0%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage24 #rocks-bottom-right {
+  top: 80%;
+  left: 0%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage24 #rocks-bottom-center {
+  top: 70%;
+  left: 0%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage24 #title-end {
+  top: 10%;
+  transform: scale(1) rotate(0deg);
+}
+body section.stage25 #rocks-top-left, body section.stage25 #rocks-top-right, body section.stage25 #rocks-bottom-left, body section.stage25 #rocks-bottom-right, body section.stage25 #rocks-bottom-center, body section.stage25 #title-end {
+  opacity: 1;
+}
+body section.stage25 #dark-planet {
+  transform: scale(0);
+}
+body section.stage25 #stars-dark-planet {
+  transform: scale(0);
+}
+body section.stage25 #astronaut-1 {
+  transform: scale(0);
+}
+body section.stage25 #astronaut-2 {
+  transform: scale(0);
+}
+body section.stage25 #rocks-top-left {
+  top: 40%;
+  left: 10%;
+  transform: scale(0) rotate(0deg);
+}
+body section.stage25 #rocks-top-right {
+  top: 40%;
+  left: 90%;
+  transform: scale(0) rotate(0deg);
+}
+body section.stage25 #rocks-bottom-left {
+  top: 80%;
+  right: 50%;
+  transform: scale(0) rotate(0deg);
+}
+body section.stage25 #rocks-bottom-right {
+  top: 80%;
+  right: 50%;
+  transform: scale(0) rotate(0deg);
+}
+body section.stage25 #rocks-bottom-center {
+  top: 10%;
+  left: 0%;
+  transform: scale(0.6) rotate(0deg);
+}
+body section.stage25 #title-end {
+  top: 40%;
+  transform: scale(1) rotate(0deg);
 }
 body .anim {
   transition: all 1000ms;

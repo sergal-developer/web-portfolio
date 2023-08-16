@@ -14,31 +14,18 @@ export class APP {
         // reset when refresh screen
         window.scrollTo(0, 0);
 
-        const sections = document.querySelectorAll('section');
+        const sections = document.querySelectorAll('.application');
         console.log('sections: ', sections);
         sections.forEach((section) => {
             section.classList.add('stage0')
             section.addEventListener('click', () => {
                 const maxStage: number = parseInt(section.getAttribute('max-stage'));
                 const lastStage = section.classList[1];
-                // const currentStage = 
-                let newStage = 
-                    section.classList.contains('stage0') ? 1 :
-                    section.classList.contains('stage1') ? 2 :
-                    section.classList.contains('stage2') ? 3 :
-                    section.classList.contains('stage3') ? 4 :
-                    section.classList.contains('stage4') ? 5 :
-                    section.classList.contains('stage5') ? 6 :
-                    section.classList.contains('stage6') ? 7 :
-                    section.classList.contains('stage7') ? 8 :
-                    section.classList.contains('stage8') ? 9 :
-                    section.classList.contains('stage9') ? 10 :
-                    section.classList.contains('stage10') ? 11 :
-                    section.classList.contains('stage11') ? 12 :
-                    section.classList.contains('stage12') ? 13 :
-                    section.classList.contains('stage13') ? 14 :
-                    section.classList.contains('stage14') ? 15 : 0;
-                
+                let currentStage = parseInt(lastStage.replace('stage', ''));
+                let newStage = currentStage + 1
+                console.log('lastStage: ', lastStage);
+                console.log('newStage: ', newStage);
+
                 newStage = newStage <= maxStage ? newStage : 0;
                 section.classList.replace(lastStage, `stage${ newStage }`)
             });
