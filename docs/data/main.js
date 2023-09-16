@@ -1,4 +1,3 @@
-import { EXPERIENCE } from "./experience";
 export class APP {
     constructor() {
         this.frameCollector = null;
@@ -16,17 +15,12 @@ export class APP {
         this.frameContainer = null;
         this.currentPageClass = 'home';
         this.shapesContainer = null;
-        this.data = {
-            experience: new EXPERIENCE()
-        };
     }
     init() {
         this.setupEvents();
     }
     setupEvents() {
         var _a;
-        const data = this.data.experience.get();
-        console.log('data: ', data);
         this.navBar = document.querySelector(this.navbarName);
         this.frameCollector = document.querySelector(this.frameName);
         this.frames = document.querySelectorAll(this.frameItemsName);

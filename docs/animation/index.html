@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-XFVBECAL">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+		<!-- <link rel="stylesheet" href="scss/main.css"> -->
+		<meta name="generator" content="Astro v2.8.1">
+		
+		<title>SERGAL Portfolio</title>
+	<link rel="stylesheet" href="/_astro/animation.28860e5b.css" /><script type="module">class n{constructor(){this.percentageScroll=0,this.animations=[]}init(){this.setupIntro()}setupIntro(){window.scrollTo(0,0);const o=document.querySelectorAll(".application");console.log("sections: ",o),o.forEach(t=>{t.classList.add("stage0"),t.addEventListener("click",()=>{const s=parseInt(t.getAttribute("max-stage")),l=t.classList[1];let e=parseInt(l.replace("stage",""))+1;console.log("lastStage: ",l),console.log("newStage: ",e),e=e<=s?e:0,t.classList.replace(l,`stage${e}`)})})}setupEvents(){window.scrollTo(0,0),this.setupAnimations(),window.addEventListener("scroll",()=>{console.clear(),this.percentageScroll=this.percentageScrolled(),console.log("percentageScroll: ",this.percentageScroll),this.updateLayout(this.percentageScroll)})}setupAnimations(){this.animations=[{start:0,end:10,items:[{id:"asteroids-main",style:"opacity: 1;"},{id:"planet-main",style:"transform: scale(calc( {RANGE} * ({STEPS} / {RANGE} ) ));"},{id:"developer",style:"opacity: 0;"},{id:"title-intro",style:"opacity: 1; top: calc(10% * {SCROLL});"},{id:"intro",style:"opacity: 1;"}]},{start:10,end:20,items:[{id:"asteroids-main",style:"opacity: 0;"},{id:"planet-main",style:"transform: scale(calc(5 / ({SCROLL})));"},{id:"developer",style:"opacity: 0;"},{id:"title-intro",style:"opacity: 1; top: calc(5 * {SCROLL}%);"},{id:"intro",style:"opacity: 1;"}]},{start:20,end:30,items:[{id:"asteroids-main",style:"opacity: 1;"},{id:"planet-main",style:"transform: scale(1);"},{id:"developer",style:"opacity: 1;"},{id:"title-intro",style:"opacity: 1;"},{id:"intro",style:"opacity: 0;"}]}],this.updateLayout(0)}updateLayout(o){this.animations.forEach(t=>{if(this.percentageScroll>=t.start&&this.percentageScroll<=t.end){console.log("item.id: ",t.start);const s={steps:t.end-t.start,range:t.end-t.start-this.percentageScroll};console.log("values: ",s),t.items.forEach(l=>{const a=document.querySelector(`#${l.id}`);let e=l.style.replace("{SCROLL}",this.percentageScroll);e=e.replace("{RANGE}",s.range),e=e.replace("{STEPS}",s.steps),a?.setAttribute("style",e)})}})}percentageScrolled(){const o=document.documentElement.scrollTop,t=document.documentElement.scrollHeight,s=document.documentElement.clientHeight;return o/(t-s)*100}}const i=new n;window.onload=c=>{i.init(),console.log("loaded demo!")};
+</script></head>
+	<body class="astro-XFVBECAL">
+		
+    <section class="application" max-stage="25">
+
+        <img id="asteroids-main" class="anim image asteroids-main" src="svg/asteroids-main.svg" alt="">
+        <img id="planet-main" class="anim image planet-main" src="svg/planet-main.svg" alt="">
+        <img id="developer" class="anim image developer" src="svg/developer.svg" alt="">
+        <div id="title-intro" class="anim title"><h4>it's Time to...</h4><h1><span>Get</span> Together</h1></div>
+
+        <img id="ateroids-planet-layers" class="anim image ateroids-planet-layers" src="svg/ateroids-planet-layers.svg" alt="">
+        <img id="planet-main-layers" class="anim image planet-main-layers" src="svg/planet-main-layers.svg" alt="">
+        <div id="title-layers" class="anim title"><h1>We do our <span>bit</span></h1></div>
+
+        <img id="projects" class="anim image projects" src="svg/projects.svg" alt="">
+        <div id="title-projects" class="anim title"><h3>Leaders that make <br> people <span>click</span></h3></div>
+
+        <img id="city" class="anim image city" src="svg/city.svg" alt="">
+        <div id="title-city" class="anim title"><h5>Enabling Leaders.</h5></div>
+
+        <img id="glow-star" class="anim image glow-star" src="svg/glow-star.svg" alt="">
+        <img id="star-unique" class="anim image star-unique" src="svg/start.svg" alt="">
+        <div id="title-star" class="anim title"><h3>... to make a comunity <br> that is Star<span>lit</span></h3></div>
+
+        <img id="constellation" class="anim image constellation" src="svg/constellation.svg" alt="">
+        <div id="title-constellation" class="anim title"><h5>Building connections thet are closed knit.</h5></div>
+
+        <img id="citadel-external-2" class="anim image citadel-external-2" src="svg/citadel-external.svg" alt="">
+        <img id="citadel-external" class="anim image citadel-external" src="svg/citadel-external.svg" alt="">
+        <img id="citadel-internal" class="anim image citadel-internal" src="svg/citadel-internal.svg" alt="">
+
+        <img id="stars-dark-planet" class="anim image stars-dark-planet" src="svg/stars-dark-planet.svg" alt="">
+        <img id="dark-planet" class="anim image dark-planet" src="svg/dark-planet.svg" alt="">
+        <img id="astronaut-1" class="anim image astronaut-1" src="svg/astronaut-1.svg" alt="">
+        <img id="astronaut-2" class="anim image astronaut-2" src="svg/astronaut-2.svg" alt="">
+
+        <img id="rocks-top-left" class="anim image rocks-top-left" src="svg/rocks-top-left.svg" alt="">
+        <img id="rocks-top-right" class="anim image rocks-top-right" src="svg/rocks-top-right.svg" alt="">
+        <img id="rocks-bottom-left" class="anim image rocks-bottom-left" src="svg/rocks-bottom-left.svg" alt="">
+        <img id="rocks-bottom-right" class="anim image rocks-bottom-right" src="svg/rocks-bottom-right.svg" alt="">
+        <img id="rocks-bottom-center" class="anim image rocks-bottom-center" src="svg/rocks-bottom-center.svg" alt="">
+        <div id="title-end" class="anim title"><h4>Hey there</h4><h1>It´s time to ...</h1></div>
+    
+    </section>
+
+	</body></html>
