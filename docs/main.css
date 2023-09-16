@@ -1047,10 +1047,6 @@ body .anim {
   transition: all 1000ms;
 }
 
-* * {
-  outline: 1px solid rgba(235, 189, 235, 0.5);
-}
-
 @keyframes leftToRight {
   0% {
     transform: scale(1.2);
