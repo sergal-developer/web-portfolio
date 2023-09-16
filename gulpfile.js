@@ -49,9 +49,13 @@ gulp.task('prepare-deploy', () => {
     .pipe(gulp.dest('./'));
 });
 
+gulp.task("sitename", () => {
+  return gulp.src('./CNAME')
+        .pipe(gulp.dest(config.public));
+});
 
 gulp.task('build', 
-  gulp.series('styles', 'scripts'));
+  gulp.series('styles', 'scripts', 'sitename'));
 
 gulp.task('dev', 
   gulp.series('build', 'watchers-dev' ));
