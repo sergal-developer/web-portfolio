@@ -12,114 +12,488 @@
 		<!-- <link rel="stylesheet" href="scss/main.css"> -->
 		<meta name="generator" content="Astro v2.8.1">
 		
-		<title>SERGAL Portfolio</title>
-	<link rel="stylesheet" href="/main.css" /><script type="module">class o{constructor(){this.frameCollector=null,this.inNavigation=!1,this.currentPage=0,this.transitionDurationFrame=1e3,this.frameName=".page-frame-container",this.frameContainerName=".pfc-area",this.frameContainerWidth="width: calc(100%);",this.frameItemsName=".pfc-area > .item",this.linksName=".navbar .item.page",this.navbarName=".navbar",this.shapesName=".shapes",this.navBar=null,this.frameContainer=null,this.currentPageClass="home",this.shapesContainer=null}init(){this.setupEvents()}setupEvents(){this.navBar=document.querySelector(this.navbarName),this.frameCollector=document.querySelector(this.frameName),this.frames=document.querySelectorAll(this.frameItemsName),this.links=document.querySelectorAll(this.linksName),this.frameContainer=document.querySelector(this.frameContainerName),this.frameContainerWidth=`width: calc(100% * ${this.frames.length});`,this.frameContainer?.setAttribute("style",`${this.frameContainerWidth}`),this.shapesContainer=document.querySelector(this.shapesName),this.links.forEach((t,a)=>{t.addEventListener("click",i=>{this.gotoPage(a,t),document.querySelector("#navbar-menu")?.classList.remove("show")})});const e=document.querySelector("#navbar-menu");document.querySelector("#navbar-menu-button")?.addEventListener("click",t=>{e?.classList.contains("show")?e?.classList.remove("show"):e?.classList.add("show")})}gotoPage(e,s){if(this.inNavigation||this.currentPage===e)return;this.inNavigation=!0,this.currentPage=e;const t=s.getAttribute("data-class");console.log("dataClass: ",t);const a=`-${100*e}%`,i=`transition-duration: ${this.transitionDurationFrame}ms;`,n=`margin-left: ${a};`;this.frameContainer?.setAttribute("style",`${this.frameContainerWidth}${i}${n}`),t&&(this.frameContainer?.classList.replace(this.currentPageClass,t),this.shapesContainer?.classList.replace(this.currentPageClass,t),this.currentPageClass=t),this.frameContainer?.classList.add("moveOn"),setTimeout(()=>{this.frameContainer?.classList.remove("moveOn"),this.inNavigation=!1},this.transitionDurationFrame),this.currentPage!==0?this.navBar?.classList.contains("collapsed")||this.navBar?.classList.add("collapsed"):this.navBar?.classList.remove("collapsed")}}const l=new o;window.onload=r=>{l.init(),console.log("loaded!")};
+		<title>SERGAL.</title>
+	<link rel="stylesheet" href="/main.css" /><script type="module">class n{constructor(){this.percentageScroll=0,this.animations=[]}init(){this.setupPage()}setupPage(){window.scrollTo(0,0);const o=document.querySelectorAll(".section-relative"),e=document.querySelectorAll("button.link");console.log("sections: ",e),e.forEach((t,l)=>{t.addEventListener("click",()=>{this.gotoSection(o[l])})}),window.addEventListener("scroll",()=>{console.clear(),this.percentageScroll=this.percentageScrolled(),console.log("percentageScroll: ",this.percentageScroll),this.updateLayout(this.percentageScroll)}),this.percentageScroll=this.percentageScrolled(),console.log("percentageScroll: ",this.percentageScroll)}setupAnimations(){this.animations=[{start:0,end:10,items:[{id:"asteroids-main",style:"opacity: 1;"},{id:"planet-main",style:"transform: scale(calc( {RANGE} * ({STEPS} / {RANGE} ) ));"},{id:"developer",style:"opacity: 0;"},{id:"title-intro",style:"opacity: 1; top: calc(10% * {SCROLL});"},{id:"intro",style:"opacity: 1;"}]},{start:10,end:20,items:[{id:"asteroids-main",style:"opacity: 0;"},{id:"planet-main",style:"transform: scale(calc(5 / ({SCROLL})));"},{id:"developer",style:"opacity: 0;"},{id:"title-intro",style:"opacity: 1; top: calc(5 * {SCROLL}%);"},{id:"intro",style:"opacity: 1;"}]},{start:20,end:30,items:[{id:"asteroids-main",style:"opacity: 1;"},{id:"planet-main",style:"transform: scale(1);"},{id:"developer",style:"opacity: 1;"},{id:"title-intro",style:"opacity: 1;"},{id:"intro",style:"opacity: 0;"}]}],this.updateLayout(0)}updateLayout(o){this.animations.forEach(e=>{if(this.percentageScroll>=e.start&&this.percentageScroll<=e.end){console.log("item.id: ",e.start);const t={steps:e.end-e.start,range:e.end-e.start-this.percentageScroll};console.log("values: ",t),e.items.forEach(l=>{const r=document.querySelector(`#${l.id}`);let c=l.style.replace("{SCROLL}",this.percentageScroll);c=c.replace("{RANGE}",t.range),c=c.replace("{STEPS}",t.steps),r?.setAttribute("style",c)})}})}percentageScrolled(){const o=document.documentElement.scrollHeight-window.innerHeight;return window.scrollY/o*100||0}gotoSection(o){o.scrollIntoView({behavior:"smooth"}),this.percentageScroll=this.percentageScrolled(),console.log("percentageScroll: ",this.percentageScroll)}}const i=new n;window.onload=s=>{i.init(),console.log("loaded!")};const a=document.querySelectorAll("[timeline-item]");a.forEach(s=>{s.addEventListener("click",()=>{document.querySelectorAll("[timeline-item]").forEach(l=>{l.classList.remove("show-details")});const e=JSON.parse(s.getAttribute("data-item"));e.showDetails=!0,console.log("data: ",e);const t=document.querySelector(`#${e.id}`);console.log("event: ",t),t.classList.add("show-details")})});
 </script></head>
 	<body class="astro-HSP6OTUF">
 		
-  <div class="page-frame">
-    <div class="navbar">
-      <div class="item logo-container">
-        <div class="logo">SERGAL. <br></div>
+  <div class="app-page">
+    <header>
+      <div class="header-item">
+        <div class="logo">SERGAL<span>.</span></div>
       </div>
-      <div class="item mobile-menu" id="navbar-menu-button">Menu</div>
-      <div class="item-collection" id="navbar-menu">
-        <div class="item page" data-class="home"><a>Home</a></div>
-        <div class="item page" data-class="about"><a>About</a></div>
-        <div class="item page" data-class="skills"><a>Skills</a></div>
-        <div class="item page" data-class="experience"><a>Experience</a></div>
-        <div class="item page" data-class="portfolio"><a>Portfolio</a></div>
-      </div>
-      <div class="item copyright">Sergal, all right reserved.</div>
-    </div>
 
-    <div class="page-frame-container">
-      <div class="shapes home">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-        <div class="shape shape4"></div>
-        <div class="shape shape5"></div>
-        <div class="shape shape6"></div>
-        <div class="shape shape7"></div>
-        <div class="shape shape8"></div>
-        <div class="shape shape9"></div>
-        <div class="shape shape10"></div>
-      </div>
-      <div class="pfc-area home">
-        <div class="item home-section" id="home">
-          <div class="hero">
-  <div class="text">
-    <h2>
-      <span>Hello, I&#39;m </span><br>
-      Sergio Gallegos
-    </h2>
-    <span class="title">
-      Frontend Developer / Backend Developer
-    </span>
-  </div>
-</div>
+      <nav>
+        <div class="header-item"><button class="link">About</button></div>
+        <div class="header-item"><button class="link">Experience</button></div>
+        <div class="header-item"><button class="link">Skills</button></div>
+        <div class="header-item"><button class="link">Portfolio</button></div>
+      </nav>
+    </header>
+    
+    <main>
+      <section id="about" class="section-relative"> <div class="container about-container">
+  <div class="about-section section-0">
+          <h3>Acerca de Mi</h3>
+
+          <p>Soy un apasionado desarrollador con más de una década de experiencia en el mundo de la programación.</p><p>Desde el año 2008, he estado inmerso en el emocionante campo del desarrollo web y de aplicaciones de escritorio.</p><p><br></p><p><h4>Mi enfoque es convertir ideas en soluciones digitales excepcionales.</h4></p><p>Si estás buscando a alguien que pueda llevar tu proyecto al siguiente nivel, estoy listo para sumergirme en nuevos desafíos y contribuir al éxito de tu equipo. <br> ¡No dudes en contactarme! <br> <a href='mailto:sergio.gallegos@live.com.mx'>sergio.gallegos@live.com.mx</a> </p>
+        </div><div class="about-section section-1">
+          <h3>Mis Especialidades</h3>
+
+          <p><b>Arquitectura de Desarrollo</b><br> Siempre estoy investigando y aplicando las mejores prácticas en arquitectura de desarrollo. Me aseguro de que mis proyectos estén diseñados con sólidas bases técnicas para garantizar un rendimiento óptimo y una fácil escalabilidad.</p><p><b>Metodologías de Desarrollo</b><br> Soy un firme creyente en las metodologías de desarrollo ágil, como Kanban y Scrum. Estas prácticas me han permitido gestionar proyectos de manera eficaz, adaptándome rápidamente a los cambios y entregando resultados de alta calidad en tiempo y forma.</p><p><b>Dominio de Backend y Frontend</b><br> Mi experiencia se extiende a través de las tres ramas fundamentales del desarrollo: Backend, Frontend y UX. Esto me permite tener una visión integral de los proyectos y asegurarme de que todos los aspectos estén perfectamente alineados.</p><p><b>Experiencia en UX</b><br> Mi compromiso con la experiencia del usuario (UX) se refleja en mis proyectos. Siempre busco la forma de mejorar la usabilidad y la interacción del usuario para crear aplicaciones más atractivas y funcionales.</p>
         </div>
-        <div class="item about-section" id="about">
-          <h2>About</h2>
-<div class="title-divider"></div>
-<div class="about-container">
-  <div class="divider50">
-    <ul>
-      <li>Name: Sergio Gallegos</li>
-      <li>Email: <a href="mailto:{email}">sergio.gallegos@live.com.mx</a></li>
-      <li>Phone: 52+ 5516322613</li>
-      <li>Date of birth: 13 June 1988</li>
-      <li>Nationality: Mexican</li>
+
+<div class="title-page">
+    <div class="title-page-name">Sergio Gallegos</div>
+    <div class="title-page-title">FRONTEND <span class='accent'>&bull;</span> BACKEND</div>
+    <div class="title-page-description"><b><span class='accent'>/</span>Developer<span class='accent'>.</span></b></div>
+</div>
+
+<!-- <div class="types">{ title } <span class="accent">&</span> {position2} </div>
+<div class="types bold"> <span class="accent">/</span> { position3 } <span class="accent">.</span>  </div> -->
+</div> </section>
+      <section id="experience" class="section-relative"> <div class="container experience-container">
+  <div class="title-page">
+    <div class="title-page-name"><span class='accent'>More than a decade</span></div>
+    <div class="title-page-title"></div>
+    <div class="title-page-description"><b>Experience<span class='accent'>.</span></b></div>
+</div>
+
+<!-- <div class="types">{ title } <span class="accent">&</span> {position2} </div>
+<div class="types bold"> <span class="accent">/</span> { position3 } <span class="accent">.</span>  </div> -->
+
+  <p class="description">Since 2008 I started working on blog projects and university exhibitions, understanding information technology more. I ventured into full stack development, mixing backend, frontend and graphic design. This has opened the doors to various projects such as the ones that will be shown below. continuation.</p>
+
+  <div class="timeline-component">
+    <ul class="timeline-events">
+        <li id="project-01" class="timeline-event-years-4 timeline-level-1" timeline-item data-item="{&#34;id&#34;:&#34;project-01&#34;,&#34;name&#34;:&#34;University FES Aragon&#34;,&#34;type&#34;:&#34;Informatic Engineer&#34;,&#34;period&#34;:&#34;2008 - 2012&#34;,&#34;duration&#34;:4,&#34;durationFraction&#34;:&#34;&#34;,&#34;level&#34;:1,&#34;image&#34;:&#34;img/blackboard.png&#34;,&#34;description&#34;:&#34;Management aplication of courses and learning online named &#38;quot;Ultra-UI&#38;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. &#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Jazminejs&#34;},{&#34;name&#34;:&#34;AngularJs&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;SASS&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;WebServices&#34;}]}">
+                    <div class="info">
+                        <h2>2008 - 2012</h2>
+                        <h3>University FES Aragon</h3>
+                        <h4>Informatic Engineer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>2008 - 2012</h2>
+                        <h3>University FES Aragon</h3>
+                        <h4>Informatic Engineer</h4>
+                        <p class="event-description">Management aplication of courses and learning online named &quot;Ultra-UI&quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+                    </div>
+                </li><li id="project-02" class="timeline-event-years-1 timeline-level-2" timeline-item data-item="{&#34;id&#34;:&#34;project-02&#34;,&#34;name&#34;:&#34;TV Azteca&#34;,&#34;type&#34;:&#34;Web Developer &#38; Backend&#34;,&#34;period&#34;:&#34;SEP 2008 - SEP 2010&#34;,&#34;duration&#34;:1,&#34;durationFraction&#34;:&#34;&#34;,&#34;level&#34;:2,&#34;image&#34;:&#34;img/blackboard.png&#34;,&#34;description&#34;:&#34;Management aplication of courses and learning online named &#38;quot;Ultra-UI&#38;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. &#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Jazminejs&#34;},{&#34;name&#34;:&#34;AngularJs&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;SASS&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;WebServices&#34;}]}">
+                    <div class="info">
+                        <h2>SEP 2008 - SEP 2010</h2>
+                        <h3>TV Azteca</h3>
+                        <h4>Web Developer &amp; Backend</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>SEP 2008 - SEP 2010</h2>
+                        <h3>TV Azteca</h3>
+                        <h4>Web Developer &amp; Backend</h4>
+                        <p class="event-description">Management aplication of courses and learning online named &quot;Ultra-UI&quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+                    </div>
+                </li><li id="project-03" class="timeline-event-years-2 timeline-level-3" timeline-item data-item="{&#34;id&#34;:&#34;project-03&#34;,&#34;name&#34;:&#34;Praxis&#34;,&#34;type&#34;:&#34;Web Developer &#38; Backend&#34;,&#34;period&#34;:&#34;SEP 2008 - SEP 2015&#34;,&#34;duration&#34;:2,&#34;durationFraction&#34;:&#34;&#34;,&#34;level&#34;:3,&#34;image&#34;:&#34;img/blackboard.png&#34;,&#34;description&#34;:&#34;Management aplication of courses and learning online named &#38;quot;Ultra-UI&#38;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. &#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Jazminejs&#34;},{&#34;name&#34;:&#34;AngularJs&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;SASS&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;WebServices&#34;}]}">
+                    <div class="info">
+                        <h2>SEP 2008 - SEP 2015</h2>
+                        <h3>Praxis</h3>
+                        <h4>Web Developer &amp; Backend</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>SEP 2008 - SEP 2015</h2>
+                        <h3>Praxis</h3>
+                        <h4>Web Developer &amp; Backend</h4>
+                        <p class="event-description">Management aplication of courses and learning online named &quot;Ultra-UI&quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+                    </div>
+                </li><li id="project-04" class="timeline-event-years-1 timeline-level-1" timeline-item data-item="{&#34;id&#34;:&#34;project-04&#34;,&#34;name&#34;:&#34;Blackboard&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;SEP 2014 - AUG 2015&#34;,&#34;duration&#34;:1,&#34;durationFraction&#34;:&#34;&#34;,&#34;level&#34;:1,&#34;image&#34;:&#34;img/blackboard.png&#34;,&#34;description&#34;:&#34;Management aplication of courses and learning online named &#38;quot;Ultra-UI&#38;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. &#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Jazminejs&#34;},{&#34;name&#34;:&#34;AngularJs&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;SASS&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;WebServices&#34;}]}">
+                    <div class="info">
+                        <h2>SEP 2014 - AUG 2015</h2>
+                        <h3>Blackboard</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>SEP 2014 - AUG 2015</h2>
+                        <h3>Blackboard</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description">Management aplication of courses and learning online named &quot;Ultra-UI&quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+                    </div>
+                </li><li id="project-05" class="timeline-event-years-1 timeline-level-2" timeline-item data-item="{&#34;id&#34;:&#34;project-05&#34;,&#34;name&#34;:&#34;Scholastic&#34;,&#34;type&#34;:&#34;Web Developer / Backend Developer&#34;,&#34;period&#34;:&#34;SEP 2015 - JUL 2016&#34;,&#34;duration&#34;:1,&#34;durationFraction&#34;:&#34;&#34;,&#34;level&#34;:2,&#34;image&#34;:&#34;img/scholastic.png&#34;,&#34;description&#34;:&#34; The project consisted of generating sites to advertise books, events and scholastic didactic material, the different sites and games were made on jquery, javascript, angularjs, with the use of PHP for contact forms, our day to day was to consult the pending tasks in Jira using the AGILE methodology. The development aims to create Single page sites to promote products, events, etc., with compatibility in multiple browsers and respecting the designs provided by the Scholastic design and UX team. &#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;AngularJs&#34;},{&#34;name&#34;:&#34;Gitlab&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;SASS&#34;},{&#34;name&#34;:&#34;SOAP&#34;}]}">
+                    <div class="info">
+                        <h2>SEP 2015 - JUL 2016</h2>
+                        <h3>Scholastic</h3>
+                        <h4>Web Developer / Backend Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>SEP 2015 - JUL 2016</h2>
+                        <h3>Scholastic</h3>
+                        <h4>Web Developer / Backend Developer</h4>
+                        <p class="event-description"> The project consisted of generating sites to advertise books, events and scholastic didactic material, the different sites and games were made on jquery, javascript, angularjs, with the use of PHP for contact forms, our day to day was to consult the pending tasks in Jira using the AGILE methodology. The development aims to create Single page sites to promote products, events, etc., with compatibility in multiple browsers and respecting the designs provided by the Scholastic design and UX team. </p>
+                    </div>
+                </li><li id="project-06" class="timeline-event-years-0-5 timeline-level-3" timeline-item data-item="{&#34;id&#34;:&#34;project-06&#34;,&#34;name&#34;:&#34;Interapt&#34;,&#34;type&#34;:&#34;Web Developer / Backend Developer&#34;,&#34;period&#34;:&#34;SEP 2016 - NOV 2016&#34;,&#34;duration&#34;:0,&#34;durationFraction&#34;:&#34;-5&#34;,&#34;level&#34;:3,&#34;image&#34;:&#34;img/interapt.png&#34;,&#34;description&#34;:&#34;The application for managing medical visits and medical history, Angular 2 and Typescript technology was used, on the server side using Nodejs, Gulp, our day to day was managed through Jira using the SCRUM methodology. The development aims to upgrade the old system to a more modern one&#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;AngularJs&#34;},{&#34;name&#34;:&#34;Gitlab&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;SASS&#34;},{&#34;name&#34;:&#34;SOAP&#34;}]}">
+                    <div class="info">
+                        <h2>SEP 2016 - NOV 2016</h2>
+                        <h3>Interapt</h3>
+                        <h4>Web Developer / Backend Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>SEP 2016 - NOV 2016</h2>
+                        <h3>Interapt</h3>
+                        <h4>Web Developer / Backend Developer</h4>
+                        <p class="event-description">The application for managing medical visits and medical history, Angular 2 and Typescript technology was used, on the server side using Nodejs, Gulp, our day to day was managed through Jira using the SCRUM methodology. The development aims to upgrade the old system to a more modern one</p>
+                    </div>
+                </li><li id="project-07" class="timeline-event-years-0-5 timeline-level-4" timeline-item data-item="{&#34;id&#34;:&#34;project-07&#34;,&#34;name&#34;:&#34;Ebay, VivaAnuncios&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;NOV 2016 - APR 2017&#34;,&#34;duration&#34;:0,&#34;durationFraction&#34;:&#34;-5&#34;,&#34;level&#34;:4,&#34;image&#34;:&#34;img/vivaanuncios.png&#34;,&#34;description&#34;:&#34; The project was to maintain the child site of ebay &#38;ldquo;vivaanuncios.com&#38;rdquo;, the technologies used are: jquery, google maps api, javascript, consuming microservices, our day to day was managed through JIRA using the SCRUM methodology. &#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gruntjs&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;WebServices&#34;},{&#34;name&#34;:&#34;Javascript&#34;}]}">
+                    <div class="info">
+                        <h2>NOV 2016 - APR 2017</h2>
+                        <h3>Ebay, VivaAnuncios</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>NOV 2016 - APR 2017</h2>
+                        <h3>Ebay, VivaAnuncios</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description"> The project was to maintain the child site of ebay &ldquo;vivaanuncios.com&rdquo;, the technologies used are: jquery, google maps api, javascript, consuming microservices, our day to day was managed through JIRA using the SCRUM methodology. </p>
+                    </div>
+                </li><li id="project-08" class="timeline-event-years-0-5 timeline-level-5" timeline-item data-item="{&#34;id&#34;:&#34;project-08&#34;,&#34;name&#34;:&#34;Zaplabs LLC&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;APR 2017 - AUG 2017&#34;,&#34;duration&#34;:0,&#34;durationFraction&#34;:&#34;-5&#34;,&#34;level&#34;:5,&#34;image&#34;:&#34;img/zaplabs.png&#34;,&#34;description&#34;:&#34;The application was a real estate sales site using riot and javascript as frontend technology along with nodejs, our day to day was managed through JIRA using the AGILE methodology. The development consisted of modernizing the client's site prioritizing speed and stability&#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;GruntJs&#34;},{&#34;name&#34;:&#34;HTML&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;CSS3&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;RIOT&#34;},{&#34;name&#34;:&#34;SOAP&#34;}]}">
+                    <div class="info">
+                        <h2>APR 2017 - AUG 2017</h2>
+                        <h3>Zaplabs LLC</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>APR 2017 - AUG 2017</h2>
+                        <h3>Zaplabs LLC</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description">The application was a real estate sales site using riot and javascript as frontend technology along with nodejs, our day to day was managed through JIRA using the AGILE methodology. The development consisted of modernizing the client's site prioritizing speed and stability</p>
+                    </div>
+                </li><li id="project-09" class="timeline-event-years-0-5 timeline-level-4" timeline-item data-item="{&#34;id&#34;:&#34;project-09&#34;,&#34;name&#34;:&#34;DELL EMC&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;AUG 2017 - SEP 2017&#34;,&#34;duration&#34;:0,&#34;durationFraction&#34;:&#34;-5&#34;,&#34;level&#34;:4,&#34;image&#34;:&#34;img/dell.png&#34;,&#34;description&#34;:&#34;The customer search and management application, the development was a module of the DELL EMC site, using AngularJs technology and SOAP as information provider, our day to day was managed through an internal ticketing application, using the AGILE methodology. The development consisted in making more efficient the search of customers and present their details in a more comfortable way for consumers.&#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;AngularJs&#34;},{&#34;name&#34;:&#34;Mercurial SCM&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;CSS3&#34;},{&#34;name&#34;:&#34;SOAP&#34;}]}">
+                    <div class="info">
+                        <h2>AUG 2017 - SEP 2017</h2>
+                        <h3>DELL EMC</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>AUG 2017 - SEP 2017</h2>
+                        <h3>DELL EMC</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description">The customer search and management application, the development was a module of the DELL EMC site, using AngularJs technology and SOAP as information provider, our day to day was managed through an internal ticketing application, using the AGILE methodology. The development consisted in making more efficient the search of customers and present their details in a more comfortable way for consumers.</p>
+                    </div>
+                </li><li id="project-10" class="timeline-event-years-4 timeline-level-3" timeline-item data-item="{&#34;id&#34;:&#34;project-10&#34;,&#34;name&#34;:&#34;Globant GLOW&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;SEP 2017 - JUL 2022&#34;,&#34;duration&#34;:4,&#34;durationFraction&#34;:&#34;&#34;,&#34;level&#34;:3,&#34;image&#34;:&#34;img/globant.png&#34;,&#34;description&#34;:&#34;The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.&#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Angular 12&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;Jenkins&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;SASS&#34;}]}">
+                    <div class="info">
+                        <h2>SEP 2017 - JUL 2022</h2>
+                        <h3>Globant GLOW</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>SEP 2017 - JUL 2022</h2>
+                        <h3>Globant GLOW</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description">The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+                    </div>
+                </li><li id="project-11" class="timeline-event-years-0-5 timeline-level-2" timeline-item data-item="{&#34;id&#34;:&#34;project-11&#34;,&#34;name&#34;:&#34;Disney&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;JUL 2022 - JUN 2023&#34;,&#34;duration&#34;:0,&#34;durationFraction&#34;:&#34;-5&#34;,&#34;level&#34;:2,&#34;image&#34;:&#34;img/disnep.png&#34;,&#34;description&#34;:&#34;The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.&#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Angular 12&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;Jenkins&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;SASS&#34;}]}">
+                    <div class="info">
+                        <h2>JUL 2022 - JUN 2023</h2>
+                        <h3>Disney</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>JUL 2022 - JUN 2023</h2>
+                        <h3>Disney</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description">The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+                    </div>
+                </li><li id="project-12" class="timeline-event-years-0-5 timeline-level-1" timeline-item data-item="{&#34;id&#34;:&#34;project-12&#34;,&#34;name&#34;:&#34;RockWell Automation&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;MAR 2023 - JUL 2023&#34;,&#34;duration&#34;:0,&#34;durationFraction&#34;:&#34;-5&#34;,&#34;level&#34;:1,&#34;image&#34;:&#34;img/rockwell.png&#34;,&#34;description&#34;:&#34;The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.&#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Angular 12&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;Jenkins&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;SASS&#34;}]}">
+                    <div class="info">
+                        <h2>MAR 2023 - JUL 2023</h2>
+                        <h3>RockWell Automation</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>MAR 2023 - JUL 2023</h2>
+                        <h3>RockWell Automation</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description">The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+                    </div>
+                </li><li id="project-13" class="timeline-event-years-1 timeline-level-3" timeline-item data-item="{&#34;id&#34;:&#34;project-13&#34;,&#34;name&#34;:&#34;Pod Experience&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;JUL 2023 - &#34;,&#34;duration&#34;:1,&#34;durationFraction&#34;:&#34;&#34;,&#34;level&#34;:3,&#34;image&#34;:&#34;img/rockwell.png&#34;,&#34;description&#34;:&#34;The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.&#34;,&#34;tech&#34;:[{&#34;name&#34;:&#34;Nodejs&#34;},{&#34;name&#34;:&#34;Gulpjs&#34;},{&#34;name&#34;:&#34;Angular 12&#34;},{&#34;name&#34;:&#34;Typescript&#34;},{&#34;name&#34;:&#34;HTML5&#34;},{&#34;name&#34;:&#34;Jira&#34;},{&#34;name&#34;:&#34;Jenkins&#34;},{&#34;name&#34;:&#34;github&#34;},{&#34;name&#34;:&#34;Javascript&#34;},{&#34;name&#34;:&#34;SASS&#34;}]}">
+                    <div class="info">
+                        <h2>JUL 2023 - </h2>
+                        <h3>Pod Experience</h3>
+                        <h4>Web Developer</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>JUL 2023 - </h2>
+                        <h3>Pod Experience</h3>
+                        <h4>Web Developer</h4>
+                        <p class="event-description">The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+                    </div>
+                </li>
     </ul>
-    <h3>Professional Profile</h3>
-    <p>
-        Sergio started working as a designer and programmer in 2008. During his first years he worked in
-        projects with technologies such as: JS, and ASP. In addition, he honed skills in graphic design, web
-        development, and desktop application development with Microsoft Tecnologies. Sergio acknowledges the
-        benefits of agile methodologies to ensure predictive delivery in software projects. He has experience
-        working with Scrum and Kanban methods. Additionally, Sergio has a solid background in design patterns,
-        OOP, and software architectures for web development. He is on top of the latest trends in web
-        development.</p>
-    <a href="files/cv.pdf" target="_blank" class="button">Download resume as PDF format</a>
-    <img src="img/signature-web.png" class="signature" alt="img/signature-web.png">
-  </div>
-  <!--<div class="divider50 picture">
-    <img src="{picture}" class="picture-profile" alt="{picture}">
-  </div>-->
+    <ul class="timelines-years">
+        <li>2007</li><li>2008</li><li>2009</li><li>2010</li><li>2011</li><li>2012</li><li>2013</li><li>2014</li><li>2015</li><li>2016</li><li>2017</li><li>2018</li><li>2019</li><li>2020</li><li>2021</li><li>2022</li><li>2023</li><li>2024</li>
+    </ul>
+    <ul class="timeline-institutions">
+        <li id="institution-001" class="timeline-event-years-4 timeline-level-undefined" timeline-item data-item="{&#34;id&#34;:&#34;institution-001&#34;,&#34;name&#34;:&#34;University FES Aragon&#34;,&#34;type&#34;:&#34;Informatic Engineer&#34;,&#34;period&#34;:&#34;2007 - 2011&#34;,&#34;duration&#34;:4,&#34;image&#34;:&#34;img/blackboard.png&#34;}">
+                    <div class="info">
+                    <h2>2007 - 2011</h2>
+                    <h3>University FES Aragon</h3>
+                    <h4>Informatic Engineer</h4>
+                    </div>
+                </li><li id="institution-002" class="timeline-event-years-1 timeline-level-undefined" timeline-item data-item="{&#34;id&#34;:&#34;institution-002&#34;,&#34;name&#34;:&#34;TV Azteca&#34;,&#34;type&#34;:&#34;Developer Backend &#38; Frontend&#34;,&#34;period&#34;:&#34;2011 - 2012&#34;,&#34;duration&#34;:1,&#34;image&#34;:&#34;img/blackboard.png&#34;}">
+                    <div class="info">
+                    <h2>2011 - 2012</h2>
+                    <h3>TV Azteca</h3>
+                    <h4>Developer Backend &amp; Frontend</h4>
+                    </div>
+                </li><li id="institution-003" class="timeline-event-years-2 timeline-level-undefined" timeline-item data-item="{&#34;id&#34;:&#34;institution-003&#34;,&#34;name&#34;:&#34;Praxis&#34;,&#34;type&#34;:&#34;Web Developer &#38; Backend&#34;,&#34;period&#34;:&#34;2012 - 2014&#34;,&#34;duration&#34;:2,&#34;image&#34;:&#34;img/blackboard.png&#34;}">
+                    <div class="info">
+                    <h2>2012 - 2014</h2>
+                    <h3>Praxis</h3>
+                    <h4>Web Developer &amp; Backend</h4>
+                    </div>
+                </li><li id="institution-004" class="timeline-event-years-10 timeline-level-undefined" timeline-item data-item="{&#34;id&#34;:&#34;institution-004&#34;,&#34;name&#34;:&#34;Globant&#34;,&#34;type&#34;:&#34;Web Developer&#34;,&#34;period&#34;:&#34;2014 -&#34;,&#34;duration&#34;:10,&#34;image&#34;:&#34;img/blackboard.png&#34;}">
+                    <div class="info">
+                    <h2>2014 -</h2>
+                    <h3>Globant</h3>
+                    <h4>Web Developer</h4>
+                    </div>
+                </li>
+    </ul>
+    
 </div>
-        </div>
-        <div class="item skills-section" id="skills">
-          <h2>Skills &amp; Education</h2>
-<div class="title-divider"></div>
 
-<div class="row">
-  <h3>Just My Education</h3>
-  <p>I studied at the Universidad Autonoma de México, 
+  <ul class="timeline" style="display: none;">
+    <li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">2008 - 2012</p>
+    <h3>Informatic Engineer</h3>
+    <div class="logo-enterprice">
+        <img src="img/blackboard.png" class="image-project" alt="img/blackboard.png">
+    </div>
+    <p>Management aplication of courses and learning online named &amp;quot;Ultra-UI&amp;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Jazminejs</div><div>AngularJs</div><div>github</div><div>HTML5</div><div>Typescript</div><div>SASS</div><div>Jira</div><div>WebServices</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">SEP 2008 - SEP 2010</p>
+    <h3>Web Developer &amp; Backend</h3>
+    <div class="logo-enterprice">
+        <img src="img/blackboard.png" class="image-project" alt="img/blackboard.png">
+    </div>
+    <p>Management aplication of courses and learning online named &amp;quot;Ultra-UI&amp;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Jazminejs</div><div>AngularJs</div><div>github</div><div>HTML5</div><div>Typescript</div><div>SASS</div><div>Jira</div><div>WebServices</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">SEP 2008 - SEP 2015</p>
+    <h3>Web Developer &amp; Backend</h3>
+    <div class="logo-enterprice">
+        <img src="img/blackboard.png" class="image-project" alt="img/blackboard.png">
+    </div>
+    <p>Management aplication of courses and learning online named &amp;quot;Ultra-UI&amp;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Jazminejs</div><div>AngularJs</div><div>github</div><div>HTML5</div><div>Typescript</div><div>SASS</div><div>Jira</div><div>WebServices</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">SEP 2014 - AUG 2015</p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/blackboard.png" class="image-project" alt="img/blackboard.png">
+    </div>
+    <p>Management aplication of courses and learning online named &amp;quot;Ultra-UI&amp;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Jazminejs</div><div>AngularJs</div><div>github</div><div>HTML5</div><div>Typescript</div><div>SASS</div><div>Jira</div><div>WebServices</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">SEP 2015 - JUL 2016</p>
+    <h3>Web Developer / Backend Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/scholastic.png" class="image-project" alt="img/scholastic.png">
+    </div>
+    <p> The project consisted of generating sites to advertise books, events and scholastic didactic material, the different sites and games were made on jquery, javascript, angularjs, with the use of PHP for contact forms, our day to day was to consult the pending tasks in Jira using the AGILE methodology. The development aims to create Single page sites to promote products, events, etc., with compatibility in multiple browsers and respecting the designs provided by the Scholastic design and UX team. </p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>AngularJs</div><div>Gitlab</div><div>HTML5</div><div>Javascript</div><div>SASS</div><div>SOAP</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">SEP 2016 - NOV 2016</p>
+    <h3>Web Developer / Backend Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/interapt.png" class="image-project" alt="img/interapt.png">
+    </div>
+    <p>The application for managing medical visits and medical history, Angular 2 and Typescript technology was used, on the server side using Nodejs, Gulp, our day to day was managed through Jira using the SCRUM methodology. The development aims to upgrade the old system to a more modern one</p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>AngularJs</div><div>Gitlab</div><div>HTML5</div><div>Javascript</div><div>SASS</div><div>SOAP</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">NOV 2016 - APR 2017</p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/vivaanuncios.png" class="image-project" alt="img/vivaanuncios.png">
+    </div>
+    <p> The project was to maintain the child site of ebay &amp;ldquo;vivaanuncios.com&amp;rdquo;, the technologies used are: jquery, google maps api, javascript, consuming microservices, our day to day was managed through JIRA using the SCRUM methodology. </p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gruntjs</div><div>HTML5</div><div>github</div><div>WebServices</div><div>Javascript</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">APR 2017 - AUG 2017</p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/zaplabs.png" class="image-project" alt="img/zaplabs.png">
+    </div>
+    <p>The application was a real estate sales site using riot and javascript as frontend technology along with nodejs, our day to day was managed through JIRA using the AGILE methodology. The development consisted of modernizing the client&#39;s site prioritizing speed and stability</p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>GruntJs</div><div>HTML</div><div>github</div><div>CSS3</div><div>Javascript</div><div>RIOT</div><div>SOAP</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">AUG 2017 - SEP 2017</p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/dell.png" class="image-project" alt="img/dell.png">
+    </div>
+    <p>The customer search and management application, the development was a module of the DELL EMC site, using AngularJs technology and SOAP as information provider, our day to day was managed through an internal ticketing application, using the AGILE methodology. The development consisted in making more efficient the search of customers and present their details in a more comfortable way for consumers.</p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>AngularJs</div><div>Mercurial SCM</div><div>HTML5</div><div>Javascript</div><div>CSS3</div><div>SOAP</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">SEP 2017 - JUL 2022</p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/globant.png" class="image-project" alt="img/globant.png">
+    </div>
+    <p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Angular 12</div><div>Typescript</div><div>HTML5</div><div>Jira</div><div>Jenkins</div><div>github</div><div>Javascript</div><div>SASS</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">JUL 2022 - JUN 2023</p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/disnep.png" class="image-project" alt="img/disnep.png">
+    </div>
+    <p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Angular 12</div><div>Typescript</div><div>HTML5</div><div>Jira</div><div>Jenkins</div><div>github</div><div>Javascript</div><div>SASS</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">MAR 2023 - JUL 2023</p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/rockwell.png" class="image-project" alt="img/rockwell.png">
+    </div>
+    <p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Angular 12</div><div>Typescript</div><div>HTML5</div><div>Jira</div><div>Jenkins</div><div>github</div><div>Javascript</div><div>SASS</div>
+    </div>
+  </div>
+</li><li class="timeline-event">
+  <label class="timeline-event-icon"></label>
+  <div class="timeline-event-copy">
+    <p class="timeline-event-thumbnail">JUL 2023 - </p>
+    <h3>Web Developer</h3>
+    <div class="logo-enterprice">
+        <img src="img/rockwell.png" class="image-project" alt="img/rockwell.png">
+    </div>
+    <p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+
+    <h4>Technologies</h4>
+    <div class="list-tech">
+      <div>Nodejs</div><div>Gulpjs</div><div>Angular 12</div><div>Typescript</div><div>HTML5</div><div>Jira</div><div>Jenkins</div><div>github</div><div>Javascript</div><div>SASS</div>
+    </div>
+  </div>
+</li>
+  </ul>
+</div> </section>
+      <section id="skills" class="section-relative"> <div class="container skills-container">
+  <div class="title-page">
+    <div class="title-page-name"></div>
+    <div class="title-page-title">Skills <span class='accent'>&</span></div>
+    <div class="title-page-description"><b>Education<span class='accent'>.</span></b></div>
+</div>
+
+<!-- <div class="types">{ title } <span class="accent">&</span> {position2} </div>
+<div class="types bold"> <span class="accent">/</span> { position3 } <span class="accent">.</span>  </div> -->
+
+  <div style="display: none">
+    <div class="row">
+      <h3>Just My Education</h3>
+      <p>I studied at the Universidad Autonoma de México, 
     in the Faculty of Higher Education Aragon (FES Aragon), from 2008 to 2011 where I graduated as a Computer Engineer, 
     throughout my career I have updated myself in edge technologies, 
     I have taken courses at Microsoft offices and courses on virtual way using digital platforms, 
     all this knowledge is reflected in the success of the projects in which I participate.</p>
-  <br>
-  <br>
-
-  <div class="list-container">
-    <!-- {listEducation} -->
-  </div>
-</div>
-
-<div class="full-divider"></div>
-
-<div class="row">
-  <h3>Soft &amp; Hard Skills</h3>
-  <br>
-  <br>
-
-  <div class="list-container">
-    <div class="skills-collection">
-      <h4>Soft Skills</h4>
       <br>
-      <div class="item-skill">
+      <br>
+  
+      <div class="list-container">
+        <!-- {listEducation} -->
+      </div>
+    </div>
+  
+    <div class="full-divider"></div>
+  
+    <div class="row">
+      <h3>Soft &amp; Hard Skills</h3>
+      <br>
+      <br>
+  
+      <div class="list-container">
+        <div class="skills-collection">
+          <h4>Soft Skills</h4>
+          <br>
+          <div class="item-skill">
   <div class="name">Communication <b>Advanced</b></div>
   <div class="progressbar">
     <div class="progressbar-indicator" style="width: 80%"></div>
@@ -155,12 +529,12 @@
     <div class="progressbar-indicator" style="width: 100%"></div>
   </div>
 </div>
-      <!-- {listSoftSkills} -->
-    </div>
-    <div class="skills-collection">
-      <h4>Hard Skills</h4>
-      <br>
-      <div class="item-skill">
+          <!-- {listSoftSkills} -->
+        </div>
+        <div class="skills-collection">
+          <h4>Hard Skills</h4>
+          <br>
+          <div class="item-skill">
   <div class="name">English <b>A2</b></div>
   <div class="progressbar">
     <div class="progressbar-indicator" style="width: 30%"></div>
@@ -191,18 +565,18 @@
     <div class="progressbar-indicator" style="width: 90%"></div>
   </div>
 </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="full-divider"></div>
-
-<h3>Just My Skills</h3>
-<p>Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years.</p>
-<h3>Design</h3>
-
-<div class="list-section">
-  <div class="list-item">
+  
+    <div class="full-divider"></div>
+  
+    <h3>Just My Skills</h3>
+    <p>Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years.</p>
+    <h3>Design</h3>
+  
+    <div class="list-section">
+      <div class="list-item">
   <div class="overlay">
     <div class="name">Adobe Photoshop</div>
 
@@ -283,13 +657,13 @@
     <img src="img/expression.png" alt="img/expression.png">
   </div>
 </div>
-</div>
-
-<div class="full-divider"></div>
-<h3>FrontEnd</h3>
-
-<div class="list-section">
-  <div class="list-item">
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>FrontEnd</h3>
+  
+    <div class="list-section">
+      <div class="list-item">
   <div class="overlay">
     <div class="name">HTML5</div>
 
@@ -498,13 +872,13 @@
     <img src="img/karma.png" alt="img/karma.png">
   </div>
 </div>
-</div>
-
-<div class="full-divider"></div>
-<h3>Backend</h3>
-
-<div class="list-section">
-  <div class="list-item">
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>Backend</h3>
+  
+    <div class="list-section">
+      <div class="list-item">
   <div class="overlay">
     <div class="name">Windows Azure</div>
 
@@ -633,13 +1007,13 @@
     <img src="img/nodejs.png" alt="img/nodejs.png">
   </div>
 </div>
-</div>
-
-<div class="full-divider"></div>
-<h3>Admin</h3>
-
-<div class="list-section">
-  <div class="list-item">
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>Admin</h3>
+  
+    <div class="list-section">
+      <div class="list-item">
   <div class="overlay">
     <div class="name">Google Analytics</div>
 
@@ -704,163 +1078,22 @@
     <img src="img/confluence.png" alt="img/confluence.png">
   </div>
 </div>
+    </div>
+  </div>
+</div> </section> 
+      <section id="portfolio" class="section-relative"> <div class="container about-container">
+  <div class="title-page">
+    <div class="title-page-name">A look at my <span class='accent'>&bull;</span></div>
+    <div class="title-page-title"></div>
+    <div class="title-page-description"><b><span class='accent'>/</span>Portfolio</b></div>
 </div>
-        </div>
-        <div class="item experience-section" id="experience">
-          <h2>Experience</h2>
-<div class="title-divider"></div>
-<h3>14 Years Experience!</h3>
-<p>Since 2008 I started working on blog projects and university exhibitions, understanding information technology more. I ventured into full stack development, mixing backend, frontend and graphic design. This has opened the doors to various projects such as the ones that will be shown below. continuation.</p>
-<div class="full-divider"></div>
-<ul class="timeline">
-  <li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">MAR 2023 - JUL 2023</p>
-    <h3>Web Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/rockwell.png" class="image-project" alt="img/rockwell.png">
-    </div>
-    <p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
 
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gulpjs</div><div>Angular 12</div><div>Typescript</div><div>HTML5</div><div>Jira</div><div>Jenkins</div><div>github</div><div>Javascript</div><div>SASS</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">JUL 2022 - JUN 2023</p>
-    <h3>Web Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/disnep.png" class="image-project" alt="img/disnep.png">
-    </div>
-    <p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
+<!-- <div class="types">{ title } <span class="accent">&</span> {position2} </div>
+<div class="types bold"> <span class="accent">/</span> { position3 } <span class="accent">.</span>  </div> -->
 
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gulpjs</div><div>Angular 12</div><div>Typescript</div><div>HTML5</div><div>Jira</div><div>Jenkins</div><div>github</div><div>Javascript</div><div>SASS</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">SEP 2017 - JUL 2022</p>
-    <h3>Web Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/globant.png" class="image-project" alt="img/globant.png">
-    </div>
-    <p>The business management application for managing globers, trips, bonds, permits etc, was a SPA (Single Page Application), using Angular 12 and Typescript technology, on the server side using Nodejs, Gulp, our day to day was managed through Jira using SCRUM methodology. The development aims to upgrade the old system to a more modern and efficient one, as well as support different modules that would directly impact the globers.</p>
-
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gulpjs</div><div>Angular 12</div><div>Typescript</div><div>HTML5</div><div>Jira</div><div>Jenkins</div><div>github</div><div>Javascript</div><div>SASS</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">AUG 2017 - SEP 2017</p>
-    <h3>Web Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/dell.png" class="image-project" alt="img/dell.png">
-    </div>
-    <p>The customer search and management application, the development was a module of the DELL EMC site, using AngularJs technology and SOAP as information provider, our day to day was managed through an internal ticketing application, using the AGILE methodology. The development consisted in making more efficient the search of customers and present their details in a more comfortable way for consumers.</p>
-
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gulpjs</div><div>AngularJs</div><div>Mercurial SCM</div><div>HTML5</div><div>Javascript</div><div>CSS3</div><div>SOAP</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">APR 2017 - AUG 2017</p>
-    <h3>Web Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/zaplabs.png" class="image-project" alt="img/zaplabs.png">
-    </div>
-    <p>The application was a real estate sales site using riot and javascript as frontend technology along with nodejs, our day to day was managed through JIRA using the AGILE methodology. The development consisted of modernizing the client&#39;s site prioritizing speed and stability</p>
-
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>GruntJs</div><div>HTML</div><div>github</div><div>CSS3</div><div>Javascript</div><div>RIOT</div><div>SOAP</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">NOV 2016 - APR 2017</p>
-    <h3>Web Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/vivaanuncios.png" class="image-project" alt="img/vivaanuncios.png">
-    </div>
-    <p> The project was to maintain the child site of ebay &amp;ldquo;vivaanuncios.com&amp;rdquo;, the technologies used are: jquery, google maps api, javascript, consuming microservices, our day to day was managed through JIRA using the SCRUM methodology. </p>
-
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gruntjs</div><div>HTML5</div><div>github</div><div>WebServices</div><div>Javascript</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">SEP 2016 - NOV 2016</p>
-    <h3>Web Developer / Backend Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/interapt.png" class="image-project" alt="img/interapt.png">
-    </div>
-    <p>The application for managing medical visits and medical history, Angular 2 and Typescript technology was used, on the server side using Nodejs, Gulp, our day to day was managed through Jira using the SCRUM methodology. The development aims to upgrade the old system to a more modern one</p>
-
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gulpjs</div><div>AngularJs</div><div>Gitlab</div><div>HTML5</div><div>Javascript</div><div>SASS</div><div>SOAP</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">SEP 2015 - JUL 2016</p>
-    <h3>Web Developer / Backend Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/scholastic.png" class="image-project" alt="img/scholastic.png">
-    </div>
-    <p> The project consisted of generating sites to advertise books, events and scholastic didactic material, the different sites and games were made on jquery, javascript, angularjs, with the use of PHP for contact forms, our day to day was to consult the pending tasks in Jira using the AGILE methodology. The development aims to create Single page sites to promote products, events, etc., with compatibility in multiple browsers and respecting the designs provided by the Scholastic design and UX team. </p>
-
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gulpjs</div><div>AngularJs</div><div>Gitlab</div><div>HTML5</div><div>Javascript</div><div>SASS</div><div>SOAP</div>
-    </div>
-  </div>
-</li><li class="timeline-event">
-  <label class="timeline-event-icon"></label>
-  <div class="timeline-event-copy">
-    <p class="timeline-event-thumbnail">SEP 2014 - AUG 2015</p>
-    <h3>Web Developer</h3>
-    <div class="logo-enterprice">
-        <img src="img/blackboard.png" class="image-project" alt="img/blackboard.png">
-    </div>
-    <p>Management aplication of courses and learning online named &amp;quot;Ultra-UI&amp;quot;, was an application type SPA(Single Page Aplication), using the technology Angularjs and Typescript, in server side using Nodejs, Gruntjs and Jazminejs (for unit tests), our day to day was managed through Jira using SCRUM methodology. The development is intended to upgrade the old Blackboard System (Learn-Classic) in one new aplication more fresh, dynamic and faster with capacity responsive and cross browsing (Chrome, IE, Safari, Firefox, Opera), compatible with smartphones, tablets and desktop computers. </p>
-
-    <h4>Technologies</h4>
-    <div class="list-tech">
-      <div>Nodejs</div><div>Gulpjs</div><div>Jazminejs</div><div>AngularJs</div><div>github</div><div>HTML5</div><div>Typescript</div><div>SASS</div><div>Jira</div><div>WebServices</div>
-    </div>
-  </div>
-</li>
-</ul>
-        </div>
-        <div class="item portfolio-section" id="portfolio">
-          <h2>Portfolio</h2>
   <div class="title-divider"></div>
-  <h3>Just My Work</h3>
-  <p>Sergio started working as a designer and programmer in 2008. During his first years he worked in projects
-      with technologies such as: JS, and ASP. In addition, he honed skills in graphic design, web development,
-      and desktop application development with Microsoft Tecnologies. Sergio acknowledges the benefits of agile
-      methodologies to ensure predictive delivery in software projects. He has experience working with Scrum and
-      Kanban methods. Additionally, Sergio has a solid background in design patterns, OOP, and software
-      architectures for web development. He is on top of the latest trends in web development.</p>
+  <h3></h3>
+  <p></p>
 
   <div class="education-con">
     <div class="container-sub">
@@ -871,9 +1104,9 @@
       </div>
     </div>
   </div>
-        </div>
-      </div>
-    </div>
+</div> </section> 
+    </main>
   </div>
+
 
 	</body></html>

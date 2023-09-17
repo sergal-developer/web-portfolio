@@ -592,31 +592,29 @@ img {
   text-transform: uppercase;
 }
 .timeline-component .timelines-years {
-  position: absolute;
-  top: 500px;
   padding: 0;
   margin: 0;
   white-space: nowrap;
-  border-top: 1px solid #282828;
   list-style: none;
 }
 .timeline-component .timelines-years li {
-  position: relative;
-  top: 6px;
-  display: inline-block;
   width: 200px;
-  color: #868686;
   font-weight: bold;
+  padding: 5px;
+  display: inline-block;
+  background: black;
+  color: white;
 }
 .timeline-component .timelines-years li:last-child {
   width: 100px;
 }
 .timeline-component .timeline-events, .timeline-component .timeline-institutions {
-  position: absolute;
-  top: 200px;
+  position: relative;
+  top: 0;
   padding: 0;
   list-style: none;
   white-space: nowrap;
+  height: 300px;
 }
 .timeline-component .timeline-events h2, .timeline-component .timeline-events h3, .timeline-component .timeline-events h4, .timeline-component .timeline-institutions h2, .timeline-component .timeline-institutions h3, .timeline-component .timeline-institutions h4 {
   margin: 0 0 1px 0;
@@ -635,18 +633,31 @@ img {
   display: inline-block;
   background: violet;
   transition: all 300ms;
+  top: 208px;
+  cursor: pointer;
 }
 .timeline-component .timeline-events li .info, .timeline-component .timeline-institutions li .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
+  transition: all 300ms;
+  opacity: 1;
 }
-.timeline-component .timeline-institutions {
-  top: 200px;
+.timeline-component .timeline-events li .info.full, .timeline-component .timeline-institutions li .info.full {
+  opacity: 0;
+  display: none;
+}
+.timeline-component .timeline-events .show-details .info, .timeline-component .timeline-institutions .show-details .info {
+  opacity: 0;
+  display: none;
+}
+.timeline-component .timeline-events .show-details .info.full, .timeline-component .timeline-institutions .show-details .info.full {
+  opacity: 1;
+  display: flex;
 }
 .timeline-component .timeline-institutions li {
-  margin-top: 140px;
+  top: 0px;
 }
 .timeline-component .timeline-institutions li {
   background: rgb(168, 168, 168);
@@ -2020,7 +2031,6 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 1em 0;
 }
-
 /**
  * @description
  * Generate scroll into container 
@@ -2398,31 +2408,29 @@ img {
   text-transform: uppercase;
 }
 .timeline-component .timelines-years {
-  position: absolute;
-  top: 500px;
   padding: 0;
   margin: 0;
   white-space: nowrap;
-  border-top: 1px solid #282828;
   list-style: none;
 }
 .timeline-component .timelines-years li {
-  position: relative;
-  top: 6px;
-  display: inline-block;
   width: 200px;
-  color: #868686;
   font-weight: bold;
+  padding: 5px;
+  display: inline-block;
+  background: black;
+  color: white;
 }
 .timeline-component .timelines-years li:last-child {
   width: 100px;
 }
 .timeline-component .timeline-events, .timeline-component .timeline-institutions {
-  position: absolute;
-  top: 200px;
+  position: relative;
+  top: 0;
   padding: 0;
   list-style: none;
   white-space: nowrap;
+  height: 300px;
 }
 .timeline-component .timeline-events h2, .timeline-component .timeline-events h3, .timeline-component .timeline-events h4, .timeline-component .timeline-institutions h2, .timeline-component .timeline-institutions h3, .timeline-component .timeline-institutions h4 {
   margin: 0 0 1px 0;
@@ -2441,18 +2449,31 @@ img {
   display: inline-block;
   background: violet;
   transition: all 300ms;
+  top: 208px;
+  cursor: pointer;
 }
 .timeline-component .timeline-events li .info, .timeline-component .timeline-institutions li .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 10px;
+  transition: all 300ms;
+  opacity: 1;
 }
-.timeline-component .timeline-institutions {
-  top: 200px;
+.timeline-component .timeline-events li .info.full, .timeline-component .timeline-institutions li .info.full {
+  opacity: 0;
+  display: none;
+}
+.timeline-component .timeline-events .show-details .info, .timeline-component .timeline-institutions .show-details .info {
+  opacity: 0;
+  display: none;
+}
+.timeline-component .timeline-events .show-details .info.full, .timeline-component .timeline-institutions .show-details .info.full {
+  opacity: 1;
+  display: flex;
 }
 .timeline-component .timeline-institutions li {
-  margin-top: 140px;
+  top: 0px;
 }
 .timeline-component .timeline-institutions li {
   background: rgb(168, 168, 168);
