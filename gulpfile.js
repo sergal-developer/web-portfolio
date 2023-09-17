@@ -44,10 +44,16 @@ gulp.task('watchers-dev', () => {
   return;
 });
 
-gulp.task('update-references', () => {
+gulp.task('update-references-styles', () => {
   return gulp.src('./docs/**/*.html', {base: './'})
     // .pipe(replace(/href="\/_astro\//g, 'href="/styles/'))
     .pipe(replace('href="/_astro/', 'href="/styles/'))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('update-references-styles-all', () => {
+  return gulp.src('./docs/**/*.html', {base: './'})
+    .pipe(replace(/href="\/(styles|_astro)\/[\S]*.css"/g, 'href="main.css"'))
     .pipe(gulp.dest('./'));
 });
 
@@ -68,7 +74,7 @@ gulp.task("sitename", () => {
 });
 
 gulp.task('prepare-deploy', 
-  gulp.series('rename-folders', 'update-references', 'sitename'));
+  gulp.series('rename-folders', 'update-references-styles-all', 'sitename'));
 
 gulp.task('build', 
   gulp.series('styles', 'scripts'));
