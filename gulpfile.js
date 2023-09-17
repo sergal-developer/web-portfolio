@@ -4,6 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 const clean = require('gulp-clean');
 const concat = require('gulp-concat');
 const replace = require('gulp-replace');
+const  fs = require('fs');
 
 const config = {
   dest: './docs',
@@ -43,19 +44,34 @@ gulp.task('watchers-dev', () => {
   return;
 });
 
-gulp.task('prepare-deploy', () => {
-  return gulp.src('./docs/index.html', {base: './'})
-    .pipe(replace(/href="\/_astro\/index.[\S]*.css"/g, 'href="main.css"'))
+gulp.task('update-references', () => {
+  return gulp.src('./docs/**/*.html', {base: './'})
+    // .pipe(replace(/href="\/_astro\//g, 'href="/styles/'))
+    .pipe(replace('href="/_astro/', 'href="/styles/'))
     .pipe(gulp.dest('./'));
 });
+
+gulp.task('rename-folders', (done) => {
+  fs.rename('./docs/_astro', './docs/styles', (err) => {
+    if (err) {
+      throw err;
+    }
+    done();
+  });
+});
+
+
 
 gulp.task("sitename", () => {
   return gulp.src('./CNAME')
         .pipe(gulp.dest(config.public));
 });
 
+gulp.task('prepare-deploy', 
+  gulp.series('rename-folders', 'update-references', 'sitename'));
+
 gulp.task('build', 
-  gulp.series('styles', 'scripts', 'sitename'));
+  gulp.series('styles', 'scripts'));
 
 gulp.task('dev', 
   gulp.series('build', 'watchers-dev' ));

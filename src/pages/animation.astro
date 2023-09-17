@@ -51,7 +51,11 @@ import MainDemo from "../layouts/MainDemo.astro";
   import { APP } from "../data/main-demo";
   const app = new APP();
   window.onload = (e) => {
-    app.init();
-    console.log("loaded demo!");
+      app.init();
+      console.log("loaded demo!");
   };
+
+  setTimeout(() => {
+    app.init();
+  }, 2000);
 </script>
