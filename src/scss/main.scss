@@ -1,34 +1,23 @@
+@import "core/globals.scss";
 @import "core/reset";
+@import "core/references";
 @import "core/mixins";
 @import "core/typography";
-
-@import "components/root.scss";
-@import "components/tags.scss";
-@import "components/layout.scss";
-@import "components/aboutSection.scss";
-@import "components/skillsSection.scss";
-@import "components/experienceSection.scss";
-@import "components/portfolioSection.scss";
-
 
 body, .body {
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  flex-direction: row;
-  justify-content: center;
   width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   background: rgb(194, 194, 194);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 
   @extend .openSansFont;
-  font-size: 1em;
+  font-size: em(16);
   font-weight: normal;
   line-height: 1.5;
-  // letter-spacing: 0.05em;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,5 +26,8 @@ body, .body {
     box-sizing: border-box;
   }
 }
+
+@import "theme/html.scss";
+@import "theme/layouts.scss";
 
 

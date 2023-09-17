@@ -1,66 +1,39 @@
 ---
 import Main from "../layouts/Main.astro";
 
-import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
 import Experience from "../components/Experience.astro";
 import Portafolio from "../components/Portafolio.astro";
 ---
 
-<Main title="SERGAL Portfolio">
-  <div class="page-frame">
-    <div class="navbar">
-      <div class="item logo-container">
-        <div class="logo">SERGAL. <br /></div>
+<Main title="SERGAL.">
+  <div class="app-page">
+    <header>
+      <div class="header-item">
+        <div class="logo">SERGAL<span>.</span></div>
       </div>
-      <div class="item mobile-menu" id="navbar-menu-button">Menu</div>
-      <div class="item-collection" id="navbar-menu">
-        <div class="item page" data-class="home"><a>Home</a></div>
-        <div class="item page" data-class="about"><a>About</a></div>
-        <div class="item page" data-class="skills"><a>Skills</a></div>
-        <div class="item page" data-class="experience"><a>Experience</a></div>
-        <div class="item page" data-class="portfolio"><a>Portfolio</a></div>
-      </div>
-      <div class="item copyright">Sergal, all right reserved.</div>
-    </div>
 
-    <div class="page-frame-container">
-      <div class="shapes home">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-        <div class="shape shape4"></div>
-        <div class="shape shape5"></div>
-        <div class="shape shape6"></div>
-        <div class="shape shape7"></div>
-        <div class="shape shape8"></div>
-        <div class="shape shape9"></div>
-        <div class="shape shape10"></div>
-      </div>
-      <div class="pfc-area home">
-        <div class="item home-section" id="home">
-          <Hero />
-        </div>
-        <div class="item about-section" id="about">
-          <About />
-        </div>
-        <div class="item skills-section" id="skills">
-          <Skills />
-        </div>
-        <div class="item experience-section" id="experience">
-          <Experience />
-        </div>
-        <div class="item portfolio-section" id="portfolio">
-          <Portafolio />
-        </div>
-      </div>
-    </div>
+      <nav>
+        <div class="header-item"><button class="link"  >About</button></div>
+        <div class="header-item"><button class="link" >Experience</button></div>
+        <div class="header-item"><button class="link" >Skills</button></div>
+        <div class="header-item"><button class="link" >Portfolio</button></div>
+      </nav>
+    </header>
+    
+    <main>
+      <section id="about" class="section-relative" > <About /> </section>
+      <section id="experience" class="section-relative" > <Experience /> </section>
+      <section id="skills" class="section-relative" > <Skills /> </section> 
+      <section id="portfolio" class="section-relative" > <Portafolio /> </section> 
+    </main>
   </div>
+
 </Main>
 
 <script>
-  import { APP } from "../data/main";
+  import { APP } from "../data/index";
   const app = new APP();
   window.onload = (e) => {
     app.init();

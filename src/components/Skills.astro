@@ -1,6 +1,7 @@
 ---
-import SkillsItem from "./SkillsItem.astro";
-import SkillsTechItem from "./SkillsTechItem.astro";
+import SkillsItem from "./shared-components/SkillsItem.astro";
+import SkillsTechItem from "./shared-components/SkillsTechItem.astro";
+import TitlePage from "./shared-components/TitlePage.astro";
 
 let {
   title,
@@ -21,7 +22,8 @@ let {
 } = Astro.props;
 
 const data = {
-  title: "Skills & Education",
+  title: "Skills <span class='accent'>&</span>",
+  position: "<b>Education<span class='accent'>.</span></b>",
 
   subtitle1: "Just My Skills",
   description1: `Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years.`,
@@ -46,210 +48,210 @@ const data = {
       name: "Windows Azure",
       level: 1,
       years: "4",
-      image: 'img/azure.png',
+      image: "img/azure.png",
       type: "backend",
     },
     {
       name: "Windows .NET Services",
       level: 2,
       years: "8",
-      image: 'img/dotnet.png',
+      image: "img/dotnet.png",
       type: "backend",
     },
     {
       name: "C#",
       level: 3,
       years: "8",
-      image: 'img/csharp.png',
+      image: "img/csharp.png",
       type: "backend",
     },
     {
       name: "HTML5",
       level: 3,
       years: "14",
-      image: 'img/html.png',
+      image: "img/html.png",
       type: "frontend",
     },
     {
       name: "CSS3",
       level: 3,
       years: "14",
-      image: 'img/css.png',
+      image: "img/css.png",
       type: "frontend",
     },
     {
       name: "SASS, SCSS",
       level: 3,
       years: "8",
-      image: 'img/sass.png',
+      image: "img/sass.png",
       type: "frontend",
     },
     {
       name: "Astro",
       level: 1,
       years: "1",
-      image: 'img/astro.png',
+      image: "img/astro.png",
       type: "frontend",
     },
     {
       name: "Java Script, ECMAScript 6 (ES6)",
       level: 3,
       years: "14",
-      image: 'img/javascript.png',
+      image: "img/javascript.png",
       type: "frontend",
     },
     {
       name: "TypeScript",
       level: 3,
       years: "9",
-      image: 'img/typescript.png',
+      image: "img/typescript.png",
       type: "frontend",
     },
     {
       name: "TypeScript",
       level: 3,
       years: "9",
-      image: 'img/typescript.png',
+      image: "img/typescript.png",
       type: "backend",
     },
     {
       name: "jQuery",
       level: 3,
       years: "10",
-      image: 'img/jquery.png',
+      image: "img/jquery.png",
       type: "frontend",
     },
     {
       name: "AngularJS & Angular 15",
       level: 3,
       years: "8",
-      image: 'img/angular.png',
+      image: "img/angular.png",
       type: "frontend",
     },
     {
       name: "React",
       level: 1,
       years: "1",
-      image: 'img/react.png',
+      image: "img/react.png",
       type: "frontend",
     },
     {
       name: "VUEJs",
       level: 1,
       years: "1",
-      image: 'img/vue.png',
+      image: "img/vue.png",
       type: "frontend",
     },
     {
       name: "ElectronJs",
       level: 2,
       years: "3",
-      image: 'img/electron.png',
+      image: "img/electron.png",
       type: "frontend",
     },
     {
       name: "SQL Server / SQL Azure",
       level: 2,
       years: "5",
-      image: 'img/sql.png',
+      image: "img/sql.png",
       type: "backend",
     },
     {
       name: "MongoDB",
       level: 2,
       years: "3",
-      image: 'img/mongodb.png',
+      image: "img/mongodb.png",
       type: "backend",
     },
     {
       name: "Google Firebase",
       level: 1,
       years: "1",
-      image: 'img/firebase.png',
+      image: "img/firebase.png",
       type: "backend",
     },
     {
       name: "Google Analytics",
       level: 2,
       years: "5",
-      image: 'img/analytics.png',
+      image: "img/analytics.png",
       type: "admin",
     },
     {
       name: "Jazmine UnitTest",
       level: 3,
       years: "8",
-      image: 'img/jazminejs.png',
+      image: "img/jazminejs.png",
       type: "frontend",
     },
     {
       name: "Karma UnitTest",
       level: 3,
       years: "8",
-      image: 'img/karma.png',
+      image: "img/karma.png",
       type: "frontend",
     },
     {
       name: "Github",
       level: 3,
       years: "14",
-      image: 'img/github.png',
+      image: "img/github.png",
       type: "admin",
     },
     {
       name: "Jira",
       level: 2,
       years: "8",
-      image: 'img/jira.png',
+      image: "img/jira.png",
       type: "admin",
     },
     {
       name: "Confluence",
       level: 1,
       years: "7",
-      image: 'img/confluence.png',
+      image: "img/confluence.png",
       type: "admin",
     },
     {
       name: "NodeJS",
       level: 2,
       years: "8",
-      image: 'img/nodejs.png',
+      image: "img/nodejs.png",
       type: "backend",
     },
     {
       name: "Adobe Photoshop",
       level: 2,
       years: "4",
-      image: 'img/adobephotoshop.png',
+      image: "img/adobephotoshop.png",
       type: "design",
     },
     {
       name: "Adobe Ilustrator",
       level: 2,
       years: "4",
-      image: 'img/adobeilustrator.png',
+      image: "img/adobeilustrator.png",
       type: "design",
     },
     {
       name: "Adobe XD",
       level: 2,
       years: "3",
-      image: 'img/adobexd.png',
+      image: "img/adobexd.png",
       type: "design",
     },
     {
       name: "Figma",
       level: 2,
       years: "1",
-      image: 'img/figma.png',
+      image: "img/figma.png",
       type: "design",
     },
     {
       name: "Microsoft Expression",
       level: 2,
       years: "8",
-      image: 'img/expression.png',
+      image: "img/expression.png",
       type: "design",
     },
   ],
@@ -348,93 +350,124 @@ data.skills.forEach((s) => {
 });
 ---
 
-<h2>{title}</h2>
-<div class="title-divider"></div>
+<div class="container skills-container">
+  <TitlePage title={data.title} description={data.position} />
 
-<div class="row">
-  <h3>{subtitle2}</h3>
-  <p>{description2}</p>
-  <br />
-  <br />
-
-  <div class="list-container">
-    <!-- {listEducation} -->
-  </div>
-</div>
-
-<div class="full-divider"></div>
-
-<div class="row">
-  <h3>{subtitle3}</h3>
-  <br />
-  <br />
-
-  <div class="list-container">
-    <div class="skills-collection">
-      <h4>Soft Skills</h4>
+  <div style="display: none">
+    <div class="row">
+      <h3>{subtitle2}</h3>
+      <p>{description2}</p>
       <br />
+      <br />
+  
+      <div class="list-container">
+        <!-- {listEducation} -->
+      </div>
+    </div>
+  
+    <div class="full-divider"></div>
+  
+    <div class="row">
+      <h3>{subtitle3}</h3>
+      <br />
+      <br />
+  
+      <div class="list-container">
+        <div class="skills-collection">
+          <h4>Soft Skills</h4>
+          <br />
+          {
+            softSkills.map((i: any) => {
+              return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+            })
+          }
+          <!-- {listSoftSkills} -->
+        </div>
+        <div class="skills-collection">
+          <h4>Hard Skills</h4>
+          <br />
+          {
+            hardSkills.map((i: any) => {
+              return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+            })
+          }
+        </div>
+      </div>
+    </div>
+  
+    <div class="full-divider"></div>
+  
+    <h3>{subtitle1}</h3>
+    <p>{description1}</p>
+    <h3>{skillsTitleDesign}</h3>
+  
+    <div class="list-section">
       {
-        softSkills.map((i: any) => {
-          return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+        listSkillsDesign.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
         })
       }
-      <!-- {listSoftSkills} -->
     </div>
-    <div class="skills-collection">
-      <h4>Hard Skills</h4>
-      <br />
+  
+    <div class="full-divider"></div>
+    <h3>{skillsTitleFrontEnd}</h3>
+  
+    <div class="list-section">
       {
-        hardSkills.map((i: any) => {
-          return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+        listSkillsFrontend.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
+        })
+      }
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>{skillsTitleBackend}</h3>
+  
+    <div class="list-section">
+      {
+        listSkillsBackend.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
+        })
+      }
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>{skillsTitleAdmin}</h3>
+  
+    <div class="list-section">
+      {
+        listSkillsAdmin.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
         })
       }
     </div>
   </div>
-</div>
-
-<div class="full-divider"></div>
-
-<h3>{subtitle1}</h3>
-<p>{description1}</p>
-<h3>{skillsTitleDesign}</h3>
-
-<div class="list-section">
-  {
-    listSkillsDesign.map((i: any) => {
-      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
-    })
-  }
-</div>
-
-<div class="full-divider"></div>
-<h3>{skillsTitleFrontEnd}</h3>
-
-<div class="list-section">
-  {
-    listSkillsFrontend.map((i: any) => {
-      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
-    })
-  }
-</div>
-
-<div class="full-divider"></div>
-<h3>{skillsTitleBackend}</h3>
-
-<div class="list-section">
-  {
-    listSkillsBackend.map((i: any) => {
-      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
-    })
-  }
-</div>
-
-<div class="full-divider"></div>
-<h3>{skillsTitleAdmin}</h3>
-
-<div class="list-section">
-  {
-    listSkillsAdmin.map((i: any) => {
-      return <SkillsTechItem name={i.name} years={i.years} image={i.image} level={i.level} />;
-    })
-  }
 </div>

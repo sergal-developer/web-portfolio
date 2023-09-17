@@ -1,0 +1,65 @@
+---
+// export interface Props {
+//   from: number;
+//   level: string;
+//   value: number;
+// }
+
+let { from, to, projects, institutions } = Astro.props;
+
+let steps = to - from;
+let years = [];
+
+for (let i = 0; i <= steps; i++) {
+    years.push(from + i);
+}
+---
+
+<div class="timeline-component">
+    <ul class="timeline-events">
+        {
+            projects.map((evt, index) => {
+                const duration = 'timeline-event-years-' + evt.duration + evt.durationFraction;
+                const level = ' timeline-level-' + evt.level;
+                const showDetails = evt.showDetails ? ' show-details' : '';
+                return <li id={evt.id}  class={ duration + level + showDetails } timeline-item data-item={ JSON.stringify(evt)}>
+                    <div class="info">
+                        <h2>{ evt.period }</h2>
+                        <h3>{ evt.name }</h3>
+                        <h4>{ evt.type }</h4>
+                    </div>
+                    <div class="info full">
+                        <h2>{ evt.period }</h2>
+                        <h3>{ evt.name }</h3>
+                        <h4>{ evt.type }</h4>
+                        <p class="event-description" set:html={ evt.description }></p>
+                    </div>
+                </li>
+            })
+        }
+    </ul>
+    <ul class="timelines-years">
+        {
+            years.map((y) => {
+                return <li>{y}</li>;
+            })
+        }
+    </ul>
+    <ul class="timeline-institutions">
+        {
+            institutions.map((evt, index) => {
+                const duration = 'timeline-event-years-' + evt.duration;
+                const level = ' timeline-level-' + evt.level;
+                const showDetails = evt.showDetails ? ' show-details' : '';
+                return <li id={evt.id} class={ duration + level + showDetails } timeline-item data-item={ JSON.stringify(evt)}>
+                    <div class="info">
+                    <h2>{ evt.period }</h2>
+                    <h3>{ evt.name }</h3>
+                    <h4>{ evt.type }</h4>
+                    </div>
+                </li>
+            })
+        }
+    </ul>
+    
+</div>

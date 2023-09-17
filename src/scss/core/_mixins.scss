@@ -106,3 +106,20 @@ $desktop-width: 1204px;
     user-select: $value;
 }
 // #endregion
+
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
+ $base-font-size: 16;
+@function em($px) {
+    @return #{calc($px / $base-font-size)}em;
+}
+
+@function rem($px) {
+    $rem-value: #{calc($px / $base-font-size)};
+    @return #{calc($rem-value * 1rem)};
+}

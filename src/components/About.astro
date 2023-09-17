@@ -1,73 +1,58 @@
 ---
-// import signImage from '../asserts/img/signature-web.png';
-// import documentFile from '../asserts/files/cv.pdf';
-
-let {
-  title,
-  name,
-  email,
-  phone,
-  birthday,
-  nationality,
-  subtitle,
-  profileDescription,
-  signImage,
-  documentFile
-} = Astro.props;
+import TitlePage from "./shared-components/TitlePage.astro";
+let {} = Astro.props;
 
 const data = {
-  title: "About",
+  title: "FRONTEND <span class='accent'>&bull;</span> BACKEND",
   name: "Sergio Gallegos",
+  position:
+    "<b><span class='accent'>/</span>Developer<span class='accent'>.</span></b>",
+
   email: "sergio.gallegos@live.com.mx",
   phone: "52+ 5516322613",
-  birthday: "13 June 1988",
-  nationality: "Mexican",
 
-  subtitle: "Professional Profile",
-  profileDescription: `
-        Sergio started working as a designer and programmer in 2008. During his first years he worked in
-        projects with technologies such as: JS, and ASP. In addition, he honed skills in graphic design, web
-        development, and desktop application development with Microsoft Tecnologies. Sergio acknowledges the
-        benefits of agile methodologies to ensure predictive delivery in software projects. He has experience
-        working with Scrum and Kanban methods. Additionally, Sergio has a solid background in design patterns,
-        OOP, and software architectures for web development. He is on top of the latest trends in web
-        development.`,
-        signImage: "img/signature-web.png",
-        documentFile: "files/cv.pdf",
-//   picture: "/asserts/img/sergal-front.png",
+  info: [
+    {
+      subtitle: "Acerca de Mi",
+      description: [
+        "Soy un apasionado desarrollador con más de una década de experiencia en el mundo de la programación.",
+        "Desde el año 2008, he estado inmerso en el emocionante campo del desarrollo web y de aplicaciones de escritorio.",
+        "<br>",
+        "<h4>Mi enfoque es convertir ideas en soluciones digitales excepcionales.</h4>",
+        "Si estás buscando a alguien que pueda llevar tu proyecto al siguiente nivel, estoy listo para sumergirme en nuevos desafíos y contribuir al éxito de tu equipo. <br> ¡No dudes en contactarme! <br> <a href='mailto:sergio.gallegos@live.com.mx'>sergio.gallegos@live.com.mx</a> ",
+      ],
+    },
+    {
+      subtitle: "Mis Especialidades",
+      description: [
+        "<b>Arquitectura de Desarrollo</b><br> Siempre estoy investigando y aplicando las mejores prácticas en arquitectura de desarrollo. Me aseguro de que mis proyectos estén diseñados con sólidas bases técnicas para garantizar un rendimiento óptimo y una fácil escalabilidad.",
+        "<b>Metodologías de Desarrollo</b><br> Soy un firme creyente en las metodologías de desarrollo ágil, como Kanban y Scrum. Estas prácticas me han permitido gestionar proyectos de manera eficaz, adaptándome rápidamente a los cambios y entregando resultados de alta calidad en tiempo y forma.",
+        "<b>Dominio de Backend y Frontend</b><br> Mi experiencia se extiende a través de las tres ramas fundamentales del desarrollo: Backend, Frontend y UX. Esto me permite tener una visión integral de los proyectos y asegurarme de que todos los aspectos estén perfectamente alineados.",
+        "<b>Experiencia en UX</b><br> Mi compromiso con la experiencia del usuario (UX) se refleja en mis proyectos. Siempre busco la forma de mejorar la usabilidad y la interacción del usuario para crear aplicaciones más atractivas y funcionales.",
+      ],
+    },
+  ],
+
+  documentFile: "files/cv.pdf",
 };
-
-title = data.title;
-name = data.name;
-email = data.email;
-phone = data.phone;
-birthday = data.birthday;
-nationality = data.nationality;
-subtitle = data.subtitle;
-profileDescription = data.profileDescription;
-signImage = data.signImage;
-documentFile = data.documentFile;
 ---
 
-<h2>{title}</h2>
-<div class="title-divider"></div>
-<div class="about-container">
-  <div class="divider50">
-    <ul>
-      <li>Name: {name}</li>
-      <li>Email: <a href="mailto:{email}">{email}</a></li>
-      <li>Phone: {phone}</li>
-      <li>Date of birth: {birthday}</li>
-      <li>Nationality: {nationality}</li>
-    </ul>
-    <h3>{subtitle}</h3>
-    <p>{profileDescription}</p>
-    <a href={documentFile} target="_blank" class="button"
-      >Download resume as PDF format</a
-    >
-    <img src={signImage} class="signature" alt={signImage} />
-  </div>
-  <!--<div class="divider50 picture">
-    <img src="{picture}" class="picture-profile" alt="{picture}">
-  </div>-->
+<div class="container about-container">
+  {
+    data.info.map((i, index) => {
+      return (
+        <div class={'about-section section-' + index}>
+          <h3 set:html={i.subtitle} />
+
+          {i.description?.map((item, idx) => {
+              return <p set:html={item} />;
+          })}
+        </div>
+      );
+    })
+  }
+
+<TitlePage name={data.name} title={data.title} description={data.position} />
 </div>
+
+
