@@ -373,7 +373,7 @@ img {
  *
  */
 * * {
-  outline: 1px solid rgba(238, 130, 238, 0.5);
+  outline: 1px solid rgba(238, 130, 238, 0.1);
 }
 
 .accent {
@@ -575,38 +575,34 @@ img {
 }
 
 .timeline-component {
-  margin: 0 -40px -30px;
+  margin: 0;
   padding: 0;
+  margin-top: 6%;
   position: relative;
   overflow-x: auto;
-  width: 99vw;
-  height: 77vh;
+  overflow-y: hidden;
+  width: 100%;
+  height: 70vh;
   font-family: "Roboto", sans-serif;
   /* Timeline - Events */
-}
-.timeline-component h1 {
-  position: absolute;
-  top: 20px;
-  left: 935px;
-  font-weight: normal;
-  text-transform: uppercase;
 }
 .timeline-component .timelines-years {
   padding: 0;
   margin: 0;
   white-space: nowrap;
   list-style: none;
+  height: 30px;
 }
-.timeline-component .timelines-years li {
-  width: 200px;
+.timeline-component .timelines-years [item-year] {
+  width: 400px;
   font-weight: bold;
   padding: 5px;
   display: inline-block;
   background: black;
   color: white;
 }
-.timeline-component .timelines-years li:last-child {
-  width: 100px;
+.timeline-component .timelines-years [item-year]:last-child {
+  width: 200px;
 }
 .timeline-component .timeline-events, .timeline-component .timeline-institutions {
   position: relative;
@@ -614,53 +610,129 @@ img {
   padding: 0;
   list-style: none;
   white-space: nowrap;
-  height: 300px;
+  height: calc(100% - 33px);
 }
-.timeline-component .timeline-events h2, .timeline-component .timeline-events h3, .timeline-component .timeline-events h4, .timeline-component .timeline-institutions h2, .timeline-component .timeline-institutions h3, .timeline-component .timeline-institutions h4 {
-  margin: 0 0 1px 0;
-  font-weight: normal;
-  font-size: 13px;
-}
-.timeline-component .timeline-events h2, .timeline-component .timeline-institutions h2 {
-  color: #777;
-  text-transform: uppercase;
-}
-.timeline-component .timeline-events h4, .timeline-component .timeline-institutions h4 {
-  font-style: italic;
-}
-.timeline-component .timeline-events li, .timeline-component .timeline-institutions li {
-  position: relative;
-  display: inline-block;
-  background: violet;
-  transition: all 300ms;
-  top: 208px;
-  cursor: pointer;
-}
-.timeline-component .timeline-events li .info, .timeline-component .timeline-institutions li .info {
+.timeline-component .timeline-events .info, .timeline-component .timeline-institutions .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 10px;
+  padding: 8px 10px;
   transition: all 300ms;
-  opacity: 1;
+  font-size: 13px;
 }
-.timeline-component .timeline-events li .info.full, .timeline-component .timeline-institutions li .info.full {
-  opacity: 0;
+.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+  margin: 0 0 1px 0;
+  font-weight: normal;
+}
+.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+  color: #777;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.timeline-component .timeline-events .info .tle-type, .timeline-component .timeline-institutions .info .tle-type {
+  font-style: italic;
+}
+.timeline-component .timeline-events .info .tle-description, .timeline-component .timeline-institutions .info .tle-description {
   display: none;
 }
-.timeline-component .timeline-events .show-details .info, .timeline-component .timeline-institutions .show-details .info {
-  opacity: 0;
-  display: none;
+.timeline-component .timeline-events [item-event], .timeline-component .timeline-institutions [item-event] {
+  position: relative;
+  display: inline-block;
+  background: gray;
+  transition: all 800ms ease;
+  transition-property: all;
+  top: 0;
+  cursor: pointer;
+  height: calc(100% / 5);
 }
-.timeline-component .timeline-events .show-details .info.full, .timeline-component .timeline-institutions .show-details .info.full {
-  opacity: 1;
+.timeline-component .timeline-events [item-event] .info {
+  padding: 20px;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  width: calc(100% - 20px);
+  overflow: hidden;
+}
+.timeline-component .timeline-events .show-details {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+  margin: 0% auto 0;
+  right: 0;
+  width: 100%;
+  height: 100% !important;
+  z-index: 4;
+  border-radius: 0px;
+  background: #dddddd !important;
+  color: black;
+  padding: 35px;
+  transition-duration: 300ms;
+  transition-property: left, width;
+}
+.timeline-component .timeline-events .show-details .info {
+  overflow: auto;
+  justify-content: flex-start;
+  width: 100%;
+}
+.timeline-component .timeline-events .show-details .info .tle-description {
   display: flex;
+  text-wrap: wrap;
 }
-.timeline-component .timeline-institutions li {
-  top: 0px;
+.timeline-component .timeline-events .show-details .info .tle-period {
+  font-size: 15px;
+  margin-bottom: -10px;
 }
-.timeline-component .timeline-institutions li {
-  background: rgb(168, 168, 168);
+.timeline-component .timeline-events .show-details .info .tle-name {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.timeline-component .timeline-events .show-details .info .tle-type {
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+}
+.timeline-component .timeline-institutions {
+  position: absolute;
+  top: 0;
+  user-select: none;
+}
+.timeline-component .timeline-institutions [item-event] {
+  margin-top: 1%;
+  background: transparent;
+  height: 100%;
+  border: 1px solid transparent;
+  border-left: 1px dashed #b7b7b7;
+}
+.timeline-component .timeline-institutions [item-event] .info {
+  font-size: 25px;
+}
+.timeline-component .timeline-institutions [item-event] .info .tle-name {
+  font-weight: bold;
+}
+.timeline-component .timeline-institutions [item-event] .info .tle-period {
+  font-size: 12px;
+}
+.timeline-component .timeline-institutions [item-event] .info .tle-type {
+  display: none;
+}
+
+.timeline-events [item-event].yellow, .timeline-institutions [item-event].yellow {
+  background: linear-gradient(90deg, #ecf7c5 0%, #546b02 100%);
+}
+.timeline-events [item-event].orange, .timeline-institutions [item-event].orange {
+  background: linear-gradient(90deg, #f5d7ad 0%, #FF9704 100%);
+}
+.timeline-events [item-event].blue, .timeline-institutions [item-event].blue {
+  background: linear-gradient(90deg, #b0d2e2 0%, #56C2F3 100%);
+}
+.timeline-events [item-event].red, .timeline-institutions [item-event].red {
+  background: linear-gradient(90deg, #f9b49b 0%, #DD3D01 100%);
+}
+.timeline-events [item-event].aqua, .timeline-institutions [item-event].aqua {
+  background: linear-gradient(90deg, #bceef1 0%, #4A8B8F 100%);
+}
+.timeline-events [item-event].transparent, .timeline-institutions [item-event].transparent {
+  background: transparent;
 }
 
 /* Timeline - Events - Grid */
@@ -673,275 +745,255 @@ img {
 /* X.5 years */
 .timeline-event-years-0-5,
 .timeline-event-years-0-5:before {
-  width: 100px;
+  width: 200px;
 }
 
 /* X years */
 .timeline-event-years-1,
 .timeline-event-years-1:before {
-  width: 200px;
+  width: 400px;
 }
 
 /* X.5 years */
 .timeline-event-years-1-5,
 .timeline-event-years-1-5:before {
-  width: 300px;
+  width: 600px;
 }
 
 /* X years */
 .timeline-event-years-2,
 .timeline-event-years-2:before {
-  width: 400px;
+  width: 800px;
 }
 
 /* X.5 years */
 .timeline-event-years-2-5,
 .timeline-event-years-2-5:before {
-  width: 500px;
+  width: 1000px;
 }
 
 /* X years */
 .timeline-event-years-3,
 .timeline-event-years-3:before {
-  width: 600px;
+  width: 1200px;
 }
 
 /* X.5 years */
 .timeline-event-years-3-5,
 .timeline-event-years-3-5:before {
-  width: 700px;
+  width: 1400px;
 }
 
 /* X years */
 .timeline-event-years-4,
 .timeline-event-years-4:before {
-  width: 800px;
+  width: 1600px;
 }
 
 /* X.5 years */
 .timeline-event-years-4-5,
 .timeline-event-years-4-5:before {
-  width: 900px;
+  width: 1800px;
 }
 
 /* X years */
 .timeline-event-years-5,
 .timeline-event-years-5:before {
-  width: 1000px;
+  width: 2000px;
 }
 
 /* X.5 years */
 .timeline-event-years-5-5,
 .timeline-event-years-5-5:before {
-  width: 1100px;
+  width: 2200px;
 }
 
 /* X years */
 .timeline-event-years-6,
 .timeline-event-years-6:before {
-  width: 1200px;
+  width: 2400px;
 }
 
 /* X.5 years */
 .timeline-event-years-6-5,
 .timeline-event-years-6-5:before {
-  width: 1300px;
+  width: 2600px;
 }
 
 /* X years */
 .timeline-event-years-7,
 .timeline-event-years-7:before {
-  width: 1400px;
+  width: 2800px;
 }
 
 /* X.5 years */
 .timeline-event-years-7-5,
 .timeline-event-years-7-5:before {
-  width: 1500px;
+  width: 3000px;
 }
 
 /* X years */
 .timeline-event-years-8,
 .timeline-event-years-8:before {
-  width: 1600px;
+  width: 3200px;
 }
 
 /* X.5 years */
 .timeline-event-years-8-5,
 .timeline-event-years-8-5:before {
-  width: 1700px;
+  width: 3400px;
 }
 
 /* X years */
 .timeline-event-years-9,
 .timeline-event-years-9:before {
-  width: 1800px;
+  width: 3600px;
 }
 
 /* X.5 years */
 .timeline-event-years-9-5,
 .timeline-event-years-9-5:before {
-  width: 1900px;
+  width: 3800px;
 }
 
 /* X years */
 .timeline-event-years-10,
 .timeline-event-years-10:before {
-  width: 2000px;
+  width: 4000px;
 }
 
 /* X.5 years */
 .timeline-event-years-10-5,
 .timeline-event-years-10-5:before {
-  width: 2100px;
+  width: 4200px;
 }
 
 /* X years */
 .timeline-event-years-11,
 .timeline-event-years-11:before {
-  width: 2200px;
+  width: 4400px;
 }
 
 /* X.5 years */
 .timeline-event-years-11-5,
 .timeline-event-years-11-5:before {
-  width: 2300px;
+  width: 4600px;
 }
 
 /* X years */
 .timeline-event-years-12,
 .timeline-event-years-12:before {
-  width: 2400px;
+  width: 4800px;
 }
 
 /* X.5 years */
 .timeline-event-years-12-5,
 .timeline-event-years-12-5:before {
-  width: 2500px;
+  width: 5000px;
 }
 
 /* X years */
 .timeline-event-years-13,
 .timeline-event-years-13:before {
-  width: 2600px;
+  width: 5200px;
 }
 
 /* X.5 years */
 .timeline-event-years-13-5,
 .timeline-event-years-13-5:before {
-  width: 2700px;
+  width: 5400px;
 }
 
 /* X years */
 .timeline-event-years-14,
 .timeline-event-years-14:before {
-  width: 2800px;
+  width: 5600px;
 }
 
 /* X.5 years */
 .timeline-event-years-14-5,
 .timeline-event-years-14-5:before {
-  width: 2900px;
+  width: 5800px;
 }
 
 /* X years */
 .timeline-event-years-15,
 .timeline-event-years-15:before {
-  width: 3000px;
+  width: 6000px;
 }
 
 /* X.5 years */
 .timeline-event-years-15-5,
 .timeline-event-years-15-5:before {
-  width: 3100px;
+  width: 6200px;
 }
 
 /* X years */
 .timeline-event-years-16,
 .timeline-event-years-16:before {
-  width: 3200px;
+  width: 6400px;
 }
 
 /* X.5 years */
 .timeline-event-years-16-5,
 .timeline-event-years-16-5:before {
-  width: 3300px;
+  width: 6600px;
 }
 
 /* X years */
 .timeline-event-years-17,
 .timeline-event-years-17:before {
-  width: 3400px;
+  width: 6800px;
 }
 
 /* X.5 years */
 .timeline-event-years-17-5,
 .timeline-event-years-17-5:before {
-  width: 3500px;
+  width: 7000px;
 }
 
 /* X years */
 .timeline-event-years-18,
 .timeline-event-years-18:before {
-  width: 3600px;
+  width: 7200px;
 }
 
 /* X.5 years */
 .timeline-event-years-18-5,
 .timeline-event-years-18-5:before {
-  width: 3700px;
+  width: 7400px;
 }
 
 /* X years */
 .timeline-event-years-19,
 .timeline-event-years-19:before {
-  width: 3800px;
+  width: 7600px;
 }
 
 /* X.5 years */
 .timeline-event-years-19-5,
 .timeline-event-years-19-5:before {
-  width: 3900px;
+  width: 7800px;
 }
 
 .timeline-level-1 {
-  bottom: 0px;
+  top: calc(80% - (100% / 10) * 1) !important;
 }
 
 .timeline-level-2 {
-  bottom: 30px;
+  top: calc(80% - (100% / 10) * 2) !important;
 }
 
 .timeline-level-3 {
-  bottom: 60px;
+  top: calc(80% - (100% / 10) * 3) !important;
 }
 
 .timeline-level-4 {
-  bottom: 90px;
+  top: calc(80% - (100% / 10) * 4) !important;
 }
 
 .timeline-level-5 {
-  bottom: 120px;
-}
-
-.timeline-level-6 {
-  bottom: 150px;
-}
-
-.timeline-level-7 {
-  bottom: 180px;
-}
-
-.timeline-level-8 {
-  bottom: 210px;
-}
-
-.timeline-level-9 {
-  bottom: 240px;
-}
-
-.timeline-level-10 {
-  bottom: 270px;
+  top: calc(80% - (100% / 10) * 5) !important;
 }
 /**
  * @description
@@ -2031,6 +2083,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 1em 0;
 }
+
 /**
  * @description
  * Generate scroll into container 
@@ -2189,7 +2242,7 @@ img {
  *
  */
 * * {
-  outline: 1px solid rgba(238, 130, 238, 0.5);
+  outline: 1px solid rgba(238, 130, 238, 0.1);
 }
 
 .accent {
@@ -2391,38 +2444,34 @@ img {
 }
 
 .timeline-component {
-  margin: 0 -40px -30px;
+  margin: 0;
   padding: 0;
+  margin-top: 6%;
   position: relative;
   overflow-x: auto;
-  width: 99vw;
-  height: 77vh;
+  overflow-y: hidden;
+  width: 100%;
+  height: 70vh;
   font-family: "Roboto", sans-serif;
   /* Timeline - Events */
-}
-.timeline-component h1 {
-  position: absolute;
-  top: 20px;
-  left: 935px;
-  font-weight: normal;
-  text-transform: uppercase;
 }
 .timeline-component .timelines-years {
   padding: 0;
   margin: 0;
   white-space: nowrap;
   list-style: none;
+  height: 30px;
 }
-.timeline-component .timelines-years li {
-  width: 200px;
+.timeline-component .timelines-years [item-year] {
+  width: 400px;
   font-weight: bold;
   padding: 5px;
   display: inline-block;
   background: black;
   color: white;
 }
-.timeline-component .timelines-years li:last-child {
-  width: 100px;
+.timeline-component .timelines-years [item-year]:last-child {
+  width: 200px;
 }
 .timeline-component .timeline-events, .timeline-component .timeline-institutions {
   position: relative;
@@ -2430,53 +2479,129 @@ img {
   padding: 0;
   list-style: none;
   white-space: nowrap;
-  height: 300px;
+  height: calc(100% - 33px);
 }
-.timeline-component .timeline-events h2, .timeline-component .timeline-events h3, .timeline-component .timeline-events h4, .timeline-component .timeline-institutions h2, .timeline-component .timeline-institutions h3, .timeline-component .timeline-institutions h4 {
-  margin: 0 0 1px 0;
-  font-weight: normal;
-  font-size: 13px;
-}
-.timeline-component .timeline-events h2, .timeline-component .timeline-institutions h2 {
-  color: #777;
-  text-transform: uppercase;
-}
-.timeline-component .timeline-events h4, .timeline-component .timeline-institutions h4 {
-  font-style: italic;
-}
-.timeline-component .timeline-events li, .timeline-component .timeline-institutions li {
-  position: relative;
-  display: inline-block;
-  background: violet;
-  transition: all 300ms;
-  top: 208px;
-  cursor: pointer;
-}
-.timeline-component .timeline-events li .info, .timeline-component .timeline-institutions li .info {
+.timeline-component .timeline-events .info, .timeline-component .timeline-institutions .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 10px;
+  padding: 8px 10px;
   transition: all 300ms;
-  opacity: 1;
+  font-size: 13px;
 }
-.timeline-component .timeline-events li .info.full, .timeline-component .timeline-institutions li .info.full {
-  opacity: 0;
+.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+  margin: 0 0 1px 0;
+  font-weight: normal;
+}
+.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+  color: #777;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.timeline-component .timeline-events .info .tle-type, .timeline-component .timeline-institutions .info .tle-type {
+  font-style: italic;
+}
+.timeline-component .timeline-events .info .tle-description, .timeline-component .timeline-institutions .info .tle-description {
   display: none;
 }
-.timeline-component .timeline-events .show-details .info, .timeline-component .timeline-institutions .show-details .info {
-  opacity: 0;
-  display: none;
+.timeline-component .timeline-events [item-event], .timeline-component .timeline-institutions [item-event] {
+  position: relative;
+  display: inline-block;
+  background: gray;
+  transition: all 800ms ease;
+  transition-property: all;
+  top: 0;
+  cursor: pointer;
+  height: calc(100% / 5);
 }
-.timeline-component .timeline-events .show-details .info.full, .timeline-component .timeline-institutions .show-details .info.full {
-  opacity: 1;
+.timeline-component .timeline-events [item-event] .info {
+  padding: 20px;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  width: calc(100% - 20px);
+  overflow: hidden;
+}
+.timeline-component .timeline-events .show-details {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0;
+  margin: 0% auto 0;
+  right: 0;
+  width: 100%;
+  height: 100% !important;
+  z-index: 4;
+  border-radius: 0px;
+  background: #dddddd !important;
+  color: black;
+  padding: 35px;
+  transition-duration: 300ms;
+  transition-property: left, width;
+}
+.timeline-component .timeline-events .show-details .info {
+  overflow: auto;
+  justify-content: flex-start;
+  width: 100%;
+}
+.timeline-component .timeline-events .show-details .info .tle-description {
   display: flex;
+  text-wrap: wrap;
 }
-.timeline-component .timeline-institutions li {
-  top: 0px;
+.timeline-component .timeline-events .show-details .info .tle-period {
+  font-size: 15px;
+  margin-bottom: -10px;
 }
-.timeline-component .timeline-institutions li {
-  background: rgb(168, 168, 168);
+.timeline-component .timeline-events .show-details .info .tle-name {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.timeline-component .timeline-events .show-details .info .tle-type {
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+}
+.timeline-component .timeline-institutions {
+  position: absolute;
+  top: 0;
+  user-select: none;
+}
+.timeline-component .timeline-institutions [item-event] {
+  margin-top: 1%;
+  background: transparent;
+  height: 100%;
+  border: 1px solid transparent;
+  border-left: 1px dashed #b7b7b7;
+}
+.timeline-component .timeline-institutions [item-event] .info {
+  font-size: 25px;
+}
+.timeline-component .timeline-institutions [item-event] .info .tle-name {
+  font-weight: bold;
+}
+.timeline-component .timeline-institutions [item-event] .info .tle-period {
+  font-size: 12px;
+}
+.timeline-component .timeline-institutions [item-event] .info .tle-type {
+  display: none;
+}
+
+.timeline-events [item-event].yellow, .timeline-institutions [item-event].yellow {
+  background: linear-gradient(90deg, #ecf7c5 0%, #546b02 100%);
+}
+.timeline-events [item-event].orange, .timeline-institutions [item-event].orange {
+  background: linear-gradient(90deg, #f5d7ad 0%, #FF9704 100%);
+}
+.timeline-events [item-event].blue, .timeline-institutions [item-event].blue {
+  background: linear-gradient(90deg, #b0d2e2 0%, #56C2F3 100%);
+}
+.timeline-events [item-event].red, .timeline-institutions [item-event].red {
+  background: linear-gradient(90deg, #f9b49b 0%, #DD3D01 100%);
+}
+.timeline-events [item-event].aqua, .timeline-institutions [item-event].aqua {
+  background: linear-gradient(90deg, #bceef1 0%, #4A8B8F 100%);
+}
+.timeline-events [item-event].transparent, .timeline-institutions [item-event].transparent {
+  background: transparent;
 }
 
 /* Timeline - Events - Grid */
@@ -2489,273 +2614,253 @@ img {
 /* X.5 years */
 .timeline-event-years-0-5,
 .timeline-event-years-0-5:before {
-  width: 100px;
+  width: 200px;
 }
 
 /* X years */
 .timeline-event-years-1,
 .timeline-event-years-1:before {
-  width: 200px;
+  width: 400px;
 }
 
 /* X.5 years */
 .timeline-event-years-1-5,
 .timeline-event-years-1-5:before {
-  width: 300px;
+  width: 600px;
 }
 
 /* X years */
 .timeline-event-years-2,
 .timeline-event-years-2:before {
-  width: 400px;
+  width: 800px;
 }
 
 /* X.5 years */
 .timeline-event-years-2-5,
 .timeline-event-years-2-5:before {
-  width: 500px;
+  width: 1000px;
 }
 
 /* X years */
 .timeline-event-years-3,
 .timeline-event-years-3:before {
-  width: 600px;
+  width: 1200px;
 }
 
 /* X.5 years */
 .timeline-event-years-3-5,
 .timeline-event-years-3-5:before {
-  width: 700px;
+  width: 1400px;
 }
 
 /* X years */
 .timeline-event-years-4,
 .timeline-event-years-4:before {
-  width: 800px;
+  width: 1600px;
 }
 
 /* X.5 years */
 .timeline-event-years-4-5,
 .timeline-event-years-4-5:before {
-  width: 900px;
+  width: 1800px;
 }
 
 /* X years */
 .timeline-event-years-5,
 .timeline-event-years-5:before {
-  width: 1000px;
+  width: 2000px;
 }
 
 /* X.5 years */
 .timeline-event-years-5-5,
 .timeline-event-years-5-5:before {
-  width: 1100px;
+  width: 2200px;
 }
 
 /* X years */
 .timeline-event-years-6,
 .timeline-event-years-6:before {
-  width: 1200px;
+  width: 2400px;
 }
 
 /* X.5 years */
 .timeline-event-years-6-5,
 .timeline-event-years-6-5:before {
-  width: 1300px;
+  width: 2600px;
 }
 
 /* X years */
 .timeline-event-years-7,
 .timeline-event-years-7:before {
-  width: 1400px;
+  width: 2800px;
 }
 
 /* X.5 years */
 .timeline-event-years-7-5,
 .timeline-event-years-7-5:before {
-  width: 1500px;
+  width: 3000px;
 }
 
 /* X years */
 .timeline-event-years-8,
 .timeline-event-years-8:before {
-  width: 1600px;
+  width: 3200px;
 }
 
 /* X.5 years */
 .timeline-event-years-8-5,
 .timeline-event-years-8-5:before {
-  width: 1700px;
+  width: 3400px;
 }
 
 /* X years */
 .timeline-event-years-9,
 .timeline-event-years-9:before {
-  width: 1800px;
+  width: 3600px;
 }
 
 /* X.5 years */
 .timeline-event-years-9-5,
 .timeline-event-years-9-5:before {
-  width: 1900px;
+  width: 3800px;
 }
 
 /* X years */
 .timeline-event-years-10,
 .timeline-event-years-10:before {
-  width: 2000px;
+  width: 4000px;
 }
 
 /* X.5 years */
 .timeline-event-years-10-5,
 .timeline-event-years-10-5:before {
-  width: 2100px;
+  width: 4200px;
 }
 
 /* X years */
 .timeline-event-years-11,
 .timeline-event-years-11:before {
-  width: 2200px;
+  width: 4400px;
 }
 
 /* X.5 years */
 .timeline-event-years-11-5,
 .timeline-event-years-11-5:before {
-  width: 2300px;
+  width: 4600px;
 }
 
 /* X years */
 .timeline-event-years-12,
 .timeline-event-years-12:before {
-  width: 2400px;
+  width: 4800px;
 }
 
 /* X.5 years */
 .timeline-event-years-12-5,
 .timeline-event-years-12-5:before {
-  width: 2500px;
+  width: 5000px;
 }
 
 /* X years */
 .timeline-event-years-13,
 .timeline-event-years-13:before {
-  width: 2600px;
+  width: 5200px;
 }
 
 /* X.5 years */
 .timeline-event-years-13-5,
 .timeline-event-years-13-5:before {
-  width: 2700px;
+  width: 5400px;
 }
 
 /* X years */
 .timeline-event-years-14,
 .timeline-event-years-14:before {
-  width: 2800px;
+  width: 5600px;
 }
 
 /* X.5 years */
 .timeline-event-years-14-5,
 .timeline-event-years-14-5:before {
-  width: 2900px;
+  width: 5800px;
 }
 
 /* X years */
 .timeline-event-years-15,
 .timeline-event-years-15:before {
-  width: 3000px;
+  width: 6000px;
 }
 
 /* X.5 years */
 .timeline-event-years-15-5,
 .timeline-event-years-15-5:before {
-  width: 3100px;
+  width: 6200px;
 }
 
 /* X years */
 .timeline-event-years-16,
 .timeline-event-years-16:before {
-  width: 3200px;
+  width: 6400px;
 }
 
 /* X.5 years */
 .timeline-event-years-16-5,
 .timeline-event-years-16-5:before {
-  width: 3300px;
+  width: 6600px;
 }
 
 /* X years */
 .timeline-event-years-17,
 .timeline-event-years-17:before {
-  width: 3400px;
+  width: 6800px;
 }
 
 /* X.5 years */
 .timeline-event-years-17-5,
 .timeline-event-years-17-5:before {
-  width: 3500px;
+  width: 7000px;
 }
 
 /* X years */
 .timeline-event-years-18,
 .timeline-event-years-18:before {
-  width: 3600px;
+  width: 7200px;
 }
 
 /* X.5 years */
 .timeline-event-years-18-5,
 .timeline-event-years-18-5:before {
-  width: 3700px;
+  width: 7400px;
 }
 
 /* X years */
 .timeline-event-years-19,
 .timeline-event-years-19:before {
-  width: 3800px;
+  width: 7600px;
 }
 
 /* X.5 years */
 .timeline-event-years-19-5,
 .timeline-event-years-19-5:before {
-  width: 3900px;
+  width: 7800px;
 }
 
 .timeline-level-1 {
-  bottom: 0px;
+  top: calc(80% - (100% / 10) * 1) !important;
 }
 
 .timeline-level-2 {
-  bottom: 30px;
+  top: calc(80% - (100% / 10) * 2) !important;
 }
 
 .timeline-level-3 {
-  bottom: 60px;
+  top: calc(80% - (100% / 10) * 3) !important;
 }
 
 .timeline-level-4 {
-  bottom: 90px;
+  top: calc(80% - (100% / 10) * 4) !important;
 }
 
 .timeline-level-5 {
-  bottom: 120px;
-}
-
-.timeline-level-6 {
-  bottom: 150px;
-}
-
-.timeline-level-7 {
-  bottom: 180px;
-}
-
-.timeline-level-8 {
-  bottom: 210px;
-}
-
-.timeline-level-9 {
-  bottom: 240px;
-}
-
-.timeline-level-10 {
-  bottom: 270px;
+  top: calc(80% - (100% / 10) * 5) !important;
 }
