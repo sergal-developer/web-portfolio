@@ -1,8 +1,8 @@
 @import "../core/globals.scss";
 @import "../core/mixins";
 
-* * {
-    outline: 1px solid rgba(238, 130, 238, 0.5);
+.debugger * * {
+    outline: 1px dotted rgba(238, 130, 238, 0.3);
 }
 
 .accent {
@@ -15,7 +15,7 @@
     width: 100vw;
     min-height: 100vh;
     padding: 0px;
-    color: #000;
+    color: black;
     max-width: 100vw;
     overflow-x: hidden;
     font-family: $openSansFont;
@@ -152,7 +152,7 @@
 }
 
 #experience {
-    background: #dddddd;
+    // background: #dddddd;
 
     .experience-container {
         display: flex;
@@ -219,7 +219,7 @@
 }
 
 #portfolio {
-    background: #dddddd;
+    // background: #dddddd;
 
     .portfolio-container {
         .portfolio-section {
@@ -248,199 +248,4 @@
     }
 }
 
-
-$grid-background-color: #0F0F0F;
-$grid-line-color: #000;
-$grid-width: 100px;
-$timeline-events-no: 17;
-$timeline-events-level: 10;
-$timeline-events-line-height: 15px;
-$timeline-years-no: 19;
-
-.timeline-component {
-    margin: 0 -40px -30px;
-    padding: 0;
-    position: relative;
-    overflow-x: auto;
-    width: 99vw;
-    height: 77vh;
-    font-family: $robotoFont;
-
-    h1 {
-        position: absolute;
-        top: 20px;
-        left: 935px;
-        font-weight: normal;
-        text-transform: uppercase;
-    }
-
-    .timelines-years {
-        padding: 0;
-        margin: 0;
-        white-space: nowrap;
-        list-style: none;
-        
-        
-        li {
-            width: #{$grid-width * 2};
-            font-weight: bold;
-            padding: 5px;
-            display: inline-block;
-             background: black;
-             color: white;
-
-            &:last-child {
-                width: $grid-width;
-            }
-        }
-    }
-
-    /* Timeline - Events */
-    .timeline-events, .timeline-institutions {
-        position: relative;
-        // top: 200px;
-        top: 0;
-        padding: 0;
-        list-style: none;
-        white-space: nowrap;
-        height: 300px;
-
-        h2, h3, h4 {
-            margin: 0 0 1px 0;
-            font-weight: normal;
-            font-size: 13px;
-        }
-        h2 {
-            color: #777;
-            text-transform: uppercase;
-        }
-        h4 {
-            font-style: italic;
-        }
-
-        li {
-            position: relative;
-            display: inline-block;
-            background: violet;
-            transition: all 300ms;
-            top: 208px;
-            cursor: pointer;
-            
-            .info {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px;
-                transition: all 300ms;
-                opacity: 1;
-
-                &.full {
-                    opacity: 0;
-                    display: none;
-                }
-            }
-        }
-
-        // li:before {
-        //     position: absolute;
-        //     left: 0;
-        //     bottom: 0;
-        //     height: 100%;
-        //     width: 100%;
-        //     content: "";
-        //     background: violet;
-        // }
-        .show-details {
-            // background: red;
-            .info {
-                opacity: 0;
-                display: none;
-                &.full {
-                    opacity: 1;
-                    display: flex;
-                }
-            }
-        }
-    }
-
-    .timeline-institutions {
-        // top: 200px;
-        
-        li {
-            top: 0px;
-        }
-
-        li {
-            // height: $timeline-events-line-height;    
-            background: rgb(168, 168, 168);
-            // top: -20px;
-            // @include gradient(green, gray, left);
-            // border-radius: 0 6px 6px 0;
-        }
-    }
-
-
-    
-
-    // @for $i from 1 through $timeline-events-no {
-    //     .timeline-events li:nth-child(#{$i}) { 
-    //         bottom: #{((($timeline-events-line-height * 2) * $i)) - ($timeline-events-line-height * 2)};
-    //     }
-    // }
-    
-    // .timeline-events li:nth-child(1) h3 {
-    //     color: #C2E34E;
-    // }
-    // /* Orange */
-    // .timeline-events li:nth-child(2):before {
-    //     background: #FF9704;
-    // }
-    // .timeline-events li:nth-child(2) h3 {
-    //     color: #FF9704;
-    // }
-    // /* Blue */
-    // .timeline-events li:nth-child(3):before {
-    //     background: #56C2F3;
-    // }
-    // .timeline-events li:nth-child(3) h3 {
-    //     color: #56C2F3;
-    // }
-    // /* Red */
-    // .timeline-events li:nth-child(4):before {
-    //     background: #DD3D01;
-    // }
-    // .timeline-events li:nth-child(4) h3 {
-    //     color: #DD3D01;
-    // }
-    // /* Aqua/Grey */
-    // .timeline-events li:nth-child(5):before {
-    //     background: #4A8B8F;
-    //     @include gradient(#4A8B8F, #0F0F0F, left);
-    //     border-radius: 6px 0 0 6px;
-    // }
-    // .timeline-events li:nth-child(5) h3 {
-    //     color: #4A8B8F;
-    // }
-    
-    
-}
-
-/* Timeline - Events - Grid */
-@for $i from 0 through $timeline-years-no {
-    /* X years */
-    .timeline-event-years-#{$i},
-    .timeline-event-years-#{$i}:before {
-        width: #{($grid-width * 2) * $i};
-    }
-    /* X.5 years */
-    .timeline-event-years-#{$i}-5,
-    .timeline-event-years-#{$i}-5:before {
-          width: #{(($grid-width * 2) * $i) + ($grid-width)};
-    }
-}
-
-@for $i from 1 through $timeline-events-level {
-    .timeline-level-#{$i} {
-        bottom: #{((($timeline-events-line-height * 2) * $i)) - ($timeline-events-line-height * 2)};
-    }
-}
+@import '../components/timeline.scss';

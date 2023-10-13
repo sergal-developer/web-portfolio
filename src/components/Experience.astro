@@ -380,17 +380,31 @@ const to = 2024;
 const timelineItems = document.querySelectorAll('[timeline-item]');
 timelineItems.forEach((item) => {
     item.addEventListener('click', () => {
-        const allevents = document.querySelectorAll('[timeline-item]');
-        allevents.forEach(x => {
-          x.classList.remove('show-details');
-        })
+        // const allevents = document.querySelectorAll('[timeline-item]');
+        // allevents.forEach(x => {
+        //   x.classList.remove('show-details');
+        // });
         const data = JSON.parse(item.getAttribute('data-item'));
-
-        data.showDetails = true;
-        console.log('data: ', data);
         const event = document.querySelector(`#${data.id}`);
-        console.log('event: ', event);
-        event.classList.add('show-details');
+        console.log('data.id: ', data.id);
+
+        if(!event.classList.contains('show-details')) {
+          resetTimeline();
+          event.classList.add('show-details');
+        } else {
+          resetTimeline();
+          event.classList.remove('show-details');
+        }
+
+        console.log('data.showDetails: ', event.classList.contains('show-details'));
+        
     })
 })
+
+function resetTimeline() {
+  const allevents = document.querySelectorAll('[timeline-item]');
+  allevents.forEach(x => {
+    x.classList.remove('show-details');
+  });
+}
 </script>

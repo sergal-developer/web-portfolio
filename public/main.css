@@ -372,9 +372,9 @@ img {
  * @param $value: contain | text | none
  *
  */
-* * {
-  outline: 1px solid rgba(238, 130, 238, 0.5);
-}
+/* * * {
+  outline: 1px dotted rgba(238, 130, 238, 0.3);
+} */
 
 .accent {
   font-size: inherit;
@@ -386,7 +386,7 @@ img {
   width: 100vw;
   min-height: 100vh;
   padding: 0px;
-  color: #000;
+  color: black;
   max-width: 100vw;
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
@@ -499,9 +499,6 @@ img {
   left: 0;
 }
 
-#experience {
-  background: #dddddd;
-}
 #experience .experience-container {
   display: flex;
   align-items: flex-start;
@@ -551,9 +548,6 @@ img {
   left: 0;
 }
 
-#portfolio {
-  background: #dddddd;
-}
 #portfolio .portfolio-container .portfolio-section {
   padding: 30px;
   width: 50%;
@@ -574,13 +568,55 @@ img {
   left: 0;
 }
 
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
 .timeline-component {
   margin: 0 -40px -30px;
+  margin: 0px;
   padding: 0;
   position: relative;
   overflow-x: auto;
-  width: 99vw;
-  height: 77vh;
+  width: 100vw;
+  height: 70vh;
   font-family: "Roboto", sans-serif;
   /* Timeline - Events */
 }
@@ -624,6 +660,7 @@ img {
 .timeline-component .timeline-events h2, .timeline-component .timeline-institutions h2 {
   color: #777;
   text-transform: uppercase;
+  display: none;
 }
 .timeline-component .timeline-events h4, .timeline-component .timeline-institutions h4 {
   font-style: italic;
@@ -635,6 +672,8 @@ img {
   transition: all 300ms;
   top: 208px;
   cursor: pointer;
+  border-radius: 10px;
+  margin: 2px;
 }
 .timeline-component .timeline-events li .info, .timeline-component .timeline-institutions li .info {
   display: flex;
@@ -647,14 +686,6 @@ img {
 .timeline-component .timeline-events li .info.full, .timeline-component .timeline-institutions li .info.full {
   opacity: 0;
   display: none;
-}
-.timeline-component .timeline-events .show-details .info, .timeline-component .timeline-institutions .show-details .info {
-  opacity: 0;
-  display: none;
-}
-.timeline-component .timeline-events .show-details .info.full, .timeline-component .timeline-institutions .show-details .info.full {
-  opacity: 1;
-  display: flex;
 }
 .timeline-component .timeline-institutions li {
   top: 0px;
@@ -2072,6 +2103,413 @@ p {
  * @param $value: contain | text | none
  *
  */
+.timeline-component {
+  margin: 0 -40px -30px;
+  margin: 0px;
+  padding: 0;
+  position: relative;
+  overflow-x: auto;
+  width: 100vw;
+  height: 70vh;
+  font-family: "Roboto", sans-serif;
+  /* Timeline - Events */
+}
+.timeline-component h1 {
+  position: absolute;
+  top: 20px;
+  left: 935px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.timeline-component .timelines-years {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  list-style: none;
+}
+.timeline-component .timelines-years li {
+  width: 200px;
+  font-weight: bold;
+  padding: 5px;
+  display: inline-block;
+  background: black;
+  color: white;
+}
+.timeline-component .timelines-years li:last-child {
+  width: 100px;
+}
+.timeline-component .timeline-events, .timeline-component .timeline-institutions {
+  position: relative;
+  top: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+  height: 300px;
+}
+.timeline-component .timeline-events h2, .timeline-component .timeline-events h3, .timeline-component .timeline-events h4, .timeline-component .timeline-institutions h2, .timeline-component .timeline-institutions h3, .timeline-component .timeline-institutions h4 {
+  margin: 0 0 1px 0;
+  font-weight: normal;
+  font-size: 13px;
+}
+.timeline-component .timeline-events h2, .timeline-component .timeline-institutions h2 {
+  color: #777;
+  text-transform: uppercase;
+  display: none;
+}
+.timeline-component .timeline-events h4, .timeline-component .timeline-institutions h4 {
+  font-style: italic;
+}
+.timeline-component .timeline-events li, .timeline-component .timeline-institutions li {
+  position: relative;
+  display: inline-block;
+  background: violet;
+  transition: all 300ms;
+  top: 208px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 2px;
+}
+.timeline-component .timeline-events li .info, .timeline-component .timeline-institutions li .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  transition: all 300ms;
+  opacity: 1;
+}
+.timeline-component .timeline-events li .info.full, .timeline-component .timeline-institutions li .info.full {
+  opacity: 0;
+  display: none;
+}
+.timeline-component .timeline-institutions li {
+  top: 0px;
+}
+.timeline-component .timeline-institutions li {
+  background: rgb(168, 168, 168);
+}
+
+/* Timeline - Events - Grid */
+/* X years */
+.timeline-event-years-0,
+.timeline-event-years-0:before {
+  width: 0px;
+}
+
+/* X.5 years */
+.timeline-event-years-0-5,
+.timeline-event-years-0-5:before {
+  width: 100px;
+}
+
+/* X years */
+.timeline-event-years-1,
+.timeline-event-years-1:before {
+  width: 200px;
+}
+
+/* X.5 years */
+.timeline-event-years-1-5,
+.timeline-event-years-1-5:before {
+  width: 300px;
+}
+
+/* X years */
+.timeline-event-years-2,
+.timeline-event-years-2:before {
+  width: 400px;
+}
+
+/* X.5 years */
+.timeline-event-years-2-5,
+.timeline-event-years-2-5:before {
+  width: 500px;
+}
+
+/* X years */
+.timeline-event-years-3,
+.timeline-event-years-3:before {
+  width: 600px;
+}
+
+/* X.5 years */
+.timeline-event-years-3-5,
+.timeline-event-years-3-5:before {
+  width: 700px;
+}
+
+/* X years */
+.timeline-event-years-4,
+.timeline-event-years-4:before {
+  width: 800px;
+}
+
+/* X.5 years */
+.timeline-event-years-4-5,
+.timeline-event-years-4-5:before {
+  width: 900px;
+}
+
+/* X years */
+.timeline-event-years-5,
+.timeline-event-years-5:before {
+  width: 1000px;
+}
+
+/* X.5 years */
+.timeline-event-years-5-5,
+.timeline-event-years-5-5:before {
+  width: 1100px;
+}
+
+/* X years */
+.timeline-event-years-6,
+.timeline-event-years-6:before {
+  width: 1200px;
+}
+
+/* X.5 years */
+.timeline-event-years-6-5,
+.timeline-event-years-6-5:before {
+  width: 1300px;
+}
+
+/* X years */
+.timeline-event-years-7,
+.timeline-event-years-7:before {
+  width: 1400px;
+}
+
+/* X.5 years */
+.timeline-event-years-7-5,
+.timeline-event-years-7-5:before {
+  width: 1500px;
+}
+
+/* X years */
+.timeline-event-years-8,
+.timeline-event-years-8:before {
+  width: 1600px;
+}
+
+/* X.5 years */
+.timeline-event-years-8-5,
+.timeline-event-years-8-5:before {
+  width: 1700px;
+}
+
+/* X years */
+.timeline-event-years-9,
+.timeline-event-years-9:before {
+  width: 1800px;
+}
+
+/* X.5 years */
+.timeline-event-years-9-5,
+.timeline-event-years-9-5:before {
+  width: 1900px;
+}
+
+/* X years */
+.timeline-event-years-10,
+.timeline-event-years-10:before {
+  width: 2000px;
+}
+
+/* X.5 years */
+.timeline-event-years-10-5,
+.timeline-event-years-10-5:before {
+  width: 2100px;
+}
+
+/* X years */
+.timeline-event-years-11,
+.timeline-event-years-11:before {
+  width: 2200px;
+}
+
+/* X.5 years */
+.timeline-event-years-11-5,
+.timeline-event-years-11-5:before {
+  width: 2300px;
+}
+
+/* X years */
+.timeline-event-years-12,
+.timeline-event-years-12:before {
+  width: 2400px;
+}
+
+/* X.5 years */
+.timeline-event-years-12-5,
+.timeline-event-years-12-5:before {
+  width: 2500px;
+}
+
+/* X years */
+.timeline-event-years-13,
+.timeline-event-years-13:before {
+  width: 2600px;
+}
+
+/* X.5 years */
+.timeline-event-years-13-5,
+.timeline-event-years-13-5:before {
+  width: 2700px;
+}
+
+/* X years */
+.timeline-event-years-14,
+.timeline-event-years-14:before {
+  width: 2800px;
+}
+
+/* X.5 years */
+.timeline-event-years-14-5,
+.timeline-event-years-14-5:before {
+  width: 2900px;
+}
+
+/* X years */
+.timeline-event-years-15,
+.timeline-event-years-15:before {
+  width: 3000px;
+}
+
+/* X.5 years */
+.timeline-event-years-15-5,
+.timeline-event-years-15-5:before {
+  width: 3100px;
+}
+
+/* X years */
+.timeline-event-years-16,
+.timeline-event-years-16:before {
+  width: 3200px;
+}
+
+/* X.5 years */
+.timeline-event-years-16-5,
+.timeline-event-years-16-5:before {
+  width: 3300px;
+}
+
+/* X years */
+.timeline-event-years-17,
+.timeline-event-years-17:before {
+  width: 3400px;
+}
+
+/* X.5 years */
+.timeline-event-years-17-5,
+.timeline-event-years-17-5:before {
+  width: 3500px;
+}
+
+/* X years */
+.timeline-event-years-18,
+.timeline-event-years-18:before {
+  width: 3600px;
+}
+
+/* X.5 years */
+.timeline-event-years-18-5,
+.timeline-event-years-18-5:before {
+  width: 3700px;
+}
+
+/* X years */
+.timeline-event-years-19,
+.timeline-event-years-19:before {
+  width: 3800px;
+}
+
+/* X.5 years */
+.timeline-event-years-19-5,
+.timeline-event-years-19-5:before {
+  width: 3900px;
+}
+
+.timeline-level-1 {
+  bottom: 0px;
+}
+
+.timeline-level-2 {
+  bottom: 30px;
+}
+
+.timeline-level-3 {
+  bottom: 60px;
+}
+
+.timeline-level-4 {
+  bottom: 90px;
+}
+
+.timeline-level-5 {
+  bottom: 120px;
+}
+
+.timeline-level-6 {
+  bottom: 150px;
+}
+
+.timeline-level-7 {
+  bottom: 180px;
+}
+
+.timeline-level-8 {
+  bottom: 210px;
+}
+
+.timeline-level-9 {
+  bottom: 240px;
+}
+
+.timeline-level-10 {
+  bottom: 270px;
+}
+
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
 h1 {
   font-size: 2.1875em;
   line-height: 2.3125em;
@@ -2189,7 +2627,7 @@ img {
  *
  */
 * * {
-  outline: 1px solid rgba(238, 130, 238, 0.5);
+  outline: 1px dotted rgba(238, 130, 238, 0.3);
 }
 
 .accent {
@@ -2202,7 +2640,7 @@ img {
   width: 100vw;
   min-height: 100vh;
   padding: 0px;
-  color: #000;
+  color: black;
   max-width: 100vw;
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
@@ -2315,9 +2753,6 @@ img {
   left: 0;
 }
 
-#experience {
-  background: #dddddd;
-}
 #experience .experience-container {
   display: flex;
   align-items: flex-start;
@@ -2367,9 +2802,6 @@ img {
   left: 0;
 }
 
-#portfolio {
-  background: #dddddd;
-}
 #portfolio .portfolio-container .portfolio-section {
   padding: 30px;
   width: 50%;
@@ -2390,13 +2822,55 @@ img {
   left: 0;
 }
 
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
 .timeline-component {
   margin: 0 -40px -30px;
+  margin: 0px;
   padding: 0;
   position: relative;
   overflow-x: auto;
-  width: 99vw;
-  height: 77vh;
+  width: 100vw;
+  height: 70vh;
   font-family: "Roboto", sans-serif;
   /* Timeline - Events */
 }
@@ -2440,6 +2914,7 @@ img {
 .timeline-component .timeline-events h2, .timeline-component .timeline-institutions h2 {
   color: #777;
   text-transform: uppercase;
+  display: none;
 }
 .timeline-component .timeline-events h4, .timeline-component .timeline-institutions h4 {
   font-style: italic;
@@ -2451,6 +2926,8 @@ img {
   transition: all 300ms;
   top: 208px;
   cursor: pointer;
+  border-radius: 10px;
+  margin: 2px;
 }
 .timeline-component .timeline-events li .info, .timeline-component .timeline-institutions li .info {
   display: flex;
@@ -2463,14 +2940,6 @@ img {
 .timeline-component .timeline-events li .info.full, .timeline-component .timeline-institutions li .info.full {
   opacity: 0;
   display: none;
-}
-.timeline-component .timeline-events .show-details .info, .timeline-component .timeline-institutions .show-details .info {
-  opacity: 0;
-  display: none;
-}
-.timeline-component .timeline-events .show-details .info.full, .timeline-component .timeline-institutions .show-details .info.full {
-  opacity: 1;
-  display: flex;
 }
 .timeline-component .timeline-institutions li {
   top: 0px;
