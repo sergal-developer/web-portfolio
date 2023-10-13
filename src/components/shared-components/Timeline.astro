@@ -16,50 +16,50 @@ for (let i = 0; i <= steps; i++) {
 ---
 
 <div class="timeline-component">
-    <ul class="timeline-events">
+    
+    <div class="timeline-institutions">
+        {
+            institutions.map((evt, index) => {
+                const duration = 'timeline-event-years-' + evt.duration + evt.durationFraction;
+                const level = ' timeline-level-' + evt.level;
+                const showDetails = evt.showDetails ? ' show-details' : ' ';
+                const color = evt.color ? evt.color : '';
+                return <div item-event id={evt.id}  class={ duration + level + showDetails + color } timeline-item data-item={ evt.id }>
+                    <div class="info">
+                        <div class="tle-name">{ evt.name }</div>
+                        <div class="tle-period">{ evt.period }</div>
+                        <div class="tle-type">{ evt.type }</div>
+                        <div class="tle-description" set:html={ evt.description }></div>
+                    </div>
+                </div>
+            })
+        }
+    </div>
+    
+    <div class="timeline-events">
         {
             projects.map((evt, index) => {
                 const duration = 'timeline-event-years-' + evt.duration + evt.durationFraction;
                 const level = ' timeline-level-' + evt.level;
-                const showDetails = evt.showDetails ? ' show-details' : '';
-                return <li id={evt.id}  class={ duration + level + showDetails } timeline-item data-item={ JSON.stringify(evt)}>
+                const showDetails = evt.showDetails ? ' show-details' : ' ';
+                const color = evt.color ? evt.color : '';
+                return <div item-event id={evt.id}  class={ duration + level + showDetails + color } timeline-item data-item={ evt.id }>
                     <div class="info">
-                        <h2>{ evt.period }</h2>
-                        <h3>{ evt.name }</h3>
-                        <h4>{ evt.type }</h4>
+                        <div class="tle-period">{ evt.period }</div>
+                        <div class="tle-name">{ evt.name }</div>
+                        <div class="tle-type">{ evt.type }</div>
+                        <div class="tle-description" set:html={ evt.description }></div>
                     </div>
-                    <div class="info full">
-                        <h2>{ evt.period }</h2>
-                        <h3>{ evt.name }</h3>
-                        <h4>{ evt.type }</h4>
-                        <p class="event-description" set:html={ evt.description }></p>
-                    </div>
-                </li>
+                </div>
             })
         }
-    </ul>
-    <ul class="timelines-years">
+    </div>
+    <div class="timelines-years">
         {
             years.map((y) => {
-                return <li>{y}</li>;
+                return <div item-year >{y}</div>;
             })
         }
-    </ul>
-    <ul class="timeline-institutions">
-        {
-            institutions.map((evt, index) => {
-                const duration = 'timeline-event-years-' + evt.duration;
-                const level = ' timeline-level-' + evt.level;
-                const showDetails = evt.showDetails ? ' show-details' : '';
-                return <li id={evt.id} class={ duration + level + showDetails } timeline-item data-item={ JSON.stringify(evt)}>
-                    <div class="info">
-                    <h2>{ evt.period }</h2>
-                    <h3>{ evt.name }</h3>
-                    <h4>{ evt.type }</h4>
-                    </div>
-                </li>
-            })
-        }
-    </ul>
+    </div>
     
 </div>
