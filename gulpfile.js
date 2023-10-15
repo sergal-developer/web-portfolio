@@ -19,11 +19,6 @@ const config = {
   urlPage: '/web-portafolio/',
 }
 
-// gulp.task('clear', () => {
-//   return (gulp.src(config.dest, {read: true, allowEmpty: true})
-//     .pipe(clean()));
-// });
-
 gulp.task('styles', () => {
   return gulp.src(config.sassFiles)
         .pipe(sass().on('error', sass.logError))
@@ -44,9 +39,17 @@ gulp.task('watchers-dev', () => {
   return;
 });
 
+gulp.task('rename-folders', (done) => {
+  fs.rename('./docs/_astro', './docs/styles', (err) => {
+    if (err) {
+      throw err;
+    }
+    done();
+  });
+});
+
 gulp.task('update-references-styles', () => {
   return gulp.src('./docs/**/*.html', {base: './'})
-    // .pipe(replace(/href="\/_astro\//g, 'href="/styles/'))
     .pipe(replace('href="/_astro/', 'href="/styles/'))
     .pipe(gulp.dest('./'));
 });
@@ -57,16 +60,11 @@ gulp.task('update-references-styles-all', () => {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('rename-folders', (done) => {
-  fs.rename('./docs/_astro', './docs/styles', (err) => {
-    if (err) {
-      throw err;
-    }
-    done();
-  });
+gulp.task('update-references-scrpts', () => {
+  return gulp.src('./docs/**/*.html', {base: './'})
+    .pipe(replace(/src="\/(styles|_astro)\/"/g, 'src="/styles/"'))
+    .pipe(gulp.dest('./'));
 });
-
-
 
 gulp.task("sitename", () => {
   return gulp.src('./CNAME')
@@ -74,7 +72,7 @@ gulp.task("sitename", () => {
 });
 
 gulp.task('prepare-deploy', 
-  gulp.series('rename-folders', 'update-references-styles-all', 'sitename'));
+  gulp.series('rename-folders', 'update-references-styles-all', 'update-references-scrpts', 'sitename'));
 
 gulp.task('build', 
   gulp.series('styles', 'scripts'));
