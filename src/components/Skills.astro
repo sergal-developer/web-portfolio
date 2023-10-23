@@ -353,5 +353,121 @@ data.skills.forEach((s) => {
 <div class="container skills-container">
   <TitlePage title={data.title} description={data.position} />
 
+  <div >
+    <div class="row">
+      <h3>{subtitle2}</h3>
+      <p>{description2}</p>
+      <br />
+      <br />
   
+      <div class="list-container">
+        <!-- {listEducation} -->
+      </div>
+    </div>
+  
+    <div class="full-divider"></div>
+  
+    <div class="row">
+      <h3>{subtitle3}</h3>
+      <br />
+      <br />
+  
+      <div class="list-container">
+        <div class="skills-collection">
+          <h4>Soft Skills</h4>
+          <br />
+          {
+            softSkills.map((i: any) => {
+              return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+            })
+          }
+          <!-- {listSoftSkills} -->
+        </div>
+        <div class="skills-collection">
+          <h4>Hard Skills</h4>
+          <br />
+          {
+            hardSkills.map((i: any) => {
+              return <SkillsItem name={i.name} level={i.level} value={i.value} />;
+            })
+          }
+        </div>
+      </div>
+    </div>
+  
+    <div class="full-divider"></div>
+  
+    <h3>{subtitle1}</h3>
+    <p>{description1}</p>
+    <h3>{skillsTitleDesign}</h3>
+  
+    <div class="list-section">
+      {
+        listSkillsDesign.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
+        })
+      }
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>{skillsTitleFrontEnd}</h3>
+  
+    <div class="list-section">
+      {
+        listSkillsFrontend.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
+        })
+      }
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>{skillsTitleBackend}</h3>
+  
+    <div class="list-section">
+      {
+        listSkillsBackend.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
+        })
+      }
+    </div>
+  
+    <div class="full-divider"></div>
+    <h3>{skillsTitleAdmin}</h3>
+  
+    <div class="list-section">
+      {
+        listSkillsAdmin.map((i: any) => {
+          return (
+            <SkillsTechItem
+              name={i.name}
+              years={i.years}
+              image={i.image}
+              level={i.level}
+            />
+          );
+        })
+      }
+    </div>
+  </div>
 </div>
