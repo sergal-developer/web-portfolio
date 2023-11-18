@@ -353,5 +353,156 @@ data.skills.forEach((s) => {
 <div class="container skills-container">
   <TitlePage title={data.title} description={data.position} />
 
-  
+  <div style="display: none">
+    <div class="row content">
+      <h3>{subtitle2}</h3>
+      <p>{description2}</p>
+    </div>
+
+    <div class="container-flex">
+      <div class="skills">
+        <div class="list-container">
+          <div class="skills-collection">
+            <h4>Soft Skills</h4>
+            <br />
+            {
+              softSkills.map((i: any) => {
+                return (
+                  <SkillsItem name={i.name} level={i.level} value={i.value} />
+                );
+              })
+            }
+            <!-- {listSoftSkills} -->
+          </div>
+          <div class="skills-collection">
+            <h4>Hard Skills</h4>
+            <br />
+            {
+              hardSkills.map((i: any) => {
+                return (
+                  <SkillsItem name={i.name} level={i.level} value={i.value} />
+                );
+              })
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="paths">
+        <h3>{subtitle1}</h3>
+        <p>{description1}</p>
+
+        <div class="knowpath-container">
+          <div class="knowpath">
+            <h3>{skillsTitleDesign}</h3>
+
+            <div class="list-section">
+              {
+                listSkillsDesign.map((i: any) => {
+                  return (
+                    <SkillsTechItem
+                      name={i.name}
+                      years={i.years}
+                      image={i.image}
+                      level={i.level}
+                    />
+                  );
+                })
+              }
+            </div>
+          </div>
+          <div class="knowpath">
+            <h3>{skillsTitleFrontEnd}</h3>
+
+            <div class="list-section">
+              {
+                listSkillsFrontend.map((i: any) => {
+                  return (
+                    <SkillsTechItem
+                      name={i.name}
+                      years={i.years}
+                      image={i.image}
+                      level={i.level}
+                    />
+                  );
+                })
+              }
+            </div>
+          </div>
+          <div class="knowpath">
+            <h3>{skillsTitleBackend}</h3>
+
+            <div class="list-section">
+              {
+                listSkillsBackend.map((i: any) => {
+                  return (
+                    <SkillsTechItem
+                      name={i.name}
+                      years={i.years}
+                      image={i.image}
+                      level={i.level}
+                    />
+                  );
+                })
+              }
+            </div>
+          </div>
+
+          <div class="knowpath">
+            <h3>{skillsTitleAdmin}</h3>
+
+            <div class="list-section">
+              {
+                listSkillsAdmin.map((i: any) => {
+                  return (
+                    <SkillsTechItem
+                      name={i.name}
+                      years={i.years}
+                      image={i.image}
+                      level={i.level}
+                    />
+                  );
+                })
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pathKnowledge">
+    
+    <div class="backend">
+      <div class="page perpective-2">
+        <div class="title-path">Backend</div>
+          <pre class="code">
+<code><span class="comment">// Tu código C# aquí</span>
+<span class="reserved">import</span> <span class="function">Something</span> <span class="reserved">from</span> <span class="comment">'somewhere'</span>;
+<span class="names"><span class="reserved">class</span> API <span class="reserved">extends</span> C# {'{'}</span>
+<span class="reserved">constuctor</span>() {'{'}
+<span class="function">super</span><span class="reserved">()</span>;
+      <span class="reserved">const</span> item = document.createElement('style');
+      item.innerHTML = 'custom';
+      document.head.appendChild(item);
+  {'}'}
+{'}'}
+            </code>
+          </pre>
+      </div>
+    </div>
+    <div class="frontend">
+      <div class="page perpective-1">
+        <div class="title-path">Frontend</div>
+        <div class="tag">&lt;header&gt;</div>
+        <div class="tag">&lt;nav&gt;</div>
+        <div class="tag">
+          &lt;main&gt; <br />
+          &lt;acticle&gt; <br />
+          &lt;title&gt; <br />
+          &lt;subtitle&gt; <br />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
