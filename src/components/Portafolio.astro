@@ -58,15 +58,25 @@ const data = {
   <TitlePage name={data.title} description={data.position} />
 
   <div class="title-divider"></div>
-  <h3>{subtitle}</h3>
-  <p>{description}</p>
+  <p>{data.description}</p>
 
   <div class="education-con">
     <div class="container-sub">
       <div class="full-divider"></div>
       <div class="row">
         <!-- {listPortfolio} -->
+        
         <h1>Under Construction ...</h1>
+        {
+          data.list.map((i: any) => {
+            return <div>
+              <img src="i.image" alt="">
+              <div class="title">{ i.name }</div>
+              <div class="description">{ i.description }</div>
+              <div class="years">{ i.years }</div>
+            </div>;
+          })
+        }
       </div>
     </div>
   </div>
