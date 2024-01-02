@@ -4,6 +4,7 @@ export class APP {
         this.animations = [];
     }
     init() {
+        this.setupAnimations();
         this.setupPage();
     }
     setupPage() {
@@ -20,46 +21,10 @@ export class APP {
         window.addEventListener('scroll', () => {
             console.clear();
             this.percentageScroll = this.percentageScrolled();
-            console.log('percentageScroll: ', this.percentageScroll);
+            console.log('this.percentageScroll: ', this.percentageScroll);
             this.updateLayout(this.percentageScroll);
         });
-        this.percentageScroll = this.percentageScrolled();
-        console.log('percentageScroll: ', this.percentageScroll);
-    }
-    setupAnimations() {
-        this.animations = [
-            {
-                start: 0, end: 10,
-                items: [
-                    { id: 'asteroids-main', style: 'opacity: 1;' },
-                    { id: 'planet-main', style: 'transform: scale(calc( {RANGE} * ({STEPS} / {RANGE} ) ));' },
-                    { id: 'developer', style: 'opacity: 0;' },
-                    { id: 'title-intro', style: 'opacity: 1; top: calc(10% * {SCROLL});' },
-                    { id: 'intro', style: 'opacity: 1;' },
-                ]
-            },
-            {
-                start: 10, end: 20,
-                items: [
-                    { id: 'asteroids-main', style: 'opacity: 0;' },
-                    { id: 'planet-main', style: 'transform: scale(calc(5 / ({SCROLL})));' },
-                    { id: 'developer', style: 'opacity: 0;' },
-                    { id: 'title-intro', style: 'opacity: 1; top: calc(5 * {SCROLL}%);' },
-                    { id: 'intro', style: 'opacity: 1;' },
-                ]
-            },
-            {
-                start: 20, end: 30,
-                items: [
-                    { id: 'asteroids-main', style: 'opacity: 1;' },
-                    { id: 'planet-main', style: 'transform: scale(1);' },
-                    { id: 'developer', style: 'opacity: 1;' },
-                    { id: 'title-intro', style: 'opacity: 1;' },
-                    { id: 'intro', style: 'opacity: 0;' },
-                ]
-            },
-        ];
-        this.updateLayout(0);
+        // this.percentageScroll = this.percentageScrolled();
     }
     updateLayout(percentageScroll) {
         this.animations.forEach(anim => {
@@ -72,10 +37,15 @@ export class APP {
                 console.log('values: ', values);
                 anim.items.forEach(item => {
                     const element = document.querySelector(`#${item.id}`);
-                    let style = item.style.replace('{SCROLL}', this.percentageScroll);
-                    style = style.replace('{RANGE}', values.range);
-                    style = style.replace('{STEPS}', values.steps);
-                    element === null || element === void 0 ? void 0 : element.setAttribute('style', style);
+                    if (item.style) {
+                        let style = item.style.replace('{SCROLL}', this.percentageScroll);
+                        style = style.replace('{RANGE}', values.range);
+                        style = style.replace('{STEPS}', values.steps);
+                        element === null || element === void 0 ? void 0 : element.setAttribute('style', style);
+                    }
+                    if (item.class) {
+                        element.classList.value = item.class;
+                    }
                 });
             }
         });
@@ -119,5 +89,22 @@ export class APP {
         // } else {
         //     this.navBar?.classList.remove('collapsed');
         // }
+    }
+    setupAnimations() {
+        this.animations = [
+            {
+                start: 0, end: 1,
+                items: [
+                    { id: 'about-title ', class: 'title-page' }
+                ]
+            },
+            {
+                start: 2, end: 5,
+                items: [
+                    { id: 'about-title ', class: 'title-page anim1' },
+                ]
+            },
+        ];
+        this.updateLayout(0);
     }
 }

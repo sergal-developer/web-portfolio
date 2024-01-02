@@ -1,5 +1,8 @@
 @import "../core/globals.scss";
 @import "../core/mixins";
+@import "components/timeline.scss";
+@import "components/GroupCards.scss";
+@import "components/ADN.scss";
 
 .pathKnowledge {
     margin-top: 20%;
@@ -95,3 +98,4 @@
         
     }
 }
+

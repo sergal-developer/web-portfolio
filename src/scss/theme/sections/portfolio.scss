@@ -1,0 +1,31 @@
+.portfolio-container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .portfolio-section {
+        padding: 30px;
+        width: 50%;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+
+        &.section-2 {
+            position: absolute;
+            top: 45%;
+        }
+    }
+}
+
+.title-page {
+    // position: relative;
+    top: 0vh;
+    left: 0;
+    margin-bottom: 40px;
+}

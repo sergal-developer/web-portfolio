@@ -2,6 +2,9 @@
 import SkillsItem from "./shared-components/SkillsItem.astro";
 import SkillsTechItem from "./shared-components/SkillsTechItem.astro";
 import TitlePage from "./shared-components/TitlePage.astro";
+import ADN from "./shared-components/ADN.astro";
+import ADNS from "./shared-components/ADNS.astro";
+import * as DATA from "../data/datacontent";
 
 let {
   title,
@@ -21,297 +24,7 @@ let {
   education,
 } = Astro.props;
 
-const data = {
-  title: "Skills <span class='accent'>&</span>",
-  position: "<b>Education<span class='accent'>.</span></b>",
-
-  subtitle1: "Just My Skills",
-  description1: `Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years.`,
-
-  subtitle2: "Just My Education",
-  description2: `I studied at the Universidad Autonoma de México, 
-    in the Faculty of Higher Education Aragon (FES Aragon), from 2008 to 2011 where I graduated as a Computer Engineer, 
-    throughout my career I have updated myself in edge technologies, 
-    I have taken courses at Microsoft offices and courses on virtual way using digital platforms, 
-    all this knowledge is reflected in the success of the projects in which I participate.`,
-
-  subtitle3: "Soft & Hard Skills",
-  description3: ``,
-
-  skillsTitleDesign: "Design",
-  skillsTitleFrontEnd: "FrontEnd",
-  skillsTitleBackend: "Backend",
-  skillsTitleAdmin: "Admin",
-
-  skills: [
-    {
-      name: "Windows Azure",
-      level: 1,
-      years: "4",
-      image: "img/azure.png",
-      type: "backend",
-    },
-    {
-      name: "Windows .NET Services",
-      level: 2,
-      years: "8",
-      image: "img/dotnet.png",
-      type: "backend",
-    },
-    {
-      name: "C#",
-      level: 3,
-      years: "8",
-      image: "img/csharp.png",
-      type: "backend",
-    },
-    {
-      name: "HTML5",
-      level: 3,
-      years: "14",
-      image: "img/html.png",
-      type: "frontend",
-    },
-    {
-      name: "CSS3",
-      level: 3,
-      years: "14",
-      image: "img/css.png",
-      type: "frontend",
-    },
-    {
-      name: "SASS, SCSS",
-      level: 3,
-      years: "8",
-      image: "img/sass.png",
-      type: "frontend",
-    },
-    {
-      name: "Astro",
-      level: 1,
-      years: "1",
-      image: "img/astro.png",
-      type: "frontend",
-    },
-    {
-      name: "Java Script, ECMAScript 6 (ES6)",
-      level: 3,
-      years: "14",
-      image: "img/javascript.png",
-      type: "frontend",
-    },
-    {
-      name: "TypeScript",
-      level: 3,
-      years: "9",
-      image: "img/typescript.png",
-      type: "frontend",
-    },
-    {
-      name: "TypeScript",
-      level: 3,
-      years: "9",
-      image: "img/typescript.png",
-      type: "backend",
-    },
-    {
-      name: "jQuery",
-      level: 3,
-      years: "10",
-      image: "img/jquery.png",
-      type: "frontend",
-    },
-    {
-      name: "AngularJS & Angular 15",
-      level: 3,
-      years: "8",
-      image: "img/angular.png",
-      type: "frontend",
-    },
-    {
-      name: "React",
-      level: 1,
-      years: "1",
-      image: "img/react.png",
-      type: "frontend",
-    },
-    {
-      name: "VUEJs",
-      level: 1,
-      years: "1",
-      image: "img/vue.png",
-      type: "frontend",
-    },
-    {
-      name: "ElectronJs",
-      level: 2,
-      years: "3",
-      image: "img/electron.png",
-      type: "frontend",
-    },
-    {
-      name: "SQL Server / SQL Azure",
-      level: 2,
-      years: "5",
-      image: "img/sql.png",
-      type: "backend",
-    },
-    {
-      name: "MongoDB",
-      level: 2,
-      years: "3",
-      image: "img/mongodb.png",
-      type: "backend",
-    },
-    {
-      name: "Google Firebase",
-      level: 1,
-      years: "1",
-      image: "img/firebase.png",
-      type: "backend",
-    },
-    {
-      name: "Google Analytics",
-      level: 2,
-      years: "5",
-      image: "img/analytics.png",
-      type: "admin",
-    },
-    {
-      name: "Jazmine UnitTest",
-      level: 3,
-      years: "8",
-      image: "img/jazminejs.png",
-      type: "frontend",
-    },
-    {
-      name: "Karma UnitTest",
-      level: 3,
-      years: "8",
-      image: "img/karma.png",
-      type: "frontend",
-    },
-    {
-      name: "Github",
-      level: 3,
-      years: "14",
-      image: "img/github.png",
-      type: "admin",
-    },
-    {
-      name: "Jira",
-      level: 2,
-      years: "8",
-      image: "img/jira.png",
-      type: "admin",
-    },
-    {
-      name: "Confluence",
-      level: 1,
-      years: "7",
-      image: "img/confluence.png",
-      type: "admin",
-    },
-    {
-      name: "NodeJS",
-      level: 2,
-      years: "8",
-      image: "img/nodejs.png",
-      type: "backend",
-    },
-    {
-      name: "Adobe Photoshop",
-      level: 2,
-      years: "4",
-      image: "img/adobephotoshop.png",
-      type: "design",
-    },
-    {
-      name: "Adobe Ilustrator",
-      level: 2,
-      years: "4",
-      image: "img/adobeilustrator.png",
-      type: "design",
-    },
-    {
-      name: "Adobe XD",
-      level: 2,
-      years: "3",
-      image: "img/adobexd.png",
-      type: "design",
-    },
-    {
-      name: "Figma",
-      level: 2,
-      years: "1",
-      image: "img/figma.png",
-      type: "design",
-    },
-    {
-      name: "Microsoft Expression",
-      level: 2,
-      years: "8",
-      image: "img/expression.png",
-      type: "design",
-    },
-  ],
-
-  softSkills: [
-    { name: "Communication", level: "Advanced", value: 80 },
-    { name: "Flexibility", level: "Expert", value: 100 },
-    { name: "Leadership", level: "Advanced", value: 80 },
-    { name: "Motivation", level: "Expert", value: 100 },
-    { name: "Innovation", level: "Expert", value: 100 },
-    { name: "problem solving ability", level: "Expert", value: 100 },
-    { name: "Teamwork", level: "Expert", value: 100 },
-  ],
-
-  hardSkills: [
-    { name: "English", level: "A2", value: 30 },
-    { name: "Español", level: "Native", value: 100 },
-    { name: "Logical thinking", level: "Expert", value: 100 },
-    { name: "Management tools", level: "Advanced", value: 80 },
-    {
-      name: "Programming in different areas (Backend, Frontend)",
-      level: "Expert",
-      value: 100,
-    },
-    { name: "Design and prototyping skills", level: "Advanced", value: 90 },
-  ],
-
-  education: [
-    {
-      image: "",
-      name: "Universisdad Autonoma De Mexico, FES Aragon",
-      carrer: "Ingenieria en Computación",
-      years: "2008 - 2011",
-    },
-    {
-      image: "",
-      name: "Certification",
-      carrer: "Microsoft Azure",
-      years: "2010 - 2011",
-    },
-    {
-      image: "",
-      name: "Online course",
-      carrer: "Mastering in Angular",
-      years: "2018",
-    },
-    {
-      image: "",
-      name: "Online course",
-      carrer: "Mastering in React",
-      years: "2021 - 2022",
-    },
-    {
-      image: "",
-      name: "Online course",
-      carrer: "Mastering in VUE.js",
-      years: "2021 - 2022",
-    },
-  ],
-};
+const data = DATA.CONTENT.skills;
 
 title = data.title;
 subtitle1 = data.subtitle1;
@@ -334,6 +47,8 @@ const listSkillsFrontend: any[] = [];
 const listSkillsBackend: any[] = [];
 const listSkillsAdmin: any[] = [];
 
+
+
 data.skills.forEach((s) => {
   if (s.type.toLowerCase() === "frontend") {
     listSkillsFrontend.push(s);
@@ -353,12 +68,16 @@ data.skills.forEach((s) => {
 <div class="container skills-container">
   <TitlePage title={data.title} description={data.position} />
 
-  <div style="display: none">
+  <div>
     <div class="row content">
       <h3>{subtitle2}</h3>
       <p>{description2}</p>
     </div>
 
+    
+    <ADNS list={data.adnList}></ADNS>
+
+    <!--
     <div class="container-flex">
       <div class="skills">
         <div class="list-container">
@@ -372,7 +91,7 @@ data.skills.forEach((s) => {
                 );
               })
             }
-            <!-- {listSoftSkills} -->
+            
           </div>
           <div class="skills-collection">
             <h4>Hard Skills</h4>
@@ -469,40 +188,7 @@ data.skills.forEach((s) => {
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="pathKnowledge">
-    
-    <div class="backend">
-      <div class="page perpective-2">
-        <div class="title-path">Backend</div>
-          <pre class="code">
-<code><span class="comment">// Tu código C# aquí</span>
-<span class="reserved">import</span> <span class="function">Something</span> <span class="reserved">from</span> <span class="comment">'somewhere'</span>;
-<span class="names"><span class="reserved">class</span> API <span class="reserved">extends</span> C# {'{'}</span>
-<span class="reserved">constuctor</span>() {'{'}
-<span class="function">super</span><span class="reserved">()</span>;
-      <span class="reserved">const</span> item = document.createElement('style');
-      item.innerHTML = 'custom';
-      document.head.appendChild(item);
-  {'}'}
-{'}'}
-            </code>
-          </pre>
-      </div>
-    </div>
-    <div class="frontend">
-      <div class="page perpective-1">
-        <div class="title-path">Frontend</div>
-        <div class="tag">&lt;header&gt;</div>
-        <div class="tag">&lt;nav&gt;</div>
-        <div class="tag">
-          &lt;main&gt; <br />
-          &lt;acticle&gt; <br />
-          &lt;title&gt; <br />
-          &lt;subtitle&gt; <br />
-        </div>
-      </div>
-    </div>
+    -->
   </div>
 </div>

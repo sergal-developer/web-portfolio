@@ -1,0 +1,51 @@
+---
+// export interface Props {
+//   from: number;
+//   level: string;
+//   value: number;
+// }
+
+let { list } = Astro.props;
+
+const totalList = [];
+
+list.map(group => {
+    group.data.map(item => {
+        totalList.push(item);
+    })
+});
+let idx = 0;
+
+---
+
+<!-- <div class="dna-component">
+    {
+        totalList.map((item, indexgroup) => {
+            return <div class="chain">
+                <div class="molecule"></div>
+                <div class="strand"></div>
+                <div class="molecule"></di6v>
+            </div>;
+        })
+    }
+</div> -->
+
+<div class="dna-component">
+    {
+        list.map((group) => {
+            return (<div class={"dna-group " + group.id}>
+                {
+                    group.data.map((item, index) => {
+                        idx++;
+                        return <div class={"chain index-" + idx } data-index={idx}>
+                            <div class="molecule"></div>
+                            <div class="strand"></div>
+                            <div class="molecule"></div>
+                        </div>;
+                    })
+                }    
+            </div>)
+        })
+        
+    }
+</div>

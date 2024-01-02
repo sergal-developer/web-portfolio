@@ -11,11 +11,11 @@ import Portafolio from "../components/Portafolio.astro";
   <div class="app-page">
     <header>
       <div class="header-item">
-        <div class="logo">SERGAL<span>.</span></div>
+        <div class="logo"><span>SERGAL</span><span class="accent">.</span></div>
       </div>
 
       <nav>
-        <div class="header-item"><button class="link"  >About</button></div>
+        <div class="header-item"><button class="link" >About</button></div>
         <div class="header-item"><button class="link" >Experience</button></div>
         <div class="header-item"><button class="link" >Skills</button></div>
         <div class="header-item"><button class="link" >Portfolio</button></div>
@@ -23,6 +23,18 @@ import Portafolio from "../components/Portafolio.astro";
     </header>
     
     <main>
+      <!-- <div class="title-page" id="main-title">s
+          <div class="title-page-name" id="main-title-name">Sergio Gallegos</div>
+          <div class="title-page-description" id="main-title-description"><b><span class="accent">/</span>Developer<span class="accent">.</span></b></div>
+      </div> -->
+<!-- 
+      <div class="title-page" id="main-title-header">
+        <div class="title-page-name">Sergio Gallegos</div>
+        <div class="title-page-title">FRONTEND <span class="accent">•</span> BACKEND</div>
+        <div class="title-page-description"><b><span class="accent">/</span>Developer<span class="accent">.</span></b></div>
+    </div> -->
+
+    
       <section id="about" class="section-relative" > <About /> </section>
       <section id="experience" class="section-relative" > <Experience /> </section>
       <section id="skills" class="section-relative" > <Skills /> </section> 
@@ -33,7 +45,7 @@ import Portafolio from "../components/Portafolio.astro";
 </Main>
 
 <script>
-  import { APP } from "../data/index";
+  import { APP } from "../data/page";
   const app = new APP();
   window.onload = (e) => {
     app.init();

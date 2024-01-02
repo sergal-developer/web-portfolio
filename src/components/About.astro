@@ -1,41 +1,11 @@
 ---
 import TitlePage from "./shared-components/TitlePage.astro";
+import * as DATA from "../data/datacontent";
 let {} = Astro.props;
-
-const data = {
-  title: "FRONTEND <span class='accent'>&bull;</span> BACKEND",
-  name: "Sergio Gallegos",
-  position:
-    "<b><span class='accent'>/</span>Developer<span class='accent'>.</span></b>",
-
-  email: "sergio.gallegos@live.com.mx",
-  phone: "52+ 5516322613",
-
-  info: [
-    {
-      subtitle: "Acerca de Mi",
-      description: [
-        "Soy un apasionado desarrollador con más de una década de experiencia en el mundo de la programación.",
-        "Desde el año 2008, he estado inmerso en el emocionante campo del desarrollo web y de aplicaciones de escritorio.",
-        "<br>",
-        "<h4>Mi enfoque es convertir ideas en soluciones digitales excepcionales.</h4>",
-        "Si estás buscando a alguien que pueda llevar tu proyecto al siguiente nivel, estoy listo para sumergirme en nuevos desafíos y contribuir al éxito de tu equipo. <br> ¡No dudes en contactarme! <br> <a href='mailto:sergio.gallegos@live.com.mx'>sergio.gallegos@live.com.mx</a> ",
-      ],
-    },
-    {
-      subtitle: "Mis Especialidades",
-      description: [
-        "<b>Arquitectura de Desarrollo</b><br> Siempre estoy investigando y aplicando las mejores prácticas en arquitectura de desarrollo. Me aseguro de que mis proyectos estén diseñados con sólidas bases técnicas para garantizar un rendimiento óptimo y una fácil escalabilidad.",
-        "<b>Metodologías de Desarrollo</b><br> Soy un firme creyente en las metodologías de desarrollo ágil, como Kanban y Scrum. Estas prácticas me han permitido gestionar proyectos de manera eficaz, adaptándome rápidamente a los cambios y entregando resultados de alta calidad en tiempo y forma.",
-        "<b>Dominio de Backend y Frontend</b><br> Mi experiencia se extiende a través de las tres ramas fundamentales del desarrollo: Backend, Frontend y UX. Esto me permite tener una visión integral de los proyectos y asegurarme de que todos los aspectos estén perfectamente alineados.",
-        "<b>Experiencia en UX</b><br> Mi compromiso con la experiencia del usuario (UX) se refleja en mis proyectos. Siempre busco la forma de mejorar la usabilidad y la interacción del usuario para crear aplicaciones más atractivas y funcionales.",
-      ],
-    },
-  ],
-
-  documentFile: "files/cv.pdf",
-};
+const data = DATA.CONTENT.about;
 ---
+
+<TitlePage id={'about-title'} name={data.name} namealt={data.namealt} title={data.title} description={data.position} />
 
 <div class="container about-container">
   {
@@ -51,8 +21,4 @@ const data = {
       );
     })
   }
-
-<TitlePage name={data.name} title={data.title} description={data.position} />
 </div>
-
-
