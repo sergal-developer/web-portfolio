@@ -376,6 +376,134 @@ img {
  * @param $value: contain | text | none
  *
  */
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
+.pathKnowledge {
+  margin-top: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.pathKnowledge .frontend,
+.pathKnowledge .backend {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.pathKnowledge .frontend .page,
+.pathKnowledge .backend .page {
+  background: #385a64;
+  color: #9fb3b9;
+  padding: 20px;
+  width: 400px;
+  font-weight: 600;
+  border: 4px solid #1b2e35;
+  border-bottom: none;
+  border-right: none;
+  margin-top: 90px;
+}
+.pathKnowledge .frontend .page .title-path,
+.pathKnowledge .backend .page .title-path {
+  background: #cd69c9;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: -110px;
+  position: absolute;
+  margin-left: -23px;
+}
+.pathKnowledge .frontend .page .tag,
+.pathKnowledge .backend .page .tag {
+  border: 1px solid #9fb3b9;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.pathKnowledge .backend {
+  justify-content: flex-end;
+}
+.pathKnowledge .backend .page {
+  background: #232730;
+  color: #cecece;
+  border: 4px solid #1b2e35;
+}
+.pathKnowledge .backend .page .title-path {
+  margin-top: -110px;
+  position: absolute;
+  margin-left: 105px;
+}
+.pathKnowledge .backend .page .code code {
+  color: #9d4858;
+  color: white;
+}
+.pathKnowledge .backend .page .code code .comment {
+  color: #698d5e;
+}
+.pathKnowledge .backend .page .code code .reserved {
+  color: #d685d1;
+}
+.pathKnowledge .backend .page .code code .names {
+  color: #f3d15a;
+}
+.pathKnowledge .backend .page .code code .function {
+  color: #f06680;
+}
+.pathKnowledge .perpective-1 {
+  transition: all 300ms;
+}
+.pathKnowledge .perpective-1:hover {
+  transform: perspective(380px) rotateX(0deg) rotateY(30deg) rotateZ(0deg);
+  width: 300px !important;
+}
+.pathKnowledge .perpective-2 {
+  transition: all 300ms;
+}
+.pathKnowledge .perpective-2:hover {
+  transform: perspective(380px) rotateX(0deg) rotateY(-30deg) rotateZ(0deg);
+  width: 300px !important;
+}
+
 .debugger * * {
   outline: 1px dotted rgba(238, 130, 238, 0.3);
 }
@@ -395,6 +523,7 @@ img {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   position: relative;
+  line-height: 2;
 }
 .app-page .logo {
   font-size: calc(2.5 * 1rem);
@@ -532,6 +661,9 @@ img {
   left: 0;
 }
 
+#skills .skills-container {
+  flex-direction: column;
+}
 #skills .skills-container .skills-section {
   padding: 30px;
   width: 50%;
@@ -548,8 +680,77 @@ img {
 }
 #skills .title-page {
   position: absolute;
-  top: 60vh;
-  left: 0;
+  top: 0vh;
+  right: 0;
+}
+#skills .content {
+  width: 60%;
+}
+#skills .list-container {
+  display: flex;
+}
+#skills .container-flex {
+  display: flex;
+  margin-top: 30px;
+}
+#skills .container-flex .paths {
+  width: 100%;
+}
+#skills .container-flex .paths .knowpath-container {
+  display: flex;
+  flex-direction: column;
+}
+#skills .container-flex .paths .knowpath {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#skills .container-flex .paths .knowpath h3 {
+  margin-top: 20px;
+}
+#skills .container-flex .paths h3 {
+  margin-bottom: 20px;
+}
+#skills .container-flex .skills {
+  width: 30%;
+}
+#skills .skills-collection {
+  padding: 0 20px 0 0;
+}
+#skills .item-skill {
+  margin-bottom: 10px;
+}
+#skills .item-skill .name b {
+  display: inline-block;
+}
+#skills .list-section {
+  display: flex;
+}
+#skills .list-section .list-item {
+  position: relative;
+  cursor: pointer;
+}
+#skills .list-section .list-item .picture {
+  width: 80%;
+}
+#skills .list-section .list-item .picture img {
+  width: inherit;
+  height: auto;
+}
+#skills .list-section .list-item .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+}
+#skills .list-section .list-item .overlay .name {
+  font-size: 150%;
+}
+#skills .list-section .list-item:hover .overlay {
+  opacity: 1;
 }
 
 #portfolio .portfolio-container .portfolio-section {
@@ -602,7 +803,8 @@ img {
 .timeline-component .timelines-years [item-year]:last-child {
   width: 200px;
 }
-.timeline-component .timeline-events, .timeline-component .timeline-institutions {
+.timeline-component .timeline-events,
+.timeline-component .timeline-institutions {
   position: relative;
   top: 0;
   padding: 0;
@@ -610,7 +812,8 @@ img {
   white-space: nowrap;
   height: calc(100% - 33px);
 }
-.timeline-component .timeline-events .info, .timeline-component .timeline-institutions .info {
+.timeline-component .timeline-events .info,
+.timeline-component .timeline-institutions .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -618,22 +821,27 @@ img {
   transition: all 300ms;
   font-size: 13px;
 }
-.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+.timeline-component .timeline-events .info .tle-period,
+.timeline-component .timeline-institutions .info .tle-period {
   margin: 0 0 1px 0;
   font-weight: normal;
 }
-.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+.timeline-component .timeline-events .info .tle-period,
+.timeline-component .timeline-institutions .info .tle-period {
   color: #777;
   text-transform: uppercase;
   font-weight: bold;
 }
-.timeline-component .timeline-events .info .tle-type, .timeline-component .timeline-institutions .info .tle-type {
+.timeline-component .timeline-events .info .tle-type,
+.timeline-component .timeline-institutions .info .tle-type {
   font-style: italic;
 }
-.timeline-component .timeline-events .info .tle-description, .timeline-component .timeline-institutions .info .tle-description {
+.timeline-component .timeline-events .info .tle-description,
+.timeline-component .timeline-institutions .info .tle-description {
   display: none;
 }
-.timeline-component .timeline-events [item-event], .timeline-component .timeline-institutions [item-event] {
+.timeline-component .timeline-events [item-event],
+.timeline-component .timeline-institutions [item-event] {
   position: relative;
   display: inline-block;
   background: gray;
@@ -714,22 +922,28 @@ img {
   display: none;
 }
 
-.timeline-events [item-event].yellow, .timeline-institutions [item-event].yellow {
+.timeline-events [item-event].yellow,
+.timeline-institutions [item-event].yellow {
   background: linear-gradient(90deg, #ecf7c5 0%, #546b02 100%);
 }
-.timeline-events [item-event].orange, .timeline-institutions [item-event].orange {
+.timeline-events [item-event].orange,
+.timeline-institutions [item-event].orange {
   background: linear-gradient(90deg, #f5d7ad 0%, #FF9704 100%);
 }
-.timeline-events [item-event].blue, .timeline-institutions [item-event].blue {
+.timeline-events [item-event].blue,
+.timeline-institutions [item-event].blue {
   background: linear-gradient(90deg, #b0d2e2 0%, #56C2F3 100%);
 }
-.timeline-events [item-event].red, .timeline-institutions [item-event].red {
+.timeline-events [item-event].red,
+.timeline-institutions [item-event].red {
   background: linear-gradient(90deg, #f9b49b 0%, #DD3D01 100%);
 }
-.timeline-events [item-event].aqua, .timeline-institutions [item-event].aqua {
+.timeline-events [item-event].aqua,
+.timeline-institutions [item-event].aqua {
   background: linear-gradient(90deg, #bceef1 0%, #4A8B8F 100%);
 }
-.timeline-events [item-event].transparent, .timeline-institutions [item-event].transparent {
+.timeline-events [item-event].transparent,
+.timeline-institutions [item-event].transparent {
   background: transparent;
 }
 
@@ -2529,6 +2743,133 @@ p {
  * @param $value: contain | text | none
  *
  */
+.pathKnowledge {
+  margin-top: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.pathKnowledge .frontend,
+.pathKnowledge .backend {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.pathKnowledge .frontend .page,
+.pathKnowledge .backend .page {
+  background: #385a64;
+  color: #9fb3b9;
+  padding: 20px;
+  width: 400px;
+  font-weight: 600;
+  border: 4px solid #1b2e35;
+  border-bottom: none;
+  border-right: none;
+  margin-top: 90px;
+}
+.pathKnowledge .frontend .page .title-path,
+.pathKnowledge .backend .page .title-path {
+  background: #cd69c9;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: -110px;
+  position: absolute;
+  margin-left: -23px;
+}
+.pathKnowledge .frontend .page .tag,
+.pathKnowledge .backend .page .tag {
+  border: 1px solid #9fb3b9;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.pathKnowledge .backend {
+  justify-content: flex-end;
+}
+.pathKnowledge .backend .page {
+  background: #232730;
+  color: #cecece;
+  border: 4px solid #1b2e35;
+}
+.pathKnowledge .backend .page .title-path {
+  margin-top: -110px;
+  position: absolute;
+  margin-left: 105px;
+}
+.pathKnowledge .backend .page .code code {
+  color: #9d4858;
+  color: white;
+}
+.pathKnowledge .backend .page .code code .comment {
+  color: #698d5e;
+}
+.pathKnowledge .backend .page .code code .reserved {
+  color: #d685d1;
+}
+.pathKnowledge .backend .page .code code .names {
+  color: #f3d15a;
+}
+.pathKnowledge .backend .page .code code .function {
+  color: #f06680;
+}
+.pathKnowledge .perpective-1 {
+  transition: all 300ms;
+}
+.pathKnowledge .perpective-1:hover {
+  transform: perspective(380px) rotateX(0deg) rotateY(30deg) rotateZ(0deg);
+  width: 300px !important;
+}
+.pathKnowledge .perpective-2 {
+  transition: all 300ms;
+}
+.pathKnowledge .perpective-2:hover {
+  transform: perspective(380px) rotateX(0deg) rotateY(-30deg) rotateZ(0deg);
+  width: 300px !important;
+}
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
 h1 {
   font-size: 2.1875em;
   line-height: 2.3125em;
@@ -2645,6 +2986,134 @@ img {
  * @param $value: contain | text | none
  *
  */
+/**
+ * @description
+ * Generate scroll into container 
+ *
+ * @param $size | define size of scroll
+ * 
+ * @param $foreground-color | define foreground color
+ * $foreground-color : rgba(255, 255, 255, 0.1);
+ * 
+ * @param $background-color | define background color
+ * background-color : rgba(255, 255, 255, 0.1);
+ *
+ * @param $radius | define trackbar with radius
+ */
+/**
+ * @description
+ * Generate linear gradient
+ *
+ * @param $from-color | define initial color
+ * $from-color: rgba(255, 255, 255, 0.5);
+ * 
+ * @param $to-color | define end color
+ * $to-color: rgba(255, 255, 255, 0.1);
+ * 
+ * @param $deg | is defined by the center of the box containing the gradient image and by an angle
+ * $deg: 217deg | 0deg | top | top bottom | left | 0.25turn
+ */
+/**
+ * @description
+ * Set element is selectable only text or none
+ *
+ * @param $value: contain | text | none
+ *
+ */
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
+.pathKnowledge {
+  margin-top: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.pathKnowledge .frontend,
+.pathKnowledge .backend {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+.pathKnowledge .frontend .page,
+.pathKnowledge .backend .page {
+  background: #385a64;
+  color: #9fb3b9;
+  padding: 20px;
+  width: 400px;
+  font-weight: 600;
+  border: 4px solid #1b2e35;
+  border-bottom: none;
+  border-right: none;
+  margin-top: 90px;
+}
+.pathKnowledge .frontend .page .title-path,
+.pathKnowledge .backend .page .title-path {
+  background: #cd69c9;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin-top: -110px;
+  position: absolute;
+  margin-left: -23px;
+}
+.pathKnowledge .frontend .page .tag,
+.pathKnowledge .backend .page .tag {
+  border: 1px solid #9fb3b9;
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.pathKnowledge .backend {
+  justify-content: flex-end;
+}
+.pathKnowledge .backend .page {
+  background: #232730;
+  color: #cecece;
+  border: 4px solid #1b2e35;
+}
+.pathKnowledge .backend .page .title-path {
+  margin-top: -110px;
+  position: absolute;
+  margin-left: 105px;
+}
+.pathKnowledge .backend .page .code code {
+  color: #9d4858;
+  color: white;
+}
+.pathKnowledge .backend .page .code code .comment {
+  color: #698d5e;
+}
+.pathKnowledge .backend .page .code code .reserved {
+  color: #d685d1;
+}
+.pathKnowledge .backend .page .code code .names {
+  color: #f3d15a;
+}
+.pathKnowledge .backend .page .code code .function {
+  color: #f06680;
+}
+.pathKnowledge .perpective-1 {
+  transition: all 300ms;
+}
+.pathKnowledge .perpective-1:hover {
+  transform: perspective(380px) rotateX(0deg) rotateY(30deg) rotateZ(0deg);
+  width: 300px !important;
+}
+.pathKnowledge .perpective-2 {
+  transition: all 300ms;
+}
+.pathKnowledge .perpective-2:hover {
+  transform: perspective(380px) rotateX(0deg) rotateY(-30deg) rotateZ(0deg);
+  width: 300px !important;
+}
+
 .debugger * * {
   outline: 1px dotted rgba(238, 130, 238, 0.3);
 }
@@ -2664,6 +3133,7 @@ img {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   position: relative;
+  line-height: 2;
 }
 .app-page .logo {
   font-size: calc(2.5 * 1rem);
@@ -2801,6 +3271,9 @@ img {
   left: 0;
 }
 
+#skills .skills-container {
+  flex-direction: column;
+}
 #skills .skills-container .skills-section {
   padding: 30px;
   width: 50%;
@@ -2817,8 +3290,77 @@ img {
 }
 #skills .title-page {
   position: absolute;
-  top: 60vh;
-  left: 0;
+  top: 0vh;
+  right: 0;
+}
+#skills .content {
+  width: 60%;
+}
+#skills .list-container {
+  display: flex;
+}
+#skills .container-flex {
+  display: flex;
+  margin-top: 30px;
+}
+#skills .container-flex .paths {
+  width: 100%;
+}
+#skills .container-flex .paths .knowpath-container {
+  display: flex;
+  flex-direction: column;
+}
+#skills .container-flex .paths .knowpath {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#skills .container-flex .paths .knowpath h3 {
+  margin-top: 20px;
+}
+#skills .container-flex .paths h3 {
+  margin-bottom: 20px;
+}
+#skills .container-flex .skills {
+  width: 30%;
+}
+#skills .skills-collection {
+  padding: 0 20px 0 0;
+}
+#skills .item-skill {
+  margin-bottom: 10px;
+}
+#skills .item-skill .name b {
+  display: inline-block;
+}
+#skills .list-section {
+  display: flex;
+}
+#skills .list-section .list-item {
+  position: relative;
+  cursor: pointer;
+}
+#skills .list-section .list-item .picture {
+  width: 80%;
+}
+#skills .list-section .list-item .picture img {
+  width: inherit;
+  height: auto;
+}
+#skills .list-section .list-item .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+}
+#skills .list-section .list-item .overlay .name {
+  font-size: 150%;
+}
+#skills .list-section .list-item:hover .overlay {
+  opacity: 1;
 }
 
 #portfolio .portfolio-container .portfolio-section {
@@ -2871,7 +3413,8 @@ img {
 .timeline-component .timelines-years [item-year]:last-child {
   width: 200px;
 }
-.timeline-component .timeline-events, .timeline-component .timeline-institutions {
+.timeline-component .timeline-events,
+.timeline-component .timeline-institutions {
   position: relative;
   top: 0;
   padding: 0;
@@ -2879,7 +3422,8 @@ img {
   white-space: nowrap;
   height: calc(100% - 33px);
 }
-.timeline-component .timeline-events .info, .timeline-component .timeline-institutions .info {
+.timeline-component .timeline-events .info,
+.timeline-component .timeline-institutions .info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -2887,22 +3431,27 @@ img {
   transition: all 300ms;
   font-size: 13px;
 }
-.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+.timeline-component .timeline-events .info .tle-period,
+.timeline-component .timeline-institutions .info .tle-period {
   margin: 0 0 1px 0;
   font-weight: normal;
 }
-.timeline-component .timeline-events .info .tle-period, .timeline-component .timeline-institutions .info .tle-period {
+.timeline-component .timeline-events .info .tle-period,
+.timeline-component .timeline-institutions .info .tle-period {
   color: #777;
   text-transform: uppercase;
   font-weight: bold;
 }
-.timeline-component .timeline-events .info .tle-type, .timeline-component .timeline-institutions .info .tle-type {
+.timeline-component .timeline-events .info .tle-type,
+.timeline-component .timeline-institutions .info .tle-type {
   font-style: italic;
 }
-.timeline-component .timeline-events .info .tle-description, .timeline-component .timeline-institutions .info .tle-description {
+.timeline-component .timeline-events .info .tle-description,
+.timeline-component .timeline-institutions .info .tle-description {
   display: none;
 }
-.timeline-component .timeline-events [item-event], .timeline-component .timeline-institutions [item-event] {
+.timeline-component .timeline-events [item-event],
+.timeline-component .timeline-institutions [item-event] {
   position: relative;
   display: inline-block;
   background: gray;
@@ -2983,22 +3532,28 @@ img {
   display: none;
 }
 
-.timeline-events [item-event].yellow, .timeline-institutions [item-event].yellow {
+.timeline-events [item-event].yellow,
+.timeline-institutions [item-event].yellow {
   background: linear-gradient(90deg, #ecf7c5 0%, #546b02 100%);
 }
-.timeline-events [item-event].orange, .timeline-institutions [item-event].orange {
+.timeline-events [item-event].orange,
+.timeline-institutions [item-event].orange {
   background: linear-gradient(90deg, #f5d7ad 0%, #FF9704 100%);
 }
-.timeline-events [item-event].blue, .timeline-institutions [item-event].blue {
+.timeline-events [item-event].blue,
+.timeline-institutions [item-event].blue {
   background: linear-gradient(90deg, #b0d2e2 0%, #56C2F3 100%);
 }
-.timeline-events [item-event].red, .timeline-institutions [item-event].red {
+.timeline-events [item-event].red,
+.timeline-institutions [item-event].red {
   background: linear-gradient(90deg, #f9b49b 0%, #DD3D01 100%);
 }
-.timeline-events [item-event].aqua, .timeline-institutions [item-event].aqua {
+.timeline-events [item-event].aqua,
+.timeline-institutions [item-event].aqua {
   background: linear-gradient(90deg, #bceef1 0%, #4A8B8F 100%);
 }
-.timeline-events [item-event].transparent, .timeline-institutions [item-event].transparent {
+.timeline-events [item-event].transparent,
+.timeline-institutions [item-event].transparent {
   background: transparent;
 }
 

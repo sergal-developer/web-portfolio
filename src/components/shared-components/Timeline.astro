@@ -13,8 +13,19 @@ let years = [];
 for (let i = 0; i <= steps; i++) {
     years.push(from + i);
 }
+
+let currentZoom = 100;
+
+const handleZoom = () => {
+    console.log('target: ', currentZoom);
+}
+
 ---
 
+<div class="timeline-zoom-control">
+    <div>{ currentZoom }%</div>
+    <div> <input type="range" name="zomcontro." id="zoomcontrol" min="1" max="100" value={currentZoom} onChange={handleZoom} > </div>
+</div>
 <div class="timeline-component">
     
     <div class="timeline-institutions">

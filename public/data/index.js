@@ -8,7 +8,6 @@ export class APP {
     }
     setupPage() {
         // reset when refresh screen
-        window.scrollTo(0, 0);
         const sections = document.querySelectorAll('.section-relative');
         const buttons = document.querySelectorAll('button.link');
         console.log('sections: ', buttons);
