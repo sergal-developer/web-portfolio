@@ -1,7 +1,13 @@
+
+about {
+    display: flex;
+    flex-direction: column-reverse;
+
 .about-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
+    gap: 30px;
 
     .about-section {
         // padding: 30px;
@@ -43,6 +49,14 @@
             }
         }
     }
+    .about-inner {
+        display: flex;
+
+        p {
+            width: 50%;
+        }
+    }
+}
 }
 
 

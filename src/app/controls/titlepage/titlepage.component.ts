@@ -1,7 +1,7 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component( {
-    selector    : 'titlepage',
+    selector    : 'titlepage-component',
     templateUrl : './titlepage.html',
     styleUrls   : [ './titlepage.scss' ],
     encapsulation: ViewEncapsulation.None

@@ -1,27 +1,28 @@
 
 const CONTENT = {
     about: {
-        title: "<span id='front'>FRONTEND</span> <span class='accent'>&</span> <span id='back'>BACKEND</span>",
-        name: "<div class='initials'>Ser</div><div class='subinitials'>gio</div><div class='initials initials2'>Gal</div><div class='subinitials'>legos</div>",
-        namealt: "<span>SERGAL</span><span class='accent'>.</span>",
-        position:
-            "<b><span class='accent'>/</span>Developer<span class='accent'>.</span></b>",
+        title: "FRONTEND <span class='accent'>&</span> BACKEND",
+        name: "Sergio Gallegos",
+        namealt: "SERGAL<span class='accent'>.</span>",
+        position: "<span class='accent'>/</span>Developer<span class='accent'>.</span>",
 
         email: "sergio.gallegos@live.com.mx",
         phone: "52+ 5516322613",
 
         info: [
             {
+                class: "about-text-01",
                 subtitle: "Acerca de Mi",
                 description: [
                     "Soy un apasionado desarrollador con más de una década de experiencia en el mundo de la programación.",
                     "Desde el año 2008, he estado inmerso en el emocionante campo del desarrollo web y de aplicaciones de escritorio.",
                     "<br>",
-                    "<h4>Mi enfoque es convertir ideas en soluciones digitales excepcionales.</h4>",
+                    // "<h4>Mi enfoque es convertir ideas en soluciones digitales excepcionales.</h4>",
                     "Si estás buscando a alguien que pueda llevar tu proyecto al siguiente nivel, estoy listo para sumergirme en nuevos desafíos y contribuir al éxito de tu equipo. <br> ¡No dudes en contactarme! <br> <a href='mailto:sergio.gallegos@live.com.mx'>sergio.gallegos@live.com.mx</a> ",
                 ],
             },
             {
+                class: "about-text-02",
                 subtitle: "Mis Especialidades",
                 description: [
                     "<b>Arquitectura de Desarrollo</b> Siempre estoy investigando y aplicando las mejores prácticas en arquitectura de desarrollo. Me aseguro de que mis proyectos estén diseñados con sólidas bases técnicas para garantizar un rendimiento óptimo y una fácil escalabilidad.",
@@ -37,7 +38,8 @@ const CONTENT = {
     experience: {
         title: "<span class='accent'>More than a decade</span>",
         position: "<b>Experience<span class='accent'>.</span></b>",
-
+        name: "",
+        namealt: "",
         description: `Desde 2008 comencé a trabajar en proyectos de blogs y exposiciones universitarias, entendiendo más las tecnologías de la información. Me incursioné en el desarrollo full stack, mezclando backend, frontend y diseño gráfico. Esto ha abierto las puertas a diversos proyectos como los que se mostrarán a continuación.`,
         projects: [
             {
@@ -550,7 +552,8 @@ const CONTENT = {
     skills: {
         title: "Skills <span class='accent'>&</span>",
         position: "<b>Education<span class='accent'>.</span></b>",
-
+        name: "",
+        namealt: "",
         subtitle1: "Just My Skills",
         description1: `Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years.`,
 

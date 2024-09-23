@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { EXPERIENCE } from '../../../../data/datacontent';
 
 @Component( {
     selector    : 'experience',
@@ -9,6 +10,9 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 export class ExperienceComponent {
     title = 'SERGAL';
+    data = EXPERIENCE;
+    from = 2006;
+    to = 2024;
     constructor() {
     }
 }

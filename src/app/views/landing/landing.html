@@ -5,25 +5,15 @@
     </div>
 
     <nav>
-      <div class="header-item"><button class="link">About</button></div>
-      <div class="header-item"><button class="link">Experience</button></div>
-      <div class="header-item"><button class="link">Skills & Portfolio</button></div>
+      <div class="header-item nav-link" 
+        *ngFor="let menu of menus"
+        [ngClass]="{'active': menu.active }" [innerHTML]="menu.name"
+        (click)="goTo(menu.section)">
+      </div>
     </nav>
   </header>
 
   <main>
-    <!-- <div class="title-page" id="main-title">s
-        <div class="title-page-name" id="main-title-name">Sergio Gallegos</div>
-        <div class="title-page-description" id="main-title-description"><b><span class="accent">/</span>Developer<span class="accent">.</span></b></div>
-    </div> -->
-    <!-- 
-    <div class="title-page" id="main-title-header">
-      <div class="title-page-name">Sergio Gallegos</div>
-      <div class="title-page-title">FRONTEND <span class="accent">•</span> BACKEND</div>
-      <div class="title-page-description"><b><span class="accent">/</span>Developer<span class="accent">.</span></b></div>
-  </div> -->
-
-
     <section id="about" class="section-relative">
       <about></about>
     </section>

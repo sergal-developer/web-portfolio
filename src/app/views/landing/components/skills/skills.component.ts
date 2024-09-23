@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { SKILLS } from '../../../../data/datacontent';
 
 @Component( {
     selector    : 'skills',
@@ -9,6 +10,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 
 export class SkillsComponent {
     title = 'SERGAL';
+    data = SKILLS;
+
     constructor() {
     }
 }

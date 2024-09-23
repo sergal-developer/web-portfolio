@@ -1,13 +1,13 @@
-<titlepage [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
+<titlepage-component [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
     [description]="data.position">
-</titlepage>
+</titlepage-component>
 
 <div class="container about-container">
     <ng-container *ngFor="let item of data.info; let i=index">
-        <div class="{{ 'about-section section-' + i }}" >
-            <h3 [innerHTML]="item.subtitle" ></h3>
+        <div class="about-section  {{ item.class }}">
+            <h3 [innerHTML]="item.subtitle"></h3> 
             <ng-container *ngFor="let desc of item.description">
-                <p [innerHTML]="desc" ></p>
+                <p [innerHTML]="desc"></p>
             </ng-container>
         </div>
     </ng-container>

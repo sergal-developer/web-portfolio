@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitlepageComponent } from './titlepage/titlepage.component';
+import { TimelineComponent } from './timeline/timeline.component';
+import { AdnComponent } from './adn/adn.component';
 
 @NgModule ( {
   imports: [
@@ -8,10 +10,14 @@ import { TitlepageComponent } from './titlepage/titlepage.component';
     // Controls
   ],
   declarations: [
-    TitlepageComponent
+    AdnComponent,
+    TitlepageComponent,
+    TimelineComponent
   ],
   exports: [
-    TitlepageComponent
+    AdnComponent,
+    TitlepageComponent,
+    TimelineComponent
   ],
   providers: []
 } )
