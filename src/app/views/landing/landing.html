@@ -5,7 +5,7 @@
     </div>
 
     <nav>
-      <div class="header-item nav-link" 
+      <div class="header-item nav-link {{ menu.section }}" 
         *ngFor="let menu of menus"
         [ngClass]="{'active': menu.active }" [innerHTML]="menu.name"
         (click)="goTo(menu.section)">

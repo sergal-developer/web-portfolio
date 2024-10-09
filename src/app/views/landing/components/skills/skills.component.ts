@@ -13,5 +13,6 @@ export class SkillsComponent {
     data = SKILLS;
 
     constructor() {
+        // console.log('this.data: ', this.data);
     }
 }
