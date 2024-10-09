@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "/web-portfolio/",
+            "baseHref": "",
             "outputPath": "docs",
             "index": "src/config/index.html",
             "main": "src/config/main.ts",
@@ -99,7 +99,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "/web-portfolio/",
+            "baseHref": "/",
             "buildTarget": "web-portfolio:build:production"
           }
         }
