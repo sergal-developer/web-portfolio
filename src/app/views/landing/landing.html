@@ -1,7 +1,9 @@
 <div class="app-page">
+  <main-element-component></main-element-component>
+  
   <header>
     <div class="header-item">
-      <div class="logo"><span>SERGAL</span><span class="accent">.</span></div>
+      <div class="logo" (click)="goTo('init');"><span>SERGAL</span><span class="accent">.</span></div>
     </div>
 
     <nav>
@@ -14,6 +16,8 @@
   </header>
 
   <main>
+    <section id="init" class="section-relative">
+    </section>
     <section id="about" class="section-relative">
       <about></about>
     </section>

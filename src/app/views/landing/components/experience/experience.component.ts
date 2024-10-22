@@ -13,6 +13,7 @@ export class ExperienceComponent {
     data = EXPERIENCE;
     from = 2006;
     to = 2024;
+    
     constructor() {
     }
 }

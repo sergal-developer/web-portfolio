@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { AfterContentInit, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -17,29 +18,43 @@ export class LandingComponent implements OnInit, AfterContentInit {
     sections: Array<Element> = [];
     sectionProps: Array<any> = [];
     current = '';
+    timeDelay = 2000;
 
-    constructor() {
+    constructor(private viewportScroller: ViewportScroller) {
     }
 
     ngOnInit(): void {
     }
 
     ngAfterContentInit(): void {
+        if (scrollY === 0) {
+            setTimeout(() => {
+                this.goTo('about');
+            }, this.timeDelay);
+        }
+
         this.onScroll(new Event('init', {}));
     }
 
     goTo(section: string) {
-        const view = document.querySelector(`#${section}`);
-        view?.scrollIntoView({ 
-            block: "center",
-            behavior: "smooth" });
         this.menus.map((m) => {
             m.active = m.section == section;
+        });
+
+        const view: any = document.querySelector(`#${section}`);
+        const top = view?.offsetTop;
+        view?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest"
         });
     }
 
     @HostListener('window:scroll', ['$event'])
     onScroll(event: Event) {
+
+        const percernt = this.percentScroll();
+
         this.sections = Array.from(document.querySelectorAll('.section-relative'));
         this.sections.forEach((section: any) => {
             let props = {
@@ -47,7 +62,7 @@ export class LandingComponent implements OnInit, AfterContentInit {
                 sectionHeight: section.clientHeight,
                 id: section.getAttribute('id')
             }
-            
+
             if (scrollY >= props.sectionTop - 1) {
                 this.current = props.id;
             }
@@ -61,6 +76,27 @@ export class LandingComponent implements OnInit, AfterContentInit {
             }
         });
         event.preventDefault();
+
+
+        if (scrollY === 0) {
+            setTimeout(() => {
+                this.goTo('about');
+            }, this.timeDelay);
+        }
+
         return false;
+    }
+
+    percentScroll() {
+        const app: any = document.querySelector('.app-page');
+        let percent = 0;
+        try {
+            percent = (scrollY * 100) / app.clientHeight;
+        } catch (error) {
+            console.log('ERR.percentScroll(): ', error);
+        }
+        
+        console.log(scroll, {scrollY, percent});
+        return percent;
     }
 }

@@ -1,13 +1,20 @@
 
 about {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
 .about-container {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 30px;
+
+    animation-timeline: scroll(root block);
+    animation-name: about-container-scroll;
+    animation-range: 0% 600px;
+    animation-fill-mode: forwards;
+    transition: all 300ms;
+    margin: 0px 0 25%;
 
     .about-section {
         // padding: 30px;
@@ -59,4 +66,13 @@ about {
 }
 }
 
+@keyframes about-container-scroll {
+    from {
+        transform: translateY(400%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
 

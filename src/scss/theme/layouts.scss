@@ -107,14 +107,13 @@
             padding-right: calc($paddingWidth + 17px);
         }
 
-        // animation-timeline: scroll(root block);;
-        // animation-name: nav-scroll;
-        // animation-range: 0% 18%;
-        // animation-fill-mode: forwards;
+        animation-timeline: scroll(root block);
+        animation-name: nav-scroll;
+        animation-range: 0% 400px;
+        animation-fill-mode: forwards;
         transition: all 300ms;
     }
 }
-
 
 .section-relative {
     position: relative;
@@ -141,6 +140,7 @@
 
 
 #about {
+    // margin-top: 100vh;
     @import "sections/about.scss";
 }
 
@@ -181,20 +181,3 @@
     }
 }
 
-@keyframes adjust-image {
-    from {
-        zoomate: -50% 100% 0;
-        translate: 0% 0%
-    }
-
-    80% {
-        opacity: 0.10;
-    }
-
-    to {
-        translate: -50% 100% 0;
-        scale: 3.5;
-        opacity: 0.10;
-        rotate: -6deg;
-    }
-}

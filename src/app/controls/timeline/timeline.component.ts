@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component( {
     selector    : 'timeline',
@@ -7,7 +7,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
     encapsulation: ViewEncapsulation.None
 } )
 
-export class TimelineComponent {
+export class TimelineComponent implements OnInit {
     @Input() from: number= 2006;
     @Input() to: number = 2024;
     @Input() projects: Array<any> = [];
@@ -18,22 +18,25 @@ export class TimelineComponent {
     currentZoom = 100;
     
     constructor() {
+    }
+
+    ngOnInit(): void {
         this.init();
     }
 
     init() {
         this.steps = this.to - this.from;
-        Object.entries(this.steps).map((year, index) => {
-            const y = this.from + index;
+        const steps = new Array<number>(this.steps);
+        for (let idx = 0; idx <= steps.length; idx++) {
+            const y = this.from + idx;
             this.years.push(y);
-        });
+        }
 
         this.normalize();
     }
 
 
     handleZoom() {
-        console.log('target: ', this.currentZoom);
     }
 
     normalize() {
@@ -52,5 +55,10 @@ export class TimelineComponent {
             evt._color = evt.color ? evt.color : '';
             evt._className = evt._duration + evt._level + evt._showDetails + evt._color;
         });
+    }
+
+    selectYear(year: number) {
+        console.log('year: ', year);
+        
     }
 }
