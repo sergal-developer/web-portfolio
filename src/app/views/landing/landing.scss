@@ -1,4 +1,40 @@
+@import '../../../scss/core/mixins';
+@import '../../../scss/core/globals.scss';
+
 .app-page {
-    overflow-y: scroll;
+    overflow: hidden;
     scroll-behavior: smooth;
+}
+
+
+
+.transition-loader {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    transition: all 300ms;
+
+    .item {
+        width: inherit;
+        height: inherit;
+        transition: all 300ms;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        &.orange { background: $accentColor;
+            transition: all 300ms;
+            transition-delay: 0; }
+        &.red { background: red;
+            transition: all 300ms;
+            transition-delay: 200ms; }
+        &.blue { background: blue;
+            transition: all 300ms;
+            transition-delay: 400ms; }
+    }
+
+    
 }

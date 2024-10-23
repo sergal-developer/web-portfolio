@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { SKILLS } from '../../../../data/datacontent';
+import { PORTFOLIO, SKILLS } from '../../../../data/datacontent';
 
 @Component( {
     selector    : 'skills',
@@ -11,8 +11,21 @@ import { SKILLS } from '../../../../data/datacontent';
 export class SkillsComponent {
     title = 'SERGAL';
     data = SKILLS;
+    skills: Array<any> = [];
+    size = 100;
+    style = 'width: 100%';
+
+    portfolio = PORTFOLIO.list;
 
     constructor() {
-        // console.log('this.data: ', this.data);
+        this.skills = this.data.skills;
+        console.log('this.data: ', this.portfolio);
+    }
+
+
+    setRamdonSize() {
+        const percent = Math.floor(Math.random() * 100);
+        console.log('percent: ', percent);
+        this.style = `width: ${percent}%`
     }
 }

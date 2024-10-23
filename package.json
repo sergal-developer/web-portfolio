@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "deploy": "ng deploy",
-    "g": "gulp copy-resources"
+    "copy": "gulp copy-resources"
   },
   "repository": {
     "type": "git",

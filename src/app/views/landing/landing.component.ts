@@ -27,13 +27,15 @@ export class LandingComponent implements OnInit, AfterContentInit {
     }
 
     ngAfterContentInit(): void {
-        if (scrollY === 0) {
-            setTimeout(() => {
-                this.goTo('about');
-            }, this.timeDelay);
-        }
+        // if (scrollY === 0) {
+        //     setTimeout(() => {
+        //         this.goTo('about');
+        //     }, this.timeDelay);
+        // }
 
-        this.onScroll(new Event('init', {}));
+        setTimeout(() => {
+            this.onScroll(new Event('init', {}));
+        }, 300);
     }
 
     goTo(section: string) {
@@ -95,8 +97,6 @@ export class LandingComponent implements OnInit, AfterContentInit {
         } catch (error) {
             console.log('ERR.percentScroll(): ', error);
         }
-        
-        console.log(scroll, {scrollY, percent});
         return percent;
     }
 }

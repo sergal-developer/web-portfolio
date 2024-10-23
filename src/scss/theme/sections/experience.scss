@@ -6,6 +6,10 @@
     .description {
         width: 50%;
         margin-left: auto;
+        &.right {
+            margin-right: auto;
+            margin-left: 0;
+        }
     }
 
     .experience-section {
@@ -28,7 +32,7 @@
 }
 
 .title-page {
-    // position: absolute;
+    position: absolute;
     top: 0vh;
-    left: 0;
+    right: 0;
 }

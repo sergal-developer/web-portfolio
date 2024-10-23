@@ -126,7 +126,7 @@
 // $paddingWidthSectionTablet: 10%;
 // $paddingWidthSectionMobile: 10%;
 
-    padding-top: calc($headerHeight + 10px);
+    padding-top: calc($headerHeight);
     padding-bottom: calc($paddingHeight * 2);
 
     .container {
@@ -149,13 +149,12 @@
 }
 
 #skills {
-    @import "sections/skills.scss";
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    padding-top: calc($headerHeight);
 }
-
-#portfolio {
-    @import "sections/portfolio.scss";
-}
-
 
 
 @keyframes titleAnimationAbout {

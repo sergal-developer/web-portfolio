@@ -14,7 +14,7 @@ main-element-component {
        
         animation: adjust-image linear both;
         animation-timeline: scroll();
-        animation-range: 0 40%;
+        animation-range: 0 43%;
         transition: all;
 
         .title-page-description {
@@ -32,6 +32,12 @@ main-element-component {
         margin-top: calc((100vh / 3));
     }
 
+    80% {
+        opacity: 1;
+        margin-left: 5%;
+        margin-top: 77vh;
+    }
+
     90% {
         opacity: 1;
         margin-left: 5%;
@@ -39,8 +45,8 @@ main-element-component {
     }
 
     to {
-        opacity: 0.1;
+        opacity: 0;
         margin-left: 0%;
-        margin-top: 100vh;
+        margin-top: 70vh;
     }
 }

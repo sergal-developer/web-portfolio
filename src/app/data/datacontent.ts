@@ -36,7 +36,7 @@ const CONTENT = {
         documentFile: "files/cv.pdf",
     },
     experience: {
-        title: "<span class='accent'>More than a decade</span>",
+        title: "<span class='accent'>+</span> than a decade",
         position: "<b>Experience<span class='accent'>.</span></b>",
         name: "",
         namealt: "",
@@ -550,8 +550,8 @@ const CONTENT = {
         ],
     },
     skills: {
-        title: "Skills <span class='accent'>&</span>",
-        position: "<b>Education<span class='accent'>.</span></b>",
+        title: " <b> Skills<b>",
+        position: "<span class='accent'>&</span> portfolio",
         name: "",
         namealt: "",
         subtitle1: "Just My Skills",
