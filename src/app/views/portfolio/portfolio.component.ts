@@ -2,13 +2,13 @@ import { ViewportScroller } from '@angular/common';
 import { AfterContentInit, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-    selector: 'landing',
-    templateUrl: './landing.html',
-    styleUrls: ['./landing.scss'],
+    selector: 'portfolio-view',
+    templateUrl: './portfolio.html',
+    styleUrls: ['./portfolio.scss'],
     encapsulation: ViewEncapsulation.None
 })
 
-export class LandingComponent implements OnInit, AfterContentInit {
+export class PortfolioViewComponent implements OnInit, AfterContentInit {
     menus = [
         { id: 'navAbout', name: 'Acerca de', section: 'about', active: true },
         { id: 'navExperience', name: 'Experiencia', section: 'experience', active: false },

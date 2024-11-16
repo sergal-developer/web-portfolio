@@ -1,48 +1,80 @@
-<div class="_frame-container">
-  <div class="_frame-content">
-    <div class="_section-leteral main">
+<div class="container skills-container">
+  <titlepage-component [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
+    [description]="data.position">
+  </titlepage-component>
 
-      <div class="_subsection">
-        <titlepage-component [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
-          [description]="data.position">
-        </titlepage-component>
+  <div>
+    <div class="row content">
+      <h3>{{ data.subtitle2 }}</h3>
+      <p>{{ data.description2 }}</p>
+    </div>
+  </div>
 
-        <div>
-          <div class="row content">
-            <h3>{{ data.subtitle2 }}</h3>
-            <p>{{ data.description2 }}</p>
-          </div>
-        </div>
-      </div>
+</div>
 
-      <div class="_subsection">
-        <div class="skills-collection">
-          <div class="skill" *ngFor="let skill of skills">
+<div class="container skills-container center">
+
+  <div class="_subsection persepective-container tech-collection">
+    <div class="skills-collection pc-content">
+      <div class="skill" *ngFor="let skill of skills; index as i" [ngClass]="{'alter': i%2}">
+        <div class="hexa-warp">
+          <div class="hexa">
             <img [attr.src]="'/assets/' + skill.image" [attr.alt]="skill.image">
           </div>
         </div>
       </div>
     </div>
   </div>
-
+  
 </div>
 
-<div class="_frame-container">
-  <div class="_frame-content">
-    <div class="_section-leteral main">
+<ng-container *ngIf="false">
 
-      <div class="_subsection project" *ngFor="let item of portfolio">
-        <div class="pj_name">{{ item.name }}</div>
-        <div class="pj_description">{{ item.description }}</div>
-        <div class="pj_years">{{ item.years }}</div>
-        <div class="pj_technologies">{{ item.name }}</div>
-        <div class="pj_images">
-          <img [attr.src]="item.image" [attr.alt]="item.image">
+  <div class="_frame-container">
+    <div class="_frame-content">
+      <div class="_section-leteral main">
+
+        <div class="_subsection">
+          <titlepage-component [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
+            [description]="data.position">
+          </titlepage-component>
+
+          <div>
+            <div class="row content">
+              <h3>{{ data.subtitle2 }}</h3>
+              <p>{{ data.description2 }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="_subsection">
+          <div class="skills-collection">
+            <div class="skill" *ngFor="let skill of skills">
+              <img [attr.src]="'/assets/' + skill.image" [attr.alt]="skill.image">
+            </div>
+          </div>
         </div>
       </div>
-
-
     </div>
+
   </div>
 
-</div>
+  <div class="_frame-container">
+    <div class="_frame-content">
+      <div class="_section-leteral main">
+        <div class="_subsection project" *ngFor="let item of portfolio">
+          <div class="pj_name">{{ item.name }}</div>
+          <div class="pj_description">{{ item.description }}</div>
+          <div class="pj_years">{{ item.years }}</div>
+          <div class="pj_technologies">{{ item.name }}</div>
+          <div class="pj_images">
+            <img [attr.src]="item.image" [attr.alt]="item.image">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</ng-container>

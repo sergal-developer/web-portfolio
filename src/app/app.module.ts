@@ -6,18 +6,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutes } from './app.routes';
 import { LandingModule } from './views/landing/landing.module';
+import { PortfolioModule } from './views/portfolio/portfolio.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutes,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    LandingModule
+    LandingModule,
+    PortfolioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

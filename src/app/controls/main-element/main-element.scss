@@ -8,13 +8,13 @@ main-element-component {
         top: 0;
         left: 0;
         right: 0;
-        margin: 0 auto;
+        margin: 25% auto;
         width: $titleWidth;
-        position: fixed;
+        position: absolute;
        
-        animation: adjust-image linear both;
-        animation-timeline: scroll();
-        animation-range: 0 43%;
+        // animation: adjust-image linear both;
+        // animation-timeline: scroll();
+        // animation-range: 0 40%;
         transition: all;
 
         .title-page-description {

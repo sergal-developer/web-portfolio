@@ -896,6 +896,8 @@ const CONTENT = {
         ]
     },
     portfolio: {
+        name: "",
+        namealt: "",
         title: "A look at my <span class='accent'>&bull;</span>",
         position: "<b><span class='accent'>/</span>Portfolio</b>",
 

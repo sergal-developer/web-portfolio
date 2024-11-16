@@ -1,0 +1,70 @@
+@import "../../../../../scss/theme/keyframes.scss";
+about {
+    // display: flex;
+    // flex-direction: column;
+    .about-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 30px;
+
+        animation-timeline: scroll(root block);
+        animation-name: about-container-scroll;
+        animation-range: 0% 600px;
+        animation-fill-mode: forwards;
+        transition: all 300ms;
+        margin: 0px 0 25%;
+
+        .about-section {
+            // padding: 30px;
+            padding: 0;
+            width: 100%;
+            margin-bottom: 20px;
+
+            &:first-child {
+                padding-left: 0;
+                padding: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+                padding: 0;
+            }
+
+            &.section-2 {
+                position: absolute;
+                top: 45%;
+            }
+
+            &.section-1 {
+                display: flex;
+                flex-wrap: wrap;
+
+                h3 {
+                    width: 100%;
+                }
+
+                p {
+                    width: calc((100% / 4) - 20px);
+                    margin-right: 20px;
+
+                    b {
+                        height: 40px;
+                        line-height: 1.4;
+                        margin-bottom: 20px;
+                        width: 100%;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .about-inner {
+            display: flex;
+
+            p {
+                width: 50%;
+            }
+        }
+    }
+}

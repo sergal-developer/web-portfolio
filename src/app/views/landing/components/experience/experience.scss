@@ -1,0 +1,41 @@
+experience {
+    .experience-container {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    
+        .description {
+            width: 50%;
+            margin-left: auto;
+            &.right {
+                margin-right: auto;
+                margin-left: 0;
+            }
+        }
+    
+        .experience-section {
+            padding: 30px;
+            width: 50%;
+    
+            &:first-child {
+                padding-left: 0;
+            }
+    
+            &:last-child {
+                padding-right: 0;
+            }
+    
+            &.section-2 {
+                position: absolute;
+                top: 45%;
+            }
+        }
+    }
+    
+    .title-page {
+        position: absolute;
+        top: 0vh;
+        right: 0;
+    }
+
+}
