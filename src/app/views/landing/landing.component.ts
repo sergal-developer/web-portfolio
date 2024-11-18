@@ -1,5 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { AfterContentInit, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
+import { TranslateService, _ } from '@ngx-translate/core';
+import { EventBusService, EventBus } from '../../shared/events/EventBus.service';
 
 @Component({
     selector: 'landing',
@@ -21,11 +23,31 @@ export class LandingComponent implements OnInit, AfterContentInit {
     current = '';
     timeDelay = 2000;
     percerntScroll = 0;
+    browserLangs: string[] = [];
+    currentLang: string = '';
+    loadingLanguage = false;
 
-    constructor(private viewportScroller: ViewportScroller) {
+    constructor(
+        private viewportScroller: ViewportScroller,
+        private translate: TranslateService,
+        private eventBusService: EventBusService) {
+        this.translate.addLangs(['es', 'en']);
+        this.browserLangs = this.translate.getLangs();
+        this.currentLang = 'en';
+        this.translate.setDefaultLang(this.currentLang);
+        this.eventBusService.publish({ name: 'language', data: this.currentLang });
     }
 
     ngOnInit(): void {
+        this.eventBusService.subscribe('language').subscribe((eventData: EventBus) => {
+            this.currentLang = eventData.data;
+            this.translate.use(this.currentLang);
+            this.updateLanguageDependedncies();
+
+            setTimeout(() => {
+                this.loadingLanguage = false;
+            }, 500);
+        });
     }
 
     ngAfterContentInit(): void {
@@ -53,14 +75,14 @@ export class LandingComponent implements OnInit, AfterContentInit {
             inline: "nearest"
         });
 
-        setTimeout(() => {
-            console.info('scroll: ', {
-                percernt: this.percerntScroll,
-                scroll: scrollY,
-                top: top
-            });
-            console.log('props: ', this.sectionProps);
-        }, 2000);
+        // setTimeout(() => {
+        //     // console.info('scroll: ', {
+        //     //     percernt: this.percerntScroll,
+        //     //     scroll: scrollY,
+        //     //     top: top
+        //     // });
+        //     // console.log('props: ', this.sectionProps);
+        // }, 2000);
     }
 
     @HostListener('window:scroll', ['$event'])
@@ -70,8 +92,8 @@ export class LandingComponent implements OnInit, AfterContentInit {
         this.percerntScroll = this.percentScroll();
         this.sections = Array.from(document.querySelectorAll('.section-relative'));
         this.sectionProps.forEach((section: any) => {
-            console.log('scrollY: ', scrollY);
-            console.log('section.sectionTop: ', section.sectionTop);
+            // console.log('scrollY: ', scrollY);
+            // console.log('section.sectionTop: ', section.sectionTop);
             if (scrollY > section.sectionTop - 100) {
                 this.current = section.id;
             }
@@ -85,7 +107,7 @@ export class LandingComponent implements OnInit, AfterContentInit {
             }
         });
 
-        console.log('this.current: ', this.current);
+        // console.log('this.current: ', this.current);
         event.preventDefault();
 
 
@@ -121,6 +143,23 @@ export class LandingComponent implements OnInit, AfterContentInit {
         }
         return percent;
     }
+
+    //#region LANGUAGE 
+    changeLang(language: string) {
+        this.currentLang = language;
+        this.translate.use(this.currentLang);
+        this.eventBusService.publish({ name: 'language', data: this.currentLang });
+        this.loadingLanguage = true;
+    }
+
+    updateLanguageDependedncies() {
+        this.menus.map((menu) => {
+            this.translate.get(_(`NAV.${menu.id}`)).subscribe((res: string) => {
+                menu.name = res;
+            });
+        });
+    }
+    //#endregion LANGUAGE 
 }
 
 

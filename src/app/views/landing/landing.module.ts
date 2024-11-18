@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { PortfolioListComponent } from './components/portfolio-list/portfolio-li
         // VIEWS
 
         // COMPONENTS
-        ControlsModule
+        ControlsModule,
+        TranslateModule
     ],
     declarations: [
         LandingComponent,

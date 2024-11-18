@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { PORTFOLIO } from '../../../../data/datacontent';
+import { _, TranslateService } from '@ngx-translate/core';
+import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
 @Component( {
     selector    : 'portfolio-list',
@@ -9,21 +11,38 @@ import { PORTFOLIO } from '../../../../data/datacontent';
 } )
 
 export class PortfolioListComponent {
-    title = 'SERGAL';
     data = PORTFOLIO;
     portfolios: Array<any> = [];
     size = 100;
     style = 'width: 100%';
 
     portfolio = PORTFOLIO.list;
-
-    constructor() {
+    title = {
+        name: '',
+        namealt: '',
+        title: '',
+        position: ''
     }
 
-
-    setRamdonSize() {
-        const percent = Math.floor(Math.random() * 100);
-        console.log('percent: ', percent);
-        this.style = `width: ${percent}%`
+    constructor(private translate: TranslateService,
+        private eventBusService: EventBusService) {
     }
+
+    ngOnInit(): void {
+        this.eventBusService.subscribe('language').subscribe((eventData: EventBus) => {
+            this.updateLanguageDependedncies();
+        });
+        this.updateLanguageDependedncies();
+    }
+
+    //#region LANGUAGE
+    updateLanguageDependedncies() {
+        this.translate.get(_(`PORTFOLIO.title`)).subscribe((res: string) => {
+            this.title.title = res;
+        });
+        this.translate.get(_(`PORTFOLIO.position`)).subscribe((res: string) => {
+            this.title.position = res
+        });
+    }
+    //#endregion LANGUAGE
 }

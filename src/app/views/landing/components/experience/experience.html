@@ -1,9 +1,9 @@
 <div class="container experience-container">
-    <titlepage-component [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
-        [description]="data.position">
+    <titlepage-component [id]="'about-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
+        [description]="title.position">
     </titlepage-component>
 
-    <p class="description right">{{ data.description }}</p>
+    <p class="description right">{{ 'EXPERIENCE.description' | translate }}</p>
 
     <timeline [from]="from" [to]="to" [projects]="data.projects" [institutions]="data.institutions">
     </timeline>

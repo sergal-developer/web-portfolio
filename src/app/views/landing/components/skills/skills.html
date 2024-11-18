@@ -1,12 +1,12 @@
 <div class="container skills-container">
-  <titlepage-component [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
-    [description]="data.position">
+  <titlepage-component [id]="'about-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
+    [description]="title.position">
   </titlepage-component>
 
   <div>
     <div class="row content">
-      <h3>{{ data.subtitle2 }}</h3>
-      <p>{{ data.description2 }}</p>
+      <h3>{{ 'SKILLS.subtitle' | translate }}</h3>
+      <p>{{ 'SKILLS.description' | translate }}</p>
     </div>
   </div>
 
@@ -27,54 +27,3 @@
   </div>
   
 </div>
-
-<ng-container *ngIf="false">
-
-  <div class="_frame-container">
-    <div class="_frame-content">
-      <div class="_section-leteral main">
-
-        <div class="_subsection">
-          <titlepage-component [id]="'about-title'" [name]="data.name" [namealt]="data.namealt" [title]="data.title"
-            [description]="data.position">
-          </titlepage-component>
-
-          <div>
-            <div class="row content">
-              <h3>{{ data.subtitle2 }}</h3>
-              <p>{{ data.description2 }}</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="_subsection">
-          <div class="skills-collection">
-            <div class="skill" *ngFor="let skill of skills">
-              <img [attr.src]="'/assets/' + skill.image" [attr.alt]="skill.image">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="_frame-container">
-    <div class="_frame-content">
-      <div class="_section-leteral main">
-        <div class="_subsection project" *ngFor="let item of portfolio">
-          <div class="pj_name">{{ item.name }}</div>
-          <div class="pj_description">{{ item.description }}</div>
-          <div class="pj_years">{{ item.years }}</div>
-          <div class="pj_technologies">{{ item.name }}</div>
-          <div class="pj_images">
-            <img [attr.src]="item.image" [attr.alt]="item.image">
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-
-  </div>
-</ng-container>

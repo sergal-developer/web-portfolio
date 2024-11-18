@@ -1,4 +1,4 @@
-<div class="app-page debugger">
+<div class="app-page" [ngClass]="{'loadingLanguage': loadingLanguage }">
   <main-element-component></main-element-component>
   
   <header>
@@ -12,6 +12,16 @@
         [ngClass]="{'active': menu.active }" [innerHTML]="menu.name"
         (click)="goTo(menu.section)">
       </div>
+      <div class="header-item language">
+        <span>{{ currentLang }}</span>
+
+        <div class="header-item language-drop">
+          <ng-container *ngFor="let lang of browserLangs">
+            <div class="item" (click)="changeLang(lang)">{{ lang }}</div>
+          </ng-container>
+        </div>
+      </div>
+      
     </nav>
   </header>
 

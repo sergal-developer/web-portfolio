@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { PORTFOLIO, SKILLS } from '../../../../data/datacontent';
+import { _, TranslateService } from '@ngx-translate/core';
+import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
 @Component( {
     selector    : 'skills',
@@ -9,23 +11,40 @@ import { PORTFOLIO, SKILLS } from '../../../../data/datacontent';
 } )
 
 export class SkillsComponent {
-    title = 'SERGAL';
     data = SKILLS;
     skills: Array<any> = [];
     size = 100;
     style = 'width: 100%';
 
     portfolio = PORTFOLIO.list;
+    title = {
+        name: '',
+        namealt: '',
+        title: '',
+        position: ''
+    }
 
-    constructor() {
+    constructor(private translate: TranslateService,
+        private eventBusService: EventBusService) {
         this.skills = this.data.skills;
-        console.log('this.data: ', this.portfolio);
+        // console.log('this.data: ', this.portfolio);
     }
 
-
-    setRamdonSize() {
-        const percent = Math.floor(Math.random() * 100);
-        console.log('percent: ', percent);
-        this.style = `width: ${percent}%`
+    ngOnInit(): void {
+        this.eventBusService.subscribe('language').subscribe((eventData: EventBus) => {
+            this.updateLanguageDependedncies();
+        });
+        this.updateLanguageDependedncies();
     }
+
+    //#region LANGUAGE
+    updateLanguageDependedncies() {
+        this.translate.get(_(`SKILLS.title`)).subscribe((res: string) => {
+            this.title.title = res;
+        });
+        this.translate.get(_(`SKILLS.position`)).subscribe((res: string) => {
+            this.title.position = res
+        });
+    }
+    //#endregion LANGUAGE
 }

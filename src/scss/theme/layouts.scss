@@ -50,19 +50,15 @@
         @include mobile {
             padding: 0 $paddingWidthSectionMobile;
         }
-        
         @include tablet {
             padding: 0 $paddingWidthSectionTablet;
         }
-        
         @include desktop {
             padding: 0 $paddingWidthSectionDesktop;
         }
-        
         @include desktop-wide {
             padding: 0 $paddingWidthSectionDesktopWide;
         }
-        
         @include desktop-huge {
             padding: 0 $paddingWidthSectionDesktopWide;
         }
@@ -93,6 +89,46 @@
                 &.active {
                     border-bottom: 3px solid $accentColor;
                 }
+
+                &.language {
+                    border-bottom: 3px solid transparent;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    width: 50px;
+                    text-align: center;
+
+                    .language-drop {
+                        position: absolute;
+                        display: flex;
+                        flex-direction: column;
+                        background: #d3d3d3;
+                        color: gray;
+                        width: inherit;
+                        margin-left: 0px;
+                        margin-top: -37px;
+                        transition: all 300ms;
+                        transform: translate(0, 0) rotateY(90deg);
+                        opacity: 0;
+                        user-select: none;
+
+                        .item {
+                            padding: 2px 10px;
+
+                            &:hover {
+                                background: gray;
+                                color: black;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .language-drop {
+                            transform: translate(0, 0) rotateY(0deg);
+                            opacity: 1;
+                        }
+                    }
+                }
             }
         }
 
@@ -113,6 +149,13 @@
         // animation-fill-mode: forwards;
         transition: all 300ms;
     }
+
+    &.loadingLanguage {
+        * div {
+            background: #f0f0f0;
+            color: #f0f0f0;
+        }
+    }
 }
 
 .section-relative {
@@ -121,10 +164,10 @@
     min-height: 100vh;
     padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionDesktop;
 
-// $paddingWidthSectionDesktopWide: 10%;
-// $paddingWidthSectionDesktop: 10%;
-// $paddingWidthSectionTablet: 10%;
-// $paddingWidthSectionMobile: 10%;
+    // $paddingWidthSectionDesktopWide: 10%;
+    // $paddingWidthSectionDesktop: 10%;
+    // $paddingWidthSectionTablet: 10%;
+    // $paddingWidthSectionMobile: 10%;
 
     // padding-top: calc($headerHeight);
     // padding-bottom: calc($paddingHeight * 2);
@@ -136,4 +179,3 @@
         position: relative;
     }
 }
-
