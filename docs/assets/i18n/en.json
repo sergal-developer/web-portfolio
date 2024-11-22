@@ -1,5 +1,7 @@
 {
     "GLOBAL": {
+        "en": "English",
+        "es": "Spanish",
         "design": "Design",
         "frontEnd": "FrontEnd",
         "backend": "Backend",

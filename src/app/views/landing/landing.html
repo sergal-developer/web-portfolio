@@ -17,7 +17,9 @@
 
         <div class="header-item language-drop">
           <ng-container *ngFor="let lang of browserLangs">
-            <div class="item" (click)="changeLang(lang)">{{ lang }}</div>
+            <div class="item" (click)="changeLang(lang)" [ngClass]="{'current': lang === currentLang }">
+              <span>{{ 'GLOBAL.' + lang | translate }}</span>
+            </div>
           </ng-container>
         </div>
       </div>

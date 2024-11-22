@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { PORTFOLIO, SKILLS } from '../../../../data/datacontent';
+import { DATA, PORTFOLIO } from '../../../../data/datacontent';
 import { _, TranslateService } from '@ngx-translate/core';
 import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
@@ -11,7 +11,7 @@ import { EventBus, EventBusService } from '../../../../shared/events/EventBus.se
 } )
 
 export class SkillsComponent {
-    data = SKILLS;
+    data = DATA;
     skills: Array<any> = [];
     size = 100;
     style = 'width: 100%';
@@ -26,7 +26,7 @@ export class SkillsComponent {
 
     constructor(private translate: TranslateService,
         private eventBusService: EventBusService) {
-        this.skills = this.data.skills;
+        this.skills = this.data.technologies;
         // console.log('this.data: ', this.portfolio);
     }
 

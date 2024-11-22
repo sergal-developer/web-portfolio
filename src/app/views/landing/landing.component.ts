@@ -10,7 +10,7 @@ import { EventBusService, EventBus } from '../../shared/events/EventBus.service'
     encapsulation: ViewEncapsulation.None
 })
 
-export class LandingComponent implements OnInit, AfterContentInit {
+export class LandingComponent implements OnInit {
     menus = [
         { id: 'navAbout', name: 'Acerca de', section: 'about', active: true },
         { id: 'navExperience', name: 'Experiencia', section: 'experience', active: false },
@@ -24,6 +24,7 @@ export class LandingComponent implements OnInit, AfterContentInit {
     timeDelay = 2000;
     percerntScroll = 0;
     browserLangs: string[] = [];
+    availableLangs: string[] = ['es', 'en'];
     currentLang: string = '';
     loadingLanguage = false;
 
@@ -31,7 +32,7 @@ export class LandingComponent implements OnInit, AfterContentInit {
         private viewportScroller: ViewportScroller,
         private translate: TranslateService,
         private eventBusService: EventBusService) {
-        this.translate.addLangs(['es', 'en']);
+        this.translate.addLangs(this.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
         this.translate.setDefaultLang(this.currentLang);
@@ -48,18 +49,6 @@ export class LandingComponent implements OnInit, AfterContentInit {
                 this.loadingLanguage = false;
             }, 500);
         });
-    }
-
-    ngAfterContentInit(): void {
-        // if (scrollY === 0) {
-        //     setTimeout(() => {
-        //         this.goTo('about');
-        //     }, this.timeDelay);
-        // }
-
-        // setTimeout(() => {
-        //     this.onScroll(new Event('init', {}));
-        // }, 300);
     }
 
     goTo(section: string) {
@@ -146,10 +135,21 @@ export class LandingComponent implements OnInit, AfterContentInit {
 
     //#region LANGUAGE 
     changeLang(language: string) {
+        
+        if(this.currentLang == language) {
+            return;
+        }
+
         this.currentLang = language;
         this.translate.use(this.currentLang);
         this.eventBusService.publish({ name: 'language', data: this.currentLang });
         this.loadingLanguage = true;
+
+        // esto cambia el orden al momento de selecionar un lenguaje
+        if(this.browserLangs[0] == this.currentLang) {
+            this.browserLangs.shift();
+            this.browserLangs.push(this.currentLang)
+        }
     }
 
     updateLanguageDependedncies() {
