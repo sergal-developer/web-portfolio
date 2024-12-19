@@ -1,0 +1,46 @@
+---
+// export interface Props {
+//   from: number;
+//   level: string;
+//   value: number;
+// }
+
+let { from, to, list } = Astro.props;
+
+let steps = to - from;
+let years = [];
+
+for (let i = 0; i <= steps; i++) {
+    years.push(from + i);
+}
+---
+
+<div class="group-cards-component">
+
+    <div class="group-cards-events">
+        {
+            list.map((evt, index) => {
+                const duration = 'group-cards-event-years-' + evt.duration + evt.durationFraction;
+                const level = ' group-cards-level-' + evt.level;
+                const showDetails = evt.showDetails ? ' show-details' : ' ';
+                const color = evt.color ? evt.color : '';
+                return <div item-event id={evt.id}  class={ duration + level + showDetails + color } timeline-item data-item={ evt.id }>
+                    <div class="info">
+                        <div class="tle-period">{ evt.period }</div>
+                        <div class="tle-name">{ evt.name }</div>
+                        <div class="tle-type">{ evt.type }</div>
+                        <div class="tle-description" set:html={ evt.description }></div>
+                    </div>
+                </div>
+            })
+        }
+    </div>
+    <div class="timelines-years">
+        {
+            years.map((y) => {
+                return <div item-year >{y}</div>;
+            })
+        }
+    </div>
+    
+</div>

@@ -4,6 +4,8 @@
 $mobile-width: 0px;
 $tablet-width: 768px;
 $desktop-width: 1204px;
+$desktop-wide-width: 1600px;
+$desktop-huge-width: 2500px;
 
 @mixin mobile {
     @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
@@ -24,7 +26,19 @@ $desktop-width: 1204px;
 }
 
 @mixin desktop {
-    @media (min-width: #{$desktop-width}) {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-wide-width - 1px}) {
+      @content;
+    }
+}
+
+@mixin desktop-wide {
+    @media (min-width: #{$desktop-wide-width}) and (max-width: #{$desktop-huge-width - 1px}) {
+      @content;
+    }
+}
+
+@mixin desktop-huge {
+    @media (min-width: #{$desktop-huge-width}) {
       @content;
     }
 }
@@ -46,15 +60,15 @@ $desktop-width: 1204px;
  *
  * @param $radius | define trackbar with radius
  */
-@mixin scroll($size, $foreground-color, $background-color, $radius) {
+@mixin scroll($size, $color, $background, $radius) {
     &::-webkit-scrollbar {
         width: $size;
         height: $size;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: $background-color;
-        //outline: 1px solid $foreground-color;
+        background-color: $color;
+        //outline: 1px solid $background;
         border-radius: $radius;
     }
     
@@ -65,8 +79,8 @@ $desktop-width: 1204px;
     }
     
     body {
-        scrollbar-face-color: $foreground-color;
-        scrollbar-track-color: $background-color;
+        scrollbar-face-color: $background;
+        scrollbar-track-color: $color;
     }
     
 }
@@ -106,3 +120,20 @@ $desktop-width: 1204px;
     user-select: $value;
 }
 // #endregion
+
+/**
+ * @description
+ * Convert Px into Em
+ *
+ * @param $value: contain | text | none
+ *
+ */
+ $base-font-size: 16;
+@function em($px) {
+    @return #{calc($px / $base-font-size)}em;
+}
+
+@function rem($px) {
+    $rem-value: #{calc($px / $base-font-size)};
+    @return #{calc($rem-value * 1rem)};
+}

@@ -1,0 +1,72 @@
+{
+    "GLOBAL": {
+        "en": "Inglés",
+        "es": "Español",
+        "design": "Diseño",
+        "frontEnd": "FrontEnd",
+        "backend": "Backend",
+        "admin": "Admin",
+        "level_advanced": "Avanzado",
+        "level_expert": "Experto",
+        "level_medium": "Medio",
+        "level_native": "Nativo",
+        "level_beginner": "Principiante",
+        "skill_comunication": "Comunicacion",
+        "skill_flexibility": "Flexibilidad",
+        "skill_leadership": "Liderazgo",
+        "skill_motivation": "Mativacion",
+        "skill_innovation": "Inovación",
+        "skill_solving": "Capacidad de resolver problemas",
+        "skill_Teamwork": "Trabajo en equipo",
+        "skill_english": "Ingles",
+        "skill_spanish": "Español",
+        "skill_logical": "Pensamiento lógico",
+        "skill_tools": "Herramientas de gestión",
+        "skill_digital_skills": "Programación en diferentes áreas (Backend, Frontend)",
+        "skill_design": "Habilidades de diseño y creación de prototipos",
+        "carrer": "Ingenieria en computación"
+    },
+    "NAV": {
+        "navAbout": "Acerca de",
+        "navExperience": "Experiencia",
+        "navskills": "Habilidades",
+        "navsportfolio": "Portafolio"
+    },
+    "ABOUT": {
+        "about": {
+            "title": "Acerca de Mi",
+            "description1": "Soy un apasionado desarrollador con más de una década de experiencia en el mundo de la programación.",
+            "description2": "Desde el año 2008, he estado inmerso en el emocionante campo del desarrollo web y de aplicaciones de escritorio.",
+            "description3": "Mi enfoque es convertir ideas en soluciones digitales excepcionales.",
+            "description4": "Si estás buscando a alguien que pueda llevar tu proyecto al siguiente nivel, estoy listo para sumergirme en nuevos desafíos y contribuir al éxito de tu equipo.",
+            "contactme": "¡No dudes en contactarme!."
+        },
+        "specialties": {
+            "title": "Mis Especialidades",
+            "descriptionTitle1": "Arquitectura de Desarrollo",
+            "descriptionTitle2": "Metodologías de Desarrollo",
+            "descriptionTitle3": "Dominio de Backend y Frontend",
+            "descriptionTitle4": "Experiencia en UX",
+            "description1": "Siempre estoy investigando y aplicando las mejores prácticas en arquitectura de desarrollo. Me aseguro de que mis proyectos estén diseñados con sólidas bases técnicas para garantizar un rendimiento óptimo y una fácil escalabilidad.",
+            "description2": "Soy un firme creyente en las metodologías de desarrollo ágil, como Kanban y Scrum. Estas prácticas me han permitido gestionar proyectos de manera eficaz, adaptándome rápidamente a los cambios y entregando resultados de alta calidad en tiempo y forma.",
+            "description3": "Mi experiencia se extiende a través de las tres ramas fundamentales del desarrollo: Backend, Frontend y UX. Esto me permite tener una visión integral de los proyectos y asegurarme de que todos los aspectos estén perfectamente alineados.",
+            "description4": "Mi compromiso con la experiencia del usuario (UX) se refleja en mis proyectos. Siempre busco la forma de mejorar la usabilidad y la interacción del usuario para crear aplicaciones más atractivas y funcionales."
+        }
+    },
+    "EXPERIENCE": {
+        "title": "<span class='accent'>+</span> Más de una década",
+        "position": "<b>de Experiencia<span class='accent'>.</span></b>",
+        "description": "Desde 2008 comencé a trabajar en proyectos de blogs y exposiciones universitarias, entendiendo más las tecnologías de la información. Me incursioné en el desarrollo full stack, mezclando backend, frontend y diseño gráfico. Esto ha abierto las puertas a diversos proyectos como los que se mostrarán a continuación."
+    },
+    "SKILLS": {
+        "title": " <b>Habilidades<b>",
+        "position": "<span class='accent'>&</span> portafolio",
+        "subtitle": "Mis Habilidades",
+        "description": "Desde el 2008 he desarrollado conocimientos en diseño, y programación orientada a backend y frontend, además de eso he trabajado bajo metodologías Scrum y Kanban, código administrado usando git scm en github y gitlab a continuación te muestro que tecnologías he trabajado a lo largo de estos maravillosos años."
+    },
+    "PORTFOLIO": {
+        "title": "Una mirada al <span class='accent'>&bull;</span>",
+        "position": "<b><span class='accent'>/</span>Portafolio</b>",
+        "description": "Comence a trabajar como diseñador y programador en 2008. perfeccionó mis habilidades en diseño gráfico, desarrollo web y desarrollo de aplicaciones de escritorio, web y mobiles. Reconosco los beneficios de las metodologías ágiles para asegurar la entrega predictiva en proyectos de software. Tiene experiencia trabajando con métodos Scrum y Kanban. Adicionalmente, Sergio tiene una sólida formación en patrones de diseño, OOP y arquitecturas de software para desarrollo web. Está al tanto de las últimas tendencias en desarrollo web."
+    }
+}

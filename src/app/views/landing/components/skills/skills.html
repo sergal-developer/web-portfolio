@@ -1,0 +1,29 @@
+<div class="container skills-container">
+  <titlepage-component [id]="'about-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
+    [description]="title.position">
+  </titlepage-component>
+
+  <div>
+    <div class="row content">
+      <h3>{{ 'SKILLS.subtitle' | translate }}</h3>
+      <p>{{ 'SKILLS.description' | translate }}</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="container skills-container center">
+
+  <div class="_subsection persepective-container tech-collection">
+    <div class="skills-collection pc-content">
+      <div class="skill" *ngFor="let skill of skills; index as i" [ngClass]="{'alter': i%2}">
+        <div class="hexa-warp">
+          <div class="hexa">
+            <img [attr.src]="'/assets/' + skill.image" [attr.alt]="skill.image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>

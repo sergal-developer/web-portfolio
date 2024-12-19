@@ -1,0 +1,12 @@
+---
+let { name, title, description, namealt, id = 'title' } = Astro.props;
+---
+
+<div class="title-page" id={ id }>
+    <div class="title-page-name" set:html={ name }></div>
+    <div class="title-page-title"set:html={ title }></div>
+    <div class="title-page-description"set:html={ description }></div>
+</div>
+
+<!-- <div class="types">{ title } <span class="accent">&</span> {position2} </div>
+<div class="types bold"> <span class="accent">/</span> { position3 } <span class="accent">.</span>  </div> -->

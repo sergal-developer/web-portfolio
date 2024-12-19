@@ -1,0 +1,50 @@
+@import '../../../scss/core/globals.scss';
+@import '../../../scss/core/mixins';
+
+$timeAnimationTitle: 300ms;
+
+titlepage-component {
+
+    .title-page {
+        display: flex;
+        flex-direction: column;
+        align-content: flex-start;
+        line-height: 1;
+
+        .title-page-name,
+        .title-page-name-alt {
+            font-size: rem(25);
+            // transition: all #{$timeAnimationTitle};
+        }
+
+        .title-page-title {
+            font-size: rem(70);
+            text-transform: uppercase;
+            // transition: all #{$timeAnimationTitle};
+        }
+
+        .title-page-description {
+            font-size: rem(70);
+            text-transform: uppercase;
+            // transition: all #{$timeAnimationTitle};
+        }
+
+        .accent {
+            color: $accentColor;
+            // transition: all #{$timeAnimationTitle};
+        }
+
+        .initials {
+            text-transform: uppercase;
+        }
+
+        .subinitials {
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+
+        span {
+            // transition: all #{$timeAnimationTitle};
+        }
+    }
+}
