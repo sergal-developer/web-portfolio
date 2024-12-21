@@ -1,6 +1,5 @@
 @import "../core/globals.scss";
 @import "../core/mixins";
-@import "./keyframes.scss";
 
 .debugger * * {
     outline: 1px dotted rgba(238, 130, 238, 0.3);
@@ -28,16 +27,7 @@
     * div {
         background: #f0f0f0;
         color: #f0f0f0;
-        opacity: 0.5;
         transition: background 300ms ease;
-    }
-
-    .loaderLanguageComponet {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        animation: rotate 1s linear infinite;
-        display: inline-block;
     }
 }
 
@@ -66,19 +56,15 @@
         @include mobile {
             padding: 0 $paddingWidthSectionMobile;
         }
-
         @include tablet {
             padding: 0 $paddingWidthSectionTablet;
         }
-
         @include desktop {
             padding: 0 $paddingWidthSectionDesktop;
         }
-
         @include desktop-wide {
             padding: 0 $paddingWidthSectionDesktopWide;
         }
-
         @include desktop-huge {
             padding: 0 $paddingWidthSectionDesktopWide;
         }
@@ -180,68 +166,29 @@ section {
     @include mobile {
         padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionMobile;
     }
-
     @include tablet {
         padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionTablet;
     }
-
     @include desktop {
         padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionDesktop;
     }
-
     @include desktop-wide {
         padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionDesktopWide;
     }
-
     @include desktop-huge {
         padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionDesktopWide;
     }
 
-    &.section-relative {
+    .section-relative {
         position: relative;
         width: 100vw;
-
-        &.full {
-            min-height: 100vh;
-        }
-
+        min-height: 100vh;
+    
         .container {
             display: flex;
             flex-wrap: nowrap;
             font-size: rem(14);
             position: relative;
-
-            &_column {
-                display: flex;
-                align-items: flex-start;
-                flex-direction: column;
-            }
         }
     }
 }
-
-.loaderLanguageComponet {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    position: relative;
-    display: none;
-
-    &::before,
-    &::after {
-        content: "";
-        box-sizing: border-box;
-        position: absolute;
-        inset: 0px;
-        border-radius: 50%;
-        border: 5px solid $secondaryColor;
-        animation: prixClipFix 2s linear infinite;
-    }
-
-    &::after {
-        border-color: $accentColor;
-        animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
-        inset: 6px;
-    }
-}
-

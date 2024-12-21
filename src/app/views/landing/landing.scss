@@ -1,12 +1,11 @@
 @import '../../../scss/core/mixins';
 @import '../../../scss/core/globals.scss';
+@import '../../../scss/theme/layouts.scss';
 
 .app-page {
     overflow: hidden;
     scroll-behavior: smooth;
 }
-
-
 
 .transition-loader {
     width: 100vw;

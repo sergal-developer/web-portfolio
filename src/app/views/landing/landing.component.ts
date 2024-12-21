@@ -37,17 +37,25 @@ export class LandingComponent implements OnInit {
         this.currentLang = 'en';
         this.translate.setDefaultLang(this.currentLang);
         this.eventBusService.publish({ name: 'language', data: this.currentLang });
+        this.changeLang(this.currentLang);
+        this.updateLanguageDependedncies();
     }
 
     ngOnInit(): void {
+        this.loadingLanguage = true;
+        setTimeout(() => {
+            this.loadingLanguage = false;
+        }, 500);
+
         this.eventBusService.subscribe('language').subscribe((eventData: EventBus) => {
             this.currentLang = eventData.data;
             this.translate.use(this.currentLang);
+            this.changeLang(this.currentLang);
             this.updateLanguageDependedncies();
 
             setTimeout(() => {
                 this.loadingLanguage = false;
-            }, 500);
+            }, 1000);
         });
     }
 

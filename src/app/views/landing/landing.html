@@ -1,16 +1,12 @@
 <div class="app-page" [ngClass]="{'loadingLanguage': loadingLanguage }">
-  <main-element-component></main-element-component>
-  
-  <header>
+  <header class="header-root">
     <div class="header-item">
       <div class="logo" (click)="goTo('init');"><span>SERGAL</span><span class="accent">.</span></div>
     </div>
 
     <nav>
-      <div class="header-item nav-link {{ menu.section }}" 
-        *ngFor="let menu of menus"
-        [ngClass]="{'active': menu.active }" [innerHTML]="menu.name"
-        (click)="goTo(menu.section)">
+      <div class="header-item nav-link {{ menu.section }}" *ngFor="let menu of menus"
+        [ngClass]="{'active': menu.active }" [innerHTML]="menu.name" (click)="goTo(menu.section)">
       </div>
       <div class="header-item language">
         <span>{{ currentLang }}</span>
@@ -23,12 +19,13 @@
           </ng-container>
         </div>
       </div>
-      
+
     </nav>
   </header>
 
   <main>
     <section id="init" class="section-relative">
+      <main-element-component></main-element-component>
     </section>
     <section id="about" class="section-relative">
       <about></about>
@@ -43,6 +40,6 @@
       <portfolio-list></portfolio-list>
     </section>
   </main>
+
+  <div class="loaderLanguageComponet"></div>
 </div>
-
-

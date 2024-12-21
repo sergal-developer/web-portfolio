@@ -38,6 +38,7 @@ pre,
 b,
 i {
     font-size: em(16);
+    margin-bottom: em(16);
 }
 
 // Sections
@@ -65,7 +66,9 @@ img {
 }
 
 
-a {}
+a {
+    color: $accentColor;
+}
 
 [button] {
     cursor: pointer;
