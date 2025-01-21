@@ -23,6 +23,7 @@ export class GoogleAnalyticsService {
         gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + this.getTrackID();
         document.head.prepend(gtagScript);
         gtag('config', this.getTrackID());
+        console.log('gtag: ', gtag);
     }
 
     public TrackPage(page?: string) {
