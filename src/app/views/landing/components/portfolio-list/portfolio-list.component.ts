@@ -36,6 +36,7 @@ export class PortfolioListComponent {
         this.updateLanguageDependedncies();
 
         this.technologies = SOURCEDATA.technologies;
+        this.portfolio = this.normalizeData(SOURCEDATA.portfolio.list);
     }
 
     //#region LANGUAGE

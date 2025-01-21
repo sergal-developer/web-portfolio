@@ -13,10 +13,8 @@ export class AppComponent {
 
     // Google analytics init
     // _ga.setTrackID(this._settingsService.settings.portal.analytics.trackid);
-    const trackLocal = "G-KW6YK99VJ1";
     const trackProd = "G-J99CJ0NJLS";
-    console.log('trackProd: ', trackProd);
-    this._ga.setTrackID(trackProd);
-    this._ga.createTrackID();
+    _ga.setTrackID(trackProd);
+    _ga.createTrackID();
   }
 }

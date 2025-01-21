@@ -16,14 +16,45 @@ export class GoogleAnalyticsService {
         return this.trackIdGA;
     }
 
+    private createDataLayer() {
+        let script: HTMLScriptElement = document.createElement('script');
+        script.text = `
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                console.log('GA:', ...arguments);
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date()); `;
+        document.head.prepend(script);
+
+        setTimeout(() => {
+            gtag('config', this.getTrackID());
+        }, 500);
+    }
+
+    private createGTagManager() {
+        let script: HTMLScriptElement = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + this.getTrackID();
+        document.head.prepend(script);
+    }
+
     public createTrackID(name?: string, cookieDomain?: string) {
-        // "gtag" object is created from /config/index.html into script Google analytics
-        let gtagScript: HTMLScriptElement = document.createElement('script');
-        gtagScript.async = true;
-        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + this.getTrackID();
-        document.head.prepend(gtagScript);
-        gtag('config', this.getTrackID());
-        console.log('gtag: ', gtag);
+        this.createGTagManager();
+        setTimeout(() => {
+            this.createDataLayer();
+        }, 500);
+    }
+
+    private existGtagFunc() {
+        return typeof gtag == 'function' ? true : false; 
+    }
+
+    private gtagArguments(...args: any) {
+        if(!this.existGtagFunc()) { 
+            this.createDataLayer();
+        }
+        gtag(...args);
     }
 
     public TrackPage(page?: string) {
@@ -31,7 +62,7 @@ export class GoogleAnalyticsService {
         page = page || defaultUrl;
 
         const event = this.analyticsEvents.pageView(defaultUrl, page);
-        gtag(event.action, event.name, event.parameters);
+        this.gtagArguments(event.action, event.name, event.parameters);
     }
 
     private convertoToQuery(text: string, splitSymbol: string) {
@@ -66,12 +97,12 @@ export class GoogleAnalyticsService {
         page = page || defaultUrl;
         const title = query?.title || page;
         const event = this.analyticsEvents.pageView(defaultUrl, title);
-        gtag(event.action, event.name, event.parameters);
+        this.gtagArguments(event.action, event.name, event.parameters);
     }
 
     public TrackScreen(screenview?: string, name?: string) {
         const event = this.analyticsEvents.custom('screen_view', { screen_name: name || screenview });
-        gtag(event.action, event.name, event.parameters);
+        this.gtagArguments(event.action, event.name, event.parameters);
     }
 
     public TrackEvent(eventAction: string, eventLabel?: string, eventCategory?: string, eventValue?: number) {
@@ -82,7 +113,7 @@ export class GoogleAnalyticsService {
         };
 
         const event = this.analyticsEvents.custom(eventAction, params);
-        gtag(event.action, event.name, event.parameters);
+        this.gtagArguments(event.action, event.name, event.parameters);
     }
 
     public TrackSocial(socialNetwork: string, socialAction: string, socialTarget: string) {
@@ -93,7 +124,7 @@ export class GoogleAnalyticsService {
         };
 
         const event = this.analyticsEvents.custom('social', params);
-        gtag(event.action, event.name, event.parameters);
+        this.gtagArguments(event.action, event.name, event.parameters);
     }
 
     public TrackFlowEvent(eventAction: string, eventLabel?: string, eventCategory?: string, data?: object) {
@@ -105,7 +136,7 @@ export class GoogleAnalyticsService {
             params = Object.assign(params, data);
         }
         const event = this.analyticsEvents.custom(eventAction, params);
-        gtag(event.action, event.name, event.parameters);
+        this.gtagArguments(event.action, event.name, event.parameters);
     }
 }
 
