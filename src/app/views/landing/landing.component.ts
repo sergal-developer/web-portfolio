@@ -2,6 +2,7 @@ import { ViewportScroller } from '@angular/common';
 import { AfterContentInit, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 import { TranslateService, _ } from '@ngx-translate/core';
 import { EventBusService, EventBus } from '../../shared/events/EventBus.service';
+import { GoogleAnalyticsService } from '../../shared/services/google.analytics.service';
 
 @Component({
     selector: 'landing',
@@ -31,7 +32,8 @@ export class LandingComponent implements OnInit {
     constructor(
         private viewportScroller: ViewportScroller,
         private translate: TranslateService,
-        private eventBusService: EventBusService) {
+        private eventBusService: EventBusService,
+        private _ga: GoogleAnalyticsService) {
         this.translate.addLangs(this.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
@@ -62,6 +64,7 @@ export class LandingComponent implements OnInit {
         // setTimeout(() => {
         //     this.goTo('init');
         // }, this.timeDelay);
+        this._ga.TrackScreen('visualization', 'landing page');
         this.onScroll();
     }
 
@@ -77,6 +80,8 @@ export class LandingComponent implements OnInit {
             block: "start",
             inline: "nearest"
         });
+
+        this._ga.TrackEvent('click', `section: ${section}`, section);
 
         // setTimeout(() => {
         //     // console.info('scroll: ', {

@@ -11,6 +11,7 @@ import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-br
 import { CommonModule } from '@angular/common';
 import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { GoogleAnalyticsService } from '../../shared/services/google.analytics.service';
 
 @NgModule({
     imports: [ 
@@ -33,7 +34,9 @@ import { TranslateModule } from '@ngx-translate/core';
     exports: [
         RouterModule
     ],
-    providers: []
+    providers: [
+        GoogleAnalyticsService
+    ]
 })
 export class LandingModule {
 }

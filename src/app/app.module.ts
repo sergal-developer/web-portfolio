@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { EventBusService } from './shared/events/EventBus.service';
+import { GoogleAnalyticsService } from './shared/services/google.analytics.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { EventBusService } from './shared/events/EventBus.service';
     LandingModule,
     PortfolioModule
   ],
-  providers: [EventBusService],
+  providers: [EventBusService, GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
