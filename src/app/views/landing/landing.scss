@@ -5,6 +5,23 @@
 .app-page {
     overflow: hidden;
     scroll-behavior: smooth;
+
+
+    .section-relative {
+        &#init {
+            position: static;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        &#skills {
+            padding-bottom: 0;
+        }
+        &#portfolio {
+            padding-top: 0;
+        }
+    }
 }
 
 .transition-loader {

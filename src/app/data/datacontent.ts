@@ -7,14 +7,7 @@ const CONTENT = {
         documentFile: "files/cv.pdf",
     },
     technologies: [
-        {
-            id: "ABFLASH",
-            name: "Adobe Flash & ActionScript",
-            level: 1,
-            years: "4",
-            image: "img/azure.png",
-            type: "frontend",
-        },
+        
         {
             id: "MSAZURE",
             name: "Windows Azure",
@@ -22,6 +15,7 @@ const CONTENT = {
             years: "4",
             image: "img/azure.png",
             type: "backend",
+            color: "#c1dce8"
         },
         {
             id: "MSNET",
@@ -30,6 +24,7 @@ const CONTENT = {
             years: "8",
             image: "img/dotnet.png",
             type: "backend",
+            color: "#cbadec"
         },
         {
             id: "MSCSHARP",
@@ -38,30 +33,34 @@ const CONTENT = {
             years: "8",
             image: "img/csharp.png",
             type: "backend",
+            color: "#dec8ff"
         },
         {
             id: "NHIBERNATE",
             name: "NHibernate",
             level: 3,
             years: "8",
-            image: "img/csharp.png",
+            image: "img/nhibernate.png",
             type: "backend",
+            color: "#fcdbac"
         },
         {
             id: "MSWPF",
             name: "Windows Presentation Foundation",
             level: 3,
             years: "8",
-            image: "img/csharp.png",
+            image: "img/wpf.png",
             type: "frontend",
+            color: "#c7e6f5"
         },
         {
             id: "MSWFM",
             name: "Windows Forms",
             level: 3,
             years: "8",
-            image: "img/csharp.png",
+            image: "img/wforms.png",
             type: "frontend",
+            color: "#cbe8e5"
         },
         {
             id: "HTML5",
@@ -70,6 +69,7 @@ const CONTENT = {
             years: "14",
             image: "img/html.png",
             type: "frontend",
+            color: "#f3d2c4"
         },
         {
             id: "CSS3",
@@ -78,6 +78,7 @@ const CONTENT = {
             years: "14",
             image: "img/css.png",
             type: "frontend",
+            color: "#bdd8e5"
         },
         {
             id: "SASS",
@@ -86,6 +87,7 @@ const CONTENT = {
             years: "8",
             image: "img/sass.png",
             type: "frontend",
+            color: "#d56ea3"
         },
         {
             id: "ASTRO",
@@ -94,6 +96,7 @@ const CONTENT = {
             years: "1",
             image: "img/astro.png",
             type: "frontend",
+            color: "#ffb288"
         },
         {
             id: "JS",
@@ -102,6 +105,7 @@ const CONTENT = {
             years: "14",
             image: "img/javascript.png",
             type: "frontend",
+            color: "#f0db4f"
         },
         {
             id: "TS",
@@ -110,6 +114,7 @@ const CONTENT = {
             years: "9",
             image: "img/typescript.png",
             type: "backend",
+            color: "#3178c6"
         },
         {
             id: "JQUERY",
@@ -118,6 +123,7 @@ const CONTENT = {
             years: "10",
             image: "img/jquery.png",
             type: "frontend",
+            color: "#d4e5f1"
         },
         {
             id: "NG",
@@ -126,6 +132,7 @@ const CONTENT = {
             years: "8",
             image: "img/angular.png",
             type: "frontend",
+            color: "#000"
         },
         {
             id: "REACT",
@@ -134,6 +141,7 @@ const CONTENT = {
             years: "1",
             image: "img/react.png",
             type: "frontend",
+            color: "#c7e6ef"
         },
         {
             id: "VUE",
@@ -142,6 +150,7 @@ const CONTENT = {
             years: "1",
             image: "img/vue.png",
             type: "frontend",
+            color: "#c2f3dd"
         },
         {
             id: "ELECTRON",
@@ -150,6 +159,7 @@ const CONTENT = {
             years: "3",
             image: "img/electron.png",
             type: "frontend",
+            color: "#2b2e3a"
         },
         {
             id: "MSSQL",
@@ -158,6 +168,7 @@ const CONTENT = {
             years: "5",
             image: "img/sql.png",
             type: "backend",
+            color: "#fce7e6"
         },
         {
             id: "MONGODB",
@@ -166,6 +177,7 @@ const CONTENT = {
             years: "3",
             image: "img/mongodb.png",
             type: "backend",
+            color: "#c0e3bb"
         },
         {
             id: "GLFIREBASE",
@@ -174,6 +186,7 @@ const CONTENT = {
             years: "1",
             image: "img/firebase.png",
             type: "backend",
+            color: "#dfdfdf"
         },
         {
             id: "GLANALYTICS",
@@ -182,6 +195,7 @@ const CONTENT = {
             years: "5",
             image: "img/analytics.png",
             type: "admin",
+            color: "#fff6e2"
         },
         {
             id: "JAZMINE",
@@ -190,6 +204,7 @@ const CONTENT = {
             years: "8",
             image: "img/jazminejs.png",
             type: "frontend",
+            color: "#8a4182"
         },
         {
             id: "KARMA",
@@ -198,6 +213,7 @@ const CONTENT = {
             years: "8",
             image: "img/karma.png",
             type: "frontend",
+            color: "#ccf3e9"
         },
         {
             id: "GIT",
@@ -206,6 +222,7 @@ const CONTENT = {
             years: "14",
             image: "img/github.png",
             type: "admin",
+            color: "#d2d2d2"
         },
         {
             id: "JIRA",
@@ -214,6 +231,7 @@ const CONTENT = {
             years: "8",
             image: "img/jira.png",
             type: "admin",
+            color: "#c4d8f1"
         },
         {
             id: "CONFLUENCE",
@@ -222,6 +240,7 @@ const CONTENT = {
             years: "7",
             image: "img/confluence.png",
             type: "admin",
+            color: "#c4d8f1"
         },
         {
             id: "NODEJS",
@@ -230,6 +249,7 @@ const CONTENT = {
             years: "8",
             image: "img/nodejs.png",
             type: "backend",
+            color: "#e2f3df"
         },
         {
             id: "ABPS",
@@ -238,6 +258,7 @@ const CONTENT = {
             years: "4",
             image: "img/adobephotoshop.png",
             type: "design",
+            color: "#001e36"
         },
         {
             id: "ABIL",
@@ -246,6 +267,7 @@ const CONTENT = {
             years: "4",
             image: "img/adobeilustrator.png",
             type: "design",
+            color: "#330000"
         },
         {
             id: "ABXD",
@@ -254,6 +276,16 @@ const CONTENT = {
             years: "3",
             image: "img/adobexd.png",
             type: "design",
+            color: "#490239"
+        },
+        {
+            id: "ABFLASH",
+            name: "Adobe Flash & ActionScript",
+            level: 1,
+            years: "4",
+            image: "img/flash.png",
+            type: "frontend",
+            color: "#231311"
         },
         {
             id: "FIGMA",
@@ -262,6 +294,7 @@ const CONTENT = {
             years: "1",
             image: "img/figma.png",
             type: "design",
+            color: "#1e1e1e"
         },
         {
             id: "MSEXPRESSION",
@@ -270,6 +303,7 @@ const CONTENT = {
             years: "8",
             image: "img/expression.png",
             type: "design",
+            color: "#f7dbd9"
         },
     ],
     projects: [
@@ -1187,56 +1221,79 @@ const CONTENT = {
     portfolio: {
         list: [
             {
-                image: "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
+                image: "/assets/projects/cfdi.jpg",
                 name: "CFDi",
                 description: "Nuestro sistema de facturación es una solución integral que cubre todo el ciclo de vida de una factura, desde su creación y personalización hasta su envío y seguimiento. Permite integrar datos de productos, clientes y pagos, generando reportes detallados para una mejor toma de decisiones.",
-                years: "2009",
-                tech: [ 'MSEXPRESSION', 'GIT', 'MSSQL', 'JQUERY', 'JS', 'CSS3', 'HTML5', 'MSCSHARP', 'MSNET', 'MSAZURE']
+                tech: ['JS', 'CSS3', 'HTML5', 'JQUERY', 'MSNET', 'MSCSHARP', 'MSSQL', 'MSAZURE'],
+                startDate: 1230789600000,
+                endDate: 1259647200000,
+                url: '/#/portfolio/cfdi',
+                externalUrl: null
             },
             {
-                image: "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
-                name: "CFDi",
-                description: "Nuestro sistema de facturación es una solución integral que cubre todo el ciclo de vida de una factura, desde su creación y personalización hasta su envío y seguimiento. Permite integrar datos de productos, clientes y pagos, generando reportes detallados para una mejor toma de decisiones.",
-                years: "2009",
-                tech: [ 'MSEXPRESSION', 'GIT', 'MSSQL', 'JQUERY', 'JS', 'CSS3', 'HTML5', 'MSCSHARP', 'MSNET', 'MSAZURE']
-            },
-
-
-            {
-                image:
-                    "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
-                name: "Ultra UI",
-                description: "Ingenieria en Computación",
-                years: "2008 - 2011",
-            },
-            {
-                image:
-                    "https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg",
-                name: "Glow",
-                description: "Mastering in Angular",
-                years: "2018",
+                image: "https://www.adrisa.com.mx/img/logo/AdrisaPartOfHowden.jpg",
+                name: "Adrisa Actus",
+                description: "Sistema de Administración de Siniestros, es una plataforma avanzada diseñada para gestionar de manera eficiente y ágil los siniestros en el ámbito de seguros, ayudando a compañías aseguradoras, ajustadores y clientes a llevar un control integral de los casos desde el reporte hasta la resolución final.",
+                tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'JQUERY', 'MSNET', 'MSCSHARP', 'MSSQL', 'NHIBERNATE', 'MSAZURE'],
+                startDate: 1325397600000,
+                endDate: 1357020000000,
+                url: null,
+                externalUrl: 'https://www.adrisa.com.mx/'
             },
             {
                 image:
                     "https://www.infobae.com/new-resizer/lrtPUyzL_l14Q0YGp_TT-JJhHuU=/992x606/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2SDH2CJ7JRFFBAZHJTI6FTEBUU.jpg",
                 name: "Incident Maps USA Emmbasy",
-                description: "Mastering in React",
-                years: "2021 - 2022",
+                description: "Sistema de Mapas de Incidentes con Generación de Reportes, es una herramienta avanzada y visual que permite monitorear, gestionar y analizar incidentes en tiempo real a través de mapas interactivos. Ideal para gobiernos, organizaciones de seguridad, o empresas que requieren un seguimiento eficiente de situaciones críticas como accidentes, desastres naturales, emergencias y eventos de riesgo.",
+                tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'MSNET', 'MSCSHARP', 'MSSQL', 'NHIBERNATE'],
+                startDate: 1357020000000,
+                endDate: 1357020000000,
+                url: '/#/portfolio/incidentMap',
+                externalUrl: null
             },
             {
                 image:
-                    "https://actus.adrisa.com.mx/File/Storage.ashx?img=Diapositiva03max.jpg",
-                name: "Actus Security",
-                description: "Mastering in VUE.js",
-                years: "2021 - 2022",
+                    "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
+                name: "Ultra UI",
+                description: "Sistema de Administración de Cursos es una plataforma integral diseñada para facilitar la gestión de cursos, estudiantes y docentes dentro de instituciones educativas o empresas. Su principal objetivo es optimizar la creación, organización, seguimiento y evaluación de programas educativos de manera eficiente y accesible.",
+                tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA'],
+                startDate: 1388556000000,
+                endDate: 1420092000000,
+                url: '/#/portfolio/ultraui',
+                externalUrl: null
             },
-
             {
                 image:
-                    "https://www.huntleylibrary.org/wp-content/uploads/2021/05/ScienceFlix-in-action.jpg",
-                name: "Scholastic",
-                description: "Microsoft Azure",
-                years: "2010 - 2022",
+                    "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
+                name: "Interapt",
+                description: "Sistema de Administración de Consultas Médicas y Seguimiento de Pacientes (SACMP) es una plataforma integral diseñada para mejorar la gestión de consultas médicas y el seguimiento de pacientes en clínicas, hospitales o consultorios privados. Con este sistema, los profesionales de la salud pueden optimizar su flujo de trabajo, gestionar eficientemente los historiales médicos, programar citas y realizar un seguimiento constante del bienestar de sus pacientes.",
+                tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA', 'MSNET'],
+                startDate: 1451628000000,
+                endDate: 1451628000000,
+                url: '/#/portfolio/interapt',
+                externalUrl: null
+            },
+            {
+                image:
+                    "https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg",
+                name: "Glow",
+                description: "Portal Integral de Gestión empresarial interna de Globant, es una plataforma centralizada diseñada para optimizar la gestión administrativa y financiera de organizaciones, empresas y equipos de trabajo. Este portal permite una administración eficiente de recursos financieros, el control de accesos de usuarios, la declaración de recursos y la gestión integral de viajes corporativos, todo desde una única interfaz fácil de usar y completamente segura.",
+                tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA'],
+                startDate: 1514786400000,
+                endDate: 1735711200000,
+                url: '/#/portfolio/glow',
+                externalUrl: null
+            },
+            {
+                image:
+                    "https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg",
+                name: "Pod Experience",
+                description: "Es una plataforma integral diseñada para optimizar la gestión, coordinación y productividad de equipos de desarrollo de software de Globant. Este sistema facilita la planificación de proyectos, el seguimiento de tareas, la gestión de recursos y la colaboración entre los miembros del equipo, asegurando una entrega eficiente y exitosa de soluciones tecnológicas.",
+                tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA'],
+                startDate: 1672552800000,
+                endDate: 1735711200000,
+                url: null,
+                externalUrl: 'https://podjourney.globant.com/'
             },
         ],
     }
@@ -1247,3 +1304,4 @@ export const EXPERIENCE = CONTENT.experience;
 export const SKILLS = CONTENT.skills;
 export const PORTFOLIO = CONTENT.portfolio;
 export const DATA = CONTENT;
+export const SOURCEDATA = CONTENT;

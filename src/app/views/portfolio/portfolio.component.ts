@@ -1,5 +1,6 @@
 import { ViewportScroller } from '@angular/common';
 import { AfterContentInit, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
+import { TranslateService, _ } from '@ngx-translate/core';
 
 @Component({
     selector: 'portfolio-view',
@@ -22,7 +23,10 @@ export class PortfolioViewComponent implements OnInit, AfterContentInit {
     timeDelay = 2000;
     percerntScroll = 0;
 
-    constructor(private viewportScroller: ViewportScroller) {
+    constructor(
+        private viewportScroller: ViewportScroller, 
+        private translate: TranslateService,
+    ) {
     }
 
     ngOnInit(): void {

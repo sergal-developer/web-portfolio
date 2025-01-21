@@ -1,15 +1,25 @@
-                                                                                                                                                                                                                            @import "../../../../../scss/core/mixins";
+@import "../../../../../scss/core/mixins";
 @import "../../../../../scss/core/globals.scss";
 
 portfolio-list {
     .portafolio-container {
-        padding: 50px 0;
+        padding: 20px 0;
+
         &.center {
             display: flex;
             justify-content: center;
             gap: 15px;
         }
+
+        &.content {
+            padding: 50px 0;
+        }
+
+        &.separator {
+            border-top: 1px solid gray;
+        }
     }
+
     /* From Uiverse.io by MikeAndrewDesigner */
     .e-card {
         background: transparent;
@@ -26,7 +36,7 @@ portfolio-list {
             margin-top: -1em;
             padding-bottom: 1em;
         }
-    
+
         .infotop {
             text-align: center;
             font-size: 20px;
@@ -37,7 +47,7 @@ portfolio-list {
             color: rgb(255, 255, 255);
             font-weight: 600;
         }
-    
+
         .name {
             font-size: 14px;
             font-weight: 100;
@@ -45,7 +55,7 @@ portfolio-list {
             top: 1em;
             text-transform: lowercase;
         }
-    
+
         .wave {
             position: absolute;
             width: 540px;
@@ -58,44 +68,47 @@ portfolio-list {
             background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb);
             transition: all 500ms;
         }
+
         .wave:nth-child(2),
         .wave:nth-child(3) {
             top: 0px;
         }
-    
+
         .wave {
             // border-radius: 40%;
             // animation: wave 55s infinite linear;
         }
-    
+
         .wave:nth-child(2) {
             // animation-duration: 50s;
         }
-    
+
         .wave:nth-child(3) {
             // animation-duration: 45s;
         }
 
-        &.playing, &:hover {
+        &.playing,
+        &:hover {
+
             .wave:nth-child(2),
             .wave:nth-child(3) {
                 top: 210px;
             }
-        
+
             .wave {
                 border-radius: 40%;
                 animation: wave 3000ms infinite linear;
             }
+
             .wave:nth-child(2) {
                 animation-duration: 4000ms;
             }
+
             .wave:nth-child(3) {
                 animation-duration: 5000ms;
             }
         }
     }
-
-    
 
     @keyframes wave {
         0% {
@@ -105,5 +118,135 @@ portfolio-list {
         100% {
             transform: rotate(360deg);
         }
+    }
+
+    .container-project {
+        display: flex;
+        gap: 15px;
+        line-height: 1.5;
+    }
+
+    .info {
+        width: 30%;
+        font-size: 22px;
+        font-weight: lighter;
+    }
+
+    .project-list {
+        width: 70%;
+        display: grid;
+        justify-content: space-between;
+        align-items: start;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .project-card {
+        position: relative;
+        border: 1px solid #bcbcbc;
+        border-radius: 10px;
+
+        .pc-background {
+            // position: absolute;
+            width: calc(100% - 40px);
+        }
+
+        .pc-border {
+            height: 10px;
+            width: 100%;
+            border-radius: 10px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            position: relative;
+            display: flex;
+
+            .pc-border-item {
+                width: 100%;
+                height: 8px;
+                border-bottom: 1px solid #f3f2f9;
+
+                &:first-child {
+                    border-top-left-radius: 10px;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 10px;
+                }
+            }
+        }
+
+        .pc-container {
+            background: white;
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            min-height: 530px;
+            justify-content: flex-start;
+
+            .pc-container-title {
+                font-size: 20px;
+            }
+
+            .pc-tech-list-title {
+                margin-top: auto;
+            }
+
+            .pc-tech-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 3px;
+
+                .pc-tech-item {
+                    img {
+                        width: 35px;
+                    }
+                }
+            }
+        }
+
+        .pc-stats {
+            background: #f3f2f9;
+            height: 70px;
+            width: 100%;
+            border-radius: 10px;
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            display: flex;
+            justify-content: center;
+            padding: 0 20px;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .pc-container-title {
+            font-weight: bold;
+        }
+    }
+
+    .type {
+        &.admin {
+            background: #ff9233;
+        }
+
+        &.frontend {
+            background: #a1e5d7;
+        }
+
+        &.backend {
+            background: #fec267;
+        }
+
+        &.design {
+            background: #c6a3e1;
+        }
+    }
+
+    .square {
+        width: 20px;
+        height: 20px;
+        background: gray;
+        display: inline-block;
     }
 }

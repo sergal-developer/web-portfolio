@@ -4,18 +4,17 @@
 $titleWidth: 800px;
 
 main-element-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     #main-title {
-        top: 0;
-        left: 0;
-        right: 0;
-        // margin: 25% auto;
-        // width: $titleWidth;
-        // position: absolute;
-       
-        // animation: adjust-image linear both;
-        // animation-timeline: scroll();
-        // animation-range: 0 40%;
-        transition: all;
+
+        animation: move-title linear both;
+        animation-timeline: scroll(root block);
+        animation-range: 0% 70vh;
+        animation-fill-mode: forwards;
+        transition: all 300ms;
 
         .title-page-description {
             font-weight: bold;
@@ -24,29 +23,16 @@ main-element-component {
 }
 
 
-@keyframes adjust-image {
+@keyframes move-title {
     from {
-        // zoomate: -50% 100% 0;
-        translate: 0% 0%;
-        margin-left: calc((#{$titleWidth} / 3));
-        margin-top: calc((100vh / 3));
+        transform: translate(0%, 0%);
     }
 
-    80% {
-        opacity: 1;
-        margin-left: 5%;
-        margin-top: 77vh;
-    }
-
-    90% {
-        opacity: 1;
-        margin-left: 5%;
-        margin-top: 77vh;
+    50% {
+        transform: translate(0%, 0%);
     }
 
     to {
-        opacity: 0;
-        margin-left: 0%;
-        margin-top: 70vh;
+        transform: translate(-40%, 330%) scale(80%);
     }
 }

@@ -16,7 +16,7 @@ import { EventBusService } from './shared/events/EventBus.service';
   declarations: [
     AppComponent,
   ],
-  imports: [
+  imports: [  
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,

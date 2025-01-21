@@ -108,11 +108,11 @@ export class LandingComponent implements OnInit {
         event.preventDefault();
 
 
-        // if (scrollY === 0) {
-        //     setTimeout(() => {
-        //         this.goTo('about');
-        //     }, this.timeDelay);
-        // }
+        if (scrollY === 0) {
+            setTimeout(() => {
+                this.goTo('about');
+            }, this.timeDelay);
+        }
 
         return false;
     }

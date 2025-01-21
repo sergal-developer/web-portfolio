@@ -6,17 +6,18 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { PortfolioViewComponent } from './portfolio.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     imports: [
         FormsModule,
-        BrowserAnimationsModule,
-
+        CommonModule,
         RouterModule.forChild([{ path: '', component: PortfolioViewComponent, children: [] }]),
         // VIEWS
 
         // COMPONENTS
-        ControlsModule
+        ControlsModule,
+        TranslateModule
     ],
     declarations: [
         PortfolioViewComponent,

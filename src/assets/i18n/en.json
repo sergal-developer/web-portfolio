@@ -3,7 +3,7 @@
         "en": "English",
         "es": "Spanish",
         "design": "Design",
-        "frontEnd": "FrontEnd",
+        "frontEnd": "Frontend",
         "backend": "Backend",
         "admin": "Admin",
         "level_advanced": "Advanced",
@@ -24,7 +24,15 @@
         "skill_tools": "Management tools",
         "skill_digital_skills": "Programming in different areas (Backend, Frontend)",
         "skill_design": "Design and prototyping skills",
-        "carrer": "Ingenieria en computación"
+        "carrer": "Ingenieria en computación",
+        "technologies": "Technologies",
+        "coming_soon": "COMING SOON",
+        "coming_soon_subtitle": "ARE YOU READY?",
+        "return": "Return",
+        "developedin": "Developed in",
+        "preview": "Preview",
+        "visit": "Visit",
+        "types": "Types"
     },
     "NAV": {
         "navAbout": "About",
@@ -67,6 +75,15 @@
     "PORTFOLIO": {
         "title": "A look at my <span class='accent'>&bull;</span>",
         "position": "<b><span class='accent'>/</span>Portfolio</b>",
-        "description": "I started working as a designer and programmer in 2008. I have honed my skills in graphic design, web development, and desktop, web, and mobile application development. I recognize the benefits of agile methodologies to ensure predictive delivery in software projects. I have experience working with Scrum and Kanban methods. Additionally, Sergio has a solid background in design patterns, OOP, and software architectures for web development. He is aware of the latest trends in web development."
+        "description": "I started working as a designer and programmer in 2008. I have honed my skills in graphic design, web development, and desktop, web, and mobile application development. I recognize the benefits of agile methodologies to ensure predictive delivery in software projects. I have experience working with Scrum and Kanban methods. Additionally, Sergio has a solid background in design patterns, OOP, and software architectures for web development. He is aware of the latest trends in web development.",
+        "slogan": "My passion is designing and developing beautiful digital products on a small and large scale.",
+        
+        "CFDI": "Comprehensive billing system that covers the entire life cycle of an invoice, from its creation and customization to its sending and tracking. It allows the integration of product, customer and payment data, generating detailed reports for better decision making.",
+        "ADRISA": "Claims Management System is an advanced platform designed to efficiently and quickly manage claims in the insurance sector, helping insurance companies, adjusters and clients to maintain comprehensive control of cases from reporting to final resolution.",
+        "INCIDENTMAPS": "Incident Mapping System with Report Generation is an advanced and visual tool that allows monitoring, managing and analyzing incidents in real time through interactive maps. Ideal for governments, security organizations, or companies that require efficient monitoring of critical situations such as accidents, natural disasters, emergencies and risk events.",
+        "ULTRA": "Course Management System is a comprehensive platform designed to facilitate the management of courses, students and teachers within educational institutions or companies. Its main objective is to optimize the creation, organization, monitoring and evaluation of educational programs in an efficient and accessible way.",
+        "INTERAPT": "It is a comprehensive platform designed to improve the management of medical consultations and patient follow-up in clinics, hospitals or private practices. With this system, health professionals can optimize their workflow, efficiently manage medical records, schedule appointments and constantly monitor the well-being of their patients.",
+        "GLOW": "Globant's Comprehensive Internal Business Management Portal is a centralized platform designed to optimize the administrative and financial management of organizations, companies and work teams. This portal allows for efficient administration of financial resources, user access control, resource declaration and comprehensive management of corporate travel, all from a single, easy-to-use and completely secure interface.",
+        "PODEXPERIENCE": "It is a comprehensive platform designed to optimize the management, coordination and productivity of Globant software development teams. This system facilitates project planning, task tracking, resource management and collaboration between team members, ensuring efficient and successful delivery of technological solutions."
     }
 }
