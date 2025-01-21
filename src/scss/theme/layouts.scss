@@ -26,10 +26,18 @@
 
 .loadingLanguage {
     * div {
-        background: #f0f0f0;
-        color: #f0f0f0;
-        opacity: 0.5;
-        transition: background 300ms ease;
+        // background: #f0f0f0;
+        // color: #f0f0f0;
+        // opacity: 0.5;
+        // transition: background 300ms ease;
+        // animation-duration: 1s;
+        // animation-fill-mode: both;
+        // // transition: all 300ms;
+        // animation-name: danceMiddle;
+        animation-name: heartbeatSlow; 
+        // animation-iteration-count: infinite;
+        animation-duration: .5s;
+
     }
 
     .loaderLanguageComponet {
@@ -245,3 +253,21 @@ section {
     }
 }
 
+@keyframes danceMiddle {
+    16% { transform: skew(-14deg) }
+    33% { transform: skew(12deg) }
+    49% { transform: skew(-8deg) }
+    66% { transform: skew(6deg) }
+    83% { transform: skew(-4deg) }
+}
+
+@keyframes typing {
+    from { width: 0 }
+}
+@keyframes cursor {
+    50% { border-color: transparent }
+}
+
+@keyframes heartbeatSlow {
+    35%, 65% { opacity: 0.8; }
+}

@@ -21,7 +21,7 @@ export class LandingComponent implements OnInit {
     sections: Array<Element> = [];
     sectionProps: Array<SectionProp> = [];
     current = '';
-    timeDelay = 2000;
+    timeDelay = 2800;
     percerntScroll = 0;
     browserLangs: string[] = [];
     availableLangs: string[] = ['es', 'en'];
@@ -57,6 +57,12 @@ export class LandingComponent implements OnInit {
                 this.loadingLanguage = false;
             }, 1000);
         });
+
+
+        // setTimeout(() => {
+        //     this.goTo('init');
+        // }, this.timeDelay);
+        this.onScroll();
     }
 
     goTo(section: string) {
@@ -83,7 +89,7 @@ export class LandingComponent implements OnInit {
     }
 
     @HostListener('window:scroll', ['$event'])
-    onScroll(event: Event) {
+    onScroll(event?: Event) {
 
         this.getSectionsProps();
         this.percerntScroll = this.percentScroll();
@@ -105,7 +111,7 @@ export class LandingComponent implements OnInit {
         });
 
         // console.log('this.current: ', this.current);
-        event.preventDefault();
+        event?.preventDefault();
 
 
         if (scrollY === 0) {

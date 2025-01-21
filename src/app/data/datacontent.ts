@@ -1223,7 +1223,7 @@ const CONTENT = {
             {
                 image: "/assets/projects/cfdi.jpg",
                 name: "CFDi",
-                description: "Nuestro sistema de facturación es una solución integral que cubre todo el ciclo de vida de una factura, desde su creación y personalización hasta su envío y seguimiento. Permite integrar datos de productos, clientes y pagos, generando reportes detallados para una mejor toma de decisiones.",
+                description: "PORTFOLIO.CFDI",
                 tech: ['JS', 'CSS3', 'HTML5', 'JQUERY', 'MSNET', 'MSCSHARP', 'MSSQL', 'MSAZURE'],
                 startDate: 1230789600000,
                 endDate: 1259647200000,
@@ -1233,7 +1233,7 @@ const CONTENT = {
             {
                 image: "https://www.adrisa.com.mx/img/logo/AdrisaPartOfHowden.jpg",
                 name: "Adrisa Actus",
-                description: "Sistema de Administración de Siniestros, es una plataforma avanzada diseñada para gestionar de manera eficiente y ágil los siniestros en el ámbito de seguros, ayudando a compañías aseguradoras, ajustadores y clientes a llevar un control integral de los casos desde el reporte hasta la resolución final.",
+                description: "PORTFOLIO.ADRISA",
                 tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'JQUERY', 'MSNET', 'MSCSHARP', 'MSSQL', 'NHIBERNATE', 'MSAZURE'],
                 startDate: 1325397600000,
                 endDate: 1357020000000,
@@ -1241,10 +1241,9 @@ const CONTENT = {
                 externalUrl: 'https://www.adrisa.com.mx/'
             },
             {
-                image:
-                    "https://www.infobae.com/new-resizer/lrtPUyzL_l14Q0YGp_TT-JJhHuU=/992x606/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2SDH2CJ7JRFFBAZHJTI6FTEBUU.jpg",
+                image: "https://www.infobae.com/new-resizer/lrtPUyzL_l14Q0YGp_TT-JJhHuU=/992x606/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2SDH2CJ7JRFFBAZHJTI6FTEBUU.jpg",
                 name: "Incident Maps USA Emmbasy",
-                description: "Sistema de Mapas de Incidentes con Generación de Reportes, es una herramienta avanzada y visual que permite monitorear, gestionar y analizar incidentes en tiempo real a través de mapas interactivos. Ideal para gobiernos, organizaciones de seguridad, o empresas que requieren un seguimiento eficiente de situaciones críticas como accidentes, desastres naturales, emergencias y eventos de riesgo.",
+                description: "PORTFOLIO.INCIDENTMAPS",
                 tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'MSNET', 'MSCSHARP', 'MSSQL', 'NHIBERNATE'],
                 startDate: 1357020000000,
                 endDate: 1357020000000,
@@ -1255,7 +1254,7 @@ const CONTENT = {
                 image:
                     "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
                 name: "Ultra UI",
-                description: "Sistema de Administración de Cursos es una plataforma integral diseñada para facilitar la gestión de cursos, estudiantes y docentes dentro de instituciones educativas o empresas. Su principal objetivo es optimizar la creación, organización, seguimiento y evaluación de programas educativos de manera eficiente y accesible.",
+                description: "PORTFOLIO.ULTRA",
                 tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA'],
                 startDate: 1388556000000,
                 endDate: 1420092000000,
@@ -1266,7 +1265,7 @@ const CONTENT = {
                 image:
                     "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
                 name: "Interapt",
-                description: "Sistema de Administración de Consultas Médicas y Seguimiento de Pacientes (SACMP) es una plataforma integral diseñada para mejorar la gestión de consultas médicas y el seguimiento de pacientes en clínicas, hospitales o consultorios privados. Con este sistema, los profesionales de la salud pueden optimizar su flujo de trabajo, gestionar eficientemente los historiales médicos, programar citas y realizar un seguimiento constante del bienestar de sus pacientes.",
+                description: "PORTFOLIO.INTERAPT",
                 tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA', 'MSNET'],
                 startDate: 1451628000000,
                 endDate: 1451628000000,
@@ -1277,7 +1276,7 @@ const CONTENT = {
                 image:
                     "https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg",
                 name: "Glow",
-                description: "Portal Integral de Gestión empresarial interna de Globant, es una plataforma centralizada diseñada para optimizar la gestión administrativa y financiera de organizaciones, empresas y equipos de trabajo. Este portal permite una administración eficiente de recursos financieros, el control de accesos de usuarios, la declaración de recursos y la gestión integral de viajes corporativos, todo desde una única interfaz fácil de usar y completamente segura.",
+                description: "PORTFOLIO.GLOW",
                 tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA'],
                 startDate: 1514786400000,
                 endDate: 1735711200000,
@@ -1288,7 +1287,7 @@ const CONTENT = {
                 image:
                     "https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg",
                 name: "Pod Experience",
-                description: "Es una plataforma integral diseñada para optimizar la gestión, coordinación y productividad de equipos de desarrollo de software de Globant. Este sistema facilita la planificación de proyectos, el seguimiento de tareas, la gestión de recursos y la colaboración entre los miembros del equipo, asegurando una entrega eficiente y exitosa de soluciones tecnológicas.",
+                description: "PORTFOLIO.PODEXPERIENCE",
                 tech: [ 'GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA'],
                 startDate: 1672552800000,
                 endDate: 1735711200000,

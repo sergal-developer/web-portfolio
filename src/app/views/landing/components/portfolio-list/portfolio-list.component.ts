@@ -35,9 +35,7 @@ export class PortfolioListComponent {
         });
         this.updateLanguageDependedncies();
 
-
         this.technologies = SOURCEDATA.technologies;
-        this.portfolio = this.normalizeData(SOURCEDATA.portfolio.list);
     }
 
     //#region LANGUAGE
@@ -48,6 +46,8 @@ export class PortfolioListComponent {
         this.translate.get(_(`PORTFOLIO.position`)).subscribe((res: string) => {
             this.title.position = res
         });
+
+        this.portfolio = this.normalizeData(SOURCEDATA.portfolio.list);
     }
     //#endregion LANGUAGE
 
@@ -62,6 +62,12 @@ export class PortfolioListComponent {
             item._start = this.datePipe.transform(item.startDate, 'yyyy');
             item._end = this.datePipe.transform(item.endDate, 'yyyy');
             item._years = item._start == item._end ? `${item._start}` : `${item._start} - ${item._end}`;
+
+            item._description = item.description;
+
+            this.translate.get(_(item.description)).subscribe((res: string) => {
+                item._description = res
+            });
 
             if (item.tech && item.tech.length) {
                 item._tech = [];
