@@ -3,6 +3,7 @@ import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/cor
 import { TranslateService, _ } from '@ngx-translate/core';
 import { EventBus, EventBusService } from '../../shared/events/EventBus.service';
 import { GoogleAnalyticsService } from '../../shared/services/google.analytics.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
     selector: 'landing',
@@ -33,7 +34,9 @@ export class LandingComponent implements OnInit {
         private viewportScroller: ViewportScroller,
         private translate: TranslateService,
         private eventBusService: EventBusService,
-        private _ga: GoogleAnalyticsService) {
+        private _ga: GoogleAnalyticsService,
+        private _activatedRoute: ActivatedRoute,
+        private _router: Router) {
         this.translate.addLangs(this.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
@@ -61,7 +64,29 @@ export class LandingComponent implements OnInit {
         });
 
         this._ga.TrackScreen('visualization', 'landing page');
-        this.onScroll();
+
+
+        // detect if is first ejecution in page
+        setTimeout(() => {
+            this.onScroll();
+            const param = this._activatedRoute.snapshot.queryParams["section"];
+            if(param) {
+                this.goTo(param);
+                this._router.navigate([]);
+                return;
+            }
+            
+            if (scrollY === 0) {
+                setTimeout(() => {
+                    this.goTo('about');
+                }, this.timeDelay - 1000);
+            }
+
+            if (this.current != 'init' || scrollY > 100 && scrollY < 250) {
+                this.goTo(this.current == 'init' ? 'about' : this.current);
+            }
+        }, 1000);
+
     }
 
     goTo(section: string) {
@@ -78,6 +103,12 @@ export class LandingComponent implements OnInit {
         });
 
         this._ga.TrackEvent('click', `section: ${section}`, section);
+
+        if (section === 'init') {
+            setTimeout(() => {
+                this.goTo('about');
+            }, this.timeDelay);
+        }
     }
 
     @HostListener('window:scroll', ['$event'])
@@ -101,12 +132,6 @@ export class LandingComponent implements OnInit {
         });
 
         event?.preventDefault();
-
-        if (scrollY === 0) {
-            setTimeout(() => {
-                this.goTo('about');
-            }, this.timeDelay);
-        }
 
         return false;
     }
@@ -137,8 +162,8 @@ export class LandingComponent implements OnInit {
 
     //#region LANGUAGE 
     changeLang(language: string) {
-        
-        if(this.currentLang == language) {
+
+        if (this.currentLang == language) {
             return;
         }
 
@@ -148,7 +173,7 @@ export class LandingComponent implements OnInit {
         this.loadingLanguage = true;
 
         // esto cambia el orden al momento de selecionar un lenguaje
-        if(this.browserLangs[0] == this.currentLang) {
+        if (this.browserLangs[0] == this.currentLang) {
             this.browserLangs.shift();
             this.browserLangs.push(this.currentLang)
         }

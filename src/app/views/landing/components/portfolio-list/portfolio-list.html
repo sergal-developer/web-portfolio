@@ -35,7 +35,7 @@
       <div class="pc-stats">
         <div>{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</div>
         <a *ngIf="item.url" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.preview' | translate }}</a>
-        <a *ngIf="item.externalUrl" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.visit' | translate }}</a>
+        <a *ngIf="item.externalUrl" target="_blank" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.visit' | translate }}</a>
       </div>
     </div>
   </div>

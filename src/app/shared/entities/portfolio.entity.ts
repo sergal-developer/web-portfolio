@@ -1,6 +1,7 @@
 import { TechnologyEntity } from "./technology.entity";
 
 export class PortfolioEntity {
+    id: string = '';
     image: string = '';
     name: string = '';
     description: string = '';

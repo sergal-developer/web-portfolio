@@ -4,29 +4,26 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ControlsModule } from '../../controls/controls.module';
-import { PortfolioViewComponent } from './portfolio.component';
-import { PortfolioComponentsModule } from './components/portfolio.components.module';
+import { HelpComponent } from './help.component';
 
 @NgModule({
     imports: [
         FormsModule,
         CommonModule,
-        RouterModule.forChild([{ path: '', component: PortfolioViewComponent, children: [] }]),
+        RouterModule.forChild([{ path: '', component: HelpComponent, children: [] }]),
         // VIEWS
 
         // COMPONENTS
         ControlsModule,
-        TranslateModule,
-        PortfolioComponentsModule
+        TranslateModule
     ],
     declarations: [
-        PortfolioViewComponent,
+        HelpComponent,
     ],
     exports: [
-        RouterModule,
-        PortfolioComponentsModule
+        RouterModule
     ],
     providers: []
 })
-export class PortfolioModule {
+export class HelpModule {
 }

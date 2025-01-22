@@ -1,15 +1,17 @@
 export const PortfolioData = [
+    // {
+    //     id: '',
+    //     image: "/assets/projects/cfdi.jpg",
+    //     name: "CFDi",
+    //     description: "PORTFOLIO.CFDI",
+    //     technologiesId: ['JS', 'CSS3', 'HTML5', 'JQUERY', 'MSNET', 'MSCSHARP', 'MSSQL', 'MSAZURE'],
+    //     startDate: 1230789600000,
+    //     endDate: 1259647200000,
+    //     url: '/#/portfolio/cfdi',
+    //     externalUrl: null
+    // },
     {
-        image: "/assets/projects/cfdi.jpg",
-        name: "CFDi",
-        description: "PORTFOLIO.CFDI",
-        technologiesId: ['JS', 'CSS3', 'HTML5', 'JQUERY', 'MSNET', 'MSCSHARP', 'MSSQL', 'MSAZURE'],
-        startDate: 1230789600000,
-        endDate: 1259647200000,
-        url: '/#/portfolio/cfdi',
-        externalUrl: null
-    },
-    {
+        id: '',
         image: "https://www.adrisa.com.mx/img/logo/AdrisaPartOfHowden.jpg",
         name: "Adrisa Actus",
         description: "PORTFOLIO.ADRISA",
@@ -20,6 +22,7 @@ export const PortfolioData = [
         externalUrl: 'https://www.adrisa.com.mx/'
     },
     {
+        id: 'incidentMap',
         image: "https://www.infobae.com/new-resizer/lrtPUyzL_l14Q0YGp_TT-JJhHuU=/992x606/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2SDH2CJ7JRFFBAZHJTI6FTEBUU.jpg",
         name: "Incident Maps USA Emmbasy",
         description: "PORTFOLIO.INCIDENTMAPS",
@@ -30,6 +33,7 @@ export const PortfolioData = [
         externalUrl: null
     },
     {
+        id: 'ultraui',
         image: "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
         name: "Ultra UI",
         description: "PORTFOLIO.ULTRA",
@@ -40,6 +44,7 @@ export const PortfolioData = [
         externalUrl: null
     },
     {
+        id: 'interapt',
         image: "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
         name: "Interapt",
         description: "PORTFOLIO.INTERAPT",
@@ -50,6 +55,7 @@ export const PortfolioData = [
         externalUrl: null
     },
     {
+        id: 'glow',
         image: "https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg",
         name: "Glow",
         description: "PORTFOLIO.GLOW",
@@ -60,6 +66,7 @@ export const PortfolioData = [
         externalUrl: null
     },
     {
+        id: '',
         image: "https://www.muycomputerpro.com/wp-content/uploads/2023/02/gobant-2.jpeg",
         name: "Pod Experience",
         description: "PORTFOLIO.PODEXPERIENCE",

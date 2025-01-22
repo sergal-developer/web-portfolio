@@ -12,6 +12,7 @@ import { EventBusService } from './shared/events/EventBus.service';
 import { GoogleAnalyticsService } from './shared/services/google.analytics.service';
 import { LandingModule } from './views/landing/landing.module';
 import { PortfolioModule } from './views/portfolio/portfolio.module';
+import { HelpModule } from './views/help/help.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PortfolioModule } from './views/portfolio/portfolio.module';
       }
     }),
     LandingModule,
-    PortfolioModule
+    PortfolioModule,
+    HelpModule
   ],
   providers: [EventBusService, GoogleAnalyticsService],
   bootstrap: [AppComponent]

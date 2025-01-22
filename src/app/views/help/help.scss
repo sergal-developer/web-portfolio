@@ -1,0 +1,21 @@
+@import '../../../scss/core/mixins';
+@import '../../../scss/core/globals.scss';
+
+.app-page {
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.comming-soon {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .material-icons {
+        font-size: 100pt;
+        color: gray;
+    }
+}

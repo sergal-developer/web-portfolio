@@ -1,8 +1,4 @@
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { PortfolioViewComponent } from './views/portfolio/portfolio.component';
-
-export const routes: Routes = [];
-
 
 const appRoutes: Routes = [
     {
@@ -11,7 +7,12 @@ const appRoutes: Routes = [
     },
     {
       path: 'portfolio/:project',
-      component: PortfolioViewComponent
+      // component: PortfolioViewComponent,
+      loadChildren: () => import('./views/portfolio/portfolio.module').then(m => m.PortfolioModule)
+    },
+    {
+      path: 'help',
+      loadChildren: () => import('./views/help/help.module').then(m => m.HelpModule)
     },
   ];
   
