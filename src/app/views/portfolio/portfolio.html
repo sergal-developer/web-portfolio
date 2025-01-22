@@ -1,15 +1,20 @@
 <div class="app-page">
-  <div class="comming-soon">
-
-    <span class="material-icons">
-      public_off
+  <ng-container *ngIf="!isValid">
+    <div class="comming-soon">
+      <span class="material-icons">
+        public_off
       </span>
 
-      <h1>{{ 'GLOBAL.coming_soon' | translate }} </h1>
-      <p>{{ 'GLOBAL.coming_soon_subtitle' | translate }}</p>
+      <h1>{{ 'GLOBAL.project_unknow' | translate }} </h1>
+      <p>{{ 'GLOBAL.project_unknow_subtitle' | translate }}</p>
 
-      <a href="/#/">{{ 'GLOBAL.return' | translate }}</a>
-  </div>
+      <a href="/#/?section=portfolio">{{ 'GLOBAL.return' | translate }}</a>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isValid">
+    <demo-glow *ngIf="project === 'glow'"></demo-glow>
+    <demo-incident-map *ngIf="project === 'incidentMap'"></demo-incident-map>
+    <demo-interapt *ngIf="project === 'interapt'"></demo-interapt>
+    <demo-ultraui *ngIf="project === 'ultraui'"></demo-ultraui>
+  </ng-container>
 </div>
-
-

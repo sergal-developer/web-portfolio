@@ -1,17 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { AppRoutes } from './app.routes';
-import { LandingModule } from './views/landing/landing.module';
-import { PortfolioModule } from './views/portfolio/portfolio.module';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { AppComponent } from './app.component';
+import { AppRoutes } from './app.routes';
 import { EventBusService } from './shared/events/EventBus.service';
 import { GoogleAnalyticsService } from './shared/services/google.analytics.service';
+import { LandingModule } from './views/landing/landing.module';
+import { PortfolioModule } from './views/portfolio/portfolio.module';
+import { HelpModule } from './views/help/help.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { GoogleAnalyticsService } from './shared/services/google.analytics.servi
       }
     }),
     LandingModule,
-    PortfolioModule
+    PortfolioModule,
+    HelpModule
   ],
   providers: [EventBusService, GoogleAnalyticsService],
   bootstrap: [AppComponent]

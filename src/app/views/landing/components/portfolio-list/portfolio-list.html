@@ -15,7 +15,7 @@
 
     <div class="project-card" *ngFor="let item of portfolio" >
       <div class="pc-border">
-        <div class="pc-border-item type {{ type }}" *ngFor="let type of item._types">
+        <div class="pc-border-item type {{ type }}" *ngFor="let type of item.typesScope">
         </div>
       </div>
       <div class="pc-container">
@@ -24,7 +24,7 @@
         <div>{{ item._description }}</div>
         <div class="pc-tech-list-title">{{ 'GLOBAL.technologies' | translate }}:</div>
         <div class="pc-tech-list">
-          <div class="pc-tech-item" *ngFor="let th of item._tech">
+          <div class="pc-tech-item" *ngFor="let th of item.technologies">
             <img [attr.src]="'/assets/' + th.image" [attr.alt]="th.name">
           </div>
         </div>
@@ -33,9 +33,9 @@
         </div>
       </div>
       <div class="pc-stats">
-        <div>{{ 'GLOBAL.developedin' | translate }}: {{ item._years }}</div>
+        <div>{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</div>
         <a *ngIf="item.url" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.preview' | translate }}</a>
-        <a *ngIf="item.externalUrl" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.visit' | translate }}</a>
+        <a *ngIf="item.externalUrl" target="_blank" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.visit' | translate }}</a>
       </div>
     </div>
   </div>

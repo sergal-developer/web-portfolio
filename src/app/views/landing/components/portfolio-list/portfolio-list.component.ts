@@ -1,9 +1,12 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { SOURCEDATA } from '../../../../data/datacontent';
-import { _, TranslateService } from '@ngx-translate/core';
-import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
-import { Route, Router } from '@angular/router';
+
 import { DatePipe } from '@angular/common';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+import { _, TranslateService } from '@ngx-translate/core';
+import { SourceData } from '../../../../shared/content/source.data';
+import { PortfolioEntity } from '../../../../shared/entities/portfolio.entity';
+import { TechnologyEntity } from '../../../../shared/entities/technology.entity';
+import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
 @Component({
     selector: 'portfolio-list',
@@ -13,8 +16,9 @@ import { DatePipe } from '@angular/common';
 })
 
 export class PortfolioListComponent {
-    portfolio: Array<any> = [];
-    technologies: Array<any> = [];
+    sourceData = new SourceData();
+    portfolio: Array<PortfolioEntity> = [];
+    technologies: Array<TechnologyEntity> = [];
 
     title = {
         name: '',
@@ -34,9 +38,6 @@ export class PortfolioListComponent {
             this.updateLanguageDependedncies();
         });
         this.updateLanguageDependedncies();
-
-        this.technologies = SOURCEDATA.technologies;
-        this.portfolio = this.normalizeData(SOURCEDATA.portfolio.list);
     }
 
     //#region LANGUAGE
@@ -48,7 +49,8 @@ export class PortfolioListComponent {
             this.title.position = res
         });
 
-        this.portfolio = this.normalizeData(SOURCEDATA.portfolio.list);
+        this.technologies = this.sourceData.getTechnologies();
+        this.portfolio = this.normalizeData(this.sourceData.getPortfolio());
     }
     //#endregion LANGUAGE
 
@@ -58,35 +60,15 @@ export class PortfolioListComponent {
         }
     }
 
-    normalizeData(portfolio: Array<any>) {
-        let projects = portfolio.map((item: any) => {
-            item._start = this.datePipe.transform(item.startDate, 'yyyy');
-            item._end = this.datePipe.transform(item.endDate, 'yyyy');
-            item._years = item._start == item._end ? `${item._start}` : `${item._start} - ${item._end}`;
-
+    normalizeData(portfolio: Array<PortfolioEntity>) {
+        let projects = portfolio.map((item: PortfolioEntity) => {
             item._description = item.description;
 
             this.translate.get(_(item.description)).subscribe((res: string) => {
                 item._description = res
             });
-
-            if (item.tech && item.tech.length) {
-                item._tech = [];
-                item._types = [];
-                item.tech.map((tech: string) => {
-                    const th = this.technologies.find((th: any) => th.id == tech);
-                    if (th) {
-                        item._tech.push(th);
-                        if (!item._types.includes(th.type)) {
-                            item._types.push(th.type);
-                        }
-                    }
-                });
-            }
-
             return item;
         });
-        console.log('projects: ', projects);
         return projects;
 
     }

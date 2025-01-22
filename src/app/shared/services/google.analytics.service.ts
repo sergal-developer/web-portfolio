@@ -21,7 +21,7 @@ export class GoogleAnalyticsService {
         script.text = `
             window.dataLayer = window.dataLayer || [];
             function gtag() {
-                console.log('GA:', ...arguments);
+                // console.log('GA:', ...arguments);
                 dataLayer.push(arguments);
             }
             gtag('js', new Date()); `;

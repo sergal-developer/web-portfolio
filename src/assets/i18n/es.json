@@ -32,7 +32,9 @@
         "developedin": "Desarrollado en",
         "preview": "Previsualizar",
         "visit": "Visitar",
-        "types": "Tipos"
+        "types": "Tipos",
+        "project_unknow": "Proyecto no encontrado",
+        "project_unknow_subtitle": "Lo sentimos por el momento no se encuentra el proyecto que buscas"
     },
     "NAV": {
         "navAbout": "Acerca de",

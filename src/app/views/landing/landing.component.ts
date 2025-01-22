@@ -1,8 +1,10 @@
 import { ViewportScroller } from '@angular/common';
-import { AfterContentInit, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 import { TranslateService, _ } from '@ngx-translate/core';
-import { EventBusService, EventBus } from '../../shared/events/EventBus.service';
+import { EventBus, EventBusService } from '../../shared/events/EventBus.service';
 import { GoogleAnalyticsService } from '../../shared/services/google.analytics.service';
+import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ConfigData } from '../../shared/content/config.data';
 
 @Component({
     selector: 'landing',
@@ -25,7 +27,6 @@ export class LandingComponent implements OnInit {
     timeDelay = 2800;
     percerntScroll = 0;
     browserLangs: string[] = [];
-    availableLangs: string[] = ['es', 'en'];
     currentLang: string = '';
     loadingLanguage = false;
 
@@ -33,8 +34,10 @@ export class LandingComponent implements OnInit {
         private viewportScroller: ViewportScroller,
         private translate: TranslateService,
         private eventBusService: EventBusService,
-        private _ga: GoogleAnalyticsService) {
-        this.translate.addLangs(this.availableLangs);
+        private _ga: GoogleAnalyticsService,
+        private _activatedRoute: ActivatedRoute,
+        private _router: Router) {
+        this.translate.addLangs(ConfigData.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
         this.translate.setDefaultLang(this.currentLang);
@@ -60,12 +63,30 @@ export class LandingComponent implements OnInit {
             }, 1000);
         });
 
-
-        // setTimeout(() => {
-        //     this.goTo('init');
-        // }, this.timeDelay);
         this._ga.TrackScreen('visualization', 'landing page');
-        this.onScroll();
+
+
+        // detect if is first ejecution in page
+        setTimeout(() => {
+            this.onScroll();
+            const param = this._activatedRoute.snapshot.queryParams["section"];
+            if(param) {
+                this.goTo(param);
+                this._router.navigate([]);
+                return;
+            }
+            
+            if (scrollY === 0) {
+                setTimeout(() => {
+                    this.goTo('about');
+                }, this.timeDelay - 1000);
+            }
+
+            if (this.current != 'init' || scrollY > 100 && scrollY < 250) {
+                this.goTo(this.current == 'init' ? 'about' : this.current);
+            }
+        }, 1000);
+
     }
 
     goTo(section: string) {
@@ -83,14 +104,11 @@ export class LandingComponent implements OnInit {
 
         this._ga.TrackEvent('click', `section: ${section}`, section);
 
-        // setTimeout(() => {
-        //     // console.info('scroll: ', {
-        //     //     percernt: this.percerntScroll,
-        //     //     scroll: scrollY,
-        //     //     top: top
-        //     // });
-        //     // console.log('props: ', this.sectionProps);
-        // }, 2000);
+        if (section === 'init') {
+            setTimeout(() => {
+                this.goTo('about');
+            }, this.timeDelay);
+        }
     }
 
     @HostListener('window:scroll', ['$event'])
@@ -100,8 +118,6 @@ export class LandingComponent implements OnInit {
         this.percerntScroll = this.percentScroll();
         this.sections = Array.from(document.querySelectorAll('.section-relative'));
         this.sectionProps.forEach((section: any) => {
-            // console.log('scrollY: ', scrollY);
-            // console.log('section.sectionTop: ', section.sectionTop);
             if (scrollY > section.sectionTop - 100) {
                 this.current = section.id;
             }
@@ -115,15 +131,7 @@ export class LandingComponent implements OnInit {
             }
         });
 
-        // console.log('this.current: ', this.current);
         event?.preventDefault();
-
-
-        if (scrollY === 0) {
-            setTimeout(() => {
-                this.goTo('about');
-            }, this.timeDelay);
-        }
 
         return false;
     }
@@ -154,8 +162,8 @@ export class LandingComponent implements OnInit {
 
     //#region LANGUAGE 
     changeLang(language: string) {
-        
-        if(this.currentLang == language) {
+
+        if (this.currentLang == language) {
             return;
         }
 
@@ -165,7 +173,7 @@ export class LandingComponent implements OnInit {
         this.loadingLanguage = true;
 
         // esto cambia el orden al momento de selecionar un lenguaje
-        if(this.browserLangs[0] == this.currentLang) {
+        if (this.browserLangs[0] == this.currentLang) {
             this.browserLangs.shift();
             this.browserLangs.push(this.currentLang)
         }

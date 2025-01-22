@@ -6,13 +6,13 @@
 
 
     <div class="timeline-institutions">
-        <ng-container *ngFor="let evt of institutions">
+        <ng-container *ngFor="let evt of companies">
             <div item-event [id]="evt.id" [attr.class]="evt._className" timeline-item [attr.data-item]="evt.id">
                 <div class="info">
                     <div class="tle-name">{{evt.name}}</div>
                     <div class="tle-period">{{evt.period}}</div>
                     <div class="tle-type">{{evt.type}}</div>
-                    <div class="tle-description" [innerHTML]="evt.description"></div>
+                    <div class="tle-description" [innerHTML]="evt._description"></div>
                 </div>
             </div>
         </ng-container>

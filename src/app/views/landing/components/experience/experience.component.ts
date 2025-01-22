@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { EXPERIENCE } from '../../../../data/datacontent';
 import { TranslateService, _ } from '@ngx-translate/core';
+import { SourceData } from '../../../../shared/content/source.data';
+import { CompanyEntity } from '../../../../shared/entities/company.entity';
+import { ProjectEntity } from '../../../../shared/entities/project.entity';
 import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
 @Component({
@@ -11,9 +13,12 @@ import { EventBus, EventBusService } from '../../../../shared/events/EventBus.se
 })
 
 export class ExperienceComponent implements OnInit {
-    data = EXPERIENCE;
+    sourceData = new SourceData();
+    projects: Array<ProjectEntity> = [];
+    companies: Array<CompanyEntity> = [];
+
     from = 2006;
-    to = 2024;
+    to = 2025;
 
     title = {
         name: '',
@@ -44,6 +49,9 @@ export class ExperienceComponent implements OnInit {
         this.translate.get(_(`EXPERIENCE.position`)).subscribe((res: string) => {
             this.title.position = res
         });
+
+        this.projects = this.sourceData.getProjects();
+        this.companies = this.sourceData.getCompanies();
     }
     //#endregion LANGUAGE
 }

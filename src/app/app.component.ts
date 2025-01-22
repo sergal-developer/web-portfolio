@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { GoogleAnalyticsService } from './shared/services/google.analytics.service';
+import { ConfigData } from './shared/content/config.data';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,8 @@ import { GoogleAnalyticsService } from './shared/services/google.analytics.servi
 export class AppComponent {
   
   constructor(public _ga: GoogleAnalyticsService) {
-
-    // Google analytics init
-    // _ga.setTrackID(this._settingsService.settings.portal.analytics.trackid);
-    const trackProd = "G-J99CJ0NJLS";
-    _ga.setTrackID(trackProd);
+    // Google analytics
+    _ga.setTrackID(ConfigData.googleAnalytics);
     _ga.createTrackID();
   }
 }

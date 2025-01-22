@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { ControlsModule } from '../../controls/controls.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { PortfolioViewComponent } from './portfolio.component';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { ControlsModule } from '../../controls/controls.module';
+import { PortfolioViewComponent } from './portfolio.component';
+import { PortfolioComponentsModule } from './components/portfolio.components.module';
 
 @NgModule({
     imports: [
@@ -17,13 +16,15 @@ import { TranslateModule } from '@ngx-translate/core';
 
         // COMPONENTS
         ControlsModule,
-        TranslateModule
+        TranslateModule,
+        PortfolioComponentsModule
     ],
     declarations: [
         PortfolioViewComponent,
     ],
     exports: [
-        RouterModule
+        RouterModule,
+        PortfolioComponentsModule
     ],
     providers: []
 })
