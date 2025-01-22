@@ -32,7 +32,9 @@
         "developedin": "Developed in",
         "preview": "Preview",
         "visit": "Visit",
-        "types": "Types"
+        "types": "Types",
+        "project_unknow": "Project not found",
+        "project_unknow_subtitle": "We are sorry, the project you are looking for is not available at the moment."
     },
     "NAV": {
         "navAbout": "About",
