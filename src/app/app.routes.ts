@@ -12,7 +12,6 @@ const appRoutes: Routes = [
     {
       path: 'portfolio/:project',
       component: PortfolioViewComponent
-      // loadChildren: () => import('./views/portfolio/portfolio.module').then(m => m.PortfolioModule)
     },
   ];
   

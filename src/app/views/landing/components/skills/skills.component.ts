@@ -1,6 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { DATA, PORTFOLIO } from '../../../../data/datacontent';
 import { _, TranslateService } from '@ngx-translate/core';
+import { SourceData } from '../../../../shared/content/source.data';
+import { PortfolioEntity } from '../../../../shared/entities/portfolio.entity';
+import { SkillEntity, TechnologyEntity } from '../../../../shared/entities/technology.entity';
 import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
 @Component( {
@@ -11,12 +13,14 @@ import { EventBus, EventBusService } from '../../../../shared/events/EventBus.se
 } )
 
 export class SkillsComponent {
-    data = DATA;
-    skills: Array<any> = [];
+    sourceData = new SourceData();
+    skills: Array<SkillEntity> = [];
+    technologies: Array<TechnologyEntity> = [];
+    portfolio: Array<PortfolioEntity> = [];
+
     size = 100;
     style = 'width: 100%';
 
-    portfolio = PORTFOLIO.list;
     title = {
         name: '',
         namealt: '',
@@ -26,8 +30,10 @@ export class SkillsComponent {
 
     constructor(private translate: TranslateService,
         private eventBusService: EventBusService) {
-        this.skills = this.data.technologies;
-        // console.log('this.data: ', this.portfolio);
+
+        this.technologies = this.sourceData.getTechnologies();
+        this.portfolio = this.sourceData.getPortfolio();
+        this.skills = this.sourceData.getSkills();
     }
 
     ngOnInit(): void {

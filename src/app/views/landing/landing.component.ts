@@ -1,7 +1,7 @@
 import { ViewportScroller } from '@angular/common';
-import { AfterContentInit, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
 import { TranslateService, _ } from '@ngx-translate/core';
-import { EventBusService, EventBus } from '../../shared/events/EventBus.service';
+import { EventBus, EventBusService } from '../../shared/events/EventBus.service';
 import { GoogleAnalyticsService } from '../../shared/services/google.analytics.service';
 
 @Component({
@@ -60,10 +60,6 @@ export class LandingComponent implements OnInit {
             }, 1000);
         });
 
-
-        // setTimeout(() => {
-        //     this.goTo('init');
-        // }, this.timeDelay);
         this._ga.TrackScreen('visualization', 'landing page');
         this.onScroll();
     }
@@ -82,15 +78,6 @@ export class LandingComponent implements OnInit {
         });
 
         this._ga.TrackEvent('click', `section: ${section}`, section);
-
-        // setTimeout(() => {
-        //     // console.info('scroll: ', {
-        //     //     percernt: this.percerntScroll,
-        //     //     scroll: scrollY,
-        //     //     top: top
-        //     // });
-        //     // console.log('props: ', this.sectionProps);
-        // }, 2000);
     }
 
     @HostListener('window:scroll', ['$event'])
@@ -100,8 +87,6 @@ export class LandingComponent implements OnInit {
         this.percerntScroll = this.percentScroll();
         this.sections = Array.from(document.querySelectorAll('.section-relative'));
         this.sectionProps.forEach((section: any) => {
-            // console.log('scrollY: ', scrollY);
-            // console.log('section.sectionTop: ', section.sectionTop);
             if (scrollY > section.sectionTop - 100) {
                 this.current = section.id;
             }
@@ -115,9 +100,7 @@ export class LandingComponent implements OnInit {
             }
         });
 
-        // console.log('this.current: ', this.current);
         event?.preventDefault();
-
 
         if (scrollY === 0) {
             setTimeout(() => {
