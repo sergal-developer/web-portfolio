@@ -4,6 +4,7 @@ import { TranslateService, _ } from '@ngx-translate/core';
 import { EventBus, EventBusService } from '../../shared/events/EventBus.service';
 import { GoogleAnalyticsService } from '../../shared/services/google.analytics.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ConfigData } from '../../shared/content/config.data';
 
 @Component({
     selector: 'landing',
@@ -26,7 +27,6 @@ export class LandingComponent implements OnInit {
     timeDelay = 2800;
     percerntScroll = 0;
     browserLangs: string[] = [];
-    availableLangs: string[] = ['es', 'en'];
     currentLang: string = '';
     loadingLanguage = false;
 
@@ -37,7 +37,7 @@ export class LandingComponent implements OnInit {
         private _ga: GoogleAnalyticsService,
         private _activatedRoute: ActivatedRoute,
         private _router: Router) {
-        this.translate.addLangs(this.availableLangs);
+        this.translate.addLangs(ConfigData.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
         this.translate.setDefaultLang(this.currentLang);

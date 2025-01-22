@@ -1,10 +1,9 @@
-import { AboutEntity } from "../entities/about.entity";
+
 import { CompanyEntity } from "../entities/company.entity";
 import { PortfolioEntity } from "../entities/portfolio.entity";
 import { ProjectEntity } from "../entities/project.entity";
 import { SkillEntity, TechnologyEntity } from "../entities/technology.entity";
 // DATA
-import { AboutData } from "./about.data";
 import { CompaniesData } from "./companies.data";
 import { PortfolioData } from "./portfolio.data";
 import { ProjectsData } from "./projects.data";
@@ -12,11 +11,6 @@ import { SkillsData } from "./skills.data";
 import { technologiesData } from "./technologies.data";
 
 export class SourceData {
-    getAbout(): AboutEntity {
-        const data: AboutEntity = AboutData;
-        return data;
-    }
-
     getCompanies(): Array<CompanyEntity> {
         const data: Array<CompanyEntity> = CompaniesData;
         return data;

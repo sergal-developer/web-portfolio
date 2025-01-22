@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { IncidentMapModule } from './incidentMap/incidentMap.module';
 import { GlowModule } from './glow/glow.module';
+import { IncidentMapModule } from './incidentMap/incidentMap.module';
 import { InteraptModule } from './interapt/interapt.module';
 import { UltrauiModule } from './ultraui/ultraui.module';
 
