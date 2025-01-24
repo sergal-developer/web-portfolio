@@ -1,0 +1,98 @@
+{
+    "GLOBAL": {
+        "en": "English",
+        "es": "Spanish",
+        "design": "Design",
+        "frontEnd": "Frontend",
+        "backend": "Backend",
+        "admin": "Admin",
+        "level_advanced": "Advanced",
+        "level_expert": "Expert",
+        "level_medium": "Medium",
+        "level_native": "Native",
+        "level_beginner": "Beginner",
+        "skill_comunication": "Communication",
+        "skill_flexibility": "Flexibility",
+        "skill_leadership": "Leadership",
+        "skill_motivation": "Motivation",
+        "skill_innovation": "Innovation",
+        "skill_solving": "problem solving ability",
+        "skill_Teamwork": "Teamwork",
+        "skill_english": "English",
+        "skill_spanish": "Spanish",
+        "skill_logical": "Logical thinking",
+        "skill_tools": "Management tools",
+        "skill_digital_skills": "Programming in different areas (Backend, Frontend)",
+        "skill_design": "Design and prototyping skills",
+        "carrer": "Ingenieria en computación",
+        "technologies": "Technologies",
+        "coming_soon": "COMING SOON",
+        "coming_soon_subtitle": "ARE YOU READY?",
+        "return": "Return",
+        "developedin": "Developed in",
+        "preview": "Preview",
+        "visit": "Visit",
+        "types": "Types",
+        "project_unknow": "Project not found",
+        "project_unknow_subtitle": "We are sorry, the project you are looking for is not available at the moment.",
+        "notification_app": "The following application is inspired by the original application, therefore the data and presentation are fictitious.",
+        "levelSkill": "Level",
+        "TRAINEE": "Trainee",
+        "JUNIOR": "Junior",
+        "ADVANCED": "Advanced",
+        "SENIOR": "Senior",
+        "EXPERT": "Expert"
+    },
+    "NAV": {
+        "navAbout": "About",
+        "navExperience": "Experience",
+        "navskills": "Skills",
+        "navsportfolio": "Portfolio"
+    },
+    "ABOUT": {
+        "about": {
+            "title": "About Me",
+            "description1": "I am a passionate developer with over a decade of experience in the programming world.",
+            "description2": "Since 2008, I have been immersed in the exciting field of web and desktop application development.",
+            "description3": "My focus is on turning ideas into exceptional digital solutions.",
+            "description4": "If you are looking for someone who can take your project to the next level, I am ready to dive into new challenges and contribute to the success of your team.",
+            "contactme": "Feel free to contact me!."
+        },
+        "specialties": {
+            "title": "My Specialties",
+            "descriptionTitle1": "Development Architecture",
+            "descriptionTitle2": "Development Methodologies",
+            "descriptionTitle3": "Backend and Frontend Mastery",
+            "descriptionTitle4": "UX Experience",
+            "description1": "I am always researching and applying best practices in development architecture. I make sure my projects are designed with solid technical foundations to ensure optimal performance and easy scalability.",
+            "description2": "I am a firm believer in agile development methodologies, such as Kanban and Scrum. These practices have allowed me to manage projects effectively, adapting quickly to changes and delivering high-quality results in a timely manner.",
+            "description3": "My experience spans the three fundamental branches of development: Backend, Frontend and UX. This allows me to have a comprehensive view of projects and ensure that all aspects are perfectly aligned.",
+            "description4": "My commitment to user experience (UX) is reflected in my projects. I am always looking for ways to improve usability and user interaction to create more attractive and functional applications."
+        }
+    },
+    "EXPERIENCE": {
+        "title": "<span class='accent'>+</span> than a decade",
+        "position": "<b>Experience<span class='accent'>.</span></b>",
+        "description": "Since 2008 I started working on blog projects and university exhibitions, understanding information technologies better. I ventured into full stack development, mixing backend, frontend and graphic design. This has opened the doors to various projects such as those shown below."
+    },
+    "SKILLS": {
+        "title": " <b>Skills<b>",
+        "position": "<span class='accent'>&</span> Technologies",
+        "subtitle": "Just My Skills",
+        "description": "Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years."
+    },
+    "PORTFOLIO": {
+        "title": "A look at my <span class='accent'>&bull;</span>",
+        "position": "<b><span class='accent'>/</span>Portfolio</b>",
+        "description": "I started working as a designer and programmer in 2008. I have honed my skills in graphic design, web development, and desktop, web, and mobile application development. I recognize the benefits of agile methodologies to ensure predictive delivery in software projects. I have experience working with Scrum and Kanban methods. Additionally, Sergio has a solid background in design patterns, OOP, and software architectures for web development. He is aware of the latest trends in web development.",
+        "slogan": "My passion is designing and developing beautiful digital products on a small and large scale.",
+        
+        "CFDI": "Comprehensive billing system that covers the entire life cycle of an invoice, from its creation and customization to its sending and tracking. It allows the integration of product, customer and payment data, generating detailed reports for better decision making.",
+        "ADRISA": "Claims Management System is an advanced platform designed to efficiently and quickly manage claims in the insurance sector, helping insurance companies, adjusters and clients to maintain comprehensive control of cases from reporting to final resolution.",
+        "INCIDENTMAPS": "Incident Mapping System with Report Generation is an advanced and visual tool that allows monitoring, managing and analyzing incidents in real time through interactive maps. Ideal for governments, security organizations, or companies that require efficient monitoring of critical situations such as accidents, natural disasters, emergencies and risk events.",
+        "ULTRA": "Course Management System is a comprehensive platform designed to facilitate the management of courses, students and teachers within educational institutions or companies. Its main objective is to optimize the creation, organization, monitoring and evaluation of educational programs in an efficient and accessible way.",
+        "INTERAPT": "It is a comprehensive platform designed to improve the management of medical consultations and patient follow-up in clinics, hospitals or private practices. With this system, health professionals can optimize their workflow, efficiently manage medical records, schedule appointments and constantly monitor the well-being of their patients.",
+        "GLOW": "Globant's Comprehensive Internal Business Management Portal is a centralized platform designed to optimize the administrative and financial management of organizations, companies and work teams. This portal allows for efficient administration of financial resources, user access control, resource declaration and comprehensive management of corporate travel, all from a single, easy-to-use and completely secure interface.",
+        "PODEXPERIENCE": "It is a comprehensive platform designed to optimize the management, coordination and productivity of Globant software development teams. This system facilitates project planning, task tracking, resource management and collaboration between team members, ensuring efficient and successful delivery of technological solutions."
+    }
+}
