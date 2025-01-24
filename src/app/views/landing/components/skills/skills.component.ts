@@ -5,12 +5,12 @@ import { PortfolioEntity } from '../../../../shared/entities/portfolio.entity';
 import { SkillEntity, TechnologyEntity } from '../../../../shared/entities/technology.entity';
 import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
-@Component( {
-    selector    : 'skills',
-    templateUrl : './skills.html',
-    styleUrls   : [ './skills.scss' ],
+@Component({
+    selector: 'skills',
+    templateUrl: './skills.html',
+    styleUrls: ['./skills.scss'],
     encapsulation: ViewEncapsulation.None
-} )
+})
 
 export class SkillsComponent {
     sourceData = new SourceData();
@@ -34,6 +34,7 @@ export class SkillsComponent {
         this.technologies = this.sourceData.getTechnologies();
         this.portfolio = this.sourceData.getPortfolio();
         this.skills = this.sourceData.getSkills();
+        this.updateLanguageDependedncies();
     }
 
     ngOnInit(): void {
@@ -50,6 +51,12 @@ export class SkillsComponent {
         });
         this.translate.get(_(`SKILLS.position`)).subscribe((res: string) => {
             this.title.position = res
+        });
+
+        this.technologies.map(tech => {
+            this.translate.get(_(`GLOBAL.${tech.levelName}`)).subscribe((res: string) => {
+                tech.levelName = res
+            });
         });
     }
     //#endregion LANGUAGE

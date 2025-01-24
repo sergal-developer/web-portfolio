@@ -1,5 +1,7 @@
 <div class="container portafolio-container">
-  <h3 [innerHTML]="title.position"></h3>
+  <titlepage-component [id]="'portfolio-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
+    [description]="title.position">
+  </titlepage-component>
 </div>
 <div class="container portafolio-container separator container-project ">
   <div class="info">

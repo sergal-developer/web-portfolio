@@ -1,13 +1,16 @@
 @import "../../../../../scss/core/mixins";
 @import "../../../../../scss/core/globals.scss";
 
+$hexaSize: 65px;
+$hexaSizeHover: 80px;
+
 skills {
 
     .skills-container {
         padding: 50px 0;
 
         titlepage-component {
-            min-width: 500px;
+            min-width: 700px;
         }
 
         &.center {
@@ -91,16 +94,12 @@ skills {
         flex-wrap: wrap;
         flex-direction: row;
         padding: 0;
+        // display: grid;
+        // grid-template-columns: repeat(16, 1fr);
         justify-content: center;
+        gap: 25px;
 
         .skill {
-            // width: 190px;
-            margin-left: -30px;
-            &.alter {
-                margin-top: 55px;
-                margin-left: -30px;
-            }
-            
             img {
                 height: 80%;
             }
@@ -109,8 +108,140 @@ skills {
 
 }
 
-$hexaSize: 65px;
-$hexaSizeHover: 80px;
+.shape-warp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    transition: all 300ms;
+    cursor: pointer;
+
+    .square {
+        width: $hexaSize;
+        height: $hexaSize;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 300ms;
+        transition-delay: 300ms;
+        background: inherit;
+
+        img {
+            z-index: 3;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 3;
+            width: inherit;
+            height: inherit;
+            background: inherit;
+            border-radius: 20px;
+            transition: all 300ms ease 300ms;
+            opacity: 0.7;
+            backdrop-filter: blur(4px);
+        }
+    }
+
+    .shape-details {
+        font-size: 13px;
+        position: absolute;
+        opacity: 0;
+        transition: all 300ms;
+        transition-delay: 600ms;
+        line-height: 1;
+        z-index: 4;
+        text-align: center;
+        padding: 10px;
+        background: rgba(99, 99, 99, 0.6);
+        color: white;
+        backdrop-filter: blur(4px);
+        width: 100%;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        gap: 5px;
+
+        b {
+            font-size: 15px;
+        }
+    }
+
+    .shape-level {
+        position: absolute;
+        display: flex;
+        gap: 3px;
+        width: 100%;
+        top: calc(#{ $hexaSize } + 2px);
+        background: lightgray;
+        border-radius: 10px;
+        transition: all 300ms;
+        transition-delay: 600ms;
+        padding: 2px;
+        div {
+            width: calc(100% / 5);
+            height: 8px;
+            background: rgb(136, 136, 136);
+            border-radius: 10px;
+            transition: all 300ms;
+            transition-delay: 800ms;
+        }
+
+        &.level-4 {
+            div {
+                background: rgb(183, 20, 242);
+            }
+        }
+        &.level-3 {
+            div:nth-child(-n + 4) {
+                background: rgb(106 163 40);
+            }
+        }
+        &.level-2 {
+            div:nth-child(-n + 3) {
+                background: rgb(26, 148, 107);
+            }
+        }
+        &.level-1 {
+            div:nth-child(-n + 2) {
+                background: rgb(140, 163, 40);
+            }
+        }
+        &.level-0 {
+            div:nth-child(-n + 1) {
+                background: rgb(153, 163, 40);
+            }
+        }
+    }
+
+    &:hover,
+    &.active {
+        z-index: 10;
+
+        .square {
+            transform: scale(1.5);
+
+            &::before,
+            &::after {
+                transform: scale(1.4);
+            }
+        }
+
+        .shape-details {
+            opacity: 1;
+            top: calc($hexaSize + 20px);
+            width: 200%;
+        }
+        .shape-level {
+            top: -28px;
+            width: 150%;
+        }
+    }
+}
 
 .hexa-warp {
     transition: all 300ms;
@@ -118,6 +249,7 @@ $hexaSizeHover: 80px;
     align-items: center;
     justify-content: center;
     position: relative;
+    flex-direction: column;
 
     .hexa {
         width: $hexaSize;
@@ -139,22 +271,32 @@ $hexaSizeHover: 80px;
     }
 
     .hexa-name {
+        font-size: 12px;
         position: absolute;
         opacity: 0;
     }
 
     &:hover,
-    &:active {
-        filter: drop-shadow(0px 0px 5px rgba(122, 122, 122, 0.5));
+    &.active {
+        // filter: drop-shadow(0px 0px 5px rgba(122, 122, 122, 0.5));
         z-index: 10;
-        padding: 0 40px;
+        // padding: 0 40px;
         transform: scale(1);
+        background: rgba(0, 0, 0, 0.5);
+        // padding: 10px;
 
         .hexa {
-            background: rgb(221 221 221);
-            background: white;
+            //     background: rgb(221 221 221);
+            //     background: white;
             z-index: 10;
-            transform: scale(1.5);
+            transform: scale(1);
+        }
+
+        .hexa-name {
+            opacity: 1;
+            // background: rgba(0, 0, 0, 0.5);
+            color: white;
+            position: relative;
         }
     }
 }

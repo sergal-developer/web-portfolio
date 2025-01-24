@@ -4,6 +4,7 @@ export class TechnologyEntity {
     id?: string = '';
     name: string = '';
     level: TypeLevel = TypeLevel.TRAINEE;
+    levelName?: string = TypeLevel.TRAINEE.toString();
     years: string = '';
     image: string = '';
     type: TypeScope | null = TypeScope.ADMIN;

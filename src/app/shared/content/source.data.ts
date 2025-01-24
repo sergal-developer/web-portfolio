@@ -3,6 +3,7 @@ import { CompanyEntity } from "../entities/company.entity";
 import { PortfolioEntity } from "../entities/portfolio.entity";
 import { ProjectEntity } from "../entities/project.entity";
 import { SkillEntity, TechnologyEntity } from "../entities/technology.entity";
+import { TypeLevel } from "../entities/types.enum";
 // DATA
 import { CompaniesData } from "./companies.data";
 import { PortfolioData } from "./portfolio.data";
@@ -35,7 +36,7 @@ export class SourceData {
         data.map(item => {
             item.period = this.getPeriod(item.startDate, item.endDate);
             item.technologies = this.joinTechnologies(item.technologiesId, technologies, item);
-        })
+        });
         return data;
     }
 
@@ -46,6 +47,9 @@ export class SourceData {
 
     getTechnologies(): Array<TechnologyEntity> {
         const data: Array<TechnologyEntity> = technologiesData;
+        data.map(item => {
+            item.levelName = TypeLevel[item.level].toString(); 
+        })
         return data;
     }
 
@@ -88,4 +92,5 @@ export class SourceData {
 
         return typesScope;
     }
+
 }

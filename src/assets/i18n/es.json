@@ -34,7 +34,14 @@
         "visit": "Visitar",
         "types": "Tipos",
         "project_unknow": "Proyecto no encontrado",
-        "project_unknow_subtitle": "Lo sentimos por el momento no se encuentra el proyecto que buscas"
+        "project_unknow_subtitle": "Lo sentimos por el momento no se encuentra el proyecto que buscas",
+        "notification_app": "La siguiente aplicacion esta inspirada en la aplicacion original, por lo tanto los datos y presentados son ficticios",
+        "levelSkill": "Nivel",
+        "TRAINEE": "Aprendiz",
+        "JUNIOR": "Júnior",
+        "ADVANCED": "Avanzado",
+        "SENIOR": "Sénior",
+        "EXPERT": "Experto"
     },
     "NAV": {
         "navAbout": "Acerca de",
@@ -70,7 +77,7 @@
     },
     "SKILLS": {
         "title": " <b>Habilidades<b>",
-        "position": "<span class='accent'>&</span> portafolio",
+        "position": "<span class='accent'>&</span> Tecnologias",
         "subtitle": "Mis Habilidades",
         "description": "Desde el 2008 he desarrollado conocimientos en diseño, y programación orientada a backend y frontend, además de eso he trabajado bajo metodologías Scrum y Kanban, código administrado usando git scm en github y gitlab a continuación te muestro que tecnologías he trabajado a lo largo de estos maravillosos años."
     },

@@ -5,6 +5,7 @@ import { EventBus, EventBusService } from '../../shared/events/EventBus.service'
 import { GoogleAnalyticsService } from '../../shared/services/google.analytics.service';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ConfigData } from '../../shared/content/config.data';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'landing',
@@ -24,7 +25,7 @@ export class LandingComponent implements OnInit {
     sections: Array<Element> = [];
     sectionProps: Array<SectionProp> = [];
     current = '';
-    timeDelay = 2800;
+    timeDelay = 1800;
     percerntScroll = 0;
     browserLangs: string[] = [];
     currentLang: string = '';
@@ -36,7 +37,8 @@ export class LandingComponent implements OnInit {
         private eventBusService: EventBusService,
         private _ga: GoogleAnalyticsService,
         private _activatedRoute: ActivatedRoute,
-        private _router: Router) {
+        private _router: Router,
+    private _title: Title) {
         this.translate.addLangs(ConfigData.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
@@ -79,13 +81,13 @@ export class LandingComponent implements OnInit {
             if (scrollY === 0) {
                 setTimeout(() => {
                     this.goTo('about');
-                }, this.timeDelay - 1000);
+                }, this.timeDelay);
             }
 
             if (this.current != 'init' || scrollY > 100 && scrollY < 250) {
                 this.goTo(this.current == 'init' ? 'about' : this.current);
             }
-        }, 1000);
+        }, 500);
 
     }
 
@@ -103,6 +105,8 @@ export class LandingComponent implements OnInit {
         });
 
         this._ga.TrackEvent('click', `section: ${section}`, section);
+
+        this._title.setTitle(`SERGAL - ${ section.toUpperCase() }`);
 
         if (section === 'init') {
             setTimeout(() => {
@@ -130,6 +134,8 @@ export class LandingComponent implements OnInit {
                 li.classList.add("active");
             }
         });
+
+        this._title.setTitle(`SERGAL - ${ this.current.toUpperCase() }`);
 
         event?.preventDefault();
 

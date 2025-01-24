@@ -4,7 +4,7 @@ export const technologiesData = [
     {
         id: "MSAZURE",
         name: "Windows Azure",
-        level: 1,
+        level: 2,
         years: "4",
         image: "img/azure.png",
         type: TypeScope.BACKEND,
@@ -13,7 +13,7 @@ export const technologiesData = [
     {
         id: "MSNET",
         name: "Windows .NET Services",
-        level: 2,
+        level: 3,
         years: "8",
         image: "img/dotnet.png",
         type: TypeScope.BACKEND,
@@ -49,7 +49,7 @@ export const technologiesData = [
     {
         id: "MSWFM",
         name: "Windows Forms",
-        level: 3,
+        level: 2,
         years: "8",
         image: "img/wforms.png",
         type: TypeScope.BACKEND,
@@ -58,7 +58,7 @@ export const technologiesData = [
     {
         id: "HTML5",
         name: "HTML5",
-        level: 3,
+        level: 4,
         years: "14",
         image: "img/html.png",
         type: TypeScope.FRONTEND,
@@ -67,7 +67,7 @@ export const technologiesData = [
     {
         id: "CSS3",
         name: "CSS3",
-        level: 3,
+        level: 4,
         years: "14",
         image: "img/css.png",
         type: TypeScope.FRONTEND,
@@ -76,7 +76,7 @@ export const technologiesData = [
     {
         id: "SASS",
         name: "SASS, SCSS",
-        level: 3,
+        level: 4,
         years: "8",
         image: "img/sass.png",
         type: TypeScope.FRONTEND,
@@ -85,7 +85,7 @@ export const technologiesData = [
     {
         id: "ASTRO",
         name: "Astro",
-        level: 1,
+        level: 2,
         years: "1",
         image: "img/astro.png",
         type: TypeScope.FRONTEND,
@@ -94,7 +94,7 @@ export const technologiesData = [
     {
         id: "JS",
         name: "Java Script, ECMAScript 6 (ES6)",
-        level: 3,
+        level: 4,
         years: "14",
         image: "img/javascript.png",
         type: TypeScope.FRONTEND,
@@ -103,7 +103,7 @@ export const technologiesData = [
     {
         id: "TS",
         name: "TypeScript",
-        level: 3,
+        level: 4,
         years: "9",
         image: "img/typescript.png",
         type: TypeScope.FRONTEND,
@@ -121,7 +121,7 @@ export const technologiesData = [
     {
         id: "NG",
         name: "AngularJS & Angular 15",
-        level: 3,
+        level: 4,
         years: "8",
         image: "img/angular.png",
         type: TypeScope.FRONTEND,
@@ -130,7 +130,7 @@ export const technologiesData = [
     {
         id: "REACT",
         name: "React",
-        level: 1,
+        level: 2,
         years: "1",
         image: "img/react.png",
         type: TypeScope.FRONTEND,
@@ -175,7 +175,7 @@ export const technologiesData = [
     {
         id: "GLFIREBASE",
         name: "Google Firebase",
-        level: 1,
+        level: 2,
         years: "1",
         image: "img/firebase.png",
         type: TypeScope.BACKEND,
@@ -211,7 +211,7 @@ export const technologiesData = [
     {
         id: "GIT",
         name: "Github",
-        level: 3,
+        level: 4,
         years: "14",
         image: "img/github.png",
         type: TypeScope.ADMIN,
@@ -229,7 +229,7 @@ export const technologiesData = [
     {
         id: "CONFLUENCE",
         name: "Confluence",
-        level: 1,
+        level: 2,
         years: "7",
         image: "img/confluence.png",
         type: TypeScope.ADMIN,
@@ -238,7 +238,7 @@ export const technologiesData = [
     {
         id: "NODEJS",
         name: "NodeJS",
-        level: 2,
+        level: 3,
         years: "8",
         image: "img/nodejs.png",
         type: TypeScope.BACKEND,
@@ -247,7 +247,7 @@ export const technologiesData = [
     {
         id: "ABPS",
         name: "Adobe Photoshop",
-        level: 2,
+        level: 3,
         years: "4",
         image: "img/adobephotoshop.png",
         type: TypeScope.DESIGN,
@@ -274,7 +274,7 @@ export const technologiesData = [
     {
         id: "ABFLASH",
         name: "Adobe Flash & ActionScript",
-        level: 1,
+        level: 2,
         years: "4",
         image: "img/flash.png",
         type: TypeScope.DESIGN,
@@ -292,7 +292,7 @@ export const technologiesData = [
     {
         id: "MSEXPRESSION",
         name: "Microsoft Expression",
-        level: 2,
+        level: 4,
         years: "8",
         image: "img/expression.png",
         type: TypeScope.DESIGN,
