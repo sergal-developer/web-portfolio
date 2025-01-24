@@ -29,8 +29,8 @@ export const PortfolioData = [
         technologiesId: ['GIT', 'JS', 'CSS3', 'HTML5', 'MSNET', 'MSCSHARP', 'MSSQL', 'NHIBERNATE'],
         startDate: 1357020000000,
         endDate: 1357020000000,
-        url: '/#/portfolio/incidentMap',
-        externalUrl: null
+        url: null,
+        externalUrl: 'https://mx.usembassy.gov/es/consular-services-es/#/incidencias'
     },
     {
         id: 'ultraui',
