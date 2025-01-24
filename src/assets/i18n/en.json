@@ -34,7 +34,14 @@
         "visit": "Visit",
         "types": "Types",
         "project_unknow": "Project not found",
-        "project_unknow_subtitle": "We are sorry, the project you are looking for is not available at the moment."
+        "project_unknow_subtitle": "We are sorry, the project you are looking for is not available at the moment.",
+        "notification_app": "The following application is inspired by the original application, therefore the data and presentation are fictitious.",
+        "levelSkill": "Level",
+        "TRAINEE": "Trainee",
+        "JUNIOR": "Junior",
+        "ADVANCED": "Advanced",
+        "SENIOR": "Senior",
+        "EXPERT": "Expert"
     },
     "NAV": {
         "navAbout": "About",
@@ -70,7 +77,7 @@
     },
     "SKILLS": {
         "title": " <b>Skills<b>",
-        "position": "<span class='accent'>&</span> portfolio",
+        "position": "<span class='accent'>&</span> Technologies",
         "subtitle": "Just My Skills",
         "description": "Since 2008 I have developed knowledge in design, and programming oriented to backend and frontend, besides that I have worked under Scrum and Kanban methodologies, managed code using git scm in github and gitlab below I show you what technologies I have worked throughout these wonderful years."
     },

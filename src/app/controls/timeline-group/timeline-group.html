@@ -1,0 +1,39 @@
+<!-- <div class="timeline-zoom-control">
+    <div>{ currentZoom }%</div>
+    <div> <input type="range" name="zomcontro." id="zoomcontrol" min="1" max="100" value={currentZoom} onChange={handleZoom} > </div>
+</div> -->
+<div class="timeline-component">
+
+
+    <div class="timeline-institutions">
+        <ng-container *ngFor="let evt of companies">
+            <div item-event [id]="evt.id" [attr.class]="evt._className" timeline-item [attr.data-item]="evt.id">
+                <div class="info">
+                    <div class="tle-name">{{evt.name}}</div>
+                    <div class="tle-period">{{evt.period}}</div>
+                    <div class="tle-type">{{evt.type}}</div>
+                    <div class="tle-description" [innerHTML]="evt._description"></div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+        <div class="timeline-events">
+            <ng-container *ngFor="let evt of projects">
+                <div item-event [id]="evt.id" [attr.class]="evt._className" timeline-item [attr.data-item]="evt.id" >
+                    <div class="info">
+                        <div class="tle-name">{{evt.name}}</div>
+                        <div class="tle-period">{{evt.period}}</div>
+                        <div class="tle-type">{{evt.type}}</div>
+                        <div class="tle-description" [innerHTML]="evt._description"></div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    <div class="timelines-years">
+        <ng-container *ngFor="let y of years">
+            <div item-year (click)="selectYear(y)">{{ y }}</div>
+        </ng-container>
+    </div>
+
+</div>

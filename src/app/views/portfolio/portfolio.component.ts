@@ -4,6 +4,7 @@ import { SourceData } from '../../shared/content/source.data';
 import { TranslateService } from '@ngx-translate/core';
 import { EventBus, EventBusService } from '../../shared/events/EventBus.service';
 import { ConfigData } from '../../shared/content/config.data';
+import { Title } from '@angular/platform-browser';
 
 @Component({
     selector: 'portfolio-view',
@@ -25,6 +26,7 @@ export class PortfolioViewComponent implements OnInit {
         private _activatedRoute: ActivatedRoute,
         private translate: TranslateService,
         private eventBusService: EventBusService,
+        private _title: Title
     ) {
         this.translate.addLangs(ConfigData.availableLangs);
         this.browserLangs = this.translate.getLangs();
@@ -46,6 +48,9 @@ export class PortfolioViewComponent implements OnInit {
     validateProject() {
         const portafolios = this.sourceData.getPortfolio();
         const portafolio = portafolios.find(portafolio => portafolio.id === this.project);
+
+        this._title.setTitle(`S. - ${ portafolio?.name }`);
+
         return portafolio ? true : false;
     }
 }

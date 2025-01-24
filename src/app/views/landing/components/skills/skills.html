@@ -17,11 +17,21 @@
   <div class="_subsection persepective-container tech-collection">
     <div class="skills-collection pc-content">
       <div class="skill" *ngFor="let skill of technologies; index as i" [ngClass]="{'alter': i%2}">
-        <div class="hexa-warp">
-          <div class="hexa" [attr.style]="'background: ' + skill.color">
+        <div class="shape-warp">
+          <div class="square" [attr.style]="'background: ' + skill.color">
             <img [attr.src]="'/assets/' + skill.image" [attr.alt]="skill.image">
           </div>
-          <div class="hexa-name">{{ skill.name }}</div>
+          <div class="shape-level level-{{ skill.level }}">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+          <div class="shape-details">
+              <div><b>{{ skill.name }}</b></div>
+              <div>{{ 'GLOBAL.levelSkill' | translate }}: {{ skill.levelName }}</div>
+          </div>
         </div>
       </div>
     </div>
