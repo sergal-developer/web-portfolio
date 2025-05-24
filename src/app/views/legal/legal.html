@@ -1,0 +1,46 @@
+<div class="app-page">
+  <ng-container *ngIf="!valid">
+    <div class="document_not_found">
+      <h2>Document</h2>
+      <p>Not exist </p>
+    </div>
+  </ng-container>
+  
+  <ng-container *ngIf="currentData">
+
+    <div class="document_legal">
+      <section class="document">
+        <div class="header">
+          <div class="title">
+            <div class="app-name">{{ currentData.header.app }}</div>
+            <div>{{ currentData.header.title }}</div>
+          </div>
+
+          <div class="logo">LOGO</div>
+        </div>
+
+        <div *ngFor="let section of currentData.sections">
+          <h2 *ngIf="section.header">{{ section.header }}</h2>
+          <p class="subtitle">{{ section.title }}</p>
+
+          <ng-container *ngFor="let content of section.content">
+            <p *ngIf="content.text" [innerHTML]="content.text"></p>
+            <ol *ngIf="!content.text" class="{{ content.class }}">
+              <li *ngFor="let item of content.list">
+                <div [innerHTML]="item.text"></div>
+
+                <ul *ngIf="item.list">
+                  <li *ngFor="let subitem of item.list">
+                    <div [innerHTML]="subitem"></div>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+
+          </ng-container>
+        </div>
+      </section>
+    </div>
+
+  </ng-container>
+</div>

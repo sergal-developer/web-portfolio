@@ -13,6 +13,7 @@ import { GoogleAnalyticsService } from './shared/services/google.analytics.servi
 import { LandingModule } from './views/landing/landing.module';
 import { PortfolioModule } from './views/portfolio/portfolio.module';
 import { HelpModule } from './views/help/help.module';
+import { LegalModule } from './views/legal/legal.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HelpModule } from './views/help/help.module';
     }),
     LandingModule,
     PortfolioModule,
-    HelpModule
+    HelpModule,
+    LegalModule
   ],
   providers: [EventBusService, GoogleAnalyticsService],
   bootstrap: [AppComponent]

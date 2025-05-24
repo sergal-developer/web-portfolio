@@ -50,6 +50,8 @@
         "navsportfolio": "Portfolio"
     },
     "ABOUT": {
+        "title": "<span class='accent'>+</span> A quick look",
+        "position": "<b>at me<span class='accent'>.</span></b>",
         "about": {
             "title": "About Me",
             "description1": "I am a passionate developer with over a decade of experience in the programming world.",

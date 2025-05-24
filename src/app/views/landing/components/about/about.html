@@ -1,4 +1,8 @@
 <div class="container about-container">
+    <titlepage-component [id]="'about-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
+        [description]="title.position">
+    </titlepage-component>
+    
     <div class="about-section about-text-01">
         <h3>{{ 'ABOUT.about.title' | translate }}</h3>
 
