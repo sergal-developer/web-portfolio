@@ -14,6 +14,10 @@ const appRoutes: Routes = [
       path: 'help',
       loadChildren: () => import('./views/help/help.module').then(m => m.HelpModule)
     },
+    {
+      path: 'legal/:app/:type',
+      loadChildren: () => import('./views/legal/legal.module').then(m => m.LegalModule),
+    },
   ];
   
   export const AppRoutes = RouterModule.forRoot(appRoutes, {

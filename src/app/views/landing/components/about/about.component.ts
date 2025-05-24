@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { _, TranslateService } from '@ngx-translate/core';
+import { EventBus, EventBusService } from '../../../../shared/events/EventBus.service';
 
 @Component({
     selector: 'about',
@@ -9,9 +10,34 @@ import { TranslateService } from '@ngx-translate/core';
 })
 
 export class AboutComponent implements OnInit {
-    constructor(private translate: TranslateService) {
+    title = {
+        name: '',
+        namealt: '',
+        title: '',
+        position: ''
     }
 
-    ngOnInit(): void {
-    }
+    constructor(
+            private translate: TranslateService,
+            private eventBusService: EventBusService
+        ) {
+        }
+    
+        ngOnInit(): void {
+            this.eventBusService.subscribe('language').subscribe((eventData: EventBus) => {
+                this.updateLanguageDependedncies();
+            });
+            this.updateLanguageDependedncies();
+        }
+    
+    
+        //#region LANGUAGE
+        updateLanguageDependedncies() {
+            this.translate.get(_(`ABOUT.title`)).subscribe((res: string) => {
+                this.title.title = res;
+            });
+            this.translate.get(_(`ABOUT.position`)).subscribe((res: string) => {
+                this.title.position = res
+            });
+        }
 }
