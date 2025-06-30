@@ -184,6 +184,19 @@
     }
 }
 
+
+main {
+    scroll-snap-type: both mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+}
+
 section {
     @include mobile {
         padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionMobile;
@@ -208,6 +221,15 @@ section {
     &.section-relative {
         position: relative;
         width: 100vw;
+        
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        padding: 0;
+        margin: 0;
 
         &.full {
             min-height: 100vh;
@@ -224,6 +246,26 @@ section {
                 align-items: flex-start;
                 flex-direction: column;
             }
+        }
+
+        
+        &#init {
+            // position: static;
+            // display: flex;
+            align-items: center;
+            justify-content: center;
+            // height: 100vh;
+
+            background: black;
+            color: white;
+        }
+
+        &#skills {
+            // padding-bottom: 0;
+        }
+
+        &#portfolio {
+            // padding-top: 0;
         }
     }
 }

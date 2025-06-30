@@ -15,8 +15,7 @@ body, .body {
   height: 100vh;
   background: rgb(255, 255, 255);
   scroll-behavior: smooth;
-  overflow-x: hidden;
-  @include scroll(5px, $accentColor, black, 0px);
+  overflow: hidden;
 
   @extend .openSansFont;
   font-size: em(16);
