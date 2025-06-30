@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,34 +16,31 @@ import { HelpModule } from './views/help/help.module';
 import { LegalModule } from './views/legal/legal.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [  
-    CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutes,
-    FormsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory:httpTranslator,
-        deps: [HttpClient]
-      }
-    }),
-    LandingModule,
-    PortfolioModule,
-    HelpModule,
-    LegalModule
-  ],
-  providers: [EventBusService, GoogleAnalyticsService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+    ],
+    bootstrap: [AppComponent],
+    imports: [CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutes,
+        FormsModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: httpTranslator,
+                deps: [HttpClient]
+            }
+        }),
+        LandingModule,
+        PortfolioModule,
+        HelpModule,
+        LegalModule],
+    providers: [EventBusService, GoogleAnalyticsService, provideHttpClient(withInterceptorsFromDi())]
 })
 export class AppModule { }
 
 
 export function httpTranslator(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+    return new TranslateHttpLoader(http);
 }
