@@ -4,7 +4,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     selector: 'help',
     templateUrl: './help.html',
     styleUrls: ['./help.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class HelpComponent implements OnInit {

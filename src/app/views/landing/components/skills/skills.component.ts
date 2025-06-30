@@ -9,7 +9,8 @@ import { EventBus, EventBusService } from '../../../../shared/events/EventBus.se
     selector: 'skills',
     templateUrl: './skills.html',
     styleUrls: ['./skills.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class SkillsComponent {

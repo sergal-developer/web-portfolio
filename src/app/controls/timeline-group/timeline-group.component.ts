@@ -4,10 +4,11 @@ import { ProjectTimelineEntity } from '../../shared/entities/project.entity';
 import { Helpers } from '../../shared/utils/helper';
 
 @Component( {
-    selector    : 'timeline-group',
-    templateUrl : './timeline-group.html',
-    styleUrls   : [ './timeline-group.scss' ],
-    encapsulation: ViewEncapsulation.None
+    selector: 'timeline-group',
+    templateUrl: './timeline-group.html',
+    styleUrls: ['./timeline-group.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 } )
 
 export class TimelineGroupComponent implements OnInit {

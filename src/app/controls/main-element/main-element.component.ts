@@ -1,10 +1,11 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component( {
-    selector    : 'main-element-component',
-    templateUrl : './main-element.html',
-    styleUrls   : [ './main-element.scss' ],
-    encapsulation: ViewEncapsulation.None
+    selector: 'main-element-component',
+    templateUrl: './main-element.html',
+    styleUrls: ['./main-element.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 } )
 
 export class MainElementComponent {

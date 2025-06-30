@@ -9,7 +9,8 @@ import { EventBus, EventBusService } from '../../../../shared/events/EventBus.se
     selector: 'experience',
     templateUrl: './experience.html',
     styleUrls: ['./experience.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class ExperienceComponent implements OnInit {

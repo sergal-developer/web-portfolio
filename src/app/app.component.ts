@@ -3,10 +3,11 @@ import { GoogleAnalyticsService } from './shared/services/google.analytics.servi
 import { ConfigData } from './shared/content/config.data';
 
 @Component({
-  selector: 'app-root',
-  template : `<router-outlet></router-outlet>`,
-  styleUrl: './app.component.scss',
-  encapsulation : ViewEncapsulation.None,
+    selector: 'app-root',
+    template: `<router-outlet></router-outlet>`,
+    styleUrl: './app.component.scss',
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class AppComponent {
   

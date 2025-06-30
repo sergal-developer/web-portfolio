@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
     selector: 'demo-glow',
     templateUrl: './glow.html',
     styleUrls: ['./glow.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class GlowComponent implements OnInit {

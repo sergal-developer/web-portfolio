@@ -1,10 +1,11 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component( {
-    selector    : 'titlepage-component',
-    templateUrl : './titlepage.html',
-    styleUrls   : [ './titlepage.scss' ],
-    encapsulation: ViewEncapsulation.None
+    selector: 'titlepage-component',
+    templateUrl: './titlepage.html',
+    styleUrls: ['./titlepage.scss'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 } )
 
 export class TitlepageComponent {

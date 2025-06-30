@@ -12,7 +12,8 @@ import { EventBus, EventBusService } from '../../../../shared/events/EventBus.se
     selector: 'portfolio-list',
     templateUrl: './portfolio-list.html',
     styleUrls: ['./portfolio-list.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class PortfolioListComponent {

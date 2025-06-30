@@ -8,7 +8,8 @@ import { EventBusService } from '../../shared/events/EventBus.service';
     selector: 'legal-view',
     templateUrl: './legal.html',
     styleUrls: ['./legal.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class LegalViewComponent implements OnInit {

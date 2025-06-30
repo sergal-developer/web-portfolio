@@ -11,7 +11,8 @@ import { Title } from '@angular/platform-browser';
     selector: 'landing',
     templateUrl: './landing.html',
     styleUrls: ['./landing.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class LandingComponent implements OnInit {

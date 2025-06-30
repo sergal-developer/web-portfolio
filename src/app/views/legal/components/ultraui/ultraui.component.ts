@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
     selector: 'demo-ultraui',
     templateUrl: './ultraui.html',
     styleUrls: ['./ultraui.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class UltrauiComponent implements OnInit {

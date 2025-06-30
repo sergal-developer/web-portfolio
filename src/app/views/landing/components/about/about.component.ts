@@ -6,7 +6,8 @@ import { EventBus, EventBusService } from '../../../../shared/events/EventBus.se
     selector: 'about',
     templateUrl: './about.html',
     styleUrls: ['./about.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class AboutComponent implements OnInit {

@@ -10,7 +10,8 @@ import { Title } from '@angular/platform-browser';
     selector: 'portfolio-view',
     templateUrl: './portfolio.html',
     styleUrls: ['./portfolio.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class PortfolioViewComponent implements OnInit {

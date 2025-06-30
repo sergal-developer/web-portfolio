@@ -15,12 +15,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "baseHref": "",
             "outputPath": "docs",
             "index": "src/config/index.html",
-            "main": "src/config/main.ts",
+            "browser": "src/config/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -85,7 +84,6 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/config/favicon.ico",
               "src/assets"

@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
     selector: 'demo-interapt',
     templateUrl: './interapt.html',
     styleUrls: ['./interapt.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 
 export class InteraptComponent implements OnInit {
