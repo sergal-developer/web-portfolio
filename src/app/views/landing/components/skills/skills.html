@@ -3,16 +3,10 @@
     [description]="title.position">
   </titlepage-component>
 
-  <div>
-    <div class="row content">
-      <h3>{{ 'SKILLS.subtitle' | translate }}</h3>
-      <p>{{ 'SKILLS.description' | translate }}</p>
-    </div>
+  <div class="description">
+    <h3>{{ 'SKILLS.subtitle' | translate }}</h3>
+    <p>{{ 'SKILLS.description' | translate }}</p>
   </div>
-
-</div>
-
-<div class="container skills-container center">
 
   <div class="_subsection persepective-container tech-collection">
     <div class="skills-collection pc-content">
@@ -27,14 +21,14 @@
             <div></div>
             <div></div>
             <div></div>
-        </div>
+          </div>
           <div class="shape-details">
-              <div><b>{{ skill.name }}</b></div>
-              <div>{{ 'GLOBAL.levelSkill' | translate }}: {{ skill.levelName }}</div>
+            <div><b>{{ skill.name }}</b></div>
+            <div>{{ 'GLOBAL.levelSkill' | translate }}: {{ skill.levelName }}</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+
 </div>

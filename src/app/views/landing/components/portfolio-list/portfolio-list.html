@@ -2,49 +2,49 @@
   <titlepage-component [id]="'portfolio-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
     [description]="title.position">
   </titlepage-component>
-</div>
-<div class="container portafolio-container separator container-project ">
-  <div class="info">
-    <p>{{ 'PORTFOLIO.slogan' | translate }}</p>
 
-    <h6>{{ 'GLOBAL.types' | translate }}</h6>
-    <div> <span class="square type admin"></span>  {{ 'GLOBAL.admin' | translate }}</div>
-    <div><span class="square type design"></span>  {{ 'GLOBAL.design' | translate }}</div>
-    <div><span class="square type frontend"></span>  {{ 'GLOBAL.frontEnd' | translate }}</div>
-    <div><span class="square type backend"></span>  {{ 'GLOBAL.backend' | translate }}</div>
-  </div>
-  <div class="project-list " *ngIf="portfolio.length">
+  <div class="separator container-project ">
+    <div class="info">
+      <p>{{ 'PORTFOLIO.slogan' | translate }}</p>
 
-    <div class="project-card" *ngFor="let item of portfolio" >
-      <div class="pc-border">
-        <div class="pc-border-item type {{ type }}" *ngFor="let type of item.typesScope">
-        </div>
-      </div>
-      <div class="pc-container">
-        
-        <div class="pc-container-title">{{ item.name }}</div>
-        <div>{{ item._description }}</div>
-        <div class="pc-tech-list-title">{{ 'GLOBAL.technologies' | translate }}:</div>
-        <div class="pc-tech-list">
-          <div class="pc-tech-item" *ngFor="let th of item.technologies">
-            <img [attr.src]="'/assets/' + th.image" [attr.alt]="th.name">
+      <h6>{{ 'GLOBAL.types' | translate }}</h6>
+      <div> <span class="square type admin"></span> {{ 'GLOBAL.admin' | translate }}</div>
+      <div><span class="square type design"></span> {{ 'GLOBAL.design' | translate }}</div>
+      <div><span class="square type frontend"></span> {{ 'GLOBAL.frontEnd' | translate }}</div>
+      <div><span class="square type backend"></span> {{ 'GLOBAL.backend' | translate }}</div>
+    </div>
+    <div class="project-list-mask">
+      <div class="project-list " *ngIf="portfolio.length">
+
+        <div class="project-card" *ngFor="let item of portfolio">
+          <div class="pc-border">
+            <div class="pc-border-item type {{ type }}" *ngFor="let type of item.typesScope">
+            </div>
+          </div>
+          <div class="pc-container">
+
+            <div class="pc-container-title">{{ item.name }}</div>
+            <div class="pc-container-description">{{ item._description }}</div>
+            <div class="pc-tech-list-title">{{ 'GLOBAL.technologies' | translate }}:</div>
+            <div class="pc-tech-list">
+              <div class="pc-tech-item" *ngFor="let th of item.technologies">
+                <img [attr.src]="'/assets/' + th.image" [attr.alt]="th.name">
+              </div>
+            </div>
+            <div class="pc-background">
+              <!-- <img [attr.src]="item.image" [attr.alt]="item.name"> -->
+            </div>
+          </div>
+          <div class="pc-stats">
+            <div>{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</div>
+            <a *ngIf="item.url" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.preview' | translate }}</a>
+            <a *ngIf="item.externalUrl" target="_blank" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.visit' |
+              translate }}</a>
           </div>
         </div>
-        <div class="pc-background">
-          <!-- <img [attr.src]="item.image" [attr.alt]="item.name"> -->
-        </div>
-      </div>
-      <div class="pc-stats">
-        <div>{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</div>
-        <a *ngIf="item.url" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.preview' | translate }}</a>
-        <a *ngIf="item.externalUrl" target="_blank" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.visit' | translate }}</a>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- <div class="container portafolio-container">
-  <titlepage-component [id]="'about-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
-    [description]="title.position">
-  </titlepage-component>
-</div> -->
+  </div>
+
+</div>

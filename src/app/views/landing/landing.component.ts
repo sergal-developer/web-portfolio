@@ -72,22 +72,22 @@ export class LandingComponent implements OnInit {
         // detect if is first ejecution in page
         setTimeout(() => {
             this.onScroll();
-            const param = this._activatedRoute.snapshot.queryParams["section"];
-            if(param) {
-                this.goTo(param);
-                this._router.navigate([]);
-                return;
-            }
+        //     const param = this._activatedRoute.snapshot.queryParams["section"];
+        //     if(param) {
+        //         this.goTo(param);
+        //         this._router.navigate([]);
+        //         return;
+        //     }
             
-            if (scrollY === 0) {
-                setTimeout(() => {
-                    this.goTo('about');
-                }, this.timeDelay);
-            }
+        //     if (scrollY === 0) {
+        //         setTimeout(() => {
+        //             this.goTo('about');
+        //         }, this.timeDelay);
+        //     }
 
-            if (this.current != 'init' || scrollY > 100 && scrollY < 250) {
-                this.goTo(this.current == 'init' ? 'about' : this.current);
-            }
+        //     if (this.current != 'init' || scrollY > 100 && scrollY < 250) {
+        //         this.goTo(this.current == 'init' ? 'about' : this.current);
+        //     }
         }, 500);
 
     }
@@ -121,6 +121,7 @@ export class LandingComponent implements OnInit {
 
         this.getSectionsProps();
         this.percerntScroll = this.percentScroll();
+        console.log('this.percerntScroll: ', this.percerntScroll);
         this.sections = Array.from(document.querySelectorAll('.section-relative'));
         this.sectionProps.forEach((section: any) => {
             if (scrollY > section.sectionTop - 100) {
