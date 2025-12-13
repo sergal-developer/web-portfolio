@@ -6,6 +6,7 @@ import { GoogleAnalyticsService } from '../../shared/services/google.analytics.s
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { ConfigData } from '../../shared/content/config.data';
 import { Title } from '@angular/platform-browser';
+import { take } from 'rxjs';
 
 @Component({
     selector: 'landing',
@@ -39,7 +40,7 @@ export class LandingComponent implements OnInit {
         private _ga: GoogleAnalyticsService,
         private _activatedRoute: ActivatedRoute,
         private _router: Router,
-    private _title: Title) {
+        private _title: Title) {
         this.translate.addLangs(ConfigData.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
@@ -68,26 +69,29 @@ export class LandingComponent implements OnInit {
 
         this._ga.TrackScreen('visualization', 'landing page');
 
+        this.init();
+    }
 
+    init() {
         // detect if is first ejecution in page
         setTimeout(() => {
             this.onScroll();
-        //     const param = this._activatedRoute.snapshot.queryParams["section"];
-        //     if(param) {
-        //         this.goTo(param);
-        //         this._router.navigate([]);
-        //         return;
-        //     }
-            
-        //     if (scrollY === 0) {
-        //         setTimeout(() => {
-        //             this.goTo('about');
-        //         }, this.timeDelay);
-        //     }
+            const param = this._activatedRoute.snapshot.queryParams["section"];
+            if(param) {
+                this.goTo(param);
+                this._router.navigate([]);
+                return;
+            }
 
-        //     if (this.current != 'init' || scrollY > 100 && scrollY < 250) {
-        //         this.goTo(this.current == 'init' ? 'about' : this.current);
-        //     }
+            if (scrollY === 0) {
+                setTimeout(() => {
+                    this.goTo('about');
+                }, this.timeDelay);
+            }
+
+            if (this.current != 'init' || scrollY > 100 && scrollY < 250) {
+                this.goTo(this.current == 'init' ? 'about' : this.current);
+            }
         }, 500);
 
     }
@@ -102,12 +106,12 @@ export class LandingComponent implements OnInit {
         view?.scrollIntoView({
             behavior: "smooth",
             block: "start",
-            inline: "nearest"
+            // inline: "nearest"
         });
 
         this._ga.TrackEvent('click', `section: ${section}`, section);
 
-        this._title.setTitle(`SERGAL - ${ section.toUpperCase() }`);
+        this._title.setTitle(`SERGAL - ${section.toUpperCase()}`);
 
         if (section === 'init') {
             setTimeout(() => {
@@ -137,7 +141,7 @@ export class LandingComponent implements OnInit {
             }
         });
 
-        this._title.setTitle(`SERGAL - ${ this.current.toUpperCase() }`);
+        this._title.setTitle(`SERGAL - ${this.current.toUpperCase()}`);
 
         event?.preventDefault();
 
@@ -181,10 +185,10 @@ export class LandingComponent implements OnInit {
         this.loadingLanguage = true;
 
         // esto cambia el orden al momento de selecionar un lenguaje
-        if (this.browserLangs[0] == this.currentLang) {
-            this.browserLangs.shift();
-            this.browserLangs.push(this.currentLang)
-        }
+        // if (this.browserLangs[0] == this.currentLang) {
+        //     this.browserLangs.shift();
+        //     this.browserLangs.push(this.currentLang)
+        // }
     }
 
     updateLanguageDependedncies() {

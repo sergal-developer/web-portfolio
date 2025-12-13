@@ -5,12 +5,14 @@ portfolio-list {
     .portafolio-container {
         display: flex;
         flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap !important;
         gap: 30px;
 
 
         .separator {
             border-top: 1px solid gray;
+            padding: 30px 0;
         }
     }
 
@@ -116,28 +118,30 @@ portfolio-list {
 
     .container-project {
         display: flex;
-        gap: 15px;
+        gap: 30px;
         line-height: 1.5;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
         width: 92.5vw;
+        width: calc(100vw - 10%);
     }
 
     .info {
-        width: 190px;
-        // font-size: 22px;
+        width: 20%;
+        font-size: em(22);
         font-weight: lighter;
     }
 
     .project-list-mask {
-        width: calc(100% - 190px);
+        width: calc(80%);
         overflow: hidden;
         overflow-x: auto;
+        margin-left: auto;
     }
 
     .project-list {
-        width: calc(400px * 6);
+        width: calc(400px * 10);
         display: flex;
         justify-content: flex-start;
         flex-direction: row;
@@ -150,7 +154,7 @@ portfolio-list {
         position: relative;
         border: 1px solid #bcbcbc;
         border-radius: 10px;
-        width: 360px;
+        width: 200px;
 
         .pc-background {
             // position: absolute;

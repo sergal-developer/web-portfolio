@@ -17,7 +17,6 @@ body, .body {
   scroll-behavior: smooth;
   overflow: hidden;
   // overflow-x: hidden;
-  // @include scroll(5px, $accentColor, black, 0px);
 
   @extend .openSansFont;
   font-size: em(16);
@@ -33,6 +32,5 @@ body, .body {
 }
 
 @import "theme/html.scss";
-// @import "theme/layouts.scss";
 
 
