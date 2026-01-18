@@ -3,6 +3,7 @@ import { TechnologyEntity } from "./technology.entity";
 export class PortfolioEntity {
     id: string = '';
     image: string = '';
+    imageCollection: Array<String> = [];
     name: string = '';
     description: string = '';
     technologiesId: Array<string> = [];

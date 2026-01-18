@@ -6,6 +6,7 @@
         "frontEnd": "Frontend",
         "backend": "Backend",
         "admin": "Admin",
+        "mobile": "Mobile",
         "level_advanced": "Advanced",
         "level_expert": "Expert",
         "level_medium": "Medium",
@@ -35,6 +36,9 @@
         "types": "Types",
         "project_unknow": "Project not found",
         "project_unknow_subtitle": "We are sorry, the project you are looking for is not available at the moment.",
+        "project_label": "Project",
+        "project_images_not_found": "There are no images available to show at the moment.",
+        "project_internal_screenshots": "Internal projects",
         "notification_app": "The following application is inspired by the original application, therefore the data and presentation are fictitious.",
         "levelSkill": "Level",
         "TRAINEE": "Trainee",
@@ -95,6 +99,7 @@
         "ULTRA": "Course Management System is a comprehensive platform designed to facilitate the management of courses, students and teachers within educational institutions or companies. Its main objective is to optimize the creation, organization, monitoring and evaluation of educational programs in an efficient and accessible way.",
         "INTERAPT": "It is a comprehensive platform designed to improve the management of medical consultations and patient follow-up in clinics, hospitals or private practices. With this system, health professionals can optimize their workflow, efficiently manage medical records, schedule appointments and constantly monitor the well-being of their patients.",
         "GLOW": "Globant's Comprehensive Internal Business Management Portal is a centralized platform designed to optimize the administrative and financial management of organizations, companies and work teams. This portal allows for efficient administration of financial resources, user access control, resource declaration and comprehensive management of corporate travel, all from a single, easy-to-use and completely secure interface.",
-        "PODEXPERIENCE": "It is a comprehensive platform designed to optimize the management, coordination and productivity of Globant software development teams. This system facilitates project planning, task tracking, resource management and collaboration between team members, ensuring efficient and successful delivery of technological solutions."
+        "PODEXPERIENCE": "It is a comprehensive platform designed to optimize the management, coordination and productivity of Globant software development teams. This system facilitates project planning, task tracking, resource management and collaboration between team members, ensuring efficient and successful delivery of technological solutions.",
+        "SIMEXAM": "An Android app that creates unique quizzes tailored specifically to your syllabus, difficulty level, and study style. From complex math to intricate history, AI handles it all!"
     }
 }

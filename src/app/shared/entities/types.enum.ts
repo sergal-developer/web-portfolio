@@ -3,6 +3,7 @@ export enum TypeScope {
     ADMIN = 'admin',
     BACKEND = 'backend',
     FRONTEND = 'frontend',
+    MOBILE = 'mobile',
 }
 
 export enum TypeSkill {

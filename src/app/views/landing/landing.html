@@ -10,7 +10,7 @@
           [ngClass]="{'active': menu.active }" [innerHTML]="menu.name" (click)="goTo(menu.section)">
         </div>
         <div class="header-item language">
-          <span>{{ currentLang }}</span>
+          <span>{{ currentLangMask }}</span>
 
           <div class="header-item language-drop">
             <ng-container *ngFor="let lang of browserLangs">

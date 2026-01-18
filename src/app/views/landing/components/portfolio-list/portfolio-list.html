@@ -1,10 +1,10 @@
-<div class="container portafolio-container">
+<div class="container portafolio-container" [ngClass]="{'current-project-show': currentProject }">
   <titlepage-component [id]="'portfolio-title'" [name]="title.name" [namealt]="title.namealt" [title]="title.title"
-    [description]="title.position">
+    [description]="title.position" (click)="closeProject()">
   </titlepage-component>
 
   <div class="separator container-project">
-    <div class="info">
+    <div class="info-projects absolute">
       <p>{{ 'PORTFOLIO.slogan' | translate }}</p>
 
       <h6>{{ 'GLOBAL.types' | translate }}</h6>
@@ -12,11 +12,12 @@
       <div><span class="square type design"></span> {{ 'GLOBAL.design' | translate }}</div>
       <div><span class="square type frontend"></span> {{ 'GLOBAL.frontEnd' | translate }}</div>
       <div><span class="square type backend"></span> {{ 'GLOBAL.backend' | translate }}</div>
+      <div><span class="square type mobile"></span> {{ 'GLOBAL.mobile' | translate }}</div>
     </div>
-    <div class="project-list-mask">
+    <div class="project-list-mask absolute">
       <div class="project-list " *ngIf="portfolio.length">
 
-        <div class="project-card" *ngFor="let item of portfolio">
+        <div class="project-card" *ngFor="let item of portfolio" (click)="expandProject(item)">
           <div class="pc-border">
             <div class="pc-border-item type {{ type }}" *ngFor="let type of item.typesScope">
             </div>
@@ -24,27 +25,68 @@
           <div class="pc-container">
 
             <div class="pc-container-title">{{ item.name }}</div>
+            <div class="pc-date-dev">{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</div>
             <div class="pc-container-description">{{ item._description }}</div>
-            <div class="pc-tech-list-title">{{ 'GLOBAL.technologies' | translate }}:</div>
+            <!-- <div class="pc-tech-list-title">{{ 'GLOBAL.technologies' | translate }}:</div> -->
             <div class="pc-tech-list">
               <div class="pc-tech-item" *ngFor="let th of item.technologies">
                 <img [attr.src]="'/assets/' + th.image" [attr.alt]="th.name">
               </div>
             </div>
             <div class="pc-background">
-              <!-- <img [attr.src]="item.image" [attr.alt]="item.name"> -->
             </div>
           </div>
-          <div class="pc-stats">
-            <div>{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</div>
-            <a *ngIf="item.url" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.preview' | translate }}</a>
-            <a *ngIf="item.externalUrl" target="_blank" [attr.href]="item.url || item.externalUrl">{{ 'GLOBAL.visit' |
-              translate }}</a>
-          </div>
+
         </div>
       </div>
     </div>
 
+    <div class="current-project absolute">
+      <div *ngIf="currentProject">
+        <div class="project-details">
+          <div class="project-details-info">
+            <div class="project-dates">{{ 'GLOBAL.developedin' | translate }}: {{ currentProject.period }}</div>
+            <div class="project-description">{{ currentProject._description }}</div>
+
+            <div class="project-tech-list">
+              <div class="project-tech-item" *ngFor="let th of currentProject.technologies">
+                <img [attr.src]="'/assets/' + th.image" [attr.alt]="th.name">
+              </div>
+            </div>
+          </div>
+
+          <div class="project-details-images">
+            <div class="project-links">
+              <div class="url-internal" *ngIf="currentProject.url"> {{ 'GLOBAL.project_internal_screenshots' | translate }}</div>
+              <a *ngIf="currentProject.externalUrl" target="_blank"
+                [attr.href]="currentProject.url || currentProject.externalUrl">{{ 'GLOBAL.visit' |
+                translate }}</a>
+            </div>
+            <div class="image-galery" *ngIf="currentProject.imageCollection.length">
+              <div data-component="carousel" class="_carousel">
+                <ul class="_entries" tabindex="0">
+                  <li *ngFor="let imageItem of currentProject.imageCollection; index as i">
+                    <a [attr.name]="'carousel_' + i">
+                      <img [attr.src]="imageItem" [attr.alt]="imageItem" draggable="false"></a>
+                  </li>
+                </ul>
+                <ul class="_markers">
+                  <li *ngFor="let marker of currentProject.imageCollection; index as i">
+                    <a [attr.href]="'#carousel_' + i">
+                      <span class="sr-only">{{ i }}</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="image-empty" *ngIf="!currentProject.imageCollection.length">
+              {{ 'GLOBAL.project_images_not_found' | translate }}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

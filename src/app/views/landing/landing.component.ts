@@ -31,6 +31,7 @@ export class LandingComponent implements OnInit {
     percerntScroll = 0;
     browserLangs: string[] = [];
     currentLang: string = '';
+    currentLangMask: string = '';
     loadingLanguage = false;
 
     constructor(
@@ -44,6 +45,7 @@ export class LandingComponent implements OnInit {
         this.translate.addLangs(ConfigData.availableLangs);
         this.browserLangs = this.translate.getLangs();
         this.currentLang = 'en';
+        this.currentLangMask = 'english';
         this.translate.setDefaultLang(this.currentLang);
         this.eventBusService.publish({ name: 'language', data: this.currentLang });
         this.changeLang(this.currentLang);
@@ -184,11 +186,12 @@ export class LandingComponent implements OnInit {
         this.eventBusService.publish({ name: 'language', data: this.currentLang });
         this.loadingLanguage = true;
 
-        // esto cambia el orden al momento de selecionar un lenguaje
-        // if (this.browserLangs[0] == this.currentLang) {
-        //     this.browserLangs.shift();
-        //     this.browserLangs.push(this.currentLang)
-        // }
+        const availableLangs: any = {
+            'en': { mask: 'english' },
+            'es': { mask: 'español' },
+        };
+
+        this.currentLangMask = availableLangs[this.currentLang].mask;
     }
 
     updateLanguageDependedncies() {

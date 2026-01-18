@@ -298,4 +298,22 @@ export const technologiesData = [
         type: TypeScope.DESIGN,
         color: "#f7dbd9"
     },
+    {
+        id: "CAPACITOR",
+        name: "Capacitor JS",
+        level: 1,
+        years: "1",
+        image: "img/capacitor.png",
+        type: TypeScope.MOBILE,
+        color: "#f7dbd9"
+    },
+    {
+        id: "ANDROIDSTUDIO",
+        name: "Android Studio",
+        level: 1,
+        years: "1",
+        image: "img/androidstudio.png",
+        type: TypeScope.MOBILE,
+        color: "#f7dbd9"
+    },
 ];

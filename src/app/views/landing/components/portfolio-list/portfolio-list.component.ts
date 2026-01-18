@@ -27,7 +27,9 @@ export class PortfolioListComponent {
         title: '',
         position: ''
     }
+    _bktitle: any = null;
     datePipe = new DatePipe('en-US');
+    projectLabel = '';
 
     constructor(private translate: TranslateService,
         private eventBusService: EventBusService,
@@ -38,17 +40,37 @@ export class PortfolioListComponent {
         this.eventBusService.subscribe('language').subscribe((eventData: EventBus) => {
             this.updateLanguageDependedncies();
         });
+
+        this.translate.get(_(`GLOBAL.project_label`)).subscribe((res: string) => {
+            this.projectLabel = `${res} <span class='accent'>&bull;</span>`;
+        });
         this.updateLanguageDependedncies();
     }
 
     //#region LANGUAGE
     updateLanguageDependedncies() {
         this.translate.get(_(`PORTFOLIO.title`)).subscribe((res: string) => {
-            this.title.title = res;
+            if (!this._bktitle) {
+                this.title.title = res;
+            } else {
+                this._bktitle.title = res;
+            }
         });
         this.translate.get(_(`PORTFOLIO.position`)).subscribe((res: string) => {
-            this.title.position = res
+            if (!this._bktitle) {
+                this.title.position = res;
+            } else {
+                this._bktitle.position = res;
+            }
         });
+
+        this.translate.get(_(`GLOBAL.project_label`)).subscribe((res: string) => {
+            this.projectLabel = `${res} <span class='accent'>&bull;</span>`;
+            if (this._bktitle) {
+                this.title.name = this.projectLabel;
+            }
+        });
+
 
         this.technologies = this.sourceData.getTechnologies();
         this.portfolio = this.normalizeData(this.sourceData.getPortfolio());
@@ -58,6 +80,25 @@ export class PortfolioListComponent {
     gotoProject(item: any) {
         if (item.url) {
             this._router.navigate([item.url])
+        }
+    }
+
+    currentProject: PortfolioEntity | null = null;
+    expandProject(project: PortfolioEntity) {
+        if (!this._bktitle) {
+            this._bktitle = { ...this.title };
+        }
+        this.currentProject = project;
+        this.title.title = '';
+        this.title.name = this.projectLabel;
+        this.title.position = `<b><span class='accent'>/</span>${this.currentProject.name}</b>`;
+
+    }
+
+    closeProject() {
+        this.currentProject = null;
+        if (this._bktitle) {
+            this.title = { ...this._bktitle };
         }
     }
 
