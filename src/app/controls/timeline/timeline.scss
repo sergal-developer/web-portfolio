@@ -12,6 +12,11 @@ $timeline-height: 50vh;
 timeline {
     width: 100%;
     max-width: calc(100vw - 100px);
+
+    @include mobile {
+        max-width: calc(100% - 10px);
+    }
+
     
     .timeline-component {
         margin: 0;

@@ -57,7 +57,7 @@
 
           <div class="project-details-images">
             <div class="project-links">
-              <div class="url-internal" *ngIf="currentProject.url"> {{ 'GLOBAL.project_internal_screenshots' | translate }}</div>
+              <!-- <div class="url-internal" *ngIf="currentProject.url"> {{ 'GLOBAL.project_internal_screenshots' | translate }}</div> -->
               <a *ngIf="currentProject.externalUrl" target="_blank"
                 [attr.href]="currentProject.url || currentProject.externalUrl">{{ 'GLOBAL.visit' |
                 translate }}</a>

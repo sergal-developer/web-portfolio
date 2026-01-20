@@ -3,6 +3,14 @@ export const PortfolioData = [
         id: '',
         image: "/assets/projects/cfdi.jpg",
         imageCollection: [
+            "/assets/projects/cfd_0.png",
+            "/assets/projects/cfd_1.png",
+            "/assets/projects/cfd_2.png",
+            "/assets/projects/cfd_3.png",
+            "/assets/projects/cfd_4.png",
+            "/assets/projects/cfd_5.png",
+            "/assets/projects/cfd_6.png",
+            "/assets/projects/cfd_7.png"
         ],
         name: "CFDi",
         description: "PORTFOLIO.CFDI",
@@ -39,7 +47,14 @@ export const PortfolioData = [
     {
         id: 'ultraui',
         image: "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
-        imageCollection: [],
+        imageCollection: [
+            "/assets/projects/bb_0.png",
+            "/assets/projects/bb_1.png",
+            "/assets/projects/bb_2.png",
+            "/assets/projects/bb_3.png",
+            "/assets/projects/bb_4.png",
+            "/assets/projects/bb_5.png"
+        ],
         name: "Ultra UI",
         description: "PORTFOLIO.ULTRA",
         technologiesId: ['GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA'],
@@ -51,7 +66,13 @@ export const PortfolioData = [
     {
         id: 'interapt',
         image: "https://help.blackboard.com/sites/default/files/images/2019-04/original_course_view_0.png",
-        imageCollection: [],
+        imageCollection: [
+            "/assets/projects/in_0.png",
+            "/assets/projects/in_1.png",
+            "/assets/projects/in_2.png",
+            "/assets/projects/in_3.png",
+            "/assets/projects/in_4.png",
+        ],
         name: "Interapt",
         description: "PORTFOLIO.INTERAPT",
         technologiesId: ['GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'JIRA', 'CONFLUENCE', 'NODEJS', 'FIGMA', 'MSNET'],
@@ -88,7 +109,13 @@ export const PortfolioData = [
     {
         id: '',
         image: "https://play-lh.googleusercontent.com/Me80RBp3Zg2UKcM6fRLdM02Ezt7lnSCoD6Rcmb7xyg9B09eSRNwaNSuXh8T-a3OOxbI=w240-h480-rw",
-        imageCollection: [],
+        imageCollection: [
+            "/assets/projects/sx_0.png",
+            "/assets/projects/sx_1.png",
+            "/assets/projects/sx_2.png",
+            "/assets/projects/sx_3.png",
+            "/assets/projects/sx_4.png",
+        ],
         name: "SIMEXAM",
         description: "PORTFOLIO.SIMEXAM",
         technologiesId: ['GIT', 'JS', 'CSS3', 'HTML5', 'TS', 'SASS', 'NG', 'CAPACITOR', 'ANDROIDSTUDIO', 'MSEXPRESSION'],
