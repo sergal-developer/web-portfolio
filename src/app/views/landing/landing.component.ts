@@ -33,6 +33,7 @@ export class LandingComponent implements OnInit {
     currentLang: string = '';
     currentLangMask: string = '';
     loadingLanguage = false;
+    mobileMenuOpen = false;
 
     constructor(
         private viewportScroller: ViewportScroller,
@@ -67,6 +68,10 @@ export class LandingComponent implements OnInit {
             setTimeout(() => {
                 this.loadingLanguage = false;
             }, 1000);
+        });
+
+        this.eventBusService.subscribe('navigateTo').subscribe((event: EventBus)  => {
+            this.goTo(event.data)
         });
 
         this._ga.TrackScreen('visualization', 'landing page');
@@ -120,6 +125,8 @@ export class LandingComponent implements OnInit {
                 this.goTo('about');
             }, this.timeDelay);
         }
+
+        this.mobileMenuOpen = false;
     }
 
     @HostListener('window:scroll', ['$event'])
@@ -172,6 +179,10 @@ export class LandingComponent implements OnInit {
             console.log('ERR.percentScroll(): ', error);
         }
         return percent;
+    }
+
+    toogleMenu() {
+        this.mobileMenuOpen = !this.mobileMenuOpen;
     }
 
     //#region LANGUAGE 

@@ -9,6 +9,11 @@
         <div class="header-item nav-link {{ menu.section }}" *ngFor="let menu of menus"
           [ngClass]="{'active': menu.active }" [innerHTML]="menu.name" (click)="goTo(menu.section)">
         </div>
+
+        <div class="header-item mobile-menu" (click)="toogleMenu()">
+          <span class="material-icons">menu</span> {{ 'GLOBAL.menu_label'| translate }}
+        </div>
+
         <div class="header-item language">
           <span>{{ currentLangMask }}</span>
 
@@ -22,6 +27,24 @@
         </div>
 
       </nav>
+    </div>
+
+    <div class="mobile-nav-container" [ngClass]="{'show_menu': mobileMenuOpen}">
+      <div class="mobile-nav-menu">
+        <ng-container *ngIf="mobileMenuOpen">
+          <div class="header-item">
+            <div class="logo" (click)="goTo('init');"><span>SERGAL</span><span class="accent">.</span></div>
+          </div>
+
+          <div class="header-item nav-link-mobile {{ menu.section }}" *ngFor="let menu of menus"
+            [ngClass]="{'active': menu.active }" [innerHTML]="menu.name" (click)="goTo(menu.section)">
+          </div>
+
+          <div class="header-item close" (click)="toogleMenu()">
+            <span class="material-icons">close</span>
+          </div>
+        </ng-container>
+      </div>
     </div>
 
     <section id="init" class="section-relative">

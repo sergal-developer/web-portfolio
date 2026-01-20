@@ -2,10 +2,12 @@
 @import "../../../../../scss/core/globals.scss";
 
 $hexaSize: 65px;
+$hexaSizeMobile: 70px;
 $hexaSizeHover: 80px;
 
 skills {
     width: 100%;
+
     .skills-container {
         display: flex;
         align-items: flex-start;
@@ -113,6 +115,21 @@ skills {
                 height: 80%;
             }
         }
+
+        @include mobile {
+            justify-content: flex-start;
+            gap: 20px;
+            padding-left: 15px;
+
+            .skill {
+                width: calc((100% / 2) - 20px);
+                width: 100%;
+
+                img {
+                    height: 80%;
+                }
+            }
+        }
     }
 
 }
@@ -126,6 +143,14 @@ skills {
     transition: all 300ms;
     cursor: pointer;
 
+    @include mobile {
+        justify-content: flex-start;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
     .square {
         width: $hexaSize;
         height: $hexaSize;
@@ -136,6 +161,11 @@ skills {
         transition: all 300ms;
         transition-delay: 300ms;
         background: inherit;
+
+        @include mobile {
+            width: $hexaSizeMobile;
+            height: $hexaSizeMobile;
+        }
 
         img {
             z-index: 3;
@@ -156,7 +186,7 @@ skills {
     }
 
     .shape-details {
-        font-size: 13px;
+        font-size: em(13);
         position: absolute;
         opacity: 0;
         transition: all 300ms;
@@ -176,7 +206,23 @@ skills {
         gap: 5px;
 
         b {
-            font-size: 15px;
+            font-size: em(15);
+        }
+
+        @include mobile {
+            opacity: 1;
+            position: relative;
+            background: transparent;
+            backdrop-filter: none;
+            color: black;
+            margin: 0;
+            text-align: left;
+            font-size: em(15);
+            padding: 0;
+
+            b {
+                font-size: em(18);
+            }
         }
     }
 
@@ -191,6 +237,7 @@ skills {
         transition: all 300ms;
         transition-delay: 600ms;
         padding: 2px;
+
         div {
             width: calc(100% / 5);
             height: 8px;
@@ -200,26 +247,36 @@ skills {
             transition-delay: 800ms;
         }
 
+        @include mobile {
+            width: $hexaSize;
+            top: calc(#{ $hexaSizeMobile } - 13px);
+            left: calc(#{ $hexaSizeMobile } - 5px);
+        }
+
         &.level-4 {
             div {
                 background: rgb(183, 20, 242);
             }
         }
+
         &.level-3 {
             div:nth-child(-n + 4) {
                 background: rgb(106 163 40);
             }
         }
+
         &.level-2 {
             div:nth-child(-n + 3) {
                 background: rgb(26, 148, 107);
             }
         }
+
         &.level-1 {
             div:nth-child(-n + 2) {
                 background: rgb(140, 163, 40);
             }
         }
+
         &.level-0 {
             div:nth-child(-n + 1) {
                 background: rgb(153, 163, 40);
@@ -245,9 +302,33 @@ skills {
             top: calc($hexaSize + 20px);
             width: 200%;
         }
+
         .shape-level {
             top: -28px;
             width: 150%;
+        }
+
+        @include mobile {
+            .square {
+                transform: scale(1);
+
+                &::before,
+                &::after {
+                    transform: scale(1);
+                }
+            }
+
+            .shape-details {
+                opacity: 1;
+                top: unset;
+                width: 100%;
+            }
+
+            .shape-level {
+                width: $hexaSize;
+                top: calc(#{ $hexaSizeMobile } - 13px);
+                left: calc(#{ $hexaSizeMobile } - 5px);
+            }
         }
     }
 }

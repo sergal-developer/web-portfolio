@@ -3,6 +3,7 @@
 
 portfolio-list {
     width: 100%;
+
     .portafolio-container {
         display: flex;
         flex-direction: row;
@@ -47,14 +48,19 @@ portfolio-list {
                 transform: translateX(50%);
                 opacity: 0;
                 z-index: 0;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             .project-list-mask {
-                // transform: translateX(-30%);
-                // opacity: 0;
-                // z-index: 0;
                 animation: exist-list-animation forwards;
                 animation-duration: 600ms;
+
+                @include mobile {
+                    display: none;
+                }
             }
 
             .current-project {
@@ -64,17 +70,6 @@ portfolio-list {
                 height: auto;
                 background: transparent;
             }
-        }
-    }
-
-
-    @keyframes wave {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
         }
     }
 
@@ -94,6 +89,11 @@ portfolio-list {
                 margin: 0 0 10px;
             }
         }
+
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .info-projects {
@@ -105,7 +105,18 @@ portfolio-list {
         h6 {
             margin: 0 0 15px 0;
         }
+
+        @include mobile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            h6 {
+                margin: 0;
+            }
+        }
     }
+
 
     .project-list-mask {
         width: calc(80%);
@@ -137,11 +148,26 @@ portfolio-list {
         padding: 10px 0;
     }
 
+    .info-projects,
+    .project-list-mask,
+    .project-list,
+    .current-project {
+        @include mobile {
+            width: 100%;
+            position: relative !important;
+            margin: 0 !important;
+        }
+    }
+
     .project-details {
         font-size: 25px;
         display: flex;
         flex-direction: row;
         gap: 40px;
+
+        @include mobile {
+            flex-direction: column;
+        }
 
         .project-details-info,
         .project-details-images {
@@ -151,6 +177,10 @@ portfolio-list {
             gap: 30px;
             width: 60%;
             position: relative;
+
+            @include mobile {
+                width: 100% !important;
+            }
         }
 
         .project-details-info {
@@ -191,11 +221,6 @@ portfolio-list {
 
     .project-card {
         position: relative;
-        border: 1px solid #bcbcbc;
-        border-radius: 10px;
-        width: 200px;
-
-        position: relative;
         border: 2px solid #bcbcbc;
         border-radius: 10px;
         width: calc((100% / 3) - 10px);
@@ -205,6 +230,10 @@ portfolio-list {
 
         &:hover {
             background: rgb(235, 235, 235);
+        }
+
+        @include mobile {
+            width: 80%;
         }
 
         .pc-background {
@@ -425,23 +454,23 @@ portfolio-list {
 
 
 @keyframes exist-list-animation {
-        0% {
-            
-            transform: translateX(0%);
-            opacity: 1;
-            z-index: 1;
-        }
+    0% {
 
-        50% {
-            
-            transform: translateX(-10%);
-            opacity: 0;
-            z-index: 0;
-        }
-
-        100% {
-            transform: translateX(-30%);
-            opacity: 0;
-            z-index: 0;
-        }
+        transform: translateX(0%);
+        opacity: 1;
+        z-index: 1;
     }
+
+    50% {
+
+        transform: translateX(-10%);
+        opacity: 0;
+        z-index: 0;
+    }
+
+    100% {
+        transform: translateX(-30%);
+        opacity: 0;
+        z-index: 0;
+    }
+}

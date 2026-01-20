@@ -45,7 +45,8 @@
         "JUNIOR": "Junior",
         "ADVANCED": "Advanced",
         "SENIOR": "Senior",
-        "EXPERT": "Expert"
+        "EXPERT": "Expert",
+        "menu_label": "MENU"
     },
     "NAV": {
         "navAbout": "About",

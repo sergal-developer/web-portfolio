@@ -42,7 +42,7 @@ export class PortfolioListComponent {
         });
 
         this.translate.get(_(`GLOBAL.project_label`)).subscribe((res: string) => {
-            this.projectLabel = `${res} <span class='accent'>&bull;</span>`;
+            this.projectLabel = `<span class="material-icons">arrow_back</span> ${res} <span class='accent'>&bull;</span>`;
         });
         this.updateLanguageDependedncies();
     }
@@ -65,7 +65,7 @@ export class PortfolioListComponent {
         });
 
         this.translate.get(_(`GLOBAL.project_label`)).subscribe((res: string) => {
-            this.projectLabel = `${res} <span class='accent'>&bull;</span>`;
+            this.projectLabel = `<span class="material-icons">arrow_back</span> ${res} <span class='accent'>&bull;</span>`;
             if (this._bktitle) {
                 this.title.name = this.projectLabel;
             }
@@ -93,6 +93,7 @@ export class PortfolioListComponent {
         this.title.name = this.projectLabel;
         this.title.position = `<b><span class='accent'>/</span>${this.currentProject.name}</b>`;
 
+        this.eventBusService.publish({ name: 'navigateTo', data: 'portfolio' });
     }
 
     closeProject() {
