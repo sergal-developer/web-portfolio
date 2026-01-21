@@ -65,7 +65,7 @@
     main {
         scroll-timeline-name: --main-scroll;
         scroll-snap-type: both mandatory;
-        scroll-snap-points-y: repeat(120vh);
+        scroll-snap-points-y: repeat(200vh);
         display: flex;
         flex-direction: column;
         height: 100vh;
@@ -276,8 +276,6 @@
         }
     }
 
-
-
     main-element-component {
         #main-title {
             @include mobile {
@@ -286,7 +284,6 @@
             }
         }
     }
-
 
     @include mobile {
         p {
@@ -304,7 +301,6 @@
 
 section {
     padding: 50px;
-    padding-top: 90px;
     max-width: 100vw;
 
     @include mobile {
@@ -330,7 +326,6 @@ section {
     &.section-relative {
         position: relative;
         width: 100vw;
-
         min-height: 100vh;
         display: flex;
         align-items: flex-start;

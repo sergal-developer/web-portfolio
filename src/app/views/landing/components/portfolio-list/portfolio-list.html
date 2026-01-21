@@ -45,7 +45,14 @@
       <div *ngIf="currentProject">
         <div class="project-details">
           <div class="project-details-info">
-            <div class="project-dates">{{ 'GLOBAL.developedin' | translate }}: {{ currentProject.period }}</div>
+            <div class="project-dates">
+              <span>{{ 'GLOBAL.developedin' | translate }}: {{ currentProject.period }}</span>
+              <span>
+                <a *ngIf="currentProject.externalUrl" target="_blank"
+                  [attr.href]="currentProject.url || currentProject.externalUrl">{{ 'GLOBAL.visit' |
+                  translate }}</a>
+              </span>
+            </div>
             <div class="project-description">{{ currentProject._description }}</div>
 
             <div class="project-tech-list">
@@ -56,12 +63,6 @@
           </div>
 
           <div class="project-details-images">
-            <div class="project-links">
-              <!-- <div class="url-internal" *ngIf="currentProject.url"> {{ 'GLOBAL.project_internal_screenshots' | translate }}</div> -->
-              <a *ngIf="currentProject.externalUrl" target="_blank"
-                [attr.href]="currentProject.url || currentProject.externalUrl">{{ 'GLOBAL.visit' |
-                translate }}</a>
-            </div>
             <div class="image-galery" *ngIf="currentProject.imageCollection.length">
               <div data-component="carousel" class="_carousel">
                 <ul class="_entries" tabindex="0">

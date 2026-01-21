@@ -98,7 +98,7 @@ portfolio-list {
 
     .info-projects {
         width: 20%;
-        font-size: em(22);
+        font-size: rem(22);
         font-weight: lighter;
         margin-left: 0;
 
@@ -143,9 +143,9 @@ portfolio-list {
         margin-left: 0%;
         background: rgb(255, 255, 255);
         padding: 0px;
-        font-size: 18px;
+        font-size: rem(16);
         height: 1px;
-        padding: 10px 0;
+        padding: 0;
     }
 
     .info-projects,
@@ -160,10 +160,11 @@ portfolio-list {
     }
 
     .project-details {
-        font-size: 25px;
+        font-size: rem(16);
         display: flex;
+        flex-direction: column;
         flex-direction: row;
-        gap: 40px;
+        gap: 0;
 
         @include mobile {
             flex-direction: column;
@@ -174,8 +175,8 @@ portfolio-list {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 30px;
-            width: 60%;
+            gap: 20px;
+            width: 100%;
             position: relative;
 
             @include mobile {
@@ -184,11 +185,17 @@ portfolio-list {
         }
 
         .project-details-info {
-            width: calc(40% - 40px);
+            width: calc(25% - 20px);
+        }
+
+        .project-details-images {
+            width: calc(80% - 20px);
         }
 
         .project-dates {
             font-style: italic;
+            display: flex;
+            gap: 20px;
         }
 
         .project-links {
@@ -203,7 +210,7 @@ portfolio-list {
             flex-wrap: wrap;
 
             .project-tech-item {
-                width: 80px;
+                width: 60px;
             }
         }
 
@@ -215,7 +222,7 @@ portfolio-list {
             justify-content: center;
             color: #a5a5a5;
             background: #f5f5f5;
-            font-size: 20px;
+            font-size: rem(20);
         }
     }
 
@@ -276,12 +283,12 @@ portfolio-list {
             justify-content: flex-start;
 
             .pc-container-title {
-                font-size: 22px;
+                font-size: rem(22);
                 font-weight: normal;
             }
 
             .pc-container-description {
-                font-size: 12px;
+                font-size: rem(12);
                 display: none;
             }
 
@@ -361,7 +368,7 @@ portfolio-list {
         position: relative;
         margin: 0;
         background: #ffffff;
-        height: 70vh;
+        height: 65vh;
         width: 100%;
         overflow: hidden;
 
@@ -388,7 +395,7 @@ portfolio-list {
             display: flex;
             flex-direction: row;
             gap: 0.25em;
-            font-size: 40px;
+            font-size: rem(30);
             position: absolute;
             bottom: 1.5rem;
             left: 50%;
