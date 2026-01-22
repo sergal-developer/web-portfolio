@@ -3,6 +3,7 @@
 
 $hexaSize: 65px;
 $hexaSizeMobile: 70px;
+$hexaSizeUltra: 85px;
 $hexaSizeHover: 80px;
 
 skills {
@@ -30,56 +31,6 @@ skills {
         }
     }
 
-    .persepective-container {
-        perspective: 400px;
-        transform-style: preserve-3d;
-    }
-
-    ._frame-container {
-        width: 100%;
-        height: calc(100% - 10px);
-        overflow-x: auto;
-        position: relative;
-        @include scroll(5px, $accentColor, black, 0px);
-
-        ._frame-content {
-            width: calc(10* 100vw);
-            height: inherit;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-items: flex-start;
-            justify-content: flex-start;
-
-            ._section-leteral {
-                width: 100vw;
-                height: inherit;
-                padding: 50px;
-            }
-        }
-    }
-
-    ._section-leteral {
-        &.main {
-            display: flex;
-            gap: 20px;
-        }
-
-        ._subsection {
-            width: 50vw;
-            min-width: 50vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: inherit;
-
-            &.project {
-                width: 100vw;
-                min-width: 100vw;
-            }
-        }
-    }
-
     .skills-collection {
         display: flex;
         flex-wrap: wrap;
@@ -100,8 +51,49 @@ skills {
             padding-left: 15px;
 
             .skill {
-                width: calc((100% / 2) - 20px);
                 width: 100%;
+
+                img {
+                    height: 80%;
+                }
+            }
+        }
+
+        @include desktop-wide {
+            justify-content: flex-start;
+            gap: 20px;
+            padding-left: 15px;
+
+            .skill {
+                width: calc((100% / 5) - 20px);
+
+                img {
+                    height: 80%;
+                }
+            }
+        }
+
+        @include desktop-huge {
+            justify-content: flex-start;
+            gap: 20px;
+            padding-left: 15px;
+
+            .skill {
+                width: calc((100% / 5) - 20px);
+
+                img {
+                    height: 80%;
+                }
+            }
+        }
+
+        @include desktop-ultra {
+            justify-content: flex-start;
+            gap: 20px;
+            padding-left: 15px;
+
+            .skill {
+                width: calc((100% / 5) - 20px);
 
                 img {
                     height: 80%;
@@ -121,14 +113,6 @@ skills {
     transition: all 300ms;
     cursor: pointer;
 
-    @include mobile {
-        justify-content: flex-start;
-        position: relative;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        gap: 10px;
-    }
-
     .square {
         width: $hexaSize;
         height: $hexaSize;
@@ -139,11 +123,6 @@ skills {
         transition: all 300ms;
         transition-delay: 300ms;
         background: inherit;
-
-        @include mobile {
-            width: $hexaSizeMobile;
-            height: $hexaSizeMobile;
-        }
 
         img {
             z-index: 3;
@@ -186,22 +165,6 @@ skills {
         b {
             font-size: em(15);
         }
-
-        @include mobile {
-            opacity: 1;
-            position: relative;
-            background: transparent;
-            backdrop-filter: none;
-            color: black;
-            margin: 0;
-            text-align: left;
-            font-size: em(15);
-            padding: 0;
-
-            b {
-                font-size: em(18);
-            }
-        }
     }
 
     .shape-level {
@@ -223,12 +186,6 @@ skills {
             border-radius: 10px;
             transition: all 300ms;
             transition-delay: 800ms;
-        }
-
-        @include mobile {
-            width: $hexaSize;
-            top: calc(#{ $hexaSizeMobile } - 13px);
-            left: calc(#{ $hexaSizeMobile } - 5px);
         }
 
         &.level-4 {
@@ -285,8 +242,50 @@ skills {
             top: -28px;
             width: 150%;
         }
+    }
 
-        @include mobile {
+    @include mobile {
+        justify-content: flex-start;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+
+        .square {
+            width: $hexaSizeMobile;
+            height: $hexaSizeMobile;
+            min-width: $hexaSize;
+            min-height: $hexaSize;
+
+            &::before {
+                content: unset;
+            }
+        }
+
+        .shape-details {
+            opacity: 1;
+            position: relative;
+            background: transparent;
+            backdrop-filter: none;
+            color: black;
+            margin: 0;
+            text-align: left;
+            font-size: em(15);
+            padding: 0;
+
+            b {
+                font-size: em(18);
+            }
+        }
+
+        .shape-level {
+            width: $hexaSize;
+            top: calc(#{ $hexaSizeMobile } - 13px);
+            left: calc(#{ $hexaSizeMobile } - 5px);
+        }
+
+        &:hover,
+        &.active {
             .square {
                 transform: scale(1);
 
@@ -309,56 +308,202 @@ skills {
             }
         }
     }
-}
 
-.hexa-warp {
-    transition: all 300ms;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-direction: column;
+    @include desktop-wide {
+        justify-content: flex-start;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
 
-    .hexa {
-        width: $hexaSize;
-        height: $hexaSize;
-        line-height: $hexaSize;
-        background: rgb(177, 177, 177);
-        text-align: center;
-        cursor: pointer;
-        -webkit-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-        -moz-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-        -ms-clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-        clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        .square {
+            width: $hexaSize;
+            height: $hexaSize;
+            min-width: $hexaSize;
+            min-height: $hexaSize;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 300ms;
-        transition-delay: 300ms;
-    }
-
-    .hexa-name {
-        font-size: 12px;
-        position: absolute;
-        opacity: 0;
-    }
-
-    &:hover,
-    &.active {
-        z-index: 10;
-        transform: scale(1);
-        background: rgba(0, 0, 0, 0.5);
-
-        .hexa {
-            z-index: 10;
-            transform: scale(1);
+            &::before {
+                content: unset;
+            }
         }
 
-        .hexa-name {
+        .shape-details {
             opacity: 1;
-            color: white;
             position: relative;
+            background: transparent;
+            backdrop-filter: none;
+            color: black;
+            margin: 0;
+            margin-top: 10px;
+            text-align: left;
+            font-size: em(14);
+            padding: 0;
+
+            b {
+                font-size: em(18);
+            }
+        }
+
+        .shape-level {
+            width: $hexaSize;
+            top: 0px;
+            left: calc(#{ $hexaSize } + 10px);
+        }
+
+        &:hover,
+        &.active {
+            .square {
+                transform: scale(1);
+
+                &::before,
+                &::after {
+                    transform: scale(1);
+                }
+            }
+
+            .shape-details {
+                opacity: 1;
+                top: unset;
+                width: 100%;
+            }
+
+            .shape-level {
+                width: $hexaSize;
+                top: 0px;
+                left: calc(#{ $hexaSize } + 10px);
+            }
+        }
+    }
+
+    @include desktop-huge {
+        justify-content: flex-start;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+
+        .square {
+            width: $hexaSizeUltra;
+            height: $hexaSizeUltra;
+            min-width: $hexaSizeUltra;
+            min-height: $hexaSizeUltra;
+
+            &::before {
+                content: unset;
+            }
+        }
+
+        .shape-details {
+            opacity: 1;
+            position: relative;
+            background: transparent;
+            backdrop-filter: none;
+            color: black;
+            margin: 0;
+            margin-top: 10px;
+            text-align: left;
+            font-size: em(16);
+            padding: 0;
+
+            b {
+                font-size: em(20);
+            }
+        }
+
+        .shape-level {
+            width: calc(#{ $hexaSizeUltra } + 30px);
+            top: 0px;
+            left: calc(#{ $hexaSizeUltra } + 10px);
+        }
+
+        &:hover,
+        &.active {
+            .square {
+                transform: scale(1);
+
+                &::before,
+                &::after {
+                    transform: scale(1);
+                }
+            }
+
+            .shape-details {
+                opacity: 1;
+                top: unset;
+                width: 100%;
+            }
+
+            .shape-level {
+                width: calc(#{ $hexaSizeUltra } + 30px);
+                top: 0px;
+                left: calc(#{ $hexaSizeUltra } + 10px);
+            }
+        }
+    }
+
+    @include desktop-ultra {
+        justify-content: flex-start;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 10px;
+
+        .square {
+            width: $hexaSizeUltra;
+            height: $hexaSizeUltra;
+            min-width: $hexaSizeUltra;
+            min-height: $hexaSizeUltra;
+
+            &::before {
+                content: unset;
+            }
+        }
+
+        .shape-details {
+            opacity: 1;
+            position: relative;
+            background: transparent;
+            backdrop-filter: none;
+            color: black;
+            margin: 0;
+            margin-top: 10px;
+            text-align: left;
+            font-size: em(16);
+            padding: 0;
+
+            b {
+                font-size: em(20);
+            }
+        }
+
+        .shape-level {
+            width: calc(#{ $hexaSizeUltra } + 30px);
+            top: 0px;
+            left: calc(#{ $hexaSizeUltra } + 10px);
+        }
+
+        &:hover,
+        &.active {
+            .square {
+                transform: scale(1);
+
+                &::before,
+                &::after {
+                    transform: scale(1);
+                }
+            }
+
+            .shape-details {
+                opacity: 1;
+                top: unset;
+                width: 100%;
+            }
+
+            .shape-level {
+                width: calc(#{ $hexaSizeUltra } + 30px);
+                top: 0px;
+                left: calc(#{ $hexaSizeUltra } + 10px);
+            }
         }
     }
 }

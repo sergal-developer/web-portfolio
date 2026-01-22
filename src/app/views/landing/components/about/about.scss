@@ -64,6 +64,18 @@ about {
                     font-size: rem(14);
                 }
             }
+
+            @include desktop-wide {
+                p {
+                    font-size: rem(18);
+                }
+            }
+
+            @include desktop-ultra {
+                p {
+                    font-size: rem(22);
+                }
+            }
         }
 
         .about-inner {

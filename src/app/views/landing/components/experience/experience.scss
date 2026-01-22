@@ -43,6 +43,10 @@ experience {
                 @include desktop {
                     height: 50vh;
                 }
+
+                @include desktop-wide {
+                    height: 55vh;
+                }
             }
         }
     }

@@ -350,6 +350,27 @@ portfolio-list {
                 }
             }
         }
+
+        @include desktop-wide {
+            width: calc((100% / 3) - 20px);
+
+            .pc-container-title {
+                font-size: rem(22) !important;
+            }
+
+            .pc-date-dev {
+                p {
+                    margin: 0;
+                    font-size: rem(16) !important;
+                }
+            }
+
+            .pc-tech-item {
+                img {
+                    width: 30px !important;
+                }
+            }
+        }
     }
 
     .type {
@@ -467,6 +488,11 @@ portfolio-list {
         @include desktop {
             height: 60vh;
         }
+
+        @include desktop-wide {
+            height: 73vh;
+        }
+
     }
 
     [data-component="carousel"] {

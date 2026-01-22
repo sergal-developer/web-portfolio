@@ -113,6 +113,10 @@
             padding: 0 $paddingWidthSectionDesktopHuge;
         }
 
+        @include desktop-ultra {
+            padding: 0 $paddingWidthSectionDesktopUltra;
+        }
+
         nav {
             display: flex;
             align-items: center;
@@ -313,6 +317,10 @@ section {
         padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionDesktopHuge;
     }
 
+    @include desktop-ultra {
+        padding: calc(#{$headerHeight} + 20px) $paddingWidthSectionDesktopUltra;
+    }
+
     &.section-relative {
         position: relative;
         width: 100vw;
@@ -488,5 +496,17 @@ section {
 p {
     @include desktop {
         font-size: rem(18);
+    }
+
+    @include desktop-wide {
+        font-size: rem(23);
+    }
+
+    @include desktop-huge {
+        font-size: rem(25);
+    }
+
+    @include desktop-ultra {
+        font-size: rem(28);
     }
 }
