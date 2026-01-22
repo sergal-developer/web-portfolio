@@ -33,27 +33,7 @@ skills {
     .persepective-container {
         perspective: 400px;
         transform-style: preserve-3d;
-
-        .pc-content {
-            // transform: rotateX(26deg);
-        }
     }
-
-    .tech-collection {
-        // width: 300px;
-
-    }
-
-    // width: 100vw;
-    // height: calc(100vh - #{$headerHeight});
-    // display: flex;
-    // align-items: center;
-    // justify-content: flex-start;
-    // padding: 0;
-
-    // display: flex;
-    // flex-direction: column;
-    // padding-top: calc($headerHeight);
 
     ._frame-container {
         width: 100%;
@@ -105,8 +85,6 @@ skills {
         flex-wrap: wrap;
         flex-direction: row;
         padding: 0;
-        // display: grid;
-        // grid-template-columns: repeat(16, 1fr);
         justify-content: center;
         gap: 25px;
 
@@ -368,23 +346,17 @@ skills {
 
     &:hover,
     &.active {
-        // filter: drop-shadow(0px 0px 5px rgba(122, 122, 122, 0.5));
         z-index: 10;
-        // padding: 0 40px;
         transform: scale(1);
         background: rgba(0, 0, 0, 0.5);
-        // padding: 10px;
 
         .hexa {
-            //     background: rgb(221 221 221);
-            //     background: white;
             z-index: 10;
             transform: scale(1);
         }
 
         .hexa-name {
             opacity: 1;
-            // background: rgba(0, 0, 0, 0.5);
             color: white;
             position: relative;
         }

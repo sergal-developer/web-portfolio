@@ -25,8 +25,9 @@
           <div class="pc-container">
 
             <div class="pc-container-title">{{ item.name }}</div>
-            <div class="pc-date-dev">{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</div>
-            <div class="pc-container-description">{{ item._description }}</div>
+            <div class="pc-date-dev">
+              <p>{{ 'GLOBAL.developedin' | translate }}: {{ item.period }}</p>
+            </div>
             <!-- <div class="pc-tech-list-title">{{ 'GLOBAL.technologies' | translate }}:</div> -->
             <div class="pc-tech-list">
               <div class="pc-tech-item" *ngFor="let th of item.technologies">
@@ -46,14 +47,14 @@
         <div class="project-details">
           <div class="project-details-info">
             <div class="project-dates">
-              <span>{{ 'GLOBAL.developedin' | translate }}: {{ currentProject.period }}</span>
-              <span>
-                <a *ngIf="currentProject.externalUrl" target="_blank"
-                  [attr.href]="currentProject.url || currentProject.externalUrl">{{ 'GLOBAL.visit' |
-                  translate }}</a>
-              </span>
+              <p>{{ 'GLOBAL.developedin' | translate }}: {{ currentProject.period }}</p>
+              <a *ngIf="currentProject.externalUrl" target="_blank"
+                [attr.href]="currentProject.url || currentProject.externalUrl">{{ 'GLOBAL.visit' |
+                translate }}</a>
             </div>
-            <div class="project-description">{{ currentProject._description }}</div>
+            <div class="project-description">
+              <p>{{ currentProject._description }}</p>
+            </div>
 
             <div class="project-tech-list">
               <div class="project-tech-item" *ngFor="let th of currentProject.technologies">
@@ -81,7 +82,7 @@
               </div>
             </div>
             <div class="image-empty" *ngIf="!currentProject.imageCollection.length">
-              {{ 'GLOBAL.project_images_not_found' | translate }}
+              <p>{{ 'GLOBAL.project_images_not_found' | translate }}</p>
             </div>
           </div>
 

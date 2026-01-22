@@ -1,3 +1,5 @@
+@import "../../../../../scss/core/mixins";
+
 experience {
     width: 100%;
 
@@ -16,12 +18,6 @@ experience {
 
         .description {
             width: 100%;
-            // margin-left: auto;
-
-            // &.right {
-            //     margin-right: auto;
-            //     margin-left: 0;
-            // }
         }
 
         .experience-section {
@@ -39,6 +35,14 @@ experience {
             &.section-2 {
                 position: absolute;
                 top: 45%;
+            }
+        }
+
+        timeline {
+            .timeline-component {
+                @include desktop {
+                    height: 50vh;
+                }
             }
         }
     }

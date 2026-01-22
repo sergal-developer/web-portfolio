@@ -30,16 +30,7 @@
 
 .loadingLanguage {
     * div {
-        // background: #f0f0f0;
-        // color: #f0f0f0;
-        // opacity: 0.5;
-        // transition: background 300ms ease;
-        // animation-duration: 1s;
-        // animation-fill-mode: both;
-        // // transition: all 300ms;
-        // animation-name: danceMiddle;
         animation-name: heartbeatSlow;
-        // animation-iteration-count: infinite;
         animation-duration: .5s;
 
     }
@@ -288,7 +279,6 @@
     @include mobile {
         p {
             font-size: em(20);
-            // margin-bottom: em(20);
             line-height: 1.4;
         }
 
@@ -376,8 +366,10 @@ section {
     experience,
     skills {
         titlepage-component {
-            display: flex;
-            justify-content: center !important;
+            @include mobile {
+                display: flex;
+                justify-content: center !important;
+            }
 
             .title-page {
 
@@ -470,40 +462,6 @@ section {
 
 }
 
-@keyframes danceMiddle {
-    16% {
-        transform: skew(-14deg)
-    }
-
-    33% {
-        transform: skew(12deg)
-    }
-
-    49% {
-        transform: skew(-8deg)
-    }
-
-    66% {
-        transform: skew(6deg)
-    }
-
-    83% {
-        transform: skew(-4deg)
-    }
-}
-
-@keyframes typing {
-    from {
-        width: 0
-    }
-}
-
-@keyframes cursor {
-    50% {
-        border-color: transparent
-    }
-}
-
 @keyframes heartbeatSlow {
 
     35%,
@@ -522,5 +480,13 @@ section {
         opacity: 1;
         transform: translateY(0);
         backdrop-filter: blur(3px);
+    }
+}
+
+
+// responsive matters
+p {
+    @include desktop {
+        font-size: rem(18);
     }
 }
