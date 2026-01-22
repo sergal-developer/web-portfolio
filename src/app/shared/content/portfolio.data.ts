@@ -23,7 +23,10 @@ export const PortfolioData = [
     {
         id: '',
         image: "https://www.adrisa.com.mx/img/logo/AdrisaPartOfHowden.jpg",
-        imageCollection: [],
+        imageCollection: [
+            "/assets/projects/ad_0.png",
+            "/assets/projects/ad_1.png",
+        ],
         name: "Adrisa Actus",
         description: "PORTFOLIO.ADRISA",
         technologiesId: ['GIT', 'JS', 'CSS3', 'HTML5', 'JQUERY', 'MSNET', 'MSCSHARP', 'MSSQL', 'NHIBERNATE', 'MSAZURE'],
@@ -35,7 +38,9 @@ export const PortfolioData = [
     {
         id: 'incidentMap',
         image: "https://www.infobae.com/new-resizer/lrtPUyzL_l14Q0YGp_TT-JJhHuU=/992x606/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/2SDH2CJ7JRFFBAZHJTI6FTEBUU.jpg",
-        imageCollection: [],
+        imageCollection: [
+            "/assets/projects/uss_0.png",
+        ],
         name: "Incident Maps USA Emmbasy",
         description: "PORTFOLIO.INCIDENTMAPS",
         technologiesId: ['GIT', 'JS', 'CSS3', 'HTML5', 'MSNET', 'MSCSHARP', 'MSSQL', 'NHIBERNATE'],
@@ -53,7 +58,6 @@ export const PortfolioData = [
             "/assets/projects/bb_2.png",
             "/assets/projects/bb_3.png",
             "/assets/projects/bb_4.png",
-            "/assets/projects/bb_5.png"
         ],
         name: "Ultra UI",
         description: "PORTFOLIO.ULTRA",
@@ -71,7 +75,6 @@ export const PortfolioData = [
             "/assets/projects/in_1.png",
             "/assets/projects/in_2.png",
             "/assets/projects/in_3.png",
-            "/assets/projects/in_4.png",
         ],
         name: "Interapt",
         description: "PORTFOLIO.INTERAPT",
@@ -97,7 +100,6 @@ export const PortfolioData = [
             "/assets/projects/gw_9.png",
             "/assets/projects/gw_10.png",
             "/assets/projects/gw_11.png",
-            "/assets/projects/gw_12.png",
         ],
         name: "Glow",
         description: "PORTFOLIO.GLOW",
@@ -138,9 +140,7 @@ export const PortfolioData = [
         imageCollection: [
             "/assets/projects/sx_0.png",
             "/assets/projects/sx_1.png",
-            "/assets/projects/sx_2.png",
-            "/assets/projects/sx_3.png",
-            "/assets/projects/sx_4.png",
+            "/assets/projects/sx_2.png"
         ],
         name: "SIMEXAM",
         description: "PORTFOLIO.SIMEXAM",

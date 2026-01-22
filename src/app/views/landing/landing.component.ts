@@ -34,6 +34,7 @@ export class LandingComponent implements OnInit {
     currentLangMask: string = '';
     loadingLanguage = false;
     mobileMenuOpen = false;
+    mainScroll = 'main';
 
     constructor(
         private viewportScroller: ViewportScroller,
@@ -82,7 +83,7 @@ export class LandingComponent implements OnInit {
     init() {
         // detect if is first ejecution in page
         setTimeout(() => {
-            this.onScroll();
+            this.startEvents();
             const param = this._activatedRoute.snapshot.queryParams["section"];
             if(param) {
                 this.goTo(param);
@@ -104,11 +105,13 @@ export class LandingComponent implements OnInit {
     }
 
     goTo(section: string) {
+        if(!section) { return; }
         this.menus.map((m) => {
             m.active = m.section == section;
         });
 
-        const view: any = document.querySelector(`#${section}`);
+        const _section = `#${section}`;
+        const view: any = document.querySelector(_section);
         const top = view?.offsetTop;
         view?.scrollIntoView({
             behavior: "smooth",
@@ -129,15 +132,23 @@ export class LandingComponent implements OnInit {
         this.mobileMenuOpen = false;
     }
 
-    @HostListener('window:scroll', ['$event'])
+    startEvents( ) {
+        const mainScroll = document.querySelector(this.mainScroll);
+        if(mainScroll) {
+            mainScroll.addEventListener('scroll', event => this.onScroll(event));
+        }
+    }
+ 
+    // @HostListener('window:scroll', ['$event'])
     onScroll(event?: Event) {
-
         this.getSectionsProps();
         this.percerntScroll = this.percentScroll();
-        console.log('this.percerntScroll: ', this.percerntScroll);
-        this.sections = Array.from(document.querySelectorAll('.section-relative'));
+        
+        const app: any = document.querySelector(this.mainScroll);
+        const scrollTop = app.scrollTop;
+
         this.sectionProps.forEach((section: any) => {
-            if (scrollY > section.sectionTop - 100) {
+            if (scrollTop > section.sectionTop - 100) {
                 this.current = section.id;
             }
         });
@@ -150,11 +161,9 @@ export class LandingComponent implements OnInit {
             }
         });
 
-        this._title.setTitle(`SERGAL - ${this.current.toUpperCase()}`);
-
+        // this._title.setTitle(`SERGAL - ${this.current.toUpperCase()}`);
         event?.preventDefault();
-
-        return false;
+        return true;
     }
 
     getSectionsProps() {
@@ -171,10 +180,15 @@ export class LandingComponent implements OnInit {
     }
 
     percentScroll() {
-        const app: any = document.querySelector('.app-page');
+        const app: any = document.querySelector(this.mainScroll);
+        const scrollHeight = app.scrollHeight;
+        const clientHeight = app.clientHeight;
+        const scrollTop = app.scrollTop;
+        const actual = scrollTop == 0 ? 0 : scrollTop + clientHeight;
+
         let percent = 0;
         try {
-            percent = (scrollY * 100) / app.clientHeight;
+            percent = (actual * 100) / scrollHeight;
         } catch (error) {
             console.log('ERR.percentScroll(): ', error);
         }

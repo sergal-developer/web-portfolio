@@ -1,4 +1,4 @@
-import{d as g,e as m,g as o}from"./chunk-HRAUXDRS.js";var p=(()=>{class s{constructor(){this.trackIdGA="",this.analyticsEvents=new l}setTrackID(e){this.trackIdGA=e}getTrackID(){return this.trackIdGA}createDataLayer(){let e=document.createElement("script");e.text=`
+import{d as g,e as m,g as o}from"./chunk-ZEHTTJYR.js";var p=(()=>{class s{constructor(){this.trackIdGA="",this.analyticsEvents=new l}setTrackID(e){this.trackIdGA=e}getTrackID(){return this.trackIdGA}createDataLayer(){let e=document.createElement("script");e.text=`
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 // console.log('GA:', ...arguments);
